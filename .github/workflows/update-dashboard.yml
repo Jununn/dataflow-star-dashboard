@@ -38,6 +38,7 @@ jobs:
           cp index.html site-public/index.html
           cp styles.css site-public/styles.css
           cp app.js site-public/app.js
+          VERSION="${GITHUB_RUN_NUMBER}-${GITHUB_SHA::7}" node -e 'const fs = require("node:fs"); const path = "site-public/index.html"; const version = process.env.VERSION; let html = fs.readFileSync(path, "utf8"); html = html.replace(/\.\/styles\.css(?:\?v=[^"]*)?/g, `./styles.css?v=${version}`).replace(/\.\/app\.js(?:\?v=[^"]*)?/g, `./app.js?v=${version}`); fs.writeFileSync(path, html);'
 
       - name: Commit updated snapshot
         run: |
