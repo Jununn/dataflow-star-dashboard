@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OpenDCAI/DataFlow Star Growth Attribution</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">OpenDCAI/DataFlow</p>
+        <h1>Star 增长与运营动作归因面板</h1>
+        <p class="subhead">
+          以 2026-01-01 起的 GitHub stargazer 时间线为底，叠加已知运营动作、阶段性趋势和外部趋势页入口。
+        </p>
+      </div>
+      <nav class="source-links" aria-label="Source links">
+        <a href="https://github.com/OpenDCAI/DataFlow" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://trendshift.io/repositories/16045" target="_blank" rel="noreferrer">Trendshift</a>
+        <a href="https://www.star-history.com/?repos=OpenDCAI%2FDataFlow&type=date&legend=top-left" target="_blank" rel="noreferrer">Star History</a>
+        <span id="liveStatus" class="live-status">本地快照</span>
+      </nav>
+    </header>
+
+    <main>
+      <section class="summary-grid" id="summary"></section>
+
+      <section class="panel chart-panel">
+        <div class="panel-heading">
+          <div>
+            <h2>每日新增与累计趋势</h2>
+            <p>柱状为 UTC 日增 stars；折线为按快照推算的累计 stars。高亮区间对应阶段性运营判断。</p>
+          </div>
+          <div class="legend">
+            <span><i class="legend-dot daily"></i>日增</span>
+            <span><i class="legend-dot cumulative"></i>累计</span>
+            <span><i class="legend-dot action"></i>运营动作</span>
+          </div>
+        </div>
+        <div id="mainChart" class="chart-wrap" aria-label="Daily stars and cumulative stars chart"></div>
+      </section>
+
+      <section class="panel chart-panel">
+        <div class="panel-heading">
+          <div>
+            <h2>全周期新增与累计趋势</h2>
+            <p>合并 2025-06-01 到最新公开快照的每日新增与累计总量，统一观察早期开源、7 月爆发、12 月再启动和 2026 年高动量阶段。</p>
+          </div>
+          <div class="legend">
+            <span><i class="legend-dot daily"></i>日增</span>
+            <span><i class="legend-dot cumulative"></i>累计</span>
+          </div>
+        </div>
+        <div id="combinedChart" class="chart-wrap" aria-label="Combined daily stars and cumulative stars chart"></div>
+      </section>
+
+      <section class="panel chart-panel">
+        <div class="panel-heading">
+          <div>
+            <h2>独立访客与新增 Star 对照</h2>
+            <p>把 GitHub Traffic 的每日访客、clone 与 UTC 日增 stars 对齐，观察流量规模和 star 转化是否同步。</p>
+          </div>
+          <div class="legend">
+            <span><i class="legend-dot visitors"></i>独立访客</span>
+            <span><i class="legend-dot daily"></i>新增 stars</span>
+            <span><i class="legend-dot clones"></i>Clones</span>
+            <span><i class="legend-dot cloners"></i>独立 cloners</span>
+          </div>
+        </div>
+        <div id="visitorStarChart" class="chart-wrap" aria-label="Unique visitors, clones, and daily stars comparison chart"></div>
+        <div class="table-wrap compact-table">
+          <table>
+            <thead>
+              <tr>
+                <th>日期</th>
+                <th>独立访客</th>
+                <th>新增 stars</th>
+                <th>Star / UV</th>
+                <th>Clones</th>
+                <th>独立 cloners</th>
+              </tr>
+            </thead>
+            <tbody id="visitorStarTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="two-col">
+        <article class="panel">
+          <div class="panel-heading compact">
+            <div>
+              <h2>阶段归因</h2>
+              <p>把数据拐点和运营动作分开看：已知动作解释台阶，平台分发解释突刺。</p>
+            </div>
+          </div>
+          <div id="phaseCards" class="phase-list"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading compact">
+            <div>
+              <h2>来源页聚合</h2>
+              <p>Trendshift 与 Star History 作为外部校验入口，页面内也提供本地快照图表。</p>
+            </div>
+          </div>
+          <div class="source-stack">
+            <a class="source-card" href="https://trendshift.io/repositories/16045" target="_blank" rel="noreferrer">
+              <strong>Trendshift repository page</strong>
+              <span>查看第三方 last 60 days / monthly activities 走势。</span>
+            </a>
+            <a class="source-card" href="https://www.star-history.com/?repos=OpenDCAI%2FDataFlow&type=date&legend=top-left" target="_blank" rel="noreferrer">
+              <strong>Star History</strong>
+              <span>查看仓库总 star 的长期趋势图。</span>
+            </a>
+          </div>
+          <div id="monthlyChart" class="mini-chart" aria-label="Monthly stars chart"></div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <div>
+            <h2>阶段新增用户地区比例</h2>
+            <p>1-5 月为历史快照，6 月为当前抽样。</p>
+          </div>
+          <a class="inline-source" href="https://starmapper.bruniaux.com/OpenDCAI/DataFlow" target="_blank" rel="noreferrer">打开 Starmapper</a>
+        </div>
+        <div id="regionStats" class="region-grid"></div>
+        <div class="table-wrap compact-table region-breakdown-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>阶段</th>
+                <th>中国 Top 地区</th>
+                <th>海外 Top 地区</th>
+              </tr>
+            </thead>
+            <tbody id="regionBreakdownTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <div>
+            <h2>运营动作与日增日历</h2>
+            <p>按月对齐 UTC 日增、累计和已知传播动作。未列出的长期运营动作仍可能贡献底座。</p>
+          </div>
+          <div class="table-tools">
+            <a class="inline-source" href="https://originhub.feishu.cn/wiki/RzN6wUFhNiGyV9kvujacU5Grnzf?table=tblXJ1LT2RV6rHxV&view=vewjFcPw8j" target="_blank" rel="noreferrer">内容日历</a>
+            <button id="calendarPrev" type="button" class="icon-button" aria-label="上一月">←</button>
+            <strong id="calendarMonthLabel" class="calendar-month-label"></strong>
+            <button id="calendarNext" type="button" class="icon-button" aria-label="下一月">→</button>
+          </div>
+        </div>
+        <div id="actionCalendar" class="action-calendar" aria-label="Action and daily stars calendar"></div>
+      </section>
+
+      <section class="panel chart-panel">
+        <div class="panel-heading">
+          <div>
+            <h2>竞品项目 Star 趋势对比</h2>
+            <p>对比数据处理、LLM 数据工程、数据准备相关开源项目的 star 总量和增长曲线。DataFlow 使用本地精确快照；其他项目使用公开 star-history 走势近似锚点，并用 GitHub 当前 star 总数校准终点。</p>
+          </div>
+          <a class="inline-source" href="https://www.star-history.com/#NVIDIA-NeMo/DataDesigner&OpenDCAI/DataFlow&datajuicer/data-juicer&NVIDIA-NeMo/Curator&huggingface/datatrove&InternScience/SciDataCopilot&OpenDataArena/OpenDataArena-Tool&Eventual-Inc/Daft&Date" target="_blank" rel="noreferrer">打开 Star History</a>
+        </div>
+        <div id="competitorLegend" class="competitor-legend" aria-label="Competitor star totals"></div>
+        <div id="competitorChart" class="chart-wrap competitor-chart" aria-label="Competitor star history comparison chart"></div>
+      </section>
+
+      <section class="panel chart-panel">
+        <div class="panel-heading">
+          <div>
+            <h2>GitHub Traffic 来源周报趋势</h2>
+            <p>每周五截图记录过去 14 天聚合数据；折线展示来源站点 UV 波动，表格融合来源站点与热门页面的 UV、Views 和环比变化。</p>
+          </div>
+          <div class="legend">
+            <span><i class="legend-dot visitors"></i>Unique visitors</span>
+            <span><i class="legend-dot daily"></i>Views</span>
+          </div>
+        </div>
+        <div id="trafficReferrerWeeklyChart" class="chart-wrap traffic-weekly-chart" aria-label="Referring sites weekly unique visitors trend"></div>
+        <div id="trafficTrendMatrix" class="traffic-matrix-wrap" aria-label="GitHub traffic weekly trend matrix"></div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
