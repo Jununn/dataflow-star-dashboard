@@ -126,7 +126,7 @@ const competitorSnapshots = {
     "OpenDCAI/DataFlow": 4998,
     "huggingface/datatrove": 3092,
     "NVIDIA-NeMo/DataDesigner": 2005,
-    "NVIDIA-NeMo/Curator": 1620,
+    "NVIDIA-NeMo/Curator": 1621,
     "tinyfish-io/bigset": 1473,
     "OpenDataArena/OpenDataArena-Tool": 144,
     "InternScience/SciDataCopilot": 40
@@ -157,7 +157,7 @@ const competitorRepos = [
   {
     name: "Eventual-Inc/Daft",
     total: 5568,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 1,
     color: "#f2994a",
     points: [
@@ -180,7 +180,7 @@ const competitorRepos = [
   {
     name: "OpenDCAI/DataFlow",
     total: 4998,
-    yesterday: 5,
+    yesterday: 0,
     twoDayChange: 60,
     color: "#2d9cdb",
     points: null
@@ -208,7 +208,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/DataDesigner",
     total: 2005,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 5,
     color: "#e94b35",
     points: [
@@ -221,9 +221,9 @@ const competitorRepos = [
   },
   {
     name: "NVIDIA-NeMo/Curator",
-    total: 1620,
-    yesterday: 0,
-    twoDayChange: 1,
+    total: 1621,
+    yesterday: 1,
+    twoDayChange: 2,
     color: "#e879b4",
     points: [
       ["2024-03-14", 0],
@@ -234,13 +234,13 @@ const competitorRepos = [
       ["2025-07-01", 900],
       ["2025-12-01", 1200],
       ["2026-04-01", 1450],
-      ["2026-06-17", 1620]
+      ["2026-06-17", 1621]
     ]
   },
   {
     name: "tinyfish-io/bigset",
     total: 1473,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 20,
     color: "#14b8a6",
     points: [
