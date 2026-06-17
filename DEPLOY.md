@@ -1,6 +1,6 @@
 # DataFlow Star Dashboard Deployment
 
-This dashboard is deployed as a static GitHub Pages site. The GitHub Actions workflow updates `app.js`, copies the public files into `site-public/`, commits the new snapshot, and publishes `site-public/` to the `gh-pages` branch.
+This dashboard is deployed as a static GitHub Pages site. The GitHub Actions workflow updates stars, competitor snapshots, and region stats in `app.js`, copies the public files into `site-public/`, commits the new snapshot, and publishes `site-public/` to the `gh-pages` branch.
 
 ## Files to publish
 

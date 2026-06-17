@@ -28,7 +28,9 @@ jobs:
       - name: Update dashboard data
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN || github.token }}
-        run: node update-dashboard.mjs
+        run: |
+          node update-dashboard.mjs
+          node update-regions.mjs
 
       - name: Refresh public site files
         run: |
