@@ -8,8 +8,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
@@ -18,9 +16,6 @@ concurrency:
 jobs:
   update-and-deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -54,16 +49,18 @@ jobs:
             git push
           fi
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: site-public
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Publish gh-pages branch
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          rm -rf /tmp/dataflow-pages
+          mkdir -p /tmp/dataflow-pages
+          cp -R site-public/. /tmp/dataflow-pages/
+          git -C /tmp/dataflow-pages init
+          git -C /tmp/dataflow-pages checkout -b gh-pages
+          git -C /tmp/dataflow-pages config user.name "github-actions[bot]"
+          git -C /tmp/dataflow-pages config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C /tmp/dataflow-pages add .
+          git -C /tmp/dataflow-pages commit -m "Deploy dashboard"
+          git -C /tmp/dataflow-pages remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git -C /tmp/dataflow-pages push --force origin gh-pages
