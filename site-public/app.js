@@ -92,7 +92,7 @@ const dailyCounts = [
   ["2026-06-06", 24], ["2026-06-07", 32], ["2026-06-08", 40], ["2026-06-09", 47],
   ["2026-06-10", 44], ["2026-06-11", 34], ["2026-06-12", 31], ["2026-06-13", 41],
   ["2026-06-14", 29], ["2026-06-15", 37], ["2026-06-16", 34], ["2026-06-17", 48],
-  ["2026-06-18", 30]
+  ["2026-06-18", 33]
 ];
 
 let competitorSnapshotDate = "2026-06-18";
@@ -135,7 +135,7 @@ const competitorSnapshots = {
   "2026-06-18": {
     "datajuicer/data-juicer": 6553,
     "Eventual-Inc/Daft": 5569,
-    "OpenDCAI/DataFlow": 5039,
+    "OpenDCAI/DataFlow": 5042,
     "huggingface/datatrove": 3093,
     "NVIDIA-NeMo/DataDesigner": 2012,
     "NVIDIA-NeMo/Curator": 1625,
@@ -149,7 +149,7 @@ const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
     total: 6553,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 8,
     color: "#f2c94c",
     points: [
@@ -191,16 +191,16 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 5039,
-    yesterday: 4,
-    twoDayChange: 83,
+    total: 5042,
+    yesterday: 3,
+    twoDayChange: 86,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
     total: 3093,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 2,
     color: "#3fb950",
     points: [
@@ -220,7 +220,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/DataDesigner",
     total: 2012,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 8,
     color: "#e94b35",
     points: [
@@ -252,7 +252,7 @@ const competitorRepos = [
   {
     name: "tinyfish-io/bigset",
     total: 1482,
-    yesterday: 3,
+    yesterday: 0,
     twoDayChange: 22,
     color: "#14b8a6",
     points: [
@@ -548,14 +548,14 @@ const phaseRegionStats = [
   {
     phaseId: "june",
     status: "complete",
-    totalStars: 653,
-    known: 513,
+    totalStars: 656,
+    known: 516,
     china: 134,
-    overseas: 379,
+    overseas: 382,
     unknown: 140,
     note: "06/01-06/18 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["China 13","Hong Kong 12","Shanghai 11","Beijing 10","Beijing, China 7","Shanghai, China 5","Shenzhen 5","Taiwan 5","Nanjing 4","Guangzhou, China 3"],
-    topOverseasLocations: ["United States 74","Singapore 24","Japan 6","Tokyo, Japan 6","Osaka 5","Korea 4","Osaka, Japan 4","Sydney, Australia 4","Berlin, Germany 3","Canberra 3"]
+    topOverseasLocations: ["United States 75","Singapore 24","Japan 6","Tokyo, Japan 6","Osaka 5","Korea 4","Osaka, Japan 4","Sydney, Australia 4","Berlin, Germany 3","Canberra 3"]
   }
 ];
 
