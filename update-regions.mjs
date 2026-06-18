@@ -55,6 +55,47 @@ function isChinaLocation(location) {
   ].some((keyword) => text.includes(keyword));
 }
 
+function normalizeOverseasLocation(location) {
+  const text = location.toLowerCase();
+  const usKeywords = [
+    "united states",
+    "usa",
+    "u.s.a",
+    "u.s.",
+    "america",
+    "california",
+    "san francisco",
+    "sf bay",
+    "bay area",
+    "silicon valley",
+    "san jose",
+    "palo alto",
+    "mountain view",
+    "sunnyvale",
+    "berkeley",
+    "los angeles",
+    "seattle",
+    "washington state",
+    "austin",
+    "texas",
+    "new york",
+    "nyc",
+    "brooklyn",
+    "boston",
+    "massachusetts",
+    "cambridge, ma",
+    "denver",
+    "colorado",
+    "chicago",
+    "illinois"
+  ];
+  const usStatePattern = /(^|[\s,])(?:ca|wa|tx|ny|ma|co|il)([\s,]|$)/;
+  if (usKeywords.some((keyword) => text.includes(keyword)) || usStatePattern.test(text)) {
+    return "United States";
+  }
+  return location;
+}
+
 function topLocations(map, limit = 10) {
   const rows = [...map.entries()]
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
@@ -119,7 +160,8 @@ function buildStat(range) {
       chinaLocations.set(profile.location, (chinaLocations.get(profile.location) || 0) + 1);
     } else {
       overseas += 1;
-      overseasLocations.set(profile.location, (overseasLocations.get(profile.location) || 0) + 1);
+      const location = normalizeOverseasLocation(profile.location);
+      overseasLocations.set(location, (overseasLocations.get(location) || 0) + 1);
     }
   }
 
