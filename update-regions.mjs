@@ -57,6 +57,32 @@ function isChinaLocation(location) {
 
 function normalizeOverseasLocation(location) {
   const text = location.toLowerCase();
+  const countryRules = [
+    ["Singapore", ["singapore"]],
+    ["France", ["france", "paris"]],
+    ["South Korea", ["south korea", "korea", "seoul"]],
+    ["Canada", ["canada", "toronto", "vancouver", "montreal", "waterloo"]],
+    ["Germany", ["germany", "berlin", "munich", "münchen", "hamburg"]],
+    ["India", ["india", "bangalore", "bengaluru", "mumbai", "delhi", "hyderabad", "pune"]],
+    ["Australia", ["australia", "sydney", "melbourne", "canberra", "brisbane"]],
+    ["United Kingdom", ["united kingdom", "uk", "london", "england", "scotland"]],
+    ["Netherlands", ["netherlands", "amsterdam"]],
+    ["Spain", ["spain", "madrid", "barcelona"]],
+    ["Italy", ["italy", "rome", "milan"]],
+    ["Brazil", ["brazil", "são paulo", "sao paulo"]],
+    ["Thailand", ["thailand", "bangkok"]],
+    ["Vietnam", ["vietnam", "hanoi", "ho chi minh"]],
+    ["Indonesia", ["indonesia", "jakarta"]],
+    ["Malaysia", ["malaysia", "kuala lumpur"]],
+    ["Switzerland", ["switzerland", "zurich", "zürich"]],
+    ["Sweden", ["sweden", "stockholm"]],
+    ["Poland", ["poland", "warsaw"]],
+    ["Turkey", ["turkey", "istanbul"]],
+    ["Israel", ["israel", "tel aviv"]],
+    ["United Arab Emirates", ["united arab emirates", "uae", "dubai"]],
+    ["Mexico", ["mexico", "mexico city"]],
+    ["Peru", ["peru", "lima"]]
+  ];
   const usKeywords = [
     "united states",
     "usa",
@@ -112,6 +138,11 @@ function normalizeOverseasLocation(location) {
   if (japanKeywords.some((keyword) => text.includes(keyword))) {
     return "Japan";
   }
+  for (const [country, keywords] of countryRules) {
+    if (keywords.some((keyword) => text.includes(keyword))) {
+      return country;
+    }
+  }
   return location;
 }
 
@@ -138,7 +169,10 @@ async function mapLimit(items, limit, task) {
 }
 
 const today = new Date().toISOString().slice(0, 10);
-const targetRange = { phaseId: "june", start: "2026-06-01", end: today };
+const targetRanges = [
+  { phaseId: "may", start: "2026-05-01", end: "2026-05-31" },
+  { phaseId: "june", start: "2026-06-01", end: today }
+];
 
 const repo = await github("/repos/OpenDCAI/DataFlow");
 const maxPage = Math.ceil(repo.stargazers_count / 100);
@@ -150,7 +184,10 @@ const pages = await mapLimit(pageNumbers, 8, (page) => github(`/repos/OpenDCAI/D
 
 const targetStargazers = pages
   .flat()
-  .filter((item) => item.starred_at?.slice(0, 10) >= targetRange.start && item.starred_at?.slice(0, 10) <= targetRange.end)
+  .filter((item) => {
+    const date = item.starred_at?.slice(0, 10);
+    return targetRanges.some((range) => date >= range.start && date <= range.end);
+  })
   .sort((a, b) => a.starred_at.localeCompare(b.starred_at));
 
 const profiles = await mapLimit(targetStargazers, 12, async (item) => {
@@ -198,8 +235,11 @@ function buildStat(range) {
   };
 }
 
-const stat = buildStat(targetRange);
-const replacement = `  {
+const stats = targetRanges.map((range) => buildStat(range));
+
+let source = await fs.readFile(appPath, "utf8");
+for (const stat of stats) {
+  const replacement = `  {
     phaseId: "${stat.phaseId}",
     status: "${stat.status}",
     totalStars: ${stat.totalStars},
@@ -211,13 +251,12 @@ const replacement = `  {
     topChinaLocations: ${JSON.stringify(stat.topChinaLocations)},
     topOverseasLocations: ${JSON.stringify(stat.topOverseasLocations)}
   }`;
-
-let source = await fs.readFile(appPath, "utf8");
-const phasePattern = new RegExp(`  \\{\\n    phaseId: "${targetRange.phaseId}",[\\s\\S]*?\\n  \\}`);
-source = source.replace(phasePattern, replacement);
+  const phasePattern = new RegExp(`  \\{\\n    phaseId: "${stat.phaseId}",[\\s\\S]*?\\n  \\}`);
+  source = source.replace(phasePattern, replacement);
+}
 await fs.writeFile(appPath, source);
 
-console.log(JSON.stringify({
+console.log(JSON.stringify(stats.map((stat) => ({
   phaseId: stat.phaseId,
   totalStars: stat.totalStars,
   known: stat.known,
@@ -226,4 +265,4 @@ console.log(JSON.stringify({
   unknown: stat.unknown,
   topChinaLocations: stat.topChinaLocations,
   topOverseasLocations: stat.topOverseasLocations
-}, null, 2));
+})), null, 2));
