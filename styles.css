@@ -939,6 +939,15 @@ svg {
   color: #7c3aed;
 }
 
+.calendar-action.channel-devsite {
+  border-color: #99f6e4;
+  background: #f0fdfa;
+}
+
+.calendar-action.channel-devsite span {
+  color: #0f766e;
+}
+
 .calendar-action.channel-default span {
   color: #64748b;
 }

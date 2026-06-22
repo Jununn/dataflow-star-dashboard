@@ -347,7 +347,11 @@ const actions = [
   ["2026-06-11", "LinkedIn", "数据价值", "https://www.linkedin.com/feed/update/urn:li:activity:7470822368672931842/"],
   ["2026-06-12", "小红书", "Data-centricAI", "http://xhslink.com/o/4DAkkkgyhY0"],
   ["2026-06-16", "Medium", "df+lf教程", "https://medium.com/p/1a61afdf07d6?postPublishedType=initial"],
-  ["2026-06-16", "小红书", "df+lf教程", "http://xhslink.com/o/3sXUuMY03OQ"]
+  ["2026-06-16", "小红书", "df+lf教程", "http://xhslink.com/o/3sXUuMY03OQ"],
+  ["2026-06-17", "LinkedIn", "df-oss", "https://www.linkedin.com/feed/update/urn:li:groupPost:6672014-7472964568416210944/"],
+  ["2026-06-18", "Reddit", "df-oss", "https://www.reddit.com/r/LLMDevs/comments/1u92cw0/llm_data_preparation_is_becoming_infrastructure/"],
+  ["2026-06-18", "Reddit", "df+lf 教程", "https://www.reddit.com/r/LocalLLM/comments/1u92lvs/one_way_to_make_data_preparation_easier_when/"],
+  ["2026-06-18", "开发者网站", "lf+df 教程-掘金", "https://juejin.cn/spost/7652609898089938990"]
 ].map(([date, channel, title, url]) => ({ date, channel, title, url }));
 
 const trafficRows = [
@@ -655,6 +659,7 @@ function getChannelClass(channel) {
   if (channel.includes("公众号")) return "channel-wechat";
   if (channel.includes("小红书")) return "channel-xhs";
   if (channel.includes("线下")) return "channel-offline";
+  if (channel.includes("开发者网站")) return "channel-devsite";
   return "channel-default";
 }
 
