@@ -4,3 +4,4 @@
 github-token.local
 dataflow-star-dashboard.zip
 node_modules/
+.cache/
