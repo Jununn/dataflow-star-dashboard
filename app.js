@@ -564,14 +564,14 @@ const phaseRegionStats = [
   {
     phaseId: "june",
     status: "complete",
-    totalStars: 780,
-    known: 624,
+    totalStars: 784,
+    known: 628,
     china: 166,
-    overseas: 458,
+    overseas: 462,
     unknown: 156,
     note: "06/01-06/22 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Shanghai 16","Hong Kong 15","China 13","Beijing 12","Beijing, China 8","Shanghai, China 8","Shenzhen 7","Taiwan 5","Guangzhou 4","Hangzhou 4"],
-    topOverseasLocations: ["United States 91","Singapore 26","Japan 9","Tokyo, Japan 8","Osaka 6","Sydney, Australia 5","Tokyo 5","Korea 4","Osaka, Japan 4","Seoul, South Korea 4"]
+    topOverseasLocations: ["United States 92","Japan 47","Singapore 26","Sydney, Australia 5","Korea 4","Seoul, South Korea 4","Thailand 4","Bangalore, India 3","Berlin, Germany 3","Canberra 3"]
   }
 ];
 

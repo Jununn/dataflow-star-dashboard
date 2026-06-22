@@ -93,6 +93,25 @@ function normalizeOverseasLocation(location) {
   if (usKeywords.some((keyword) => text.includes(keyword)) || usStatePattern.test(text)) {
     return "United States";
   }
+  const japanKeywords = [
+    "japan",
+    "tokyo",
+    "osaka",
+    "kyoto",
+    "yokohama",
+    "nagoya",
+    "fukuoka",
+    "sapporo",
+    "kobe",
+    "kanagawa",
+    "chiba",
+    "saitama",
+    "okinawa",
+    "日本"
+  ];
+  if (japanKeywords.some((keyword) => text.includes(keyword))) {
+    return "Japan";
+  }
   return location;
 }
 
