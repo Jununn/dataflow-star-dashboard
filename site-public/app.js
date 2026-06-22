@@ -1228,7 +1228,7 @@ function renderActionCalendar() {
     const stars = item?.stars ?? 0;
     const countClass = stars >= 50 ? "count-hot" : "";
     const actionsHtml = actions.length
-      ? actions.map((action) => `<a class="calendar-action ${getChannelClass(action.channel)}" href="${escapeHtml(action.url)}" title="${escapeHtml(`${date} · ${action.channel} · ${action.title}`)}" data-date="${date}" data-channel="${escapeHtml(action.channel)}" data-title="${escapeHtml(action.title)}" data-url="${escapeHtml(action.url)}"><span>${escapeHtml(action.channel)}</span>${escapeHtml(action.title)}</a>`).join("")
+      ? actions.map((action) => `<a class="calendar-action ${getChannelClass(action.channel)}" href="${escapeHtml(action.url)}" target="_blank" rel="noreferrer" title="${escapeHtml(`${date} · ${action.channel} · ${action.title}`)}" data-date="${date}" data-channel="${escapeHtml(action.channel)}" data-title="${escapeHtml(action.title)}" data-url="${escapeHtml(action.url)}"><span>${escapeHtml(action.channel)}</span>${escapeHtml(action.title)}</a>`).join("")
       : "";
     cells.push(`<article class="calendar-cell${isWeekend ? " is-weekend" : ""}">
       <div class="calendar-date">
@@ -1265,7 +1265,7 @@ function bindCalendarActionTooltip() {
       const url = action.dataset.url;
       if (!url || url === "#") return;
       event.preventDefault();
-      window.location.href = url;
+      window.open(url, "_blank", "noopener,noreferrer");
     });
     action.addEventListener("mousemove", (event) => {
       const rect = wrap.getBoundingClientRect();
