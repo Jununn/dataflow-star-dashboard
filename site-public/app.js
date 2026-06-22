@@ -1171,6 +1171,8 @@ function renderRegionStats() {
       const label = stat.status === "sample"
         ? `抽样整体：中国 ${chinaPct}%（${stat.china}）/ 海外 ${overseasPct}%（${stat.overseas}）/ 未公开 ${unknownPct}%（${stat.unknown}）`
         : `整体：中国 ${chinaPct}%（${stat.china}）/ 海外 ${overseasPct}%（${stat.overseas}）/ 未公开 ${unknownPct}%（${stat.unknown}）`;
+      const chinaLocations = stat.topChinaLocations.join(" · ");
+      const overseasLocations = stat.topOverseasLocations.join(" · ");
       return `<article class="region-card">
         <strong>${phase.label}</strong>
         <div class="region-bar" style="--china:${chinaPct}%;--overseas:${overseasPct}%;--unknown:${unknownPct}%"><span></span><span></span><span></span></div>
@@ -1178,8 +1180,8 @@ function renderRegionStats() {
           <span>${label}</span>
           <span>${basis}</span>
           ${stat.note ? `<span>${stat.note}</span>` : ""}
-          <span class="region-locations">中国：${stat.topChinaLocations.join(" · ")}</span>
-          <span class="region-locations">海外：${stat.topOverseasLocations.join(" · ")}</span>
+          <span class="region-locations" title="${escapeHtml(`中国：${chinaLocations}`)}">中国：${escapeHtml(chinaLocations)}</span>
+          <span class="region-locations" title="${escapeHtml(`海外：${overseasLocations}`)}">海外：${escapeHtml(overseasLocations)}</span>
         </div>
       </article>`;
     })
