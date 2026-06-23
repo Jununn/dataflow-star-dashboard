@@ -491,6 +491,50 @@ svg {
   fill: #e11d48;
 }
 
+.traffic-details {
+  margin: 8px 0 0;
+}
+
+.traffic-details summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 800;
+  list-style: none;
+  padding: 8px 12px;
+  user-select: none;
+}
+
+.traffic-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.traffic-details summary::after {
+  content: "↓";
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.traffic-details[open] summary {
+  margin-bottom: 12px;
+}
+
+.traffic-details[open] summary::after {
+  content: "↑";
+}
+
+.traffic-details summary:hover {
+  border-color: #94a3b8;
+  background: #f8fafc;
+}
+
 .traffic-matrix-wrap {
   overflow-x: auto;
   padding: 0 24px 24px;
@@ -963,6 +1007,186 @@ svg {
   border-top: 1px solid var(--line);
 }
 
+.stargazer-overlap-panel {
+  scroll-margin-top: 24px;
+}
+
+.overlap-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.overlap-meta span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #f8fafc;
+  color: var(--muted);
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.overlap-insights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.overlap-insights article {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  padding: 14px;
+}
+
+.overlap-insights strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ink);
+  font-size: 15px;
+}
+
+.overlap-insights span {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.relation-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.relation-pill.downstream {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.relation-pill.complement {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.relation-pill.competitor {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.relation-pill.adjacent {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.relation-pill.weak {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.overlap-table-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.overlap-table-intro {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fbfdff;
+  padding: 16px;
+}
+
+.overlap-table-intro h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+}
+
+.overlap-table-intro p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.overlap-scroll-actions {
+  display: flex;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+.overlap-scroll-actions button {
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.overlap-scroll-actions button:hover {
+  border-color: #94a3b8;
+  background: #f8fafc;
+}
+
+.overlap-table-wrap {
+  max-height: 520px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.overlap-category-wrap {
+  max-height: 360px;
+}
+
+.overlap-table {
+  min-width: 1920px;
+}
+
+.overlap-table th:nth-child(1),
+.overlap-table td:nth-child(1) {
+  min-width: 280px;
+}
+
+.overlap-table th:nth-child(7),
+.overlap-table td:nth-child(7) {
+  min-width: 330px;
+}
+
+.overlap-table th:nth-child(8),
+.overlap-table td:nth-child(8) {
+  min-width: 560px;
+}
+
+.overlap-table a {
+  color: var(--blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.overlap-table a:hover {
+  text-decoration: underline;
+}
+
+.overlap-note {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
 .compact-table {
   max-height: 320px;
 }
@@ -1035,7 +1259,8 @@ td:nth-child(3) {
   .summary-grid,
   .two-col,
   .region-grid,
-  .competitor-legend {
+  .competitor-legend,
+  .overlap-insights {
     grid-template-columns: 1fr;
   }
 
