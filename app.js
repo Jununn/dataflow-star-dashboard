@@ -348,6 +348,7 @@ const actions = [
   ["2026-06-12", "小红书", "Data-centricAI", "http://xhslink.com/o/4DAkkkgyhY0"],
   ["2026-06-16", "Medium", "df+lf教程", "https://medium.com/p/1a61afdf07d6?postPublishedType=initial"],
   ["2026-06-16", "小红书", "df+lf教程", "http://xhslink.com/o/3sXUuMY03OQ"],
+  ["2026-06-16", "GitHub", "pr收录：awesome-data-engineering", "https://github.com/igorbarinov/awesome-data-engineering/pull/295#event-26786132317"],
   ["2026-06-17", "LinkedIn", "df-oss", "https://www.linkedin.com/feed/update/urn:li:groupPost:6672014-7472964568416210944/"],
   ["2026-06-18", "Reddit", "df-oss", "https://www.reddit.com/r/LLMDevs/comments/1u92cw0/llm_data_preparation_is_becoming_infrastructure/"],
   ["2026-06-18", "Reddit", "df+lf 教程", "https://www.reddit.com/r/LocalLLM/comments/1u92lvs/one_way_to_make_data_preparation_easier_when/"],
