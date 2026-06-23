@@ -93,11 +93,11 @@ const dailyCounts = [
   ["2026-06-10", 44], ["2026-06-11", 34], ["2026-06-12", 31], ["2026-06-13", 41],
   ["2026-06-14", 29], ["2026-06-15", 37], ["2026-06-16", 34], ["2026-06-17", 20],
   ["2026-06-18", 41], ["2026-06-19", 25], ["2026-06-20", 35], ["2026-06-21", 39],
-  ["2026-06-22", 90]
+  ["2026-06-22", 79], ["2026-06-23", 66]
 ];
 
-let competitorSnapshotDate = "2026-06-22";
-let competitorPreviousSnapshotDate = "2026-06-20";
+let competitorSnapshotDate = "2026-06-23";
+let competitorPreviousSnapshotDate = "2026-06-21";
 
 const competitorSnapshots = {
   "2026-06-16": {
@@ -154,15 +154,26 @@ const competitorSnapshots = {
     "tinyfish-io/bigset": 1505,
     "OpenDataArena/OpenDataArena-Tool": 144,
     "InternScience/SciDataCopilot": 40
+  },
+  "2026-06-23": {
+    "datajuicer/data-juicer": 6569,
+    "Eventual-Inc/Daft": 5571,
+    "OpenDCAI/DataFlow": 5266,
+    "huggingface/datatrove": 3119,
+    "NVIDIA-NeMo/DataDesigner": 2025,
+    "NVIDIA-NeMo/Curator": 1629,
+    "tinyfish-io/bigset": 1548,
+    "OpenDataArena/OpenDataArena-Tool": 144,
+    "InternScience/SciDataCopilot": 40
   }
 };
 
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 6567,
-    yesterday: 1,
-    twoDayChange: 5,
+    total: 6569,
+    yesterday: 2,
+    twoDayChange: 8,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -175,14 +186,14 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-06-22", 6567]
+      ["2026-06-23", 6569]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
-    total: 5570,
-    yesterday: -1,
-    twoDayChange: 1,
+    total: 5571,
+    yesterday: 1,
+    twoDayChange: 0,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -198,22 +209,22 @@ const competitorRepos = [
       ["2025-10-01", 4400],
       ["2026-01-01", 4900],
       ["2026-04-01", 5350],
-      ["2026-06-22", 5570]
+      ["2026-06-23", 5571]
     ]
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 5211,
-    yesterday: 16,
-    twoDayChange: 92,
+    total: 5266,
+    yesterday: 55,
+    twoDayChange: 108,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
-    total: 3116,
-    yesterday: 8,
-    twoDayChange: 21,
+    total: 3119,
+    yesterday: 3,
+    twoDayChange: 23,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -226,27 +237,27 @@ const competitorRepos = [
       ["2025-06-01", 2400],
       ["2025-10-01", 2650],
       ["2026-03-01", 2900],
-      ["2026-06-22", 3116]
+      ["2026-06-23", 3119]
     ]
   },
   {
     name: "NVIDIA-NeMo/DataDesigner",
-    total: 2024,
-    yesterday: 0,
-    twoDayChange: 3,
+    total: 2025,
+    yesterday: 1,
+    twoDayChange: 2,
     color: "#e94b35",
     points: [
       ["2025-10-16", 0],
       ["2026-01-01", 500],
       ["2026-03-01", 700],
       ["2026-04-01", 1000],
-      ["2026-06-22", 2024]
+      ["2026-06-23", 2025]
     ]
   },
   {
     name: "NVIDIA-NeMo/Curator",
     total: 1629,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 2,
     color: "#e879b4",
     points: [
@@ -258,18 +269,18 @@ const competitorRepos = [
       ["2025-07-01", 900],
       ["2025-12-01", 1200],
       ["2026-04-01", 1450],
-      ["2026-06-22", 1629]
+      ["2026-06-23", 1629]
     ]
   },
   {
     name: "tinyfish-io/bigset",
-    total: 1505,
-    yesterday: 1,
-    twoDayChange: 10,
+    total: 1548,
+    yesterday: 43,
+    twoDayChange: 47,
     color: "#14b8a6",
     points: [
       ["2026-05-15", 0],
-      ["2026-06-22", 1505]
+      ["2026-06-23", 1548]
     ]
   },
   {
@@ -282,7 +293,7 @@ const competitorRepos = [
       ["2025-07-19", 0],
       ["2025-11-01", 60],
       ["2026-03-01", 120],
-      ["2026-06-22", 144]
+      ["2026-06-23", 144]
     ]
   },
   {
@@ -293,7 +304,7 @@ const competitorRepos = [
     color: "#7c6bd8",
     points: [
       ["2026-02-09", 0],
-      ["2026-06-22", 40]
+      ["2026-06-23", 40]
     ]
   }
 ];
@@ -565,14 +576,14 @@ const phaseRegionStats = [
   {
     phaseId: "june",
     status: "complete",
-    totalStars: 827,
-    known: 663,
-    china: 177,
-    overseas: 486,
-    unknown: 164,
-    note: "06/01-06/22 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["Shanghai 18","Hong Kong 15","China 13","Beijing 12","Beijing, China 9","Shanghai, China 8","Shenzhen 7","Taiwan 7","Hangzhou 5","Hangzhou, China 5"],
-    topOverseasLocations: ["United States 94","Japan 50","Singapore 28","South Korea 17","Australia 16","United Kingdom 16","India 14","Canada 7","France 7","Germany 6"]
+    totalStars: 882,
+    known: 711,
+    china: 190,
+    overseas: 521,
+    unknown: 171,
+    note: "06/01-06/23 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    topChinaLocations: ["Shanghai 19","Hong Kong 18","Beijing 14","China 13","Beijing, China 10","Shanghai, China 8","Shenzhen 7","Taiwan 7","Hangzhou, China 6","Hangzhou 5"],
+    topOverseasLocations: ["United States 96","Japan 53","Singapore 31","South Korea 18","Australia 17","United Kingdom 17","India 15","Canada 8","France 8","Thailand 7"]
   }
 ];
 
