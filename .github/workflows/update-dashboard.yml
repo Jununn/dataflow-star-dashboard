@@ -1,6 +1,14 @@
 name: Update and deploy dashboard
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - "index.html"
+      - "styles.css"
+      - "reports/**"
+      - ".github/workflows/update-dashboard.yml"
   workflow_dispatch:
   schedule:
     - cron: "30 2 * * *"
