@@ -1,4 +1,4 @@
-let startTotal = 1842;
+let startTotal = 1799;
 const historicalStartTotal = 72;
 const historicalNonZeroDailyCounts = [
   ["2025-06-04", 1], ["2025-06-05", 8], ["2025-06-06", 26], ["2025-06-07", 21],
@@ -7,8 +7,8 @@ const historicalNonZeroDailyCounts = [
   ["2025-06-16", 3], ["2025-06-17", 7], ["2025-06-18", 2], ["2025-06-19", 4],
   ["2025-06-20", 1], ["2025-06-27", 1], ["2025-06-28", 4], ["2025-06-29", 4],
   ["2025-06-30", 17], ["2025-07-01", 17], ["2025-07-02", 16], ["2025-07-03", 18],
-  ["2025-07-04", 76], ["2025-07-05", 32], ["2025-07-06", 7], ["2025-07-07", 13],
-  ["2025-07-08", 82], ["2025-07-09", 123], ["2025-07-10", 76], ["2025-07-11", 55],
+  ["2025-07-04", 76], ["2025-07-05", 31], ["2025-07-06", 7], ["2025-07-07", 13],
+  ["2025-07-08", 82], ["2025-07-09", 123], ["2025-07-10", 75], ["2025-07-11", 55],
   ["2025-07-12", 16], ["2025-07-13", 8], ["2025-07-14", 8], ["2025-07-15", 10],
   ["2025-07-16", 10], ["2025-07-17", 6], ["2025-07-18", 10], ["2025-07-19", 5],
   ["2025-07-20", 4], ["2025-07-21", 13], ["2025-07-22", 10], ["2025-07-23", 8],
@@ -25,7 +25,7 @@ const historicalNonZeroDailyCounts = [
   ["2025-09-07", 1], ["2025-09-08", 42], ["2025-09-09", 21], ["2025-09-10", 5],
   ["2025-09-11", 8], ["2025-09-12", 18], ["2025-09-13", 7], ["2025-09-15", 3],
   ["2025-09-16", 8], ["2025-09-18", 4], ["2025-09-19", 5], ["2025-09-20", 4],
-  ["2025-09-22", 7], ["2025-09-23", 9], ["2025-09-24", 3], ["2025-09-25", 2],
+  ["2025-09-22", 7], ["2025-09-23", 9], ["2025-09-24", 3], ["2025-09-25", 1],
   ["2025-09-26", 3], ["2025-09-27", 5], ["2025-09-28", 4], ["2025-09-29", 7],
   ["2025-09-30", 5], ["2025-10-01", 1], ["2025-10-03", 1], ["2025-10-04", 1],
   ["2025-10-05", 1], ["2025-10-06", 2], ["2025-10-08", 2], ["2025-10-09", 4],
@@ -43,11 +43,11 @@ const historicalNonZeroDailyCounts = [
   ["2025-11-29", 2], ["2025-12-01", 4], ["2025-12-02", 6], ["2025-12-03", 1],
   ["2025-12-04", 6], ["2025-12-05", 3], ["2025-12-06", 1], ["2025-12-07", 3],
   ["2025-12-08", 4], ["2025-12-09", 4], ["2025-12-10", 5], ["2025-12-11", 4],
-  ["2025-12-12", 5], ["2025-12-13", 3], ["2025-12-14", 12], ["2025-12-15", 17],
-  ["2025-12-16", 6], ["2025-12-17", 1], ["2025-12-18", 3], ["2025-12-19", 9],
+  ["2025-12-12", 5], ["2025-12-13", 3], ["2025-12-14", 12], ["2025-12-15", 16],
+  ["2025-12-16", 6], ["2025-12-17", 1], ["2025-12-18", 3], ["2025-12-19", 8],
   ["2025-12-20", 12], ["2025-12-21", 11], ["2025-12-22", 31], ["2025-12-23", 45],
   ["2025-12-24", 44], ["2025-12-25", 34], ["2025-12-26", 51], ["2025-12-27", 12],
-  ["2025-12-28", 15], ["2025-12-29", 32], ["2025-12-30", 27], ["2025-12-31", 18]
+  ["2025-12-28", 15], ["2025-12-29", 32], ["2025-12-30", 26], ["2025-12-31", 18]
 ];
 const dailyCounts = [
   ["2026-01-01", 9], ["2026-01-02", 13], ["2026-01-03", 9], ["2026-01-04", 27],
@@ -75,25 +75,25 @@ const dailyCounts = [
   ["2026-03-30", 15], ["2026-03-31", 12], ["2026-04-01", 11], ["2026-04-02", 12],
   ["2026-04-03", 4], ["2026-04-04", 13], ["2026-04-05", 8], ["2026-04-06", 7],
   ["2026-04-07", 15], ["2026-04-08", 9], ["2026-04-09", 17], ["2026-04-10", 20],
-  ["2026-04-11", 27], ["2026-04-12", 25], ["2026-04-13", 25], ["2026-04-14", 24],
+  ["2026-04-11", 27], ["2026-04-12", 25], ["2026-04-13", 24], ["2026-04-14", 24],
   ["2026-04-15", 22], ["2026-04-16", 45], ["2026-04-17", 22], ["2026-04-18", 20],
-  ["2026-04-19", 16], ["2026-04-20", 12], ["2026-04-21", 22], ["2026-04-22", 25],
+  ["2026-04-19", 16], ["2026-04-20", 12], ["2026-04-21", 21], ["2026-04-22", 25],
   ["2026-04-23", 23], ["2026-04-24", 14], ["2026-04-25", 24], ["2026-04-26", 27],
   ["2026-04-27", 19], ["2026-04-28", 12], ["2026-04-29", 13], ["2026-04-30", 25],
   ["2026-05-01", 11], ["2026-05-02", 13], ["2026-05-03", 22], ["2026-05-04", 12],
   ["2026-05-05", 17], ["2026-05-06", 27], ["2026-05-07", 24], ["2026-05-08", 20],
   ["2026-05-09", 18], ["2026-05-10", 16], ["2026-05-11", 20], ["2026-05-12", 10],
   ["2026-05-13", 16], ["2026-05-14", 26], ["2026-05-15", 25], ["2026-05-16", 95],
-  ["2026-05-17", 57], ["2026-05-18", 37], ["2026-05-19", 38], ["2026-05-20", 37],
-  ["2026-05-21", 85], ["2026-05-22", 69], ["2026-05-23", 60], ["2026-05-24", 104],
+  ["2026-05-17", 57], ["2026-05-18", 36], ["2026-05-19", 38], ["2026-05-20", 37],
+  ["2026-05-21", 84], ["2026-05-22", 69], ["2026-05-23", 60], ["2026-05-24", 104],
   ["2026-05-25", 85], ["2026-05-26", 57], ["2026-05-27", 56], ["2026-05-28", 18],
-  ["2026-05-29", 1], ["2026-05-30", 11], ["2026-05-31", 36], ["2026-06-01", 41],
+  ["2026-05-29", 2], ["2026-05-30", 11], ["2026-05-31", 36], ["2026-06-01", 42],
   ["2026-06-02", 40], ["2026-06-03", 37], ["2026-06-04", 26], ["2026-06-05", 31],
   ["2026-06-06", 24], ["2026-06-07", 32], ["2026-06-08", 40], ["2026-06-09", 47],
-  ["2026-06-10", 44], ["2026-06-11", 34], ["2026-06-12", 31], ["2026-06-13", 41],
-  ["2026-06-14", 29], ["2026-06-15", 37], ["2026-06-16", 34], ["2026-06-17", 20],
+  ["2026-06-10", 44], ["2026-06-11", 34], ["2026-06-12", 48], ["2026-06-13", 41],
+  ["2026-06-14", 29], ["2026-06-15", 37], ["2026-06-16", 34], ["2026-06-17", 48],
   ["2026-06-18", 41], ["2026-06-19", 25], ["2026-06-20", 35], ["2026-06-21", 39],
-  ["2026-06-22", 79], ["2026-06-23", 82], ["2026-06-24", 13]
+  ["2026-06-22", 79], ["2026-06-23", 82], ["2026-06-24", 20]
 ];
 
 let competitorSnapshotDate = "2026-06-24";
@@ -167,13 +167,13 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 40
   },
   "2026-06-24": {
-    "datajuicer/data-juicer": 6577,
+    "datajuicer/data-juicer": 6578,
     "Eventual-Inc/Daft": 5573,
-    "OpenDCAI/DataFlow": 5332,
+    "OpenDCAI/DataFlow": 5339,
     "huggingface/datatrove": 3119,
-    "NVIDIA-NeMo/DataDesigner": 2029,
-    "NVIDIA-NeMo/Curator": 1630,
-    "tinyfish-io/bigset": 1572,
+    "NVIDIA-NeMo/DataDesigner": 2030,
+    "NVIDIA-NeMo/Curator": 1631,
+    "tinyfish-io/bigset": 1575,
     "OpenDataArena/OpenDataArena-Tool": 144,
     "InternScience/SciDataCopilot": 40
   }
@@ -182,9 +182,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 6577,
+    total: 6578,
     yesterday: 1,
-    twoDayChange: 10,
+    twoDayChange: 11,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -197,7 +197,7 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-06-24", 6577]
+      ["2026-06-24", 6578]
     ]
   },
   {
@@ -225,9 +225,9 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 5332,
-    yesterday: 1,
-    twoDayChange: 121,
+    total: 5339,
+    yesterday: 0,
+    twoDayChange: 128,
     color: "#2d9cdb",
     points: null
   },
@@ -253,23 +253,23 @@ const competitorRepos = [
   },
   {
     name: "NVIDIA-NeMo/DataDesigner",
-    total: 2029,
-    yesterday: 0,
-    twoDayChange: 5,
+    total: 2030,
+    yesterday: 1,
+    twoDayChange: 6,
     color: "#e94b35",
     points: [
       ["2025-10-16", 0],
       ["2026-01-01", 500],
       ["2026-03-01", 700],
       ["2026-04-01", 1000],
-      ["2026-06-24", 2029]
+      ["2026-06-24", 2030]
     ]
   },
   {
     name: "NVIDIA-NeMo/Curator",
-    total: 1630,
-    yesterday: 0,
-    twoDayChange: 1,
+    total: 1631,
+    yesterday: 1,
+    twoDayChange: 2,
     color: "#e879b4",
     points: [
       ["2024-03-14", 0],
@@ -280,18 +280,18 @@ const competitorRepos = [
       ["2025-07-01", 900],
       ["2025-12-01", 1200],
       ["2026-04-01", 1450],
-      ["2026-06-24", 1630]
+      ["2026-06-24", 1631]
     ]
   },
   {
     name: "tinyfish-io/bigset",
-    total: 1572,
-    yesterday: 0,
-    twoDayChange: 67,
+    total: 1575,
+    yesterday: 3,
+    twoDayChange: 70,
     color: "#14b8a6",
     points: [
       ["2026-05-15", 0],
-      ["2026-06-24", 1572]
+      ["2026-06-24", 1575]
     ]
   },
   {
@@ -523,7 +523,7 @@ const phases = [
     label: "6 月：高位续航",
     start: "2026-06-01",
     end: "2026-06-24",
-    note: "6/1-06/24 为滚动快照，公开总数已到 5,332；日增按 starred_at 统计，累计差额通过基线对齐。"
+    note: "6/1-06/24 为滚动快照，公开总数已到 5,339；日增按 starred_at 统计，累计差额通过基线对齐。"
   }
 ];
 
@@ -587,13 +587,13 @@ const phaseRegionStats = [
   {
     phaseId: "june",
     status: "complete",
-    totalStars: 948,
-    known: 765,
-    china: 202,
-    overseas: 563,
-    unknown: 183,
+    totalStars: 955,
+    known: 770,
+    china: 204,
+    overseas: 566,
+    unknown: 185,
     note: "06/01-06/24 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["Shanghai 19","Hong Kong 18","China 16","Beijing 15","Beijing, China 11","Taiwan 9","Shanghai, China 8","Shenzhen 7","Hangzhou 6","Hangzhou, China 6"],
+    topChinaLocations: ["Shanghai 19","Hong Kong 18","China 16","Beijing 15","Beijing, China 11","Taiwan 10","Shanghai, China 8","Shenzhen 7","Hangzhou 6","Hangzhou, China 6"],
     topOverseasLocations: ["United States 105","Japan 54","Singapore 31","South Korea 19","Australia 17","United Kingdom 17","India 16","Canada 8","France 8","Thailand 8"]
   }
 ];
@@ -1173,6 +1173,9 @@ function renderRegionStats() {
     .map((stat) => {
       const phase = phases.find((item) => item.id === stat.phaseId);
       if (!phase) return "";
+      const phaseTotal = data
+        .filter((item) => item.date >= phase.start && item.date <= phase.end)
+        .reduce((sum, item) => sum + item.stars, 0);
       if (stat.status === "pending") {
         return `<article class="region-card pending">
           <strong>${phase.label}</strong>
@@ -1183,17 +1186,17 @@ function renderRegionStats() {
           </div>
         </article>`;
       }
-      const total = stat.china + stat.overseas;
-      const baseTotal = stat.totalStars || total + stat.unknown;
-      const chinaPct = baseTotal ? Math.round((stat.china / baseTotal) * 100) : 0;
-      const overseasPct = baseTotal ? Math.round((stat.overseas / baseTotal) * 100) : 0;
+      const knownTotal = stat.china + stat.overseas;
+      const displayedUnknown = Math.max(0, phaseTotal - knownTotal);
+      const chinaPct = phaseTotal ? Math.round((stat.china / phaseTotal) * 100) : 0;
+      const overseasPct = phaseTotal ? Math.round((stat.overseas / phaseTotal) * 100) : 0;
       const unknownPct = Math.max(0, 100 - chinaPct - overseasPct);
       const basis = stat.status === "sample"
-        ? `抽样 ${stat.sampled} = 可识别 ${total} + 未公开 ${stat.unknown}；6 月新增 ${stat.totalStars}`
-        : `新增 ${stat.totalStars} = 可识别 ${total} + 未公开 ${stat.unknown}`;
+        ? `抽样 ${stat.sampled}；新增 ${phaseTotal} = 可识别 ${knownTotal} + 未公开 ${displayedUnknown}`
+        : `新增 ${phaseTotal} = 可识别 ${knownTotal} + 未公开 ${displayedUnknown}`;
       const label = stat.status === "sample"
-        ? `抽样整体：中国 ${chinaPct}%（${stat.china}）/ 海外 ${overseasPct}%（${stat.overseas}）/ 未公开 ${unknownPct}%（${stat.unknown}）`
-        : `整体：中国 ${chinaPct}%（${stat.china}）/ 海外 ${overseasPct}%（${stat.overseas}）/ 未公开 ${unknownPct}%（${stat.unknown}）`;
+        ? `抽样整体：中国 ${chinaPct}%（${stat.china}）/ 海外 ${overseasPct}%（${stat.overseas}）/ 未公开 ${unknownPct}%（${displayedUnknown}）`
+        : `整体：中国 ${chinaPct}%（${stat.china}）/ 海外 ${overseasPct}%（${stat.overseas}）/ 未公开 ${unknownPct}%（${displayedUnknown}）`;
       const chinaLocations = stat.topChinaLocations.join(" · ");
       const overseasLocations = stat.topOverseasLocations.join(" · ");
       return `<article class="region-card">
