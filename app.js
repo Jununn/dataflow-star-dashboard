@@ -374,7 +374,12 @@ const actions = [
   ["2026-06-17", "LinkedIn", "df-oss", "https://www.linkedin.com/feed/update/urn:li:groupPost:6672014-7472964568416210944/"],
   ["2026-06-18", "Reddit", "df-oss", "https://www.reddit.com/r/LLMDevs/comments/1u92cw0/llm_data_preparation_is_becoming_infrastructure/"],
   ["2026-06-18", "Reddit", "df+lf 教程", "https://www.reddit.com/r/LocalLLM/comments/1u92lvs/one_way_to_make_data_preparation_easier_when/"],
-  ["2026-06-18", "开发者网站", "lf+df 教程-掘金", "https://juejin.cn/spost/7652609898089938990"]
+  ["2026-06-18", "开发者网站", "lf+df 教程-掘金", "https://juejin.cn/spost/7652609898089938990"],
+  ["2026-06-23", "Reddit", "小模型训练数据", "https://www.reddit.com/r/LocalLLM/comments/1uddhog/how_much_does_data_quality_matter_when_finetuning/"],
+  ["2026-06-23", "Reddit", "Unsloth小模型训练", "https://www.reddit.com/r/unsloth/comments/1uddoqo/my_smallmodel_finetuning_stack_with_unsloth/"],
+  ["2026-06-24", "GitHub", "pr: Awesome-LLMOps", "https://github.com/tensorchord/Awesome-LLMOps/pull/598"],
+  ["2026-06-24", "GitHub", "pr: awesome-open-data-centric-ai", "https://github.com/Renumics/awesome-open-data-centric-ai/pull/18"],
+  ["2026-06-24", "LinkedIn", "小模型训练数据", "https://www.linkedin.com/feed/update/urn:li:share:7475453436554309633/"]
 ].map(([date, channel, title, url]) => ({ date, channel, title, url }));
 
 const trafficRows = [
