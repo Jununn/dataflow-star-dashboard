@@ -8,6 +8,7 @@ const root = dirname(fileURLToPath(import.meta.url));
 const appPath = join(root, "app.js");
 const zipPath = join(root, "dataflow-star-dashboard.zip");
 const githubToken = loadGithubToken(root);
+const recalculationWindowDays = 4;
 const repoNames = [
   "datajuicer/data-juicer",
   "Eventual-Inc/Daft",
@@ -57,9 +58,13 @@ function readConstString(source, name) {
 }
 
 function readStartTotal(source) {
-  const match = source.match(/const startTotal = (\d+);/);
+  const match = source.match(/(?:const|let) startTotal = (\d+);/);
   if (!match) throw new Error("Cannot find startTotal");
   return Number(match[1]);
+}
+
+function replaceStartTotal(source, value) {
+  return source.replace(/(?:const|let) startTotal = \d+;/, `let startTotal = ${value};`);
 }
 
 async function github(path, options = {}) {
@@ -100,6 +105,25 @@ async function recentStarsAfter(repoName, afterDate) {
     if (shouldStop) break;
   }
   return count;
+}
+
+async function recentStargazersThrough(totalStars, cutoffDate) {
+  const maxPage = Math.ceil(totalStars / 100);
+  const cutoffTimestamp = `${cutoffDate}T00:00:00Z`;
+  const rows = [];
+  for (let page = maxPage; page >= 1; page -= 1) {
+    const pageRows = await github(`/repos/OpenDCAI/DataFlow/stargazers?per_page=100&page=${page}`, {
+      headers: { Accept: "application/vnd.github.star+json" }
+    });
+    if (!pageRows.length) break;
+    rows.push(...pageRows);
+    const oldest = pageRows
+      .map((item) => item?.starred_at)
+      .filter(Boolean)
+      .sort()[0];
+    if (oldest && oldest < cutoffTimestamp) break;
+  }
+  return rows;
 }
 
 function renderRows(rows) {
@@ -149,8 +173,8 @@ function replaceCompetitors(source, repos) {
 
 function updateJunePhase(source, endDate, total) {
   return source.replace(
-    /(\{\n    id: "june",\n    label: "6 月：恢复观察",\n    start: "2026-06-01",\n    end: ")[^"]+(",\n    note: ")[^"]+("\n  \})/,
-    `$1${endDate}$2${`6/1-${endDate.slice(5).replace("-", "/")} 为滚动快照，公开总数已到 ${total.toLocaleString("en-US")}；由于存在 re-star 和旧 star 取消，按净增口径对齐当前累计。`}$3`
+    /(\{\n    id: "june",\n    label: "[^"]+",\n    start: "2026-06-01",\n    end: ")[^"]+(",\n    note: ")[^"]+("\n  \})/,
+    `$1${endDate}$2${`6/1-${endDate.slice(5).replace("-", "/")} 为滚动快照，公开总数已到 ${total.toLocaleString("en-US")}；日增按 starred_at 统计，累计差额通过基线对齐。`}$3`
   );
 }
 
@@ -167,20 +191,15 @@ async function main() {
 
   const dataflow = await github("/repos/OpenDCAI/DataFlow");
   const totalStars = dataflow.stargazers_count;
-  const maxPage = Math.ceil(totalStars / 100);
-  const pageNumbers = Array.from(new Set([Math.max(1, maxPage - 1), maxPage]));
-  const stargazerPages = await Promise.all(pageNumbers.map((page) => github(`/repos/OpenDCAI/DataFlow/stargazers?per_page=100&page=${page}`, {
-    headers: { Accept: "application/vnd.github.star+json" }
-  })));
-  const recentStars = stargazerPages.flat().filter((item) => item?.starred_at);
+  const oldLastDate = dailyCounts.at(-1)[0];
+  const cutoff = addDays(oldLastDate, -recalculationWindowDays);
+  const recentStars = (await recentStargazersThrough(totalStars, cutoff)).filter((item) => item?.starred_at);
   const byDay = new Map();
   for (const item of recentStars) {
     const day = item.starred_at.slice(0, 10);
     byDay.set(day, (byDay.get(day) || 0) + 1);
   }
 
-  const oldLastDate = dailyCounts.at(-1)[0];
-  const cutoff = addDays(oldLastDate, -1);
   const latestStarDate = [...byDay.keys()].sort().at(-1) || oldLastDate;
   const currentUtcDate = utcDate(new Date());
   const endDate = [latestStarDate, currentUtcDate, oldLastDate].sort().at(-1);
@@ -190,20 +209,7 @@ async function main() {
     updatedRows.push([date, byDay.has(date) ? byDay.get(date) : (existing.get(date) || 0)]);
   }
 
-  let diff = totalStars - cumulative(startTotal, updatedRows);
-  if (diff >= 0) {
-    updatedRows.at(-1)[1] += diff;
-  } else {
-    let remaining = -diff;
-    for (let i = updatedRows.length - 1; i >= 0 && remaining > 0; i -= 1) {
-      const adjustable = Math.min(updatedRows[i][1], remaining);
-      updatedRows[i][1] -= adjustable;
-      remaining -= adjustable;
-    }
-    if (remaining > 0) {
-      throw new Error(`Net adjustment could not absorb ${remaining} stars; manual review needed.`);
-    }
-  }
+  const adjustedStartTotal = startTotal + (totalStars - cumulative(startTotal, updatedRows));
 
   const repoInfos = new Map();
   for (const name of repoNames) {
@@ -236,6 +242,7 @@ async function main() {
     };
   });
 
+  source = replaceStartTotal(source, adjustedStartTotal);
   source = replaceConstArray(source, "dailyCounts", updatedRows);
   source = replaceConstString(source, "competitorSnapshotDate", endDate);
   source = replaceConstString(source, "competitorPreviousSnapshotDate", twoDaysAgo);
@@ -247,7 +254,8 @@ async function main() {
   execFileSync("node", ["-c", appPath], { stdio: "pipe" });
   const written = readFileSync(appPath, "utf8");
   const checkRows = readConstArray(written, "dailyCounts");
-  const checkTotal = cumulative(startTotal, checkRows);
+  const checkStartTotal = readStartTotal(written);
+  const checkTotal = cumulative(checkStartTotal, checkRows);
   if (checkTotal !== totalStars) {
     throw new Error(`Cumulative mismatch: ${checkTotal} != ${totalStars}`);
   }

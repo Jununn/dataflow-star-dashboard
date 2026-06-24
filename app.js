@@ -1,4 +1,4 @@
-const startTotal = 1805;
+let startTotal = 1842;
 const historicalStartTotal = 72;
 const historicalNonZeroDailyCounts = [
   ["2025-06-04", 1], ["2025-06-05", 8], ["2025-06-06", 26], ["2025-06-07", 21],
@@ -93,7 +93,7 @@ const dailyCounts = [
   ["2026-06-10", 44], ["2026-06-11", 34], ["2026-06-12", 31], ["2026-06-13", 41],
   ["2026-06-14", 29], ["2026-06-15", 37], ["2026-06-16", 34], ["2026-06-17", 20],
   ["2026-06-18", 41], ["2026-06-19", 25], ["2026-06-20", 35], ["2026-06-21", 39],
-  ["2026-06-22", 37], ["2026-06-23", 82], ["2026-06-24", 90]
+  ["2026-06-22", 79], ["2026-06-23", 82], ["2026-06-24", 12]
 ];
 
 let competitorSnapshotDate = "2026-06-24";
@@ -156,23 +156,23 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 40
   },
   "2026-06-23": {
-    "datajuicer/data-juicer": 6574,
+    "datajuicer/data-juicer": 6571,
     "Eventual-Inc/Daft": 5572,
-    "OpenDCAI/DataFlow": 5292,
+    "OpenDCAI/DataFlow": 5271,
     "huggingface/datatrove": 3119,
-    "NVIDIA-NeMo/DataDesigner": 2028,
+    "NVIDIA-NeMo/DataDesigner": 2025,
     "NVIDIA-NeMo/Curator": 1629,
-    "tinyfish-io/bigset": 1559,
+    "tinyfish-io/bigset": 1549,
     "OpenDataArena/OpenDataArena-Tool": 144,
     "InternScience/SciDataCopilot": 40
   },
   "2026-06-24": {
     "datajuicer/data-juicer": 6576,
     "Eventual-Inc/Daft": 5573,
-    "OpenDCAI/DataFlow": 5330,
+    "OpenDCAI/DataFlow": 5331,
     "huggingface/datatrove": 3119,
     "NVIDIA-NeMo/DataDesigner": 2029,
-    "NVIDIA-NeMo/Curator": 1629,
+    "NVIDIA-NeMo/Curator": 1630,
     "tinyfish-io/bigset": 1572,
     "OpenDataArena/OpenDataArena-Tool": 144,
     "InternScience/SciDataCopilot": 40
@@ -183,7 +183,7 @@ const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
     total: 6576,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 9,
     color: "#f2c94c",
     points: [
@@ -203,7 +203,7 @@ const competitorRepos = [
   {
     name: "Eventual-Inc/Daft",
     total: 5573,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 3,
     color: "#f2994a",
     points: [
@@ -225,9 +225,9 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 5330,
-    yesterday: 38,
-    twoDayChange: 119,
+    total: 5331,
+    yesterday: 0,
+    twoDayChange: 120,
     color: "#2d9cdb",
     points: null
   },
@@ -254,7 +254,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/DataDesigner",
     total: 2029,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 5,
     color: "#e94b35",
     points: [
@@ -267,9 +267,9 @@ const competitorRepos = [
   },
   {
     name: "NVIDIA-NeMo/Curator",
-    total: 1629,
+    total: 1630,
     yesterday: 0,
-    twoDayChange: 0,
+    twoDayChange: 1,
     color: "#e879b4",
     points: [
       ["2024-03-14", 0],
@@ -280,13 +280,13 @@ const competitorRepos = [
       ["2025-07-01", 900],
       ["2025-12-01", 1200],
       ["2026-04-01", 1450],
-      ["2026-06-24", 1629]
+      ["2026-06-24", 1630]
     ]
   },
   {
     name: "tinyfish-io/bigset",
     total: 1572,
-    yesterday: 13,
+    yesterday: 0,
     twoDayChange: 67,
     color: "#14b8a6",
     points: [
@@ -522,8 +522,8 @@ const phases = [
     id: "june",
     label: "6 月：高位续航",
     start: "2026-06-01",
-    end: "2026-06-11",
-    note: "6/1-06/11 维持高位日增，公开总数已到 4,751；由于存在 re-star 和旧 star 取消，按净增口径对齐当前累计。"
+    end: "2026-06-24",
+    note: "6/1-06/24 为滚动快照，公开总数已到 5,331；日增按 starred_at 统计，累计差额通过基线对齐。"
   }
 ];
 
@@ -587,14 +587,14 @@ const phaseRegionStats = [
   {
     phaseId: "june",
     status: "complete",
-    totalStars: 946,
-    known: 763,
-    china: 202,
-    overseas: 561,
-    unknown: 183,
-    note: "06/01-06/24 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["Shanghai 19","Hong Kong 18","China 16","Beijing 15","Beijing, China 11","Taiwan 9","Shanghai, China 8","Shenzhen 7","Hangzhou 6","Hangzhou, China 6"],
-    topOverseasLocations: ["United States 105","Japan 54","Singapore 31","South Korea 19","Australia 17","United Kingdom 17","India 15","Canada 8","France 8","Thailand 8"]
+    totalStars: 887,
+    known: 716,
+    china: 191,
+    overseas: 525,
+    unknown: 171,
+    note: "06/01-06/23 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    topChinaLocations: ["Shanghai 19","Hong Kong 18","Beijing 14","China 13","Beijing, China 10","Shanghai, China 8","Shenzhen 7","Taiwan 7","Hangzhou, China 6","Guangzhou 5"],
+    topOverseasLocations: ["United States 97","Japan 53","Singapore 31","South Korea 18","Australia 17","United Kingdom 17","India 15","Canada 8","France 8","Thailand 7"]
   }
 ];
 
@@ -1364,6 +1364,25 @@ async function github(path, options = {}) {
   return response.json();
 }
 
+async function fetchRecentStargazersThrough(totalStars, cutoffDate) {
+  const maxPage = Math.ceil(totalStars / 100);
+  const cutoffTimestamp = `${cutoffDate}T00:00:00Z`;
+  const rows = [];
+  for (let page = maxPage; page >= 1; page -= 1) {
+    const pageRows = await github(`/repos/OpenDCAI/DataFlow/stargazers?per_page=100&page=${page}`, {
+      headers: { "Accept": "application/vnd.github.star+json" }
+    });
+    if (!pageRows.length) break;
+    rows.push(...pageRows);
+    const oldest = pageRows
+      .map((item) => item?.starred_at)
+      .filter(Boolean)
+      .sort()[0];
+    if (oldest && oldest < cutoffTimestamp) break;
+  }
+  return rows;
+}
+
 function updateRecentDailyCounts(totalStars, recentStargazers) {
   const byDay = new Map();
   recentStargazers
@@ -1373,7 +1392,7 @@ function updateRecentDailyCounts(totalStars, recentStargazers) {
       byDay.set(day, (byDay.get(day) || 0) + 1);
     });
   const oldLastDate = dailyCounts.at(-1)[0];
-  const cutoff = dateAdd(oldLastDate, -1);
+  const cutoff = dateAdd(oldLastDate, -4);
   const latestStarDate = [...byDay.keys()].sort().at(-1) || oldLastDate;
   const today = new Date().toISOString().slice(0, 10);
   const endDate = [oldLastDate, latestStarDate, today].sort().at(-1);
@@ -1383,14 +1402,12 @@ function updateRecentDailyCounts(totalStars, recentStargazers) {
     nextRows.push([date, byDay.has(date) ? byDay.get(date) : (existing.get(date) || 0)]);
   }
   const currentTotal = startTotal + nextRows.reduce((sum, [, stars]) => sum + stars, 0);
-  const diff = totalStars - currentTotal;
-  nextRows.at(-1)[1] += diff;
-  if (nextRows.at(-1)[1] < 0) return oldLastDate;
+  startTotal += totalStars - currentTotal;
   dailyCounts.splice(0, dailyCounts.length, ...nextRows);
   const june = phases.find((phase) => phase.id === "june");
   if (june && endDate >= "2026-06-01") {
     june.end = endDate;
-    june.note = `6/1-${endDate.slice(5).replace("-", "/")} 为浏览器实时快照，公开总数已到 ${formatNumber(totalStars)}；由于存在 re-star 和旧 star 取消，按净增口径对齐当前累计。`;
+    june.note = `6/1-${endDate.slice(5).replace("-", "/")} 为浏览器实时快照，公开总数已到 ${formatNumber(totalStars)}；日增按 starred_at 统计，累计差额通过基线对齐。`;
   }
   return endDate;
 }
@@ -1399,12 +1416,10 @@ async function refreshLiveData() {
   try {
     updateLiveStatus("在线更新中");
     const repoInfo = await github("/repos/OpenDCAI/DataFlow");
-    const maxPage = Math.ceil(repoInfo.stargazers_count / 100);
-    const pages = [...new Set([Math.max(1, maxPage - 1), maxPage])];
-    const recentPages = await Promise.all(pages.map((page) => github(`/repos/OpenDCAI/DataFlow/stargazers?per_page=100&page=${page}`, {
-      headers: { "Accept": "application/vnd.github.star+json" }
-    })));
-    const snapshotDate = updateRecentDailyCounts(repoInfo.stargazers_count, recentPages.flat());
+    const oldLastDate = dailyCounts.at(-1)[0];
+    const cutoff = dateAdd(oldLastDate, -4);
+    const recentStargazers = await fetchRecentStargazersThrough(repoInfo.stargazers_count, cutoff);
+    const snapshotDate = updateRecentDailyCounts(repoInfo.stargazers_count, recentStargazers);
     const dataflowRepo = competitorRepos.find((repo) => repo.name === "OpenDCAI/DataFlow");
     if (dataflowRepo) {
       dataflowRepo.yesterday = repoInfo.stargazers_count - dataflowRepo.total;
