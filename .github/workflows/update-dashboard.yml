@@ -7,6 +7,10 @@ on:
     paths:
       - "index.html"
       - "styles.css"
+      - "app.js"
+      - "update-dashboard.mjs"
+      - "update-regions.mjs"
+      - "env-token.mjs"
       - "reports/**"
       - ".github/workflows/update-dashboard.yml"
   workflow_dispatch:
