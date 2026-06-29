@@ -441,7 +441,21 @@ const trafficRows = [
   ["2026-06-10", 288, 98, 322, 29],
   ["2026-06-11", 220, 99, 209, 62],
   ["2026-06-12", 258, 110, 117, 31],
-  ["2026-06-13", 137, 61, 40, 27]
+  ["2026-06-13", 137, 61, 40, 27],
+  ["2026-06-14", 94, 52, 191, 34],
+  ["2026-06-15", 257, 91, 86, 34],
+  ["2026-06-16", 160, 80, 79, 38],
+  ["2026-06-17", 171, 78, 24, 20],
+  ["2026-06-18", 166, 91, 52, 42],
+  ["2026-06-19", 79, 46, 49, 34],
+  ["2026-06-20", 59, 37, 19, 19],
+  ["2026-06-21", 114, 55, 14, 14],
+  ["2026-06-22", 212, 107, 17, 15],
+  ["2026-06-23", 227, 100, 30, 20],
+  ["2026-06-24", 349, 110, 123, 41],
+  ["2026-06-25", 202, 98, 93, 36],
+  ["2026-06-26", 295, 94, 20, 15],
+  ["2026-06-27", 126, 65, 30, 26]
 ].map(([date, views, visitors, clones, cloners]) => ({ date, views, visitors, clones, cloners }));
 
 const trafficSourceSnapshots = [
@@ -524,6 +538,33 @@ const trafficSourceSnapshots = [
       ["/blob/main/awesome_dataflow.md", 38, 31],
       ["/discussions", 31, 11],
       ["/graphs/contributors", 24, 15]
+    ]
+  },
+  {
+    date: "2026-06-29",
+    referrers: [
+      ["github.com", 520, 183],
+      ["Google", 289, 161],
+      ["Bing", 91, 53],
+      ["opendcai.github.io", 44, 13],
+      ["zwt233.github.io", 26, 19],
+      ["link.zhihu.com", 13, 7],
+      ["linkedin.com", 12, 11],
+      ["chatgpt.com", 11, 6],
+      ["Baidu", 11, 4],
+      ["huggingface.co", 10, 7]
+    ],
+    content: [
+      ["Overview", 1086, 645],
+      ["/blob/main/README-zh.md", 408, 240],
+      ["/tree/main/dataflow", 78, 47],
+      ["/tree/main", 76, 48],
+      ["/issues", 67, 40],
+      ["/stargazers", 44, 5],
+      ["/pulls", 31, 11],
+      ["/discussions", 29, 7],
+      ["/tree/main/dataflow/operators", 27, 10],
+      ["/blob/main/awesome_dataflow.md", 19, 17]
     ]
   }
 ].map((snapshot) => ({
