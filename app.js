@@ -458,7 +458,10 @@ const actions = [
   ["2026-06-23", "Reddit", "Unsloth小模型训练", "https://www.reddit.com/r/unsloth/comments/1uddoqo/my_smallmodel_finetuning_stack_with_unsloth/"],
   ["2026-06-24", "GitHub", "pr: Awesome-LLMOps", "https://github.com/tensorchord/Awesome-LLMOps/pull/598"],
   ["2026-06-24", "GitHub", "pr: awesome-open-data-centric-ai", "https://github.com/Renumics/awesome-open-data-centric-ai/pull/18"],
-  ["2026-06-24", "LinkedIn", "小模型训练数据", "https://www.linkedin.com/feed/update/urn:li:share:7475453436554309633/"]
+  ["2026-06-24", "LinkedIn", "小模型训练数据", "https://www.linkedin.com/feed/update/urn:li:share:7475453436554309633/"],
+  ["2026-06-26", "线下活动", "dataflow-skills", "https://giac.msup.com.cn/2026sz/schedule"],
+  ["2026-06-26", "Reddit", "rag-oss", "https://www.reddit.com/r/Rag/comments/1ug4kzo/rag_knowledge_bases_are_creating_more_data/"],
+  ["2026-06-30", "LinkedIn", "dataflow-oss", "https://www.linkedin.com/feed/update/urn:li:share:7477684269692129280/"]
 ].map(([date, channel, title, url]) => ({ date, channel, title, url }));
 
 const trafficRows = [
