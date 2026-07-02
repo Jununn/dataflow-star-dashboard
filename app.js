@@ -324,7 +324,7 @@ const competitorRepos = [
   {
     name: "huggingface/datatrove",
     total: 3141,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 0,
     color: "#3fb950",
     points: [

@@ -1152,22 +1152,34 @@ svg {
 }
 
 .overlap-table {
-  min-width: 1920px;
+  min-width: 1480px;
+  table-layout: fixed;
 }
 
 .overlap-table th:nth-child(1),
 .overlap-table td:nth-child(1) {
-  min-width: 280px;
+  width: 190px;
+  min-width: 190px;
+  max-width: 190px;
+  overflow-wrap: anywhere;
 }
 
 .overlap-table th:nth-child(7),
 .overlap-table td:nth-child(7) {
-  min-width: 330px;
+  width: 320px;
+  min-width: 320px;
+  white-space: normal;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 .overlap-table th:nth-child(8),
 .overlap-table td:nth-child(8) {
-  min-width: 560px;
+  width: 430px;
+  min-width: 430px;
+  white-space: normal;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 .overlap-table a {
