@@ -171,11 +171,49 @@ function replaceCompetitors(source, repos) {
   return source.replace(/const competitorRepos = \[[\s\S]*?\n\];\n\nconst actions = \[/, `const competitorRepos = ${renderCompetitors(repos)};\n\nconst actions = [`);
 }
 
-function updateJunePhase(source, endDate, total) {
-  return source.replace(
-    /(\{\n    id: "june",\n    label: "[^"]+",\n    start: "2026-06-01",\n    end: ")[^"]+(",\n    note: ")[^"]+("\n  \})/,
-    `$1${endDate}$2${`6/1-${endDate.slice(5).replace("-", "/")} 为滚动快照，公开总数已到 ${total.toLocaleString("en-US")}；日增按 starred_at 统计，累计差额通过基线对齐。`}$3`
-  );
+function renderPhase({ id, label, start, end, note }) {
+  return `  {
+    id: "${id}",
+    label: "${label}",
+    start: "${start}",
+    end: "${end}",
+    note: "${note}"
+  }`;
+}
+
+function replacePhase(source, id, phase) {
+  const pattern = new RegExp(`  \\{\\n    id: "${id}",[\\s\\S]*?\\n  \\}`);
+  if (pattern.test(source)) {
+    return source.replace(pattern, renderPhase(phase));
+  }
+  return source.replace(/\n\];\n\nconst phaseRegionStats/, `,\n${renderPhase(phase)}\n];\n\nconst phaseRegionStats`);
+}
+
+function updateCurrentPhases(source, endDate, total) {
+  if (endDate <= "2026-06-30") {
+    return replacePhase(source, "june", {
+      id: "june",
+      label: "6 月：高位续航",
+      start: "2026-06-01",
+      end: endDate,
+      note: `6/1-${endDate.slice(5).replace("-", "/")} 为滚动快照，公开总数已到 ${total.toLocaleString("en-US")}；日增按 starred_at 统计，累计差额通过基线对齐。`
+    });
+  }
+
+  source = replacePhase(source, "june", {
+    id: "june",
+    label: "6 月：高位续航",
+    start: "2026-06-01",
+    end: "2026-06-30",
+    note: "6/1-6/30 为完整月数据；日增按 starred_at 统计，月柱为 Gross 新增口径。"
+  });
+  return replacePhase(source, "july", {
+    id: "july",
+    label: "7 月",
+    start: "2026-07-01",
+    end: endDate,
+    note: `7/1-${endDate.slice(5).replace("-", "/")} 为当前滚动月，数据随每日更新继续补齐。`
+  });
 }
 
 function cumulative(startTotal, rows) {
@@ -248,7 +286,7 @@ async function main() {
   source = replaceConstString(source, "competitorPreviousSnapshotDate", twoDaysAgo);
   source = replaceConstObject(source, "competitorSnapshots", competitorSnapshots);
   source = replaceCompetitors(source, nextCompetitors);
-  source = updateJunePhase(source, endDate, totalStars);
+  source = updateCurrentPhases(source, endDate, totalStars);
   writeFileSync(appPath, source);
 
   execFileSync("node", ["-c", appPath], { stdio: "pipe" });

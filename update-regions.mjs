@@ -181,6 +181,11 @@ const targetRanges = [
   { phaseId: "july", start: "2026-07-01", end: latestDailyDate }
 ];
 
+function isRateLimitError(error) {
+  return /GitHub API 403:[\s\S]*rate limit/i.test(error?.message || "");
+}
+
+try {
 const repo = await github("/repos/OpenDCAI/DataFlow");
 const maxPage = Math.ceil(repo.stargazers_count / 100);
 const pageNumbers = Array.from({ length: maxPage }, (_, index) => index + 1);
@@ -277,3 +282,10 @@ console.log(JSON.stringify(stats.map((stat) => ({
   topChinaLocations: stat.topChinaLocations,
   topOverseasLocations: stat.topOverseasLocations
 })), null, 2));
+} catch (error) {
+  if (isRateLimitError(error)) {
+    console.warn(`Skip region update because GitHub API rate limit was exhausted: ${error.message}`);
+    process.exit(0);
+  }
+  throw error;
+}
