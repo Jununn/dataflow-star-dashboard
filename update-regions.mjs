@@ -10,6 +10,7 @@ if (!token) {
 }
 
 const appPath = new URL("./app.js", import.meta.url);
+const appSource = await fs.readFile(appPath, "utf8");
 const headers = {
   "Accept": "application/vnd.github+json",
   "Authorization": `Bearer ${token}`,
@@ -168,10 +169,16 @@ async function mapLimit(items, limit, task) {
   return results;
 }
 
-const today = new Date().toISOString().slice(0, 10);
+const dailyCountsSource = appSource.match(/const dailyCounts = \[([\s\S]*?)\];/)?.[1] || "";
+const latestDailyDate = [...dailyCountsSource.matchAll(/\["(\d{4}-\d{2}-\d{2})",\s*\d+\]/g)]
+  .map((match) => match[1])
+  .sort()
+  .at(-1);
+
 const targetRanges = [
   { phaseId: "may", start: "2026-05-01", end: "2026-05-31" },
-  { phaseId: "june", start: "2026-06-01", end: today }
+  { phaseId: "june", start: "2026-06-01", end: "2026-06-30" },
+  { phaseId: "july", start: "2026-07-01", end: latestDailyDate }
 ];
 
 const repo = await github("/repos/OpenDCAI/DataFlow");
@@ -237,7 +244,7 @@ function buildStat(range) {
 
 const stats = targetRanges.map((range) => buildStat(range));
 
-let source = await fs.readFile(appPath, "utf8");
+let source = appSource;
 for (const stat of stats) {
   const replacement = `  {
     phaseId: "${stat.phaseId}",
@@ -252,7 +259,11 @@ for (const stat of stats) {
     topOverseasLocations: ${JSON.stringify(stat.topOverseasLocations)}
   }`;
   const phasePattern = new RegExp(`  \\{\\n    phaseId: "${stat.phaseId}",[\\s\\S]*?\\n  \\}`);
-  source = source.replace(phasePattern, replacement);
+  if (phasePattern.test(source)) {
+    source = source.replace(phasePattern, replacement);
+  } else {
+    source = source.replace(/\n\];\n\nconst byDateActions/, `,\n${replacement}\n];\n\nconst byDateActions`);
+  }
 }
 await fs.writeFile(appPath, source);
 

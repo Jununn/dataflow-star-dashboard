@@ -650,8 +650,15 @@ const phases = [
     id: "june",
     label: "6 月：高位续航",
     start: "2026-06-01",
-    end: "2026-07-01",
-    note: "6/1-07/01 为滚动快照，公开总数已到 5,734；日增按 starred_at 统计，累计差额通过基线对齐。"
+    end: "2026-06-30",
+    note: "6/1-6/30 为完整月数据；日增按 starred_at 统计，月柱为 Gross 新增口径。"
+  },
+  {
+    id: "july",
+    label: "7 月",
+    start: "2026-07-01",
+    end: "2026-07-31",
+    note: "7 月为当前滚动月，数据随每日更新继续补齐。"
   }
 ];
 
@@ -715,14 +722,26 @@ const phaseRegionStats = [
   {
     phaseId: "june",
     status: "complete",
-    totalStars: 1351,
-    known: 1083,
-    china: 293,
-    overseas: 790,
-    unknown: 268,
-    note: "06/01-07/01 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["Shanghai 26","China 25","Hong Kong 24","Beijing 22","Taiwan 15","Beijing, China 13","Shanghai, China 13","Shenzhen 10","Guangzhou 7","Hangzhou, China 7"],
-    topOverseasLocations: ["United States 144","Japan 72","Singapore 37","South Korea 29","India 24","United Kingdom 22","Australia 20","Canada 11","Germany 11","France 10"]
+    totalStars: 1318,
+    known: 1058,
+    china: 282,
+    overseas: 776,
+    unknown: 260,
+    note: "06/01-06/30 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    topChinaLocations: ["Shanghai 25","Hong Kong 24","China 23","Beijing 22","Taiwan 15","Shanghai, China 13","Beijing, China 12","Shenzhen 9","Guangzhou 7","Hangzhou, China 7"],
+    topOverseasLocations: ["United States 143","Japan 71","Singapore 36","South Korea 29","India 23","United Kingdom 22","Australia 20","Germany 11","Canada 10","France 10"]
+  },
+  {
+    phaseId: "july",
+    status: "complete",
+    totalStars: 51,
+    known: 39,
+    china: 13,
+    overseas: 26,
+    unknown: 12,
+    note: "07/01-07/01 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    topChinaLocations: ["China 2","Shanghai 2","Beijing 1","Beijing, China 1","BeiJing, China 1","Beijing, maybe Tokyo later 1","P. R. China 1","Pudong Shanghai 1","Shenzhen 1","Shenzhen, China 1"],
+    topOverseasLocations: ["Japan 3","Australia 2","United States 2","✅ 1","Bethlehem,PA 1","Canada 1","Cha Kwo Ling 1","Cleveland, Ohio 1","Cosmos 1","Germany 1"]
   }
 ];
 
@@ -1297,16 +1316,18 @@ function renderPhaseCards() {
 }
 
 function renderRegionStats() {
+  const shortPhaseLabel = (phase) => phase.label.split("：")[0];
   document.getElementById("regionStats").innerHTML = phaseRegionStats
     .map((stat) => {
       const phase = phases.find((item) => item.id === stat.phaseId);
       if (!phase) return "";
-      const phaseTotal = data
+      const dailyPhaseTotal = data
         .filter((item) => item.date >= phase.start && item.date <= phase.end)
         .reduce((sum, item) => sum + item.stars, 0);
+      const phaseTotal = stat.totalStars ?? dailyPhaseTotal;
       if (stat.status === "pending") {
         return `<article class="region-card pending">
-          <strong>${phase.label}</strong>
+          <strong>${shortPhaseLabel(phase)}</strong>
           <div class="region-bar" aria-hidden="true"></div>
           <div class="region-meta">
             <span>中国 / 海外：待统计</span>
@@ -1328,7 +1349,7 @@ function renderRegionStats() {
       const chinaLocations = stat.topChinaLocations.join(" · ");
       const overseasLocations = stat.topOverseasLocations.join(" · ");
       return `<article class="region-card">
-        <strong>${phase.label}</strong>
+        <strong>${shortPhaseLabel(phase)}</strong>
         <div class="region-bar" style="--china:${chinaPct}%;--overseas:${overseasPct}%;--unknown:${unknownPct}%"><span></span><span></span><span></span></div>
         <div class="region-meta">
           <span>${label}</span>
@@ -1346,10 +1367,11 @@ function renderRegionBreakdownTable() {
   const rows = phaseRegionStats.map((stat) => {
     const phase = phases.find((item) => item.id === stat.phaseId);
     if (!phase || stat.status === "pending") return "";
+    const phaseLabel = phase.label.split("：")[0];
     const china = stat.topChinaLocations.join(" · ");
     const overseas = stat.topOverseasLocations.join(" · ");
     return `<tr>
-      <td>${phase.label}</td>
+      <td>${phaseLabel}</td>
       <td>${china}</td>
       <td>${overseas}</td>
     </tr>`;
