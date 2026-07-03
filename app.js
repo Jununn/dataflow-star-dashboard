@@ -483,7 +483,9 @@ const actions = [
   ["2026-06-24", "LinkedIn", "小模型训练数据", "https://www.linkedin.com/feed/update/urn:li:share:7475453436554309633/"],
   ["2026-06-26", "线下活动", "dataflow-skills", "https://giac.msup.com.cn/2026sz/schedule"],
   ["2026-06-26", "Reddit", "rag-oss", "https://www.reddit.com/r/Rag/comments/1ug4kzo/rag_knowledge_bases_are_creating_more_data/"],
-  ["2026-06-30", "LinkedIn", "dataflow-oss", "https://www.linkedin.com/feed/update/urn:li:share:7477684269692129280/"]
+  ["2026-06-30", "LinkedIn", "dataflow-oss", "https://www.linkedin.com/feed/update/urn:li:share:7477684269692129280/"],
+  ["2026-07-03", "线下活动", "dataflow-harness", "https://agenticaicon.zhidx.com/2026/"],
+  ["2026-07-03", "Reddit", "qa类数据准备", "https://www.reddit.com/r/Rag/comments/1um8a3i/improving_rag_when_ocr_is_good_but_not_enough/"]
 ].map(([date, channel, title, url]) => ({ date, channel, title, url }));
 
 const trafficRows = [
@@ -514,7 +516,11 @@ const trafficRows = [
   ["2026-06-24", 349, 110, 123, 41],
   ["2026-06-25", 202, 98, 93, 36],
   ["2026-06-26", 295, 94, 20, 15],
-  ["2026-06-27", 126, 65, 30, 26]
+  ["2026-06-27", 126, 65, 30, 26],
+  ["2026-06-28", 125, 48, 44, 33],
+  ["2026-06-29", 179, 89, 32, 27],
+  ["2026-06-30", 145, 73, 24, 19],
+  ["2026-07-01", 166, 103, 47, 44]
 ].map(([date, views, visitors, clones, cloners]) => ({ date, views, visitors, clones, cloners }));
 
 const trafficSourceSnapshots = [
@@ -624,6 +630,33 @@ const trafficSourceSnapshots = [
       ["/discussions", 29, 7],
       ["/tree/main/dataflow/operators", 27, 10],
       ["/blob/main/awesome_dataflow.md", 19, 17]
+    ]
+  },
+  {
+    date: "2026-07-03",
+    referrers: [
+      ["github.com", 576, 188],
+      ["Google", 322, 170],
+      ["Bing", 75, 43],
+      ["opendcai.github.io", 46, 13],
+      ["zwt233.github.io", 29, 17],
+      ["huggingface.co", 15, 12],
+      ["wcny4qa9krto.feishu.cn", 13, 4],
+      ["linkedin.com", 12, 11],
+      ["Baidu", 10, 3],
+      ["l.facebook.com", 9, 6]
+    ],
+    content: [
+      ["Overview", 1110, 640],
+      ["/blob/main/README-zh.md", 397, 224],
+      ["/tree/main/dataflow", 70, 39],
+      ["/tree/main", 61, 40],
+      ["/issues", 58, 36],
+      ["/pulls", 31, 11],
+      ["/discussions", 28, 6],
+      ["/tree/main/dataflow/operators", 23, 9],
+      ["/stargazers", 22, 5],
+      ["/blob/main/awesome_dataflow.md", 20, 18]
     ]
   }
 ].map((snapshot) => ({
