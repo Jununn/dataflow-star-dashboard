@@ -95,7 +95,7 @@ const dailyCounts = [
   ["2026-06-18", 41], ["2026-06-19", 25], ["2026-06-20", 35], ["2026-06-21", 39],
   ["2026-06-22", 79], ["2026-06-23", 82], ["2026-06-24", 69], ["2026-06-25", 75],
   ["2026-06-26", 36], ["2026-06-27", 55], ["2026-06-28", 59], ["2026-06-29", 48],
-  ["2026-06-30", 41], ["2026-07-01", 51], ["2026-07-02", 61], ["2026-07-03", 6]
+  ["2026-06-30", 41], ["2026-07-01", 51], ["2026-07-02", 61], ["2026-07-03", 10]
 ];
 
 let competitorSnapshotDate = "2026-07-03";
@@ -270,11 +270,11 @@ const competitorSnapshots = {
   "2026-07-03": {
     "datajuicer/data-juicer": 6623,
     "Eventual-Inc/Daft": 5598,
-    "OpenDCAI/DataFlow": 5819,
+    "OpenDCAI/DataFlow": 5823,
     "huggingface/datatrove": 3141,
     "NVIDIA-NeMo/DataDesigner": 2063,
     "NVIDIA-NeMo/Curator": 1647,
-    "tinyfish-io/bigset": 1635,
+    "tinyfish-io/bigset": 1636,
     "OpenDataArena/OpenDataArena-Tool": 143,
     "InternScience/SciDataCopilot": 40
   }
@@ -326,9 +326,9 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 5819,
-    yesterday: 0,
-    twoDayChange: 85,
+    total: 5823,
+    yesterday: 4,
+    twoDayChange: 89,
     color: "#2d9cdb",
     points: null
   },
@@ -386,13 +386,13 @@ const competitorRepos = [
   },
   {
     name: "tinyfish-io/bigset",
-    total: 1635,
-    yesterday: 0,
-    twoDayChange: 1,
+    total: 1636,
+    yesterday: 1,
+    twoDayChange: 2,
     color: "#14b8a6",
     points: [
       ["2026-05-15", 0],
-      ["2026-07-03", 1635]
+      ["2026-07-03", 1636]
     ]
   },
   {
@@ -756,14 +756,14 @@ const phaseRegionStats = [
   {
     phaseId: "july",
     status: "complete",
-    totalStars: 118,
-    known: 91,
+    totalStars: 122,
+    known: 95,
     china: 21,
-    overseas: 70,
+    overseas: 74,
     unknown: 27,
     note: "07/01-07/03 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Shanghai 3","Beijing 2","China 2","Beijing, China 1","BeiJing, China 1","Beijing, maybe Tokyo later 1","GuangZhou 1","Nanjing 1","P. R. China 1","Pudong Shanghai 1"],
-    topOverseasLocations: ["Japan 8","United States 6","India 3","Thailand 3","Australia 2","Canada 2","France 2","Singapore 2","✅ 1","0.0.0.0 1"]
+    topOverseasLocations: ["Japan 8","United States 7","India 3","Thailand 3","Australia 2","Canada 2","France 2","Singapore 2","✅ 1","0.0.0.0 1"]
   }
 ];
 
