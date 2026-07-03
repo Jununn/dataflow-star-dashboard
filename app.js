@@ -284,7 +284,7 @@ const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
     total: 6623,
-    yesterday: 4,
+    yesterday: 0,
     twoDayChange: 9,
     color: "#f2c94c",
     points: [
@@ -304,7 +304,7 @@ const competitorRepos = [
   {
     name: "Eventual-Inc/Daft",
     total: 5598,
-    yesterday: 5,
+    yesterday: 0,
     twoDayChange: 6,
     color: "#f2994a",
     points: [
@@ -327,7 +327,7 @@ const competitorRepos = [
   {
     name: "OpenDCAI/DataFlow",
     total: 5819,
-    yesterday: 30,
+    yesterday: 0,
     twoDayChange: 85,
     color: "#2d9cdb",
     points: null
@@ -369,7 +369,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/Curator",
     total: 1647,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 5,
     color: "#e879b4",
     points: [
@@ -387,7 +387,7 @@ const competitorRepos = [
   {
     name: "tinyfish-io/bigset",
     total: 1635,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 1,
     color: "#14b8a6",
     points: [
