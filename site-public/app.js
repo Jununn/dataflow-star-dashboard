@@ -96,7 +96,7 @@ const dailyCounts = [
   ["2026-06-22", 79], ["2026-06-23", 82], ["2026-06-24", 69], ["2026-06-25", 75],
   ["2026-06-26", 36], ["2026-06-27", 55], ["2026-06-28", 59], ["2026-06-29", 48],
   ["2026-06-30", 41], ["2026-07-01", 51], ["2026-07-02", 61], ["2026-07-03", 49],
-  ["2026-07-04", 47], ["2026-07-05", 54], ["2026-07-06", 46], ["2026-07-07", 8]
+  ["2026-07-04", 47], ["2026-07-05", 54], ["2026-07-06", 46], ["2026-07-07", 14]
 ];
 
 let competitorSnapshotDate = "2026-07-07";
@@ -315,7 +315,7 @@ const competitorSnapshots = {
   "2026-07-07": {
     "datajuicer/data-juicer": 6662,
     "Eventual-Inc/Daft": 5603,
-    "OpenDCAI/DataFlow": 6017,
+    "OpenDCAI/DataFlow": 6023,
     "huggingface/datatrove": 3149,
     "NVIDIA-NeMo/DataDesigner": 2072,
     "NVIDIA-NeMo/Curator": 1652,
@@ -329,7 +329,7 @@ const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
     total: 6662,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 19,
     color: "#f2c94c",
     points: [
@@ -371,9 +371,9 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 6017,
-    yesterday: 0,
-    twoDayChange: 72,
+    total: 6023,
+    yesterday: 6,
+    twoDayChange: 78,
     color: "#2d9cdb",
     points: null
   },
@@ -834,14 +834,14 @@ const phaseRegionStats = [
   {
     phaseId: "july",
     status: "complete",
-    totalStars: 316,
-    known: 253,
-    china: 64,
-    overseas: 189,
-    unknown: 63,
+    totalStars: 322,
+    known: 258,
+    china: 65,
+    overseas: 193,
+    unknown: 64,
     note: "07/01-07/07 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["China 7","Shanghai 7","Beijing 6","Guangzhou 3","Taiwan 3","Nanjing 2","Shanghai, China 2","Shenzhen 2","Shenzhen, China 2","Suzhou 2"],
-    topOverseasLocations: ["United States 38","Japan 24","Singapore 6","Australia 5","Canada 5","India 5","Thailand 4","Earth 3","France 3","Germany 3"]
+    topChinaLocations: ["Shanghai 8","China 7","Beijing 6","Guangzhou 3","Taiwan 3","Nanjing 2","Shanghai, China 2","Shenzhen 2","Shenzhen, China 2","Suzhou 2"],
+    topOverseasLocations: ["United States 38","Japan 25","Singapore 6","Australia 5","Canada 5","India 5","Thailand 4","Earth 3","France 3","Germany 3"]
   }
 ];
 

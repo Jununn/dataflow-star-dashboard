@@ -1011,6 +1011,44 @@ svg {
   scroll-margin-top: 24px;
 }
 
+.overlap-archive {
+  padding-top: 18px;
+}
+
+.overlap-archive summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 9px 12px;
+  list-style: none;
+}
+
+.overlap-archive summary::-webkit-details-marker {
+  display: none;
+}
+
+.overlap-archive summary::before {
+  content: "+";
+  color: var(--blue);
+  font-size: 16px;
+  line-height: 1;
+}
+
+.overlap-archive[open] summary {
+  margin-bottom: 18px;
+}
+
+.overlap-archive[open] summary::before {
+  content: "-";
+}
+
 .overlap-meta {
   display: flex;
   flex-wrap: wrap;
