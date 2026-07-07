@@ -107,6 +107,15 @@ async function recentStarsAfter(repoName, afterDate) {
   return count;
 }
 
+async function safeRecentStarsAfter(repoName, afterDate) {
+  try {
+    return await recentStarsAfter(repoName, afterDate);
+  } catch (error) {
+    console.warn(`Skip detailed recent stars for ${repoName}: ${error.message}`);
+    return null;
+  }
+}
+
 async function recentStargazersThrough(totalStars, cutoffDate) {
   const maxPage = Math.ceil(totalStars / 100);
   const cutoffTimestamp = `${cutoffDate}T00:00:00Z`;
@@ -260,7 +269,7 @@ async function main() {
   const inferredTwoDayChanges = new Map();
   if (!competitorSnapshots[twoDaysAgo]) {
     for (const name of repoNames) {
-      inferredTwoDayChanges.set(name, await recentStarsAfter(name, twoDaysAgo));
+      inferredTwoDayChanges.set(name, await safeRecentStarsAfter(name, twoDaysAgo));
     }
   }
   const nextCompetitors = competitorRepos.map((repo) => {
@@ -268,8 +277,9 @@ async function main() {
     if (!info) return repo;
     const points = repo.points ? repo.points.slice(0, -1).concat([[endDate, info.stargazers_count]]) : null;
     const comparisonTotal = comparisonSnapshot[repo.name] ?? repo.total;
-    const twoDayChange = inferredTwoDayChanges.has(repo.name)
-      ? inferredTwoDayChanges.get(repo.name)
+    const inferredTwoDayChange = inferredTwoDayChanges.get(repo.name);
+    const twoDayChange = Number.isFinite(inferredTwoDayChange)
+      ? inferredTwoDayChange
       : info.stargazers_count - comparisonTotal;
     return {
       ...repo,
