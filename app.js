@@ -313,7 +313,7 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 40
   },
   "2026-07-07": {
-    "datajuicer/data-juicer": 6661,
+    "datajuicer/data-juicer": 6662,
     "Eventual-Inc/Daft": 5603,
     "OpenDCAI/DataFlow": 6017,
     "huggingface/datatrove": 3149,
@@ -328,9 +328,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 6661,
-    yesterday: 4,
-    twoDayChange: 18,
+    total: 6662,
+    yesterday: 1,
+    twoDayChange: 19,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -343,13 +343,13 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-07-07", 6661]
+      ["2026-07-07", 6662]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
     total: 5603,
-    yesterday: -1,
+    yesterday: 0,
     twoDayChange: -1,
     color: "#f2994a",
     points: [
@@ -372,7 +372,7 @@ const competitorRepos = [
   {
     name: "OpenDCAI/DataFlow",
     total: 6017,
-    yesterday: 22,
+    yesterday: 0,
     twoDayChange: 72,
     color: "#2d9cdb",
     points: null
@@ -400,7 +400,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/DataDesigner",
     total: 2072,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 6,
     color: "#e94b35",
     points: [
@@ -414,7 +414,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/Curator",
     total: 1652,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 4,
     color: "#e879b4",
     points: [
@@ -432,7 +432,7 @@ const competitorRepos = [
   {
     name: "tinyfish-io/bigset",
     total: 1652,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 3,
     color: "#14b8a6",
     points: [
