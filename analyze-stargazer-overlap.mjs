@@ -9,6 +9,8 @@ const token = loadGithubToken(root);
 const repoFullName = process.env.REPO || "OpenDCAI/DataFlow";
 const startDate = process.env.START_DATE || "2026-06-01";
 const endDate = process.env.END_DATE || new Date().toISOString().slice(0, 10);
+const reportMonth = process.env.REPORT_MONTH || startDate.slice(0, 7);
+const monthName = Number(reportMonth.slice(5, 7));
 const sampleSize = Number(process.env.SAMPLE_SIZE || 160);
 const perUserRepoLimit = Number(process.env.PER_USER_REPO_LIMIT || 300);
 const concurrency = Number(process.env.CONCURRENCY || 8);
@@ -122,12 +124,12 @@ async function fetchStargazers() {
 }
 
 function sampleUsers(rows) {
-  const juneRows = rows
+  const targetRows = rows
     .filter((item) => item.starred_at?.slice(0, 10) >= startDate && item.starred_at?.slice(0, 10) <= endDate)
     .sort((a, b) => b.starred_at.localeCompare(a.starred_at));
-  if (juneRows.length <= sampleSize) return juneRows;
-  const step = (juneRows.length - 1) / (sampleSize - 1);
-  return Array.from({ length: sampleSize }, (_, index) => juneRows[Math.round(index * step)]);
+  if (targetRows.length <= sampleSize) return targetRows;
+  const step = (targetRows.length - 1) / (sampleSize - 1);
+  return Array.from({ length: sampleSize }, (_, index) => targetRows[Math.round(index * step)]);
 }
 
 async function fetchUserStarred(login) {
@@ -156,7 +158,7 @@ function repoLine(row) {
   return `| [${row.fullName}](${row.htmlUrl}) | ${row.userCount} | ${pct(row.userCount, row.sampledUsers)} | ${row.category} | ${row.language || "-"} | ${row.stars.toLocaleString()} | ${row.description.replace(/\|/g, "/").slice(0, 90)} |`;
 }
 
-const stargazers = await cachedJson(`stargazers-${repoFullName.replace("/", "-")}`, fetchStargazers);
+const stargazers = await cachedJson(`stargazers-${repoFullName.replace("/", "-")}-${endDate}`, fetchStargazers);
 const sampled = sampleUsers(stargazers);
 const sampledLogins = sampled.map((item) => item.user.login);
 
@@ -219,7 +221,7 @@ const result = {
   repo: repoFullName,
   range: { startDate, endDate },
   sample: {
-    juneStargazers: stargazers.filter((item) => item.starred_at?.slice(0, 10) >= startDate && item.starred_at?.slice(0, 10) <= endDate).length,
+    targetStargazers: stargazers.filter((item) => item.starred_at?.slice(0, 10) >= startDate && item.starred_at?.slice(0, 10) <= endDate).length,
     sampledUsers: sampledLogins.length,
     perUserRepoLimit,
     failedUsers: starredLists.filter((item) => item.error).map((item) => ({ login: item.login, error: item.error }))
@@ -233,20 +235,20 @@ const result = {
 };
 
 await fs.mkdir(reportDir, { recursive: true });
-const jsonPath = join(reportDir, "stargazer-overlap-2026-06.json");
-const mdPath = join(reportDir, "stargazer-overlap-2026-06.md");
+const jsonPath = join(reportDir, `stargazer-overlap-${reportMonth}.json`);
+const mdPath = join(reportDir, `stargazer-overlap-${reportMonth}.md`);
 await fs.writeFile(jsonPath, JSON.stringify(result, null, 2));
 
-const markdown = `# 2026-06 DataFlow Stargazer 共同关注分析
+const markdown = `# ${reportMonth} DataFlow Stargazer 共同关注分析
 
 生成时间：${result.generatedAt}
 
-样本：${result.sample.sampledUsers} / ${result.sample.juneStargazers} 个 6 月新增 stargazer；每人最多读取最近 ${perUserRepoLimit} 个 starred repos。
+样本：${result.sample.sampledUsers} / ${result.sample.targetStargazers} 个 ${monthName} 月新增 stargazer；每人最多读取最近 ${perUserRepoLimit} 个 starred repos。
 
 ## 快速判断
 
 - Top 12 共同关注项目之间的用户集合平均重叠：${topOverlap.average}；区间：${topOverlap.min} - ${topOverlap.max}。
-- 这个重叠度很高，说明 6 月新增 stargazer 中存在一批 GitHub star 行为高度相似的人群；它更像同一类信息源/榜单/推荐链路带来的用户，而不是完全随机的自然扩散。
+- 这个重叠度很高，说明 ${monthName} 月新增 stargazer 中存在一批 GitHub star 行为高度相似的人群；它更像同一类信息源/榜单/推荐链路带来的用户，而不是完全随机的自然扩散。
 - 共同关注集中在 Agent / Workflow、LLM Infra、RAG / Search，其次才是 Data Engineering。
 
 ## 共同关注项目 Top 30（过滤泛项目）
@@ -270,7 +272,7 @@ ${rows.slice(0, 30).map(repoLine).join("\n")}
 ## 口径
 
 - 只分析 ${startDate} 到 ${endDate} 给 ${repoFullName} 点 star 的用户。
-- 抽样方式：按 6 月新增 stargazer 时间序列等距抽样，避免只看最近几天。
+- 抽样方式：按 ${monthName} 月新增 stargazer 时间序列等距抽样，避免只看最近几天。
 - 每个用户最多取最近 ${perUserRepoLimit} 个 starred repos；很早以前 star 的项目不会进入本次样本。
 - “过滤泛项目”会去掉超大型学习清单、通用 awesome list、面试资料等噪声，但原始 Top 表仍保留。
 - GitHub 不提供共同 star 图谱接口，本报告由公开 stargazer 和用户 starred repos 聚合而来。
