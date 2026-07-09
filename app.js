@@ -1,4 +1,4 @@
-let startTotal = 1797;
+let startTotal = 1796;
 const historicalStartTotal = 72;
 const historicalNonZeroDailyCounts = [
   ["2025-06-04", 1], ["2025-06-05", 8], ["2025-06-06", 26], ["2025-06-07", 21],
@@ -97,11 +97,11 @@ const dailyCounts = [
   ["2026-06-26", 36], ["2026-06-27", 55], ["2026-06-28", 59], ["2026-06-29", 48],
   ["2026-06-30", 41], ["2026-07-01", 51], ["2026-07-02", 61], ["2026-07-03", 49],
   ["2026-07-04", 47], ["2026-07-05", 54], ["2026-07-06", 46], ["2026-07-07", 46],
-  ["2026-07-08", 30]
+  ["2026-07-08", 62], ["2026-07-09", 15]
 ];
 
-let competitorSnapshotDate = "2026-07-08";
-let competitorPreviousSnapshotDate = "2026-07-06";
+let competitorSnapshotDate = "2026-07-09";
+let competitorPreviousSnapshotDate = "2026-07-07";
 
 const competitorSnapshots = {
   "2026-06-16": {
@@ -334,6 +334,17 @@ const competitorSnapshots = {
     "tinyfish-io/bigset": 1655,
     "OpenDataArena/OpenDataArena-Tool": 144,
     "InternScience/SciDataCopilot": 40
+  },
+  "2026-07-09": {
+    "datajuicer/data-juicer": 6683,
+    "Eventual-Inc/Daft": 5609,
+    "OpenDCAI/DataFlow": 6130,
+    "huggingface/datatrove": 3151,
+    "NVIDIA-NeMo/DataDesigner": 2080,
+    "NVIDIA-NeMo/Curator": 1654,
+    "tinyfish-io/bigset": 1654,
+    "OpenDataArena/OpenDataArena-Tool": 144,
+    "InternScience/SciDataCopilot": 40
   }
 };
 
@@ -342,7 +353,7 @@ const competitorRepos = [
     name: "datajuicer/data-juicer",
     total: 6683,
     yesterday: 0,
-    twoDayChange: 26,
+    twoDayChange: 13,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -355,14 +366,14 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-07-08", 6683]
+      ["2026-07-09", 6683]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
-    total: 5606,
-    yesterday: 0,
-    twoDayChange: 2,
+    total: 5609,
+    yesterday: 3,
+    twoDayChange: 3,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -378,22 +389,22 @@ const competitorRepos = [
       ["2025-10-01", 4400],
       ["2026-01-01", 4900],
       ["2026-04-01", 5350],
-      ["2026-07-08", 5606]
+      ["2026-07-09", 5609]
     ]
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 6084,
-    yesterday: 0,
-    twoDayChange: 89,
+    total: 6130,
+    yesterday: 46,
+    twoDayChange: 92,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
-    total: 3152,
-    yesterday: 0,
-    twoDayChange: 3,
+    total: 3151,
+    yesterday: -1,
+    twoDayChange: 1,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -406,28 +417,28 @@ const competitorRepos = [
       ["2025-06-01", 2400],
       ["2025-10-01", 2650],
       ["2026-03-01", 2900],
-      ["2026-07-08", 3152]
+      ["2026-07-09", 3151]
     ]
   },
   {
     name: "NVIDIA-NeMo/DataDesigner",
-    total: 2078,
-    yesterday: 0,
-    twoDayChange: 8,
+    total: 2080,
+    yesterday: 2,
+    twoDayChange: 9,
     color: "#e94b35",
     points: [
       ["2025-10-16", 0],
       ["2026-01-01", 500],
       ["2026-03-01", 700],
       ["2026-04-01", 1000],
-      ["2026-07-08", 2078]
+      ["2026-07-09", 2080]
     ]
   },
   {
     name: "NVIDIA-NeMo/Curator",
     total: 1654,
     yesterday: 0,
-    twoDayChange: 3,
+    twoDayChange: 1,
     color: "#e879b4",
     points: [
       ["2024-03-14", 0],
@@ -438,18 +449,18 @@ const competitorRepos = [
       ["2025-07-01", 900],
       ["2025-12-01", 1200],
       ["2026-04-01", 1450],
-      ["2026-07-08", 1654]
+      ["2026-07-09", 1654]
     ]
   },
   {
     name: "tinyfish-io/bigset",
-    total: 1655,
-    yesterday: 0,
-    twoDayChange: 5,
+    total: 1654,
+    yesterday: -1,
+    twoDayChange: 2,
     color: "#14b8a6",
     points: [
       ["2026-05-15", 0],
-      ["2026-07-08", 1655]
+      ["2026-07-09", 1654]
     ]
   },
   {
@@ -462,7 +473,7 @@ const competitorRepos = [
       ["2025-07-19", 0],
       ["2025-11-01", 60],
       ["2026-03-01", 120],
-      ["2026-07-08", 144]
+      ["2026-07-09", 144]
     ]
   },
   {
@@ -473,7 +484,7 @@ const competitorRepos = [
     color: "#7c6bd8",
     points: [
       ["2026-02-09", 0],
-      ["2026-07-08", 40]
+      ["2026-07-09", 40]
     ]
   }
 ];
@@ -769,8 +780,8 @@ const phases = [
     id: "july",
     label: "7 月",
     start: "2026-07-01",
-    end: "2026-07-08",
-    note: "7/1-07/08 为当前滚动月，数据随每日更新继续补齐。"
+    end: "2026-07-09",
+    note: "7/1-07/09 为当前滚动月，数据随每日更新继续补齐。"
   }
 ];
 
@@ -834,11 +845,11 @@ const phaseRegionStats = [
   {
     phaseId: "june",
     status: "complete",
-    totalStars: 1318,
+    totalStars: 1317,
     known: 1058,
     china: 282,
     overseas: 776,
-    unknown: 260,
+    unknown: 259,
     note: "06/01-06/30 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Shanghai 25","Hong Kong 24","China 23","Beijing 22","Taiwan 15","Shanghai, China 13","Beijing, China 12","Shenzhen 9","Guangzhou 7","Hangzhou, China 7"],
     topOverseasLocations: ["United States 143","Japan 71","Singapore 36","South Korea 29","India 23","United Kingdom 22","Australia 20","Germany 11","Canada 10","France 10"]
@@ -846,14 +857,14 @@ const phaseRegionStats = [
   {
     phaseId: "july",
     status: "complete",
-    totalStars: 384,
-    known: 310,
-    china: 81,
-    overseas: 229,
-    unknown: 74,
-    note: "07/01-07/08 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["China 9","Shanghai 9","Beijing 8","Taiwan 5","Guangzhou 3","Shenzhen 3","Beijing, China 2","Hong Kong 2","Nanjing 2","Shanghai, China 2"],
-    topOverseasLocations: ["United States 46","Japan 28","Singapore 7","Australia 6","India 6","Canada 5","France 4","Malaysia 4","Thailand 4","Earth 3"]
+    totalStars: 431,
+    known: 347,
+    china: 90,
+    overseas: 257,
+    unknown: 84,
+    note: "07/01-07/09 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    topChinaLocations: ["Shanghai 10","Beijing 9","China 9","Taiwan 5","Guangzhou 3","Hong Kong 3","Shenzhen 3","Beijing, China 2","Nanjing 2","Shanghai, China 2"],
+    topOverseasLocations: ["United States 54","Japan 31","Singapore 8","Australia 6","Canada 6","France 6","India 6","Malaysia 4","Thailand 4","Earth 3"]
   }
 ];
 
