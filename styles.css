@@ -488,7 +488,7 @@ svg {
 }
 
 .traffic-view-axis {
-  fill: #e11d48;
+  fill: #e65d5d;
 }
 
 .traffic-details {
@@ -1319,6 +1319,651 @@ td:nth-child(3) {
   }
 }
 
+/* ------------------------------------------------------------------
+   UI Refresh 2026-07-10
+   目标：仅重构视觉风格，不改变任何业务数据、图表结构、tooltip、外链与交互逻辑。
+   风格基准：飞书多维表格式的浅灰白基底、轻量边框、柔和色彩和规整留白。
+------------------------------------------------------------------- */
+
+/* 1. 全局视觉系统：统一字体、色板、圆角、阴影、边框和页面基底 */
+:root {
+  --bg: #f7f9fc;
+  --panel: rgba(255, 255, 255, 0.94);
+  --ink: #1f2733;
+  --muted: #667085;
+  --line: #e6ebf2;
+  --soft: #f1f5f9;
+  --blue: #4f8cff;
+  --green: #2fb67c;
+  --red: #e65d5d;
+  --accent: #f5b85b;
+  --accent-strong: #e69a35;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 8px 28px rgba(31, 39, 51, 0.06);
+  --shadow-hover: 0 12px 34px rgba(31, 39, 51, 0.09);
+  --font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  min-width: 1180px;
+  background:
+    linear-gradient(180deg, #fbfcff 0%, #f7f9fc 340px, #f7f9fc 100%);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 14px;
+  letter-spacing: 0;
+}
+
+/* 2. 页面骨架：使用居中的 12 列栅格节奏，拉开模块层级和留白 */
+.page-header,
+main {
+  width: min(1480px, calc(100vw - 64px));
+  margin: 0 auto;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.page-header {
+  align-items: flex-start;
+  padding-top: 34px;
+  padding-bottom: 22px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 20px;
+  padding-bottom: 56px;
+}
+
+main > section,
+main > details {
+  grid-column: 1 / -1;
+}
+
+.summary-grid,
+.chart-panel,
+.two-col,
+.panel {
+  margin-bottom: 0;
+}
+
+.two-col {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.two-col > .panel:first-child {
+  grid-column: span 7;
+}
+
+.two-col > .panel:last-child {
+  grid-column: span 5;
+}
+
+/* 3. 头部与筛选/外链区：轻按钮、弱边框、无厚重装饰 */
+.eyebrow {
+  color: #4f8cff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+h1 {
+  max-width: 780px;
+  color: #182230;
+  font-size: 36px;
+  font-weight: 760;
+  line-height: 1.16;
+}
+
+h2 {
+  color: #1f2733;
+  font-size: 18px;
+  font-weight: 720;
+}
+
+.subhead,
+.panel-heading p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.source-links a,
+.inline-source,
+.icon-button,
+.traffic-details summary,
+.overlap-archive summary,
+.overlap-scroll-actions button {
+  border-color: var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: none;
+  color: #334155;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.source-links a:hover,
+.inline-source:hover,
+.icon-button:hover,
+.traffic-details summary:hover,
+.overlap-archive summary:hover,
+.overlap-scroll-actions button:hover {
+  border-color: #cbd7e6;
+  background: #f8fbff;
+  color: #2f6fed;
+}
+
+.live-status {
+  border-color: #cdeedb;
+  border-radius: var(--radius-sm);
+  background: #f0fbf5;
+  box-shadow: none;
+  color: #247a55;
+}
+
+.live-status.is-stale {
+  border-color: #fde3bb;
+  background: #fff8ed;
+  color: #b66b1a;
+}
+
+/* 4. 卡片与模块容器：统一圆角、淡边框、柔和阴影，移除厚重层级 */
+.panel,
+.metric,
+.phase-card,
+.region-card,
+.source-card,
+.competitor-chip,
+.overlap-insights article,
+.overlap-table-intro {
+  border-color: var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.panel {
+  overflow: hidden;
+}
+
+.panel-heading {
+  align-items: flex-start;
+  padding: 22px 24px 14px;
+}
+
+.panel-heading.compact {
+  padding-bottom: 4px;
+}
+
+/* 5. KPI 卡片：主数字放大、说明弱化，使用轻微 hover 反馈 */
+.summary-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.metric {
+  min-height: 126px;
+  padding: 18px 18px 16px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.metric:hover {
+  transform: translateY(-1px);
+  border-color: #d5deea;
+  box-shadow: var(--shadow-hover);
+}
+
+.metric span {
+  color: #738096;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.metric strong {
+  margin-top: 9px;
+  color: #101828;
+  font-size: 34px;
+  font-weight: 760;
+  letter-spacing: 0;
+}
+
+.metric p {
+  color: #7a8699;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+/* 6. 图表轻量化：弱化坐标轴/网格，保留现有点、柱、tooltip 交互 */
+.chart-wrap,
+.mini-chart,
+.traffic-chart {
+  padding: 4px 22px 22px;
+}
+
+svg {
+  overflow: visible;
+}
+
+.grid-line {
+  stroke: #edf1f6;
+  stroke-dasharray: none;
+}
+
+.axis text,
+.chart-label,
+.phase-label,
+.axis-title {
+  fill: #7a8699;
+  font-weight: 600;
+}
+
+.phase-band {
+  fill: #f6f8fb;
+}
+
+.bar {
+  fill: var(--accent);
+  opacity: 1;
+}
+
+.bar.muted {
+  fill: #a7d8b6;
+}
+
+.bar.hot {
+  fill: #f97316;
+}
+
+.bar.weekend {
+  fill: #8b5cf6;
+}
+
+.hover-zone:hover + .bar,
+.bar:hover {
+  fill: var(--accent-strong);
+  opacity: 1;
+}
+
+.cum-line,
+.visitor-line,
+.star-compare-line,
+.clone-line,
+.cloner-line,
+.competitor-line,
+.traffic-line,
+.traffic-total-line {
+  stroke-width: 2.4;
+  filter: none;
+}
+
+.competitor-line {
+  stroke-width: 2.8;
+}
+
+.competitor-point,
+.visitor-point,
+.star-point,
+.clone-point,
+.cloner-point,
+.traffic-point {
+  stroke: #ffffff;
+  stroke-width: 1.6;
+}
+
+.competitor-point:hover,
+.traffic-point:hover {
+  stroke: #475569;
+  stroke-width: 1.8;
+}
+
+.chart-tooltip {
+  border-color: #d9e2ee;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 10px 30px rgba(31, 39, 51, 0.12);
+}
+
+/* 7. 竞品配色载体：legend 与表格标签使用柔和底色，不占用涨跌红绿 */
+.competitor-legend {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding: 0 24px 16px;
+}
+
+.competitor-chip {
+  grid-template-columns: 12px minmax(0, 1fr) auto;
+  background: #fbfdff;
+  padding: 10px 12px;
+}
+
+.competitor-chip span {
+  width: 12px;
+  height: 12px;
+  box-shadow: inset 0 0 0 1px rgba(31, 39, 51, 0.05);
+}
+
+.competitor-chip strong {
+  color: #263445;
+  font-size: 12px;
+}
+
+.competitor-chip em {
+  color: #1f2733;
+  font-size: 12px;
+}
+
+.competitor-chip small {
+  color: #2f8f66;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* 8. 表格系统：淡表头、简边框、数字对齐，降低斑马与厚线存在感 */
+.table-wrap,
+.overlap-table-wrap,
+.overlap-category-wrap,
+.traffic-matrix-wrap {
+  border-color: var(--line);
+  border-radius: var(--radius);
+  background: #ffffff;
+}
+
+table {
+  color: #273445;
+  font-size: 13px;
+}
+
+thead th {
+  background: #f6f9fc;
+  color: #596779;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+th,
+td {
+  border-bottom-color: #edf1f6;
+  padding: 11px 14px;
+}
+
+tbody tr:hover td {
+  background: #fbfdff;
+}
+
+td:nth-child(2),
+td:nth-child(3),
+td:nth-child(4),
+td:nth-child(5),
+.traffic-matrix-cell strong,
+.traffic-matrix-cell span,
+.traffic-matrix-cell em {
+  font-variant-numeric: tabular-nums;
+}
+
+.traffic-matrix th,
+.traffic-matrix td {
+  border-color: #edf1f6;
+}
+
+.traffic-matrix thead th,
+.traffic-matrix thead th:first-child,
+.traffic-group-row th {
+  background: #f4f8fd;
+  color: #4f647d;
+}
+
+.traffic-source-name,
+.traffic-matrix-cell {
+  background: #ffffff;
+}
+
+/* 9. 阶段、来源与地区卡片：压低装饰感，保持信息密度 */
+.phase-list,
+.source-stack {
+  gap: 10px;
+  padding: 16px 24px 24px;
+}
+
+.phase-card {
+  border-left: 3px solid #91b9ff;
+  background: #fbfdff;
+  padding: 13px 15px;
+}
+
+.phase-card strong,
+.region-card strong {
+  color: #273445;
+  font-size: 14px;
+}
+
+.phase-card p,
+.source-card span,
+.region-meta {
+  color: #6f7d90;
+  font-size: 12px;
+}
+
+.source-card {
+  background: #fbfdff;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.source-card:hover {
+  border-color: #cbd7e6;
+  background: #f8fbff;
+}
+
+.region-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.region-card {
+  background: #fbfdff;
+}
+
+.region-bar span:first-child {
+  background: #ef7c72;
+}
+
+.region-bar span:nth-child(2) {
+  background: #4f8cff;
+}
+
+.region-bar span:last-child {
+  background: #c8d4e2;
+}
+
+/* 10. 日历：飞书表格式轻网格，保留所有 action 外链和 tooltip */
+.action-calendar {
+  padding: 0 24px 24px;
+}
+
+.calendar-weekdays {
+  border-color: #e5ebf3;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: #f6f9fc;
+}
+
+.calendar-grid {
+  border-color: #e5ebf3;
+}
+
+.calendar-cell {
+  min-height: 128px;
+  border-color: #edf1f6;
+  background: #ffffff;
+  padding: 10px;
+}
+
+.calendar-cell.is-empty {
+  background: #f8fafc;
+}
+
+.calendar-cell.is-weekend {
+  background: #fbf9ff;
+}
+
+.calendar-date strong {
+  color: #263445;
+  font-size: 17px;
+  font-weight: 750;
+}
+
+.calendar-date span,
+.calendar-metrics em {
+  color: #7a8699;
+}
+
+.calendar-action {
+  border-color: #e7edf5;
+  border-radius: 7px;
+  box-shadow: none;
+  color: #334155;
+  font-weight: 650;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.calendar-action:hover {
+  border-color: #cad7e8;
+  background: #f8fbff;
+  color: #2f6fed;
+  text-decoration: none;
+}
+
+.calendar-action.channel-reddit {
+  border-color: #f8d9c2;
+  background: #fff6f0;
+}
+
+.calendar-action.channel-linkedin {
+  border-color: #d5e5ff;
+  background: #f3f8ff;
+}
+
+.calendar-action.channel-wechat {
+  border-color: #d3efd9;
+  background: #f4fbf5;
+}
+
+.calendar-action.channel-xhs {
+  border-color: #f7d1d1;
+  background: #fff5f5;
+}
+
+.calendar-action.channel-offline {
+  border-color: #e2dcfb;
+  background: #f8f6ff;
+}
+
+.calendar-action.channel-devsite {
+  border-color: #ccefeb;
+  background: #f3fbfa;
+}
+
+/* 11. 共同关注模块：轻标签、通透信息块、长文表格可读性优化 */
+.overlap-meta span,
+.tag,
+.relation-pill {
+  border-color: #e5ebf3;
+  background: #f6f9fc;
+  color: #64748b;
+  font-weight: 650;
+}
+
+.overlap-insights article,
+.overlap-table-intro {
+  background: #fbfdff;
+}
+
+.overlap-insights strong {
+  color: #243244;
+}
+
+.relation-pill.downstream {
+  background: #eaf4ff;
+  color: #356b9f;
+}
+
+.relation-pill.complement {
+  background: #ecf9f1;
+  color: #2f7a55;
+}
+
+.relation-pill.competitor {
+  background: #fff0ee;
+  color: #a4493f;
+}
+
+.relation-pill.adjacent {
+  background: #fff6df;
+  color: #90702c;
+}
+
+.relation-pill.weak {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.overlap-table {
+  min-width: 1420px;
+}
+
+.overlap-table th:nth-child(1),
+.overlap-table td:nth-child(1) {
+  width: 170px;
+  min-width: 170px;
+  max-width: 170px;
+}
+
+.overlap-table th:nth-child(7),
+.overlap-table td:nth-child(7) {
+  width: 360px;
+  min-width: 360px;
+}
+
+.overlap-table th:nth-child(8),
+.overlap-table td:nth-child(8) {
+  width: 460px;
+  min-width: 460px;
+}
+
+.overlap-table a,
+.action-link {
+  color: #3f7ee8;
+}
+
+/* 12. 响应式：保留同一信息层级，在窄屏切换单列 */
+@media (max-width: 1180px) {
+  body {
+    min-width: 0;
+  }
+
+  .page-header,
+  main {
+    width: min(100% - 32px, 980px);
+  }
+
+  .summary-grid,
+  .competitor-legend,
+  .region-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .two-col > .panel:first-child,
+  .two-col > .panel:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
 @media (max-width: 640px) {
   .page-header,
   main {
@@ -1338,4 +1983,165 @@ td:nth-child(3) {
   td {
     padding: 10px;
   }
+}
+
+/* Chart color tune: keep competitor comparison soft, and make traffic analysis less alert-like. */
+.traffic-bar {
+  opacity: 0.84;
+}
+
+.traffic-bar:hover {
+  opacity: 1;
+}
+
+.traffic-line.total-uv {
+  stroke: #0f766e;
+  stroke-width: 2.8;
+}
+
+.traffic-line.total-views {
+  stroke: #e65d5d;
+  stroke-width: 2.6;
+  stroke-dasharray: 8 7;
+  opacity: 0.9;
+}
+
+.traffic-total-line.views {
+  stroke: #e65d5d;
+  opacity: 0.88;
+}
+
+/* Palette card alignment for core analytics modules. */
+:root {
+  --palette-red-soft: #F9B9B6;
+  --palette-orange-soft: #FFC98D;
+  --palette-yellow-soft: #FFE283;
+  --palette-lime-soft: #C9E94F;
+  --palette-green-soft: #8CE19B;
+  --palette-teal-soft: #69DCCF;
+  --palette-sky-soft: #8ED0F0;
+  --palette-blue-soft: #B7C8F7;
+  --palette-pink-soft: #F3A7CD;
+  --palette-purple-soft: #D6BCFA;
+  --palette-gray-soft: #D7DADE;
+  --palette-red: #EF4B45;
+  --palette-orange: #F97316;
+  --palette-yellow: #D99A00;
+  --palette-lime: #6B9500;
+  --palette-green: #2BA84A;
+  --palette-teal: #16B8A6;
+  --palette-sky: #1595C8;
+  --palette-blue: #4F7EF3;
+  --palette-pink: #EF5A9D;
+  --palette-purple: #8B5CF6;
+  --palette-gray: #5B6472;
+}
+
+.legend-dot.daily {
+  background: var(--accent);
+}
+
+.legend-dot.cumulative {
+  background: var(--blue);
+}
+
+.legend-dot.action {
+  background: var(--red);
+}
+
+.legend-dot.visitors {
+  background: var(--palette-teal);
+}
+
+.legend-dot.clones {
+  background: var(--palette-orange);
+}
+
+.legend-dot.cloners {
+  background: var(--palette-purple);
+}
+
+#mainChart .bar,
+#combinedChart .bar {
+  fill: var(--accent);
+  opacity: 1;
+}
+
+#mainChart .bar.hot,
+#combinedChart .bar.hot {
+  fill: #f97316;
+  opacity: 1;
+}
+
+#mainChart .bar.weekend,
+#combinedChart .bar.weekend {
+  fill: #8b5cf6;
+  opacity: 1;
+}
+
+#mainChart .hover-zone:hover + .bar,
+#mainChart .bar:hover,
+#combinedChart .hover-zone:hover + .bar,
+#combinedChart .bar:hover {
+  fill: var(--accent-strong);
+  opacity: 1;
+}
+
+.cum-line {
+  stroke: var(--blue);
+}
+
+.visitor-line {
+  stroke: var(--palette-teal);
+}
+
+.star-compare-line {
+  stroke: var(--palette-sky);
+}
+
+.clone-line {
+  stroke: var(--palette-orange);
+}
+
+.cloner-line {
+  stroke: var(--palette-purple);
+}
+
+.region-bar span:first-child {
+  background: var(--palette-red);
+  opacity: 0.82;
+}
+
+.region-bar span:nth-child(2) {
+  background: var(--palette-blue);
+  opacity: 0.82;
+}
+
+.region-bar span:last-child {
+  background: var(--palette-gray-soft);
+}
+
+.traffic-bar {
+  opacity: 0.82;
+}
+
+.traffic-total-line {
+  stroke: var(--palette-teal);
+  stroke-width: 2.8;
+}
+
+.traffic-total-line.views {
+  stroke: var(--palette-pink);
+  stroke-width: 2.6;
+  stroke-dasharray: 8 7;
+  opacity: 0.86;
+}
+
+.traffic-point.total-uv {
+  fill: var(--palette-teal);
+}
+
+.traffic-point.total-views,
+.traffic-view-axis {
+  fill: var(--palette-pink);
 }

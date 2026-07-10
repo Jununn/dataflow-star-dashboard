@@ -564,7 +564,11 @@ const actions = [
   ["2026-06-26", "Reddit", "rag-oss", "https://www.reddit.com/r/Rag/comments/1ug4kzo/rag_knowledge_bases_are_creating_more_data/"],
   ["2026-06-30", "LinkedIn", "dataflow-oss", "https://www.linkedin.com/feed/update/urn:li:share:7477684269692129280/"],
   ["2026-07-03", "线下活动", "dataflow-harness", "https://agenticaicon.zhidx.com/2026/"],
-  ["2026-07-03", "Reddit", "qa类数据准备", "https://www.reddit.com/r/Rag/comments/1um8a3i/improving_rag_when_ocr_is_good_but_not_enough/"]
+  ["2026-07-03", "Reddit", "qa类数据准备", "https://www.reddit.com/r/Rag/comments/1um8a3i/improving_rag_when_ocr_is_good_but_not_enough/"],
+  ["2026-07-06", "LinkedIn", "dataflow-oss", "https://www.linkedin.com/feed/update/urn:li:share:7479855093358661632/"],
+  ["2026-07-10", "GitHub", "pr：awesome-opensource-ai", "https://github.com/alvinreal/awesome-opensource-ai/pull/579"],
+  ["2026-07-10", "GitHub", "pr: awesome-data-centric-ai", "https://github.com/Data-Centric-AI-Community/awesome-data-centric-ai/pull/21"],
+  ["2026-07-10", "GitHub", "pr: awesome-local-llm", "https://github.com/rafska/awesome-local-llm/pull/138"]
 ].map(([date, channel, title, url]) => ({ date, channel, title, url }));
 
 const trafficRows = [
