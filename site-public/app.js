@@ -98,7 +98,7 @@ const dailyCounts = [
   ["2026-06-30", 41], ["2026-07-01", 51], ["2026-07-02", 61], ["2026-07-03", 49],
   ["2026-07-04", 47], ["2026-07-05", 54], ["2026-07-06", 46], ["2026-07-07", 46],
   ["2026-07-08", 62], ["2026-07-09", 63], ["2026-07-10", 51], ["2026-07-11", 30],
-  ["2026-07-12", 34], ["2026-07-13", 9]
+  ["2026-07-12", 34], ["2026-07-13", 17]
 ];
 
 let competitorSnapshotDate = "2026-07-13";
@@ -382,8 +382,8 @@ const competitorSnapshots = {
   },
   "2026-07-13": {
     "datajuicer/data-juicer": 6704,
-    "Eventual-Inc/Daft": 5621,
-    "OpenDCAI/DataFlow": 6301,
+    "Eventual-Inc/Daft": 5623,
+    "OpenDCAI/DataFlow": 6309,
     "huggingface/datatrove": 3154,
     "NVIDIA-NeMo/DataDesigner": 2091,
     "NVIDIA-NeMo/Curator": 1659,
@@ -397,7 +397,7 @@ const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
     total: 6704,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 2,
     color: "#f2c94c",
     points: [
@@ -416,9 +416,9 @@ const competitorRepos = [
   },
   {
     name: "Eventual-Inc/Daft",
-    total: 5621,
-    yesterday: 0,
-    twoDayChange: 1,
+    total: 5623,
+    yesterday: 2,
+    twoDayChange: 3,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -434,14 +434,14 @@ const competitorRepos = [
       ["2025-10-01", 4400],
       ["2026-01-01", 4900],
       ["2026-04-01", 5350],
-      ["2026-07-13", 5621]
+      ["2026-07-13", 5623]
     ]
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 6301,
-    yesterday: 23,
-    twoDayChange: 56,
+    total: 6309,
+    yesterday: 8,
+    twoDayChange: 64,
     color: "#2d9cdb",
     points: null
   },
@@ -468,7 +468,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/DataDesigner",
     total: 2091,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 3,
     color: "#e94b35",
     points: [
@@ -637,7 +637,15 @@ const trafficRows = [
   ["2026-06-28", 125, 48, 44, 33],
   ["2026-06-29", 179, 89, 32, 27],
   ["2026-06-30", 145, 73, 24, 19],
-  ["2026-07-01", 166, 103, 47, 44]
+  ["2026-07-01", 166, 103, 47, 44],
+  ["2026-07-02", 168, 106, 37, 35],
+  ["2026-07-03", 202, 106, 39, 33],
+  ["2026-07-04", 111, 55, 47, 38],
+  ["2026-07-05", 119, 48, 57, 43],
+  ["2026-07-06", 214, 89, 37, 31],
+  ["2026-07-07", 133, 86, 23, 21],
+  ["2026-07-08", 134, 84, 36, 18],
+  ["2026-07-09", 205, 79, 27, 27]
 ].map(([date, views, visitors, clones, cloners]) => ({ date, views, visitors, clones, cloners }));
 
 const trafficSourceSnapshots = [
@@ -775,6 +783,33 @@ const trafficSourceSnapshots = [
       ["/stargazers", 22, 5],
       ["/blob/main/awesome_dataflow.md", 20, 18]
     ]
+  },
+  {
+    date: "2026-07-10",
+    referrers: [
+      ["github.com", 523, 201],
+      ["Google", 360, 186],
+      ["Bing", 99, 45],
+      ["zwt233.github.io", 36, 18],
+      ["huggingface.co", 26, 16],
+      ["reddit.com", 26, 15],
+      ["opendcai.github.io", 21, 10],
+      ["wcny4qa9krto.feishu.cn", 15, 5],
+      ["linkedin.com", 9, 9],
+      ["theresanaiforthat.com", 8, 8]
+    ],
+    content: [
+      ["Overview", 1105, 650],
+      ["/blob/main/README-zh.md", 356, 199],
+      ["/tree/main/dataflow", 65, 41],
+      ["/tree/main", 46, 31],
+      ["/issues", 46, 27],
+      ["/pulls", 28, 12],
+      ["/discussions", 25, 9],
+      ["/tree/main/dataflow/operators", 24, 16],
+      ["/blob/main/awesome_dataflow.md", 20, 18],
+      ["/blob/main/README.md", 16, 5]
+    ]
   }
 ].map((snapshot) => ({
   ...snapshot,
@@ -906,14 +941,14 @@ const phaseRegionStats = [
   {
     phaseId: "july",
     status: "complete",
-    totalStars: 603,
-    known: 484,
+    totalStars: 611,
+    known: 490,
     china: 115,
-    overseas: 369,
-    unknown: 119,
+    overseas: 375,
+    unknown: 121,
     note: "07/01-07/13 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Shanghai 19","China 10","Beijing 9","Taiwan 7","Shenzhen 5","Guangzhou 3","Hong Kong 3","Shenzhen, China 3","Taipei 3","Beijing, China 2"],
-    topOverseasLocations: ["United States 81","Japan 42","Singapore 12","France 9","Canada 8","India 8","Thailand 8","Australia 7","South Korea 6","United Kingdom 5"]
+    topOverseasLocations: ["United States 82","Japan 42","Singapore 12","France 10","India 9","Canada 8","Thailand 8","Australia 7","South Korea 6","Germany 5"]
   }
 ];
 
@@ -943,6 +978,7 @@ const historicalData = historicalDailyCounts.map(([date, stars], index) => {
 let data = [];
 let combinedData = [];
 let calendarMonth = dailyCounts.at(-1)[0].slice(0, 7);
+let combinedYearIndex = -1;
 
 function rebuildDerivedData() {
   data = dailyCounts.map(([date, stars], index) => {
@@ -962,6 +998,15 @@ function rebuildDerivedData() {
 }
 
 rebuildDerivedData();
+
+function getCombinedYearOptions() {
+  const years = [...new Set(combinedData.map((item) => item.date.slice(0, 4)))].sort();
+  return years.map((year) => ({
+    year,
+    label: `${year} 年`,
+    data: combinedData.filter((item) => item.date.startsWith(year))
+  })).filter((item) => item.data.length);
+}
 
 function formatNumber(value) {
   return new Intl.NumberFormat("en-US").format(value);
@@ -1031,7 +1076,27 @@ function renderMainChart() {
 }
 
 function renderCombinedChart() {
-  renderTrendChart("combinedChart", "combinedTooltip", combinedData, { height: 500, hotThreshold: 50, maxStarsFloor: 130 });
+  const windows = getCombinedYearOptions();
+  if (!windows.length) return;
+  if (combinedYearIndex < 0) combinedYearIndex = windows.length - 1;
+  combinedYearIndex = Math.min(Math.max(combinedYearIndex, 0), windows.length - 1);
+  const current = windows[combinedYearIndex];
+  const slider = document.getElementById("combinedYearSlider");
+  const label = document.getElementById("combinedYearLabel");
+  const prev = document.getElementById("combinedPrev");
+  const next = document.getElementById("combinedNext");
+  if (slider) {
+    slider.min = "0";
+    slider.max = String(windows.length - 1);
+    slider.value = String(combinedYearIndex);
+    slider.disabled = windows.length <= 1;
+  }
+  if (label) {
+    label.textContent = `${current.label}（${current.data[0].date.slice(5)}-${current.data.at(-1).date.slice(5)}）`;
+  }
+  if (prev) prev.disabled = combinedYearIndex <= 0;
+  if (next) next.disabled = combinedYearIndex >= windows.length - 1;
+  renderTrendChart("combinedChart", "combinedTooltip", current.data, { height: 500, hotThreshold: 50, maxStarsFloor: 130 });
 }
 
 function renderVisitorStarChart() {
@@ -1641,6 +1706,21 @@ function initCalendar() {
   });
 }
 
+function initCombinedWindowControls() {
+  document.getElementById("combinedPrev")?.addEventListener("click", () => {
+    combinedYearIndex -= 1;
+    renderCombinedChart();
+  });
+  document.getElementById("combinedNext")?.addEventListener("click", () => {
+    combinedYearIndex += 1;
+    renderCombinedChart();
+  });
+  document.getElementById("combinedYearSlider")?.addEventListener("input", (event) => {
+    combinedYearIndex = Number(event.target.value);
+    renderCombinedChart();
+  });
+}
+
 function renderAll() {
   rebuildDerivedData();
   renderSummary();
@@ -1761,5 +1841,6 @@ async function refreshLiveData() {
 }
 
 initCalendar();
+initCombinedWindowControls();
 renderAll();
 refreshLiveData();

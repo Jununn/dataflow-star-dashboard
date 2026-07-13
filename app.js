@@ -98,7 +98,7 @@ const dailyCounts = [
   ["2026-06-30", 41], ["2026-07-01", 51], ["2026-07-02", 61], ["2026-07-03", 49],
   ["2026-07-04", 47], ["2026-07-05", 54], ["2026-07-06", 46], ["2026-07-07", 46],
   ["2026-07-08", 62], ["2026-07-09", 63], ["2026-07-10", 51], ["2026-07-11", 30],
-  ["2026-07-12", 34], ["2026-07-13", 9]
+  ["2026-07-12", 34], ["2026-07-13", 17]
 ];
 
 let competitorSnapshotDate = "2026-07-13";
@@ -382,8 +382,8 @@ const competitorSnapshots = {
   },
   "2026-07-13": {
     "datajuicer/data-juicer": 6704,
-    "Eventual-Inc/Daft": 5621,
-    "OpenDCAI/DataFlow": 6301,
+    "Eventual-Inc/Daft": 5623,
+    "OpenDCAI/DataFlow": 6309,
     "huggingface/datatrove": 3154,
     "NVIDIA-NeMo/DataDesigner": 2091,
     "NVIDIA-NeMo/Curator": 1659,
@@ -397,7 +397,7 @@ const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
     total: 6704,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 2,
     color: "#f2c94c",
     points: [
@@ -416,9 +416,9 @@ const competitorRepos = [
   },
   {
     name: "Eventual-Inc/Daft",
-    total: 5621,
-    yesterday: 0,
-    twoDayChange: 1,
+    total: 5623,
+    yesterday: 2,
+    twoDayChange: 3,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -434,14 +434,14 @@ const competitorRepos = [
       ["2025-10-01", 4400],
       ["2026-01-01", 4900],
       ["2026-04-01", 5350],
-      ["2026-07-13", 5621]
+      ["2026-07-13", 5623]
     ]
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 6301,
-    yesterday: 23,
-    twoDayChange: 56,
+    total: 6309,
+    yesterday: 8,
+    twoDayChange: 64,
     color: "#2d9cdb",
     points: null
   },
@@ -468,7 +468,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/DataDesigner",
     total: 2091,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 3,
     color: "#e94b35",
     points: [
@@ -941,14 +941,14 @@ const phaseRegionStats = [
   {
     phaseId: "july",
     status: "complete",
-    totalStars: 603,
-    known: 484,
+    totalStars: 611,
+    known: 490,
     china: 115,
-    overseas: 369,
-    unknown: 119,
+    overseas: 375,
+    unknown: 121,
     note: "07/01-07/13 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Shanghai 19","China 10","Beijing 9","Taiwan 7","Shenzhen 5","Guangzhou 3","Hong Kong 3","Shenzhen, China 3","Taipei 3","Beijing, China 2"],
-    topOverseasLocations: ["United States 81","Japan 42","Singapore 12","France 9","Canada 8","India 8","Thailand 8","Australia 7","South Korea 6","United Kingdom 5"]
+    topOverseasLocations: ["United States 82","Japan 42","Singapore 12","France 10","India 9","Canada 8","Thailand 8","Australia 7","South Korea 6","Germany 5"]
   }
 ];
 

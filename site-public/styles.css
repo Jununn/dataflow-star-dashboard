@@ -213,6 +213,32 @@ main {
   text-align: center;
 }
 
+.chart-window-controls {
+  display: grid;
+  grid-template-columns: auto minmax(180px, 1fr) minmax(168px, auto) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 0 24px 12px;
+}
+
+.chart-window-label {
+  color: var(--ink);
+  font-size: 14px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.year-slider {
+  width: 100%;
+  accent-color: var(--blue);
+  cursor: pointer;
+}
+
+.year-slider:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
 .legend-dot {
   display: inline-block;
   width: 10px;
