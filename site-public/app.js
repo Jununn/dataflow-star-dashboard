@@ -98,7 +98,7 @@ const dailyCounts = [
   ["2026-06-30", 41], ["2026-07-01", 51], ["2026-07-02", 61], ["2026-07-03", 49],
   ["2026-07-04", 47], ["2026-07-05", 54], ["2026-07-06", 46], ["2026-07-07", 46],
   ["2026-07-08", 62], ["2026-07-09", 63], ["2026-07-10", 51], ["2026-07-11", 30],
-  ["2026-07-12", 34], ["2026-07-13", 17]
+  ["2026-07-12", 34], ["2026-07-13", 29]
 ];
 
 let competitorSnapshotDate = "2026-07-13";
@@ -381,24 +381,24 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 40
   },
   "2026-07-13": {
-    "datajuicer/data-juicer": 6704,
-    "Eventual-Inc/Daft": 5623,
-    "OpenDCAI/DataFlow": 6309,
-    "huggingface/datatrove": 3154,
+    "datajuicer/data-juicer": 6708,
+    "Eventual-Inc/Daft": 5624,
+    "OpenDCAI/DataFlow": 6321,
+    "huggingface/datatrove": 3155,
     "NVIDIA-NeMo/DataDesigner": 2091,
-    "NVIDIA-NeMo/Curator": 1659,
-    "tinyfish-io/bigset": 1661,
+    "NVIDIA-NeMo/Curator": 1660,
+    "tinyfish-io/bigset": 1662,
     "OpenDataArena/OpenDataArena-Tool": 144,
-    "InternScience/SciDataCopilot": 40
+    "InternScience/SciDataCopilot": 41
   }
 };
 
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 6704,
-    yesterday: 0,
-    twoDayChange: 2,
+    total: 6708,
+    yesterday: 4,
+    twoDayChange: 6,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -411,14 +411,14 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-07-13", 6704]
+      ["2026-07-13", 6708]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
-    total: 5623,
-    yesterday: 0,
-    twoDayChange: 3,
+    total: 5624,
+    yesterday: 1,
+    twoDayChange: 4,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -434,22 +434,22 @@ const competitorRepos = [
       ["2025-10-01", 4400],
       ["2026-01-01", 4900],
       ["2026-04-01", 5350],
-      ["2026-07-13", 5623]
+      ["2026-07-13", 5624]
     ]
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 6309,
-    yesterday: 0,
-    twoDayChange: 64,
+    total: 6321,
+    yesterday: 12,
+    twoDayChange: 76,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
-    total: 3154,
-    yesterday: 0,
-    twoDayChange: 1,
+    total: 3155,
+    yesterday: 1,
+    twoDayChange: 2,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -462,7 +462,7 @@ const competitorRepos = [
       ["2025-06-01", 2400],
       ["2025-10-01", 2650],
       ["2026-03-01", 2900],
-      ["2026-07-13", 3154]
+      ["2026-07-13", 3155]
     ]
   },
   {
@@ -481,9 +481,9 @@ const competitorRepos = [
   },
   {
     name: "NVIDIA-NeMo/Curator",
-    total: 1659,
-    yesterday: 0,
-    twoDayChange: 3,
+    total: 1660,
+    yesterday: 1,
+    twoDayChange: 4,
     color: "#e879b4",
     points: [
       ["2024-03-14", 0],
@@ -494,18 +494,18 @@ const competitorRepos = [
       ["2025-07-01", 900],
       ["2025-12-01", 1200],
       ["2026-04-01", 1450],
-      ["2026-07-13", 1659]
+      ["2026-07-13", 1660]
     ]
   },
   {
     name: "tinyfish-io/bigset",
-    total: 1661,
-    yesterday: 0,
-    twoDayChange: 1,
+    total: 1662,
+    yesterday: 1,
+    twoDayChange: 2,
     color: "#14b8a6",
     points: [
       ["2026-05-15", 0],
-      ["2026-07-13", 1661]
+      ["2026-07-13", 1662]
     ]
   },
   {
@@ -523,13 +523,13 @@ const competitorRepos = [
   },
   {
     name: "InternScience/SciDataCopilot",
-    total: 40,
-    yesterday: 0,
-    twoDayChange: 0,
+    total: 41,
+    yesterday: 1,
+    twoDayChange: 1,
     color: "#7c6bd8",
     points: [
       ["2026-02-09", 0],
-      ["2026-07-13", 40]
+      ["2026-07-13", 41]
     ]
   }
 ];
@@ -941,14 +941,14 @@ const phaseRegionStats = [
   {
     phaseId: "july",
     status: "complete",
-    totalStars: 611,
-    known: 490,
-    china: 115,
-    overseas: 375,
-    unknown: 121,
+    totalStars: 623,
+    known: 501,
+    china: 117,
+    overseas: 384,
+    unknown: 122,
     note: "07/01-07/13 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Shanghai 19","China 10","Beijing 9","Taiwan 7","Shenzhen 5","Guangzhou 3","Hong Kong 3","Shenzhen, China 3","Taipei 3","Beijing, China 2"],
-    topOverseasLocations: ["United States 82","Japan 42","Singapore 12","France 10","India 9","Canada 8","Thailand 8","Australia 7","South Korea 6","Germany 5"]
+    topOverseasLocations: ["United States 84","Japan 43","Singapore 12","France 10","Canada 9","India 9","Thailand 8","Australia 7","South Korea 6","Germany 5"]
   }
 ];
 
@@ -978,7 +978,7 @@ const historicalData = historicalDailyCounts.map(([date, stars], index) => {
 let data = [];
 let combinedData = [];
 let calendarMonth = dailyCounts.at(-1)[0].slice(0, 7);
-let combinedYearIndex = -1;
+let combinedWindowIndex = -1;
 
 function rebuildDerivedData() {
   data = dailyCounts.map(([date, stars], index) => {
@@ -999,13 +999,24 @@ function rebuildDerivedData() {
 
 rebuildDerivedData();
 
-function getCombinedYearOptions() {
-  const years = [...new Set(combinedData.map((item) => item.date.slice(0, 4)))].sort();
-  return years.map((year) => ({
-    year,
-    label: `${year} 年`,
-    data: combinedData.filter((item) => item.date.startsWith(year))
-  })).filter((item) => item.data.length);
+function getCombinedWindowOptions() {
+  const months = [...new Set(combinedData.map((item) => item.date.slice(0, 7)))].sort();
+  return months.map((endMonth) => {
+    const startMonth = addMonths(endMonth, -11);
+    const startDate = `${startMonth}-01`;
+    const endDate = combinedData.at(-1).date.startsWith(endMonth)
+      ? combinedData.at(-1).date
+      : getMonthBounds(endMonth).endDate;
+    const windowData = combinedData.filter((item) => item.date >= startDate && item.date <= endDate);
+    return {
+      startMonth,
+      endMonth,
+      startDate,
+      endDate,
+      label: `${startMonth} - ${endMonth}`,
+      data: windowData
+    };
+  }).filter((item) => item.data.length);
 }
 
 function formatNumber(value) {
@@ -1076,26 +1087,26 @@ function renderMainChart() {
 }
 
 function renderCombinedChart() {
-  const windows = getCombinedYearOptions();
+  const windows = getCombinedWindowOptions();
   if (!windows.length) return;
-  if (combinedYearIndex < 0) combinedYearIndex = windows.length - 1;
-  combinedYearIndex = Math.min(Math.max(combinedYearIndex, 0), windows.length - 1);
-  const current = windows[combinedYearIndex];
-  const slider = document.getElementById("combinedYearSlider");
-  const label = document.getElementById("combinedYearLabel");
+  if (combinedWindowIndex < 0) combinedWindowIndex = windows.length - 1;
+  combinedWindowIndex = Math.min(Math.max(combinedWindowIndex, 0), windows.length - 1);
+  const current = windows[combinedWindowIndex];
+  const slider = document.getElementById("combinedWindowSlider");
+  const label = document.getElementById("combinedWindowLabel");
   const prev = document.getElementById("combinedPrev");
   const next = document.getElementById("combinedNext");
   if (slider) {
     slider.min = "0";
     slider.max = String(windows.length - 1);
-    slider.value = String(combinedYearIndex);
+    slider.value = String(combinedWindowIndex);
     slider.disabled = windows.length <= 1;
   }
   if (label) {
-    label.textContent = `${current.label}（${current.data[0].date.slice(5)}-${current.data.at(-1).date.slice(5)}）`;
+    label.textContent = `${current.label}（${current.startDate.slice(5)} 至 ${current.endDate.slice(5)}）`;
   }
-  if (prev) prev.disabled = combinedYearIndex <= 0;
-  if (next) next.disabled = combinedYearIndex >= windows.length - 1;
+  if (prev) prev.disabled = combinedWindowIndex <= 0;
+  if (next) next.disabled = combinedWindowIndex >= windows.length - 1;
   renderTrendChart("combinedChart", "combinedTooltip", current.data, { height: 500, hotThreshold: 50, maxStarsFloor: 130 });
 }
 
@@ -1708,15 +1719,15 @@ function initCalendar() {
 
 function initCombinedWindowControls() {
   document.getElementById("combinedPrev")?.addEventListener("click", () => {
-    combinedYearIndex -= 1;
+    combinedWindowIndex -= 1;
     renderCombinedChart();
   });
   document.getElementById("combinedNext")?.addEventListener("click", () => {
-    combinedYearIndex += 1;
+    combinedWindowIndex += 1;
     renderCombinedChart();
   });
-  document.getElementById("combinedYearSlider")?.addEventListener("input", (event) => {
-    combinedYearIndex = Number(event.target.value);
+  document.getElementById("combinedWindowSlider")?.addEventListener("input", (event) => {
+    combinedWindowIndex = Number(event.target.value);
     renderCombinedChart();
   });
 }
