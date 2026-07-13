@@ -637,7 +637,15 @@ const trafficRows = [
   ["2026-06-28", 125, 48, 44, 33],
   ["2026-06-29", 179, 89, 32, 27],
   ["2026-06-30", 145, 73, 24, 19],
-  ["2026-07-01", 166, 103, 47, 44]
+  ["2026-07-01", 166, 103, 47, 44],
+  ["2026-07-02", 168, 106, 37, 35],
+  ["2026-07-03", 202, 106, 39, 33],
+  ["2026-07-04", 111, 55, 47, 38],
+  ["2026-07-05", 119, 48, 57, 43],
+  ["2026-07-06", 214, 89, 37, 31],
+  ["2026-07-07", 133, 86, 23, 21],
+  ["2026-07-08", 134, 84, 36, 18],
+  ["2026-07-09", 205, 79, 27, 27]
 ].map(([date, views, visitors, clones, cloners]) => ({ date, views, visitors, clones, cloners }));
 
 const trafficSourceSnapshots = [
@@ -774,6 +782,33 @@ const trafficSourceSnapshots = [
       ["/tree/main/dataflow/operators", 23, 9],
       ["/stargazers", 22, 5],
       ["/blob/main/awesome_dataflow.md", 20, 18]
+    ]
+  },
+  {
+    date: "2026-07-10",
+    referrers: [
+      ["github.com", 523, 201],
+      ["Google", 360, 186],
+      ["Bing", 99, 45],
+      ["zwt233.github.io", 36, 18],
+      ["huggingface.co", 26, 16],
+      ["reddit.com", 26, 15],
+      ["opendcai.github.io", 21, 10],
+      ["wcny4qa9krto.feishu.cn", 15, 5],
+      ["linkedin.com", 9, 9],
+      ["theresanaiforthat.com", 8, 8]
+    ],
+    content: [
+      ["Overview", 1105, 650],
+      ["/blob/main/README-zh.md", 356, 199],
+      ["/tree/main/dataflow", 65, 41],
+      ["/tree/main", 46, 31],
+      ["/issues", 46, 27],
+      ["/pulls", 28, 12],
+      ["/discussions", 25, 9],
+      ["/tree/main/dataflow/operators", 24, 16],
+      ["/blob/main/awesome_dataflow.md", 20, 18],
+      ["/blob/main/README.md", 16, 5]
     ]
   }
 ].map((snapshot) => ({
@@ -943,6 +978,7 @@ const historicalData = historicalDailyCounts.map(([date, stars], index) => {
 let data = [];
 let combinedData = [];
 let calendarMonth = dailyCounts.at(-1)[0].slice(0, 7);
+let combinedYearIndex = -1;
 
 function rebuildDerivedData() {
   data = dailyCounts.map(([date, stars], index) => {
@@ -962,6 +998,15 @@ function rebuildDerivedData() {
 }
 
 rebuildDerivedData();
+
+function getCombinedYearOptions() {
+  const years = [...new Set(combinedData.map((item) => item.date.slice(0, 4)))].sort();
+  return years.map((year) => ({
+    year,
+    label: `${year} 年`,
+    data: combinedData.filter((item) => item.date.startsWith(year))
+  })).filter((item) => item.data.length);
+}
 
 function formatNumber(value) {
   return new Intl.NumberFormat("en-US").format(value);
@@ -1031,7 +1076,27 @@ function renderMainChart() {
 }
 
 function renderCombinedChart() {
-  renderTrendChart("combinedChart", "combinedTooltip", combinedData, { height: 500, hotThreshold: 50, maxStarsFloor: 130 });
+  const windows = getCombinedYearOptions();
+  if (!windows.length) return;
+  if (combinedYearIndex < 0) combinedYearIndex = windows.length - 1;
+  combinedYearIndex = Math.min(Math.max(combinedYearIndex, 0), windows.length - 1);
+  const current = windows[combinedYearIndex];
+  const slider = document.getElementById("combinedYearSlider");
+  const label = document.getElementById("combinedYearLabel");
+  const prev = document.getElementById("combinedPrev");
+  const next = document.getElementById("combinedNext");
+  if (slider) {
+    slider.min = "0";
+    slider.max = String(windows.length - 1);
+    slider.value = String(combinedYearIndex);
+    slider.disabled = windows.length <= 1;
+  }
+  if (label) {
+    label.textContent = `${current.label}（${current.data[0].date.slice(5)}-${current.data.at(-1).date.slice(5)}）`;
+  }
+  if (prev) prev.disabled = combinedYearIndex <= 0;
+  if (next) next.disabled = combinedYearIndex >= windows.length - 1;
+  renderTrendChart("combinedChart", "combinedTooltip", current.data, { height: 500, hotThreshold: 50, maxStarsFloor: 130 });
 }
 
 function renderVisitorStarChart() {
@@ -1641,6 +1706,21 @@ function initCalendar() {
   });
 }
 
+function initCombinedWindowControls() {
+  document.getElementById("combinedPrev")?.addEventListener("click", () => {
+    combinedYearIndex -= 1;
+    renderCombinedChart();
+  });
+  document.getElementById("combinedNext")?.addEventListener("click", () => {
+    combinedYearIndex += 1;
+    renderCombinedChart();
+  });
+  document.getElementById("combinedYearSlider")?.addEventListener("input", (event) => {
+    combinedYearIndex = Number(event.target.value);
+    renderCombinedChart();
+  });
+}
+
 function renderAll() {
   rebuildDerivedData();
   renderSummary();
@@ -1761,5 +1841,6 @@ async function refreshLiveData() {
 }
 
 initCalendar();
+initCombinedWindowControls();
 renderAll();
 refreshLiveData();
