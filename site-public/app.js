@@ -417,7 +417,7 @@ const competitorRepos = [
   {
     name: "Eventual-Inc/Daft",
     total: 5623,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 3,
     color: "#f2994a",
     points: [
@@ -440,7 +440,7 @@ const competitorRepos = [
   {
     name: "OpenDCAI/DataFlow",
     total: 6309,
-    yesterday: 8,
+    yesterday: 0,
     twoDayChange: 64,
     color: "#2d9cdb",
     points: null
