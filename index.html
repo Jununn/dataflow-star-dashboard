@@ -52,11 +52,11 @@
             <span><i class="legend-dot cumulative"></i>累计</span>
           </div>
         </div>
-        <div class="chart-window-controls" aria-label="全周期趋势年份切换">
-          <button id="combinedPrev" type="button" class="icon-button" aria-label="上一年">←</button>
-          <input id="combinedYearSlider" class="year-slider" type="range" min="0" max="0" step="1" value="0" aria-label="选择年份" />
-          <strong id="combinedYearLabel" class="chart-window-label">全年</strong>
-          <button id="combinedNext" type="button" class="icon-button" aria-label="下一年">→</button>
+        <div class="chart-window-controls" aria-label="全周期趋势 12 个月窗口切换">
+          <button id="combinedPrev" type="button" class="icon-button" aria-label="前移一个月">←</button>
+          <input id="combinedWindowSlider" class="year-slider" type="range" min="0" max="0" step="1" value="0" aria-label="选择 12 个月窗口" />
+          <strong id="combinedWindowLabel" class="chart-window-label">近 12 个月</strong>
+          <button id="combinedNext" type="button" class="icon-button" aria-label="后移一个月">→</button>
         </div>
         <div id="combinedChart" class="chart-wrap" aria-label="Combined daily stars and cumulative stars chart"></div>
       </section>

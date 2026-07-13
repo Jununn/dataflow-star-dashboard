@@ -978,7 +978,7 @@ const historicalData = historicalDailyCounts.map(([date, stars], index) => {
 let data = [];
 let combinedData = [];
 let calendarMonth = dailyCounts.at(-1)[0].slice(0, 7);
-let combinedYearIndex = -1;
+let combinedWindowIndex = -1;
 
 function rebuildDerivedData() {
   data = dailyCounts.map(([date, stars], index) => {
@@ -999,13 +999,24 @@ function rebuildDerivedData() {
 
 rebuildDerivedData();
 
-function getCombinedYearOptions() {
-  const years = [...new Set(combinedData.map((item) => item.date.slice(0, 4)))].sort();
-  return years.map((year) => ({
-    year,
-    label: `${year} 年`,
-    data: combinedData.filter((item) => item.date.startsWith(year))
-  })).filter((item) => item.data.length);
+function getCombinedWindowOptions() {
+  const months = [...new Set(combinedData.map((item) => item.date.slice(0, 7)))].sort();
+  return months.map((endMonth) => {
+    const startMonth = addMonths(endMonth, -11);
+    const startDate = `${startMonth}-01`;
+    const endDate = combinedData.at(-1).date.startsWith(endMonth)
+      ? combinedData.at(-1).date
+      : getMonthBounds(endMonth).endDate;
+    const windowData = combinedData.filter((item) => item.date >= startDate && item.date <= endDate);
+    return {
+      startMonth,
+      endMonth,
+      startDate,
+      endDate,
+      label: `${startMonth} - ${endMonth}`,
+      data: windowData
+    };
+  }).filter((item) => item.data.length);
 }
 
 function formatNumber(value) {
@@ -1076,26 +1087,26 @@ function renderMainChart() {
 }
 
 function renderCombinedChart() {
-  const windows = getCombinedYearOptions();
+  const windows = getCombinedWindowOptions();
   if (!windows.length) return;
-  if (combinedYearIndex < 0) combinedYearIndex = windows.length - 1;
-  combinedYearIndex = Math.min(Math.max(combinedYearIndex, 0), windows.length - 1);
-  const current = windows[combinedYearIndex];
-  const slider = document.getElementById("combinedYearSlider");
-  const label = document.getElementById("combinedYearLabel");
+  if (combinedWindowIndex < 0) combinedWindowIndex = windows.length - 1;
+  combinedWindowIndex = Math.min(Math.max(combinedWindowIndex, 0), windows.length - 1);
+  const current = windows[combinedWindowIndex];
+  const slider = document.getElementById("combinedWindowSlider");
+  const label = document.getElementById("combinedWindowLabel");
   const prev = document.getElementById("combinedPrev");
   const next = document.getElementById("combinedNext");
   if (slider) {
     slider.min = "0";
     slider.max = String(windows.length - 1);
-    slider.value = String(combinedYearIndex);
+    slider.value = String(combinedWindowIndex);
     slider.disabled = windows.length <= 1;
   }
   if (label) {
-    label.textContent = `${current.label}（${current.data[0].date.slice(5)}-${current.data.at(-1).date.slice(5)}）`;
+    label.textContent = `${current.label}（${current.startDate.slice(5)} 至 ${current.endDate.slice(5)}）`;
   }
-  if (prev) prev.disabled = combinedYearIndex <= 0;
-  if (next) next.disabled = combinedYearIndex >= windows.length - 1;
+  if (prev) prev.disabled = combinedWindowIndex <= 0;
+  if (next) next.disabled = combinedWindowIndex >= windows.length - 1;
   renderTrendChart("combinedChart", "combinedTooltip", current.data, { height: 500, hotThreshold: 50, maxStarsFloor: 130 });
 }
 
@@ -1708,15 +1719,15 @@ function initCalendar() {
 
 function initCombinedWindowControls() {
   document.getElementById("combinedPrev")?.addEventListener("click", () => {
-    combinedYearIndex -= 1;
+    combinedWindowIndex -= 1;
     renderCombinedChart();
   });
   document.getElementById("combinedNext")?.addEventListener("click", () => {
-    combinedYearIndex += 1;
+    combinedWindowIndex += 1;
     renderCombinedChart();
   });
-  document.getElementById("combinedYearSlider")?.addEventListener("input", (event) => {
-    combinedYearIndex = Number(event.target.value);
+  document.getElementById("combinedWindowSlider")?.addEventListener("input", (event) => {
+    combinedWindowIndex = Number(event.target.value);
     renderCombinedChart();
   });
 }
