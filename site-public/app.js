@@ -98,7 +98,7 @@ const dailyCounts = [
   ["2026-06-30", 41], ["2026-07-01", 51], ["2026-07-02", 61], ["2026-07-03", 49],
   ["2026-07-04", 47], ["2026-07-05", 54], ["2026-07-06", 46], ["2026-07-07", 46],
   ["2026-07-08", 62], ["2026-07-09", 63], ["2026-07-10", 51], ["2026-07-11", 30],
-  ["2026-07-12", 34], ["2026-07-13", 48], ["2026-07-14", 50], ["2026-07-15", 20]
+  ["2026-07-12", 34], ["2026-07-13", 48], ["2026-07-14", 50], ["2026-07-15", 26]
 ];
 
 let competitorSnapshotDate = "2026-07-15";
@@ -405,7 +405,7 @@ const competitorSnapshots = {
   "2026-07-15": {
     "datajuicer/data-juicer": 6720,
     "Eventual-Inc/Daft": 5627,
-    "OpenDCAI/DataFlow": 6409,
+    "OpenDCAI/DataFlow": 6415,
     "huggingface/datatrove": 3157,
     "NVIDIA-NeMo/DataDesigner": 2094,
     "NVIDIA-NeMo/Curator": 1661,
@@ -419,7 +419,7 @@ const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
     total: 6720,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 11,
     color: "#f2c94c",
     points: [
@@ -439,7 +439,7 @@ const competitorRepos = [
   {
     name: "Eventual-Inc/Daft",
     total: 5627,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 3,
     color: "#f2994a",
     points: [
@@ -461,9 +461,9 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 6409,
-    yesterday: 9,
-    twoDayChange: 80,
+    total: 6415,
+    yesterday: 6,
+    twoDayChange: 86,
     color: "#2d9cdb",
     points: null
   },
@@ -490,7 +490,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/DataDesigner",
     total: 2094,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 3,
     color: "#e94b35",
     points: [
@@ -504,7 +504,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/Curator",
     total: 1661,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 2,
     color: "#e879b4",
     points: [
@@ -522,7 +522,7 @@ const competitorRepos = [
   {
     name: "tinyfish-io/bigset",
     total: 1666,
-    yesterday: -1,
+    yesterday: 0,
     twoDayChange: 3,
     color: "#14b8a6",
     points: [
@@ -970,14 +970,14 @@ const phaseRegionStats = [
   {
     phaseId: "july",
     status: "complete",
-    totalStars: 712,
-    known: 562,
-    china: 129,
-    overseas: 433,
+    totalStars: 718,
+    known: 568,
+    china: 132,
+    overseas: 436,
     unknown: 150,
     note: "07/01-07/15 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["Shanghai 22","Beijing 12","China 11","Taiwan 7","Hong Kong 5","Shenzhen 5","Guangzhou 3","Shenzhen, China 3","Taipei 3","Beijing, China 2"],
-    topOverseasLocations: ["United States 89","Japan 53","Singapore 13","France 10","India 10","Canada 9","Australia 8","South Korea 8","Thailand 8","Germany 5"]
+    topChinaLocations: ["Shanghai 22","Beijing 12","China 11","Taiwan 7","Hong Kong 5","Shenzhen 5","Beijing, China 3","Guangzhou 3","Shenzhen, China 3","Taipei 3"],
+    topOverseasLocations: ["United States 89","Japan 54","Singapore 13","France 10","India 10","Canada 9","Australia 8","South Korea 8","Thailand 8","Germany 5"]
   }
 ];
 
