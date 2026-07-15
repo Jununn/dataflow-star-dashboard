@@ -624,7 +624,14 @@ const actions = [
   ["2026-07-06", "LinkedIn", "dataflow-oss", "https://www.linkedin.com/feed/update/urn:li:share:7479855093358661632/"],
   ["2026-07-10", "GitHub", "pr：awesome-opensource-ai", "https://github.com/alvinreal/awesome-opensource-ai/pull/579"],
   ["2026-07-10", "GitHub", "pr: awesome-data-centric-ai", "https://github.com/Data-Centric-AI-Community/awesome-data-centric-ai/pull/21"],
-  ["2026-07-10", "GitHub", "pr: awesome-local-llm", "https://github.com/rafska/awesome-local-llm/pull/138"]
+  ["2026-07-10", "GitHub", "pr: awesome-local-llm", "https://github.com/rafska/awesome-local-llm/pull/138"],
+  ["2026-07-13", "Reddit", "dataflow-agent", "https://www.reddit.com/r/AI_Agents/comments/1uv9q0e/a_practical_recipe_for_building_agent_trajectory/"],
+  ["2026-07-14", "Reddit", "dataflow-agent", "https://www.reddit.com/r/reinforcementlearning/comments/1uvx5yi/a_practical_recipe_for_building_agent_trajectory/"],
+  ["2026-07-14", "LinkedIn", "dataflow-agent", "https://www.linkedin.com/feed/update/urn:li:activity:7482855576415252480/"],
+  ["2026-07-15", "LinkedIn", "dataflow-agent", "https://www.linkedin.com/feed/update/urn:li:activity:7483083605150466048/"],
+  ["2026-07-15", "LinkedIn", "dataflow-agent", "https://www.linkedin.com/feed/update/urn:li:activity:7483084658511929344/"],
+  ["2026-07-15", "Reddit", "dataflow-oss", "https://www.reddit.com/r/Agentic_Marketing/comments/1ux0r0m/better_data_is_what_makes_ai_agents_actually/"],
+  ["2026-07-17", "线下活动", "WAIC", "#"]
 ].map(([date, channel, title, url]) => ({ date, channel, title, url }));
 
 const trafficRows = [
