@@ -654,7 +654,13 @@ const actions = [
   ["2026-07-15", "LinkedIn", "dataflow-agent", "https://www.linkedin.com/feed/update/urn:li:activity:7483083605150466048/"],
   ["2026-07-15", "LinkedIn", "dataflow-agent", "https://www.linkedin.com/feed/update/urn:li:activity:7483084658511929344/"],
   ["2026-07-15", "Reddit", "dataflow-oss", "https://www.reddit.com/r/Agentic_Marketing/comments/1ux0r0m/better_data_is_what_makes_ai_agents_actually/"],
-  ["2026-07-17", "线下活动", "WAIC", "#"]
+  ["2026-07-16", "线下活动", "ppio-waic 开放麦", "#"],
+  ["2026-07-16", "Reddit", "dataflow-rag", "https://www.reddit.com/r/Rag/comments/1uxvbak/why_rag_pipelines_need_provenance/"],
+  ["2026-07-16", "Reddit", "dataflow-qa", "https://www.reddit.com/r/ArtificialNtelligence/comments/1uxvac2/qa_pairs_as_intermediate_data_not_just_final/"],
+  ["2026-07-17", "线下活动", "WAIC", "#"],
+  ["2026-07-18", "线下活动", "WAIC", "#"],
+  ["2026-07-19", "线下活动", "WAIC", "#"],
+  ["2026-07-20", "线下活动", "WAIC", "#"]
 ].map(([date, channel, title, url]) => ({ date, channel, title, url }));
 
 const trafficRows = [
