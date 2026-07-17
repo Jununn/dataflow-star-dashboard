@@ -99,7 +99,7 @@ const dailyCounts = [
   ["2026-07-04", 47], ["2026-07-05", 54], ["2026-07-06", 46], ["2026-07-07", 46],
   ["2026-07-08", 62], ["2026-07-09", 63], ["2026-07-10", 51], ["2026-07-11", 30],
   ["2026-07-12", 34], ["2026-07-13", 48], ["2026-07-14", 50], ["2026-07-15", 38],
-  ["2026-07-16", 46], ["2026-07-17", 2]
+  ["2026-07-16", 46], ["2026-07-17", 7]
 ];
 
 let competitorSnapshotDate = "2026-07-17";
@@ -426,13 +426,13 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 41
   },
   "2026-07-17": {
-    "datajuicer/data-juicer": 6726,
+    "datajuicer/data-juicer": 6727,
     "Eventual-Inc/Daft": 5633,
-    "OpenDCAI/DataFlow": 6474,
-    "huggingface/datatrove": 3203,
-    "NVIDIA-NeMo/DataDesigner": 2101,
+    "OpenDCAI/DataFlow": 6479,
+    "huggingface/datatrove": 3204,
+    "NVIDIA-NeMo/DataDesigner": 2102,
     "NVIDIA-NeMo/Curator": 1665,
-    "tinyfish-io/bigset": 1670,
+    "tinyfish-io/bigset": 1671,
     "OpenDataArena/OpenDataArena-Tool": 144,
     "InternScience/SciDataCopilot": 41
   }
@@ -441,9 +441,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 6726,
-    yesterday: 2,
-    twoDayChange: 6,
+    total: 6727,
+    yesterday: 1,
+    twoDayChange: 7,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -456,13 +456,13 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-07-17", 6726]
+      ["2026-07-17", 6727]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
     total: 5633,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 6,
     color: "#f2994a",
     points: [
@@ -484,17 +484,17 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 6474,
-    yesterday: 17,
-    twoDayChange: 59,
+    total: 6479,
+    yesterday: 5,
+    twoDayChange: 64,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
-    total: 3203,
-    yesterday: 4,
-    twoDayChange: 46,
+    total: 3204,
+    yesterday: 1,
+    twoDayChange: 47,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -507,27 +507,27 @@ const competitorRepos = [
       ["2025-06-01", 2400],
       ["2025-10-01", 2650],
       ["2026-03-01", 2900],
-      ["2026-07-17", 3203]
+      ["2026-07-17", 3204]
     ]
   },
   {
     name: "NVIDIA-NeMo/DataDesigner",
-    total: 2101,
-    yesterday: 3,
-    twoDayChange: 7,
+    total: 2102,
+    yesterday: 1,
+    twoDayChange: 8,
     color: "#e94b35",
     points: [
       ["2025-10-16", 0],
       ["2026-01-01", 500],
       ["2026-03-01", 700],
       ["2026-04-01", 1000],
-      ["2026-07-17", 2101]
+      ["2026-07-17", 2102]
     ]
   },
   {
     name: "NVIDIA-NeMo/Curator",
     total: 1665,
-    yesterday: -1,
+    yesterday: 0,
     twoDayChange: 4,
     color: "#e879b4",
     points: [
@@ -544,13 +544,13 @@ const competitorRepos = [
   },
   {
     name: "tinyfish-io/bigset",
-    total: 1670,
-    yesterday: 0,
-    twoDayChange: 4,
+    total: 1671,
+    yesterday: 1,
+    twoDayChange: 5,
     color: "#14b8a6",
     points: [
       ["2026-05-15", 0],
-      ["2026-07-17", 1670]
+      ["2026-07-17", 1671]
     ]
   },
   {
@@ -999,13 +999,13 @@ const phaseRegionStats = [
   {
     phaseId: "july",
     status: "complete",
-    totalStars: 778,
-    known: 614,
-    china: 142,
-    overseas: 472,
+    totalStars: 783,
+    known: 619,
+    china: 145,
+    overseas: 474,
     unknown: 164,
     note: "07/01-07/17 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["Shanghai 23","Beijing 12","China 11","Taiwan 10","Hong Kong 6","Shenzhen 5","Beijing, China 4","Guangzhou 3","Shenzhen, China 3","Taipei 3"],
+    topChinaLocations: ["Shanghai 23","Beijing 12","China 11","Taiwan 10","Hong Kong 6","Shenzhen 6","Beijing, China 4","Guangzhou 3","Shenzhen, China 3","Taipei 3"],
     topOverseasLocations: ["United States 94","Japan 57","Singapore 18","France 10","India 10","Canada 9","South Korea 9","Australia 8","Thailand 8","United Kingdom 6"]
   }
 ];
