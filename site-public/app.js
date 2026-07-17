@@ -99,7 +99,7 @@ const dailyCounts = [
   ["2026-07-04", 47], ["2026-07-05", 54], ["2026-07-06", 46], ["2026-07-07", 46],
   ["2026-07-08", 62], ["2026-07-09", 63], ["2026-07-10", 51], ["2026-07-11", 30],
   ["2026-07-12", 34], ["2026-07-13", 48], ["2026-07-14", 50], ["2026-07-15", 38],
-  ["2026-07-16", 46], ["2026-07-17", 17]
+  ["2026-07-16", 46], ["2026-07-17", 25]
 ];
 
 let competitorSnapshotDate = "2026-07-17";
@@ -426,12 +426,12 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 41
   },
   "2026-07-17": {
-    "datajuicer/data-juicer": 6729,
+    "datajuicer/data-juicer": 6732,
     "Eventual-Inc/Daft": 5634,
-    "OpenDCAI/DataFlow": 6489,
-    "huggingface/datatrove": 3205,
+    "OpenDCAI/DataFlow": 6497,
+    "huggingface/datatrove": 3207,
     "NVIDIA-NeMo/DataDesigner": 2102,
-    "NVIDIA-NeMo/Curator": 1665,
+    "NVIDIA-NeMo/Curator": 1666,
     "tinyfish-io/bigset": 1671,
     "OpenDataArena/OpenDataArena-Tool": 144,
     "InternScience/SciDataCopilot": 42
@@ -441,9 +441,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 6729,
-    yesterday: 2,
-    twoDayChange: 9,
+    total: 6732,
+    yesterday: 3,
+    twoDayChange: 12,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -456,13 +456,13 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-07-17", 6729]
+      ["2026-07-17", 6732]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
     total: 5634,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 7,
     color: "#f2994a",
     points: [
@@ -484,17 +484,17 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 6489,
-    yesterday: 10,
-    twoDayChange: 74,
+    total: 6497,
+    yesterday: 8,
+    twoDayChange: 82,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
-    total: 3205,
-    yesterday: 1,
-    twoDayChange: 48,
+    total: 3207,
+    yesterday: 2,
+    twoDayChange: 50,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -507,7 +507,7 @@ const competitorRepos = [
       ["2025-06-01", 2400],
       ["2025-10-01", 2650],
       ["2026-03-01", 2900],
-      ["2026-07-17", 3205]
+      ["2026-07-17", 3207]
     ]
   },
   {
@@ -526,9 +526,9 @@ const competitorRepos = [
   },
   {
     name: "NVIDIA-NeMo/Curator",
-    total: 1665,
-    yesterday: 0,
-    twoDayChange: 4,
+    total: 1666,
+    yesterday: 1,
+    twoDayChange: 5,
     color: "#e879b4",
     points: [
       ["2024-03-14", 0],
@@ -539,7 +539,7 @@ const competitorRepos = [
       ["2025-07-01", 900],
       ["2025-12-01", 1200],
       ["2026-04-01", 1450],
-      ["2026-07-17", 1665]
+      ["2026-07-17", 1666]
     ]
   },
   {
@@ -569,7 +569,7 @@ const competitorRepos = [
   {
     name: "InternScience/SciDataCopilot",
     total: 42,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 1,
     color: "#7c6bd8",
     points: [
@@ -999,14 +999,14 @@ const phaseRegionStats = [
   {
     phaseId: "july",
     status: "complete",
-    totalStars: 793,
-    known: 626,
-    china: 146,
-    overseas: 480,
-    unknown: 167,
+    totalStars: 801,
+    known: 631,
+    china: 150,
+    overseas: 481,
+    unknown: 170,
     note: "07/01-07/17 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["Shanghai 23","Beijing 12","China 11","Taiwan 10","Hong Kong 6","Shenzhen 6","Beijing, China 4","Guangzhou 3","Shenzhen, China 3","Taipei 3"],
-    topOverseasLocations: ["United States 94","Japan 57","Singapore 19","France 10","India 10","Canada 9","South Korea 9","Australia 8","Thailand 8","United Kingdom 7"]
+    topChinaLocations: ["Shanghai 25","Beijing 12","China 11","Taiwan 10","Hong Kong 6","Shenzhen 6","Beijing, China 4","Guangzhou 3","Nanjing 3","Shenzhen, China 3"],
+    topOverseasLocations: ["United States 94","Japan 57","Singapore 19","France 10","India 10","South Korea 10","Canada 9","Australia 8","Thailand 8","United Kingdom 7"]
   }
 ];
 
