@@ -99,7 +99,7 @@ const dailyCounts = [
   ["2026-07-04", 47], ["2026-07-05", 54], ["2026-07-06", 46], ["2026-07-07", 46],
   ["2026-07-08", 62], ["2026-07-09", 63], ["2026-07-10", 51], ["2026-07-11", 30],
   ["2026-07-12", 34], ["2026-07-13", 48], ["2026-07-14", 50], ["2026-07-15", 38],
-  ["2026-07-16", 46], ["2026-07-17", 47], ["2026-07-18", 15]
+  ["2026-07-16", 46], ["2026-07-17", 47], ["2026-07-18", 21]
 ];
 
 let competitorSnapshotDate = "2026-07-18";
@@ -439,7 +439,7 @@ const competitorSnapshots = {
   "2026-07-18": {
     "datajuicer/data-juicer": 6731,
     "Eventual-Inc/Daft": 5636,
-    "OpenDCAI/DataFlow": 6534,
+    "OpenDCAI/DataFlow": 6540,
     "huggingface/datatrove": 3207,
     "NVIDIA-NeMo/DataDesigner": 2103,
     "NVIDIA-NeMo/Curator": 1667,
@@ -453,7 +453,7 @@ const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
     total: 6731,
-    yesterday: -1,
+    yesterday: 0,
     twoDayChange: 7,
     color: "#f2c94c",
     points: [
@@ -495,9 +495,9 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 6534,
-    yesterday: 35,
-    twoDayChange: 77,
+    total: 6540,
+    yesterday: 6,
+    twoDayChange: 83,
     color: "#2d9cdb",
     points: null
   },
@@ -524,7 +524,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/DataDesigner",
     total: 2103,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 5,
     color: "#e94b35",
     points: [
@@ -1010,13 +1010,13 @@ const phaseRegionStats = [
   {
     phaseId: "july",
     status: "complete",
-    totalStars: 838,
-    known: 657,
-    china: 157,
-    overseas: 500,
-    unknown: 181,
+    totalStars: 844,
+    known: 660,
+    china: 159,
+    overseas: 501,
+    unknown: 184,
     note: "07/01-07/18 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["Shanghai 25","Beijing 14","China 11","Taiwan 10","Hong Kong 7","Shenzhen 6","Beijing, China 5","Guangzhou 3","Hefei, China 3","Nanjing 3"],
+    topChinaLocations: ["Shanghai 26","Beijing 14","China 12","Taiwan 10","Hong Kong 7","Shenzhen 6","Beijing, China 5","Guangzhou 3","Hefei, China 3","Nanjing 3"],
     topOverseasLocations: ["United States 97","Japan 57","Singapore 21","South Korea 12","India 11","France 10","Canada 9","Australia 8","Thailand 8","United Kingdom 7"]
   }
 ];
