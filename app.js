@@ -100,7 +100,7 @@ const dailyCounts = [
   ["2026-07-08", 62], ["2026-07-09", 63], ["2026-07-10", 51], ["2026-07-11", 30],
   ["2026-07-12", 34], ["2026-07-13", 48], ["2026-07-14", 50], ["2026-07-15", 38],
   ["2026-07-16", 46], ["2026-07-17", 47], ["2026-07-18", 45], ["2026-07-19", 50],
-  ["2026-07-20", 14]
+  ["2026-07-20", 39]
 ];
 
 let competitorSnapshotDate = "2026-07-20";
@@ -460,12 +460,12 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 42
   },
   "2026-07-20": {
-    "datajuicer/data-juicer": 6737,
-    "Eventual-Inc/Daft": 5640,
-    "OpenDCAI/DataFlow": 6628,
-    "huggingface/datatrove": 3210,
-    "NVIDIA-NeMo/DataDesigner": 2108,
-    "NVIDIA-NeMo/Curator": 1671,
+    "datajuicer/data-juicer": 6744,
+    "Eventual-Inc/Daft": 5641,
+    "OpenDCAI/DataFlow": 6653,
+    "huggingface/datatrove": 3214,
+    "NVIDIA-NeMo/DataDesigner": 2109,
+    "NVIDIA-NeMo/Curator": 1672,
     "tinyfish-io/bigset": 1673,
     "OpenDataArena/OpenDataArena-Tool": 145,
     "InternScience/SciDataCopilot": 41
@@ -475,9 +475,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 6737,
-    yesterday: 4,
-    twoDayChange: 5,
+    total: 6744,
+    yesterday: 7,
+    twoDayChange: 12,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -490,14 +490,14 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-07-20", 6737]
+      ["2026-07-20", 6744]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
-    total: 5640,
-    yesterday: 0,
-    twoDayChange: 3,
+    total: 5641,
+    yesterday: 1,
+    twoDayChange: 4,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -513,22 +513,22 @@ const competitorRepos = [
       ["2025-10-01", 4400],
       ["2026-01-01", 4900],
       ["2026-04-01", 5350],
-      ["2026-07-20", 5640]
+      ["2026-07-20", 5641]
     ]
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 6628,
-    yesterday: 30,
-    twoDayChange: 73,
+    total: 6653,
+    yesterday: 25,
+    twoDayChange: 98,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
-    total: 3210,
-    yesterday: 1,
-    twoDayChange: 2,
+    total: 3214,
+    yesterday: 4,
+    twoDayChange: 6,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -541,28 +541,28 @@ const competitorRepos = [
       ["2025-06-01", 2400],
       ["2025-10-01", 2650],
       ["2026-03-01", 2900],
-      ["2026-07-20", 3210]
+      ["2026-07-20", 3214]
     ]
   },
   {
     name: "NVIDIA-NeMo/DataDesigner",
-    total: 2108,
-    yesterday: 2,
-    twoDayChange: 5,
+    total: 2109,
+    yesterday: 1,
+    twoDayChange: 6,
     color: "#e94b35",
     points: [
       ["2025-10-16", 0],
       ["2026-01-01", 500],
       ["2026-03-01", 700],
       ["2026-04-01", 1000],
-      ["2026-07-20", 2108]
+      ["2026-07-20", 2109]
     ]
   },
   {
     name: "NVIDIA-NeMo/Curator",
-    total: 1671,
-    yesterday: 2,
-    twoDayChange: 4,
+    total: 1672,
+    yesterday: 1,
+    twoDayChange: 5,
     color: "#e879b4",
     points: [
       ["2024-03-14", 0],
@@ -573,13 +573,13 @@ const competitorRepos = [
       ["2025-07-01", 900],
       ["2025-12-01", 1200],
       ["2026-04-01", 1450],
-      ["2026-07-20", 1671]
+      ["2026-07-20", 1672]
     ]
   },
   {
     name: "tinyfish-io/bigset",
     total: 1673,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 2,
     color: "#14b8a6",
     points: [
@@ -603,7 +603,7 @@ const competitorRepos = [
   {
     name: "InternScience/SciDataCopilot",
     total: 41,
-    yesterday: -1,
+    yesterday: 0,
     twoDayChange: -1,
     color: "#7c6bd8",
     points: [
@@ -1033,14 +1033,14 @@ const phaseRegionStats = [
   {
     phaseId: "july",
     status: "complete",
-    totalStars: 932,
-    known: 728,
-    china: 180,
-    overseas: 548,
-    unknown: 204,
+    totalStars: 957,
+    known: 746,
+    china: 187,
+    overseas: 559,
+    unknown: 211,
     note: "07/01-07/20 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["Shanghai 32","Beijing 14","China 14","Taiwan 10","Hong Kong 9","Beijing, China 6","Shenzhen 6","Taipei 5","Shanghai, China 4","Shenzhen, China 4"],
-    topOverseasLocations: ["United States 107","Japan 62","Singapore 26","India 13","South Korea 13","France 10","Canada 9","Australia 8","Thailand 8","United Kingdom 7"]
+    topChinaLocations: ["Shanghai 33","Beijing 15","China 14","Taiwan 11","Hong Kong 9","Beijing, China 6","Shenzhen 6","Taipei 5","Shanghai, China 4","Shenzhen, China 4"],
+    topOverseasLocations: ["United States 107","Japan 66","Singapore 27","India 15","South Korea 13","France 10","Canada 9","Australia 8","Thailand 8","Germany 7"]
   }
 ];
 
