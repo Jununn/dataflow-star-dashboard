@@ -218,7 +218,7 @@ function updateCurrentPhases(source, endDate, total) {
   });
   return replacePhase(source, "july", {
     id: "july",
-    label: "7 月",
+    label: "7 月：高位续航",
     start: "2026-07-01",
     end: endDate,
     note: `7/1-${endDate.slice(5).replace("-", "/")} 为当前滚动月，数据随每日更新继续补齐。`

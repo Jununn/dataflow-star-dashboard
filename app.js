@@ -100,7 +100,7 @@ const dailyCounts = [
   ["2026-07-08", 62], ["2026-07-09", 63], ["2026-07-10", 51], ["2026-07-11", 30],
   ["2026-07-12", 34], ["2026-07-13", 48], ["2026-07-14", 50], ["2026-07-15", 38],
   ["2026-07-16", 46], ["2026-07-17", 47], ["2026-07-18", 45], ["2026-07-19", 50],
-  ["2026-07-20", 52], ["2026-07-21", 9]
+  ["2026-07-20", 52], ["2026-07-21", 14]
 ];
 
 let competitorSnapshotDate = "2026-07-21";
@@ -480,15 +480,26 @@ const competitorSnapshots = {
     "tinyfish-io/bigset": 1674,
     "OpenDataArena/OpenDataArena-Tool": 146,
     "InternScience/SciDataCopilot": 41
+  },
+  "2026-07-21": {
+    "datajuicer/data-juicer": 6749,
+    "Eventual-Inc/Daft": 5646,
+    "OpenDCAI/DataFlow": 6680,
+    "huggingface/datatrove": 3215,
+    "NVIDIA-NeMo/DataDesigner": 2113,
+    "NVIDIA-NeMo/Curator": 1672,
+    "tinyfish-io/bigset": 1674,
+    "OpenDataArena/OpenDataArena-Tool": 146,
+    "InternScience/SciDataCopilot": 41
   }
 };
 
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 6748,
-    yesterday: 2,
-    twoDayChange: 15,
+    total: 6749,
+    yesterday: 23,
+    twoDayChange: 23,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -501,14 +512,14 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-07-21", 6748]
+      ["2026-07-21", 6749]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
     total: 5646,
-    yesterday: 1,
-    twoDayChange: 6,
+    yesterday: 13,
+    twoDayChange: 13,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -529,17 +540,17 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 6675,
-    yesterday: 8,
-    twoDayChange: 77,
+    total: 6680,
+    yesterday: 206,
+    twoDayChange: 66,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
     total: 3215,
-    yesterday: 0,
-    twoDayChange: 6,
+    yesterday: 12,
+    twoDayChange: 12,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -557,23 +568,23 @@ const competitorRepos = [
   },
   {
     name: "NVIDIA-NeMo/DataDesigner",
-    total: 2111,
-    yesterday: 1,
-    twoDayChange: 5,
+    total: 2113,
+    yesterday: 12,
+    twoDayChange: 12,
     color: "#e94b35",
     points: [
       ["2025-10-16", 0],
       ["2026-01-01", 500],
       ["2026-03-01", 700],
       ["2026-04-01", 1000],
-      ["2026-07-21", 2111]
+      ["2026-07-21", 2113]
     ]
   },
   {
     name: "NVIDIA-NeMo/Curator",
     total: 1672,
-    yesterday: 0,
-    twoDayChange: 3,
+    yesterday: 7,
+    twoDayChange: 7,
     color: "#e879b4",
     points: [
       ["2024-03-14", 0],
@@ -590,8 +601,8 @@ const competitorRepos = [
   {
     name: "tinyfish-io/bigset",
     total: 1674,
-    yesterday: 0,
-    twoDayChange: 2,
+    yesterday: 4,
+    twoDayChange: 4,
     color: "#14b8a6",
     points: [
       ["2026-05-15", 0],
@@ -601,8 +612,8 @@ const competitorRepos = [
   {
     name: "OpenDataArena/OpenDataArena-Tool",
     total: 146,
-    yesterday: 0,
-    twoDayChange: 1,
+    yesterday: 2,
+    twoDayChange: 2,
     color: "#8a6b55",
     points: [
       ["2025-07-19", 0],
@@ -748,7 +759,17 @@ const trafficRows = [
   ["2026-07-06", 214, 89, 37, 31],
   ["2026-07-07", 133, 86, 23, 21],
   ["2026-07-08", 134, 84, 36, 18],
-  ["2026-07-09", 205, 79, 27, 27]
+  ["2026-07-09", 205, 79, 27, 27],
+  ["2026-07-10", 91, 65, 43, 27],
+  ["2026-07-11", 85, 41, 27, 24],
+  ["2026-07-12", 42, 25, 46, 36],
+  ["2026-07-13", 182, 89, 147, 35],
+  ["2026-07-14", 153, 77, 21, 20],
+  ["2026-07-15", 195, 78, 47, 26],
+  ["2026-07-16", 129, 84, 87, 26],
+  ["2026-07-17", 134, 74, 34, 29],
+  ["2026-07-18", 88, 45, 56, 30],
+  ["2026-07-19", 156, 53, 11, 11]
 ].map(([date, views, visitors, clones, cloners]) => ({ date, views, visitors, clones, cloners }));
 
 const trafficSourceSnapshots = [
@@ -913,6 +934,33 @@ const trafficSourceSnapshots = [
       ["/blob/main/awesome_dataflow.md", 20, 18],
       ["/blob/main/README.md", 16, 5]
     ]
+  },
+  {
+    date: "2026-07-19",
+    referrers: [
+      ["github.com", 439, 185],
+      ["Google", 247, 147],
+      ["Bing", 87, 36],
+      ["huggingface.co", 39, 19],
+      ["zwt233.github.io", 28, 14],
+      ["opendcai.github.io", 23, 10],
+      ["chatgpt.com", 23, 8],
+      ["reddit.com", 16, 7],
+      ["link.zhihu.com", 8, 5],
+      ["free.theresanaiforthat.com", 8, 4]
+    ],
+    content: [
+      ["Overview", 944, 552],
+      ["/blob/main/README-zh.md", 296, 180],
+      ["/issues", 64, 24],
+      ["/tree/main/dataflow", 58, 44],
+      ["/tree/main", 45, 32],
+      ["/pulls", 29, 16],
+      ["/discussions", 25, 6],
+      ["/graphs/contributors", 22, 15],
+      ["/tree/main/dataflow/operators", 19, 16],
+      ["/blob/main/awesome_dataflow.md", 18, 17]
+    ]
   }
 ].map((snapshot) => ({
   ...snapshot,
@@ -965,7 +1013,7 @@ const phases = [
   },
   {
     id: "july",
-    label: "7 月",
+    label: "7 月：高位续航",
     start: "2026-07-01",
     end: "2026-07-21",
     note: "7/1-07/21 为当前滚动月，数据随每日更新继续补齐。"
@@ -1044,14 +1092,14 @@ const phaseRegionStats = [
   {
     phaseId: "july",
     status: "complete",
-    totalStars: 979,
-    known: 767,
-    china: 192,
-    overseas: 575,
+    totalStars: 984,
+    known: 772,
+    china: 193,
+    overseas: 579,
     unknown: 212,
     note: "07/01-07/21 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Shanghai 35","Beijing 16","China 14","Taiwan 11","Hong Kong 9","Beijing, China 6","Shenzhen 6","Taipei 5","Shanghai, China 4","Shenzhen, China 4"],
-    topOverseasLocations: ["United States 110","Japan 66","Singapore 27","India 16","South Korea 13","France 10","Canada 9","Australia 8","Thailand 8","Germany 7"]
+    topOverseasLocations: ["United States 111","Japan 66","Singapore 27","India 16","South Korea 14","France 10","Canada 9","Australia 8","Thailand 8","Germany 7"]
   }
 ];
 
@@ -1762,7 +1810,6 @@ function renderActionCalendar() {
     cells.push(`<article class="calendar-cell${isWeekend ? " is-weekend" : ""}">
       <div class="calendar-date">
         <strong>${day}</strong>
-        <span>${item?.phase?.label || "未分组"}</span>
       </div>
       <div class="calendar-metrics">
         <span class="${countClass}">+${stars}</span>
