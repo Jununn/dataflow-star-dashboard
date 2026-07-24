@@ -728,7 +728,12 @@ const actions = [
   ["2026-07-17", "线下活动", "WAIC", "#"],
   ["2026-07-18", "线下活动", "WAIC", "#"],
   ["2026-07-19", "线下活动", "WAIC", "#"],
-  ["2026-07-20", "线下活动", "WAIC", "#"]
+  ["2026-07-20", "线下活动", "WAIC", "#"],
+  ["2026-07-24", "Reddit", "dataflow-harness", "https://www.reddit.com/r/codex/comments/1v55eih/using_codex_as_a_harness_for_aiready_data/"],
+  ["2026-07-24", "Reddit", "dataflow-harness", "https://www.reddit.com/r/vibecoding/comments/1v55u11/vibe_coding_the_hard_part_of_rag_turning_messy/"],
+  ["2026-07-24", "LinkedIn", "dataflow-harness", "https://www.linkedin.com/feed/update/urn:li:groupPost:7018767-7486354047265026048/"],
+  ["2026-07-24", "X", "dataflow-harness", "https://x.com/PKU_DCAI/status/2080587218897519070"],
+  ["2026-07-24", "公众号", "dataflow-harness", "https://mp.weixin.qq.com/s/c7I2nI_tjthOs369K5kXrg?scene=1&click_id=6"]
 ].map(([date, channel, title, url]) => ({ date, channel, title, url }));
 
 const trafficRows = [

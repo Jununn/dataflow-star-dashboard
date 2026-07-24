@@ -1269,6 +1269,7 @@ svg {
 
 .region-breakdown-wrap {
   margin-top: 18px;
+  max-height: none;
 }
 
 table {
