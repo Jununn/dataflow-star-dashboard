@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Star Growth &amp; Actions Dashboard</title>
+    <link rel="stylesheet" href="./styles.css?v=142-85d4235" />
+  </head>
+  <body>
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">OpenDCAI/DataFlow</p>
+        <h1>Star Growth &amp; Actions Dashboard</h1>
+        <p class="subhead">
+          以 2026-01-01 起的 GitHub stargazer 时间线为底，叠加已知运营动作、阶段性趋势和外部趋势页入口。
+        </p>
+      </div>
+      <nav class="source-links" aria-label="Source links">
+        <a href="https://github.com/OpenDCAI/DataFlow" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://trendshift.io/repositories/16045" target="_blank" rel="noreferrer">Trendshift</a>
+        <a href="https://www.star-history.com/?repos=OpenDCAI%2FDataFlow&type=date&legend=top-left" target="_blank" rel="noreferrer">Star History</a>
+        <span id="liveStatus" class="live-status">本地快照</span>
+      </nav>
+    </header>
+
+    <main>
+      <section class="summary-grid" id="summary"></section>
+
+      <section class="panel chart-panel">
+        <div class="panel-heading">
+          <div>
+            <h2>每日新增与累计趋势</h2>
+            <p>柱状为 UTC 日增 stars；折线为按快照推算的累计 stars。高亮区间对应阶段性运营判断。</p>
+          </div>
+          <div class="legend">
+            <span><i class="legend-dot daily"></i>日增</span>
+            <span><i class="legend-dot cumulative"></i>累计</span>
+            <span><i class="legend-dot action"></i>运营动作</span>
+          </div>
+        </div>
+        <div id="mainChart" class="chart-wrap" aria-label="Daily stars and cumulative stars chart"></div>
+      </section>
+
+      <section class="panel chart-panel">
+        <div class="panel-heading">
+          <div>
+            <h2>全周期新增与累计趋势</h2>
+            <p>合并 2025-06-01 到最新公开快照的每日新增与累计总量，统一观察早期开源、7 月爆发、12 月再启动和 2026 年高动量阶段。</p>
+          </div>
+          <div class="legend">
+            <span><i class="legend-dot daily"></i>日增</span>
+            <span><i class="legend-dot cumulative"></i>累计</span>
+          </div>
+        </div>
+        <div class="chart-window-controls" aria-label="全周期趋势 12 个月窗口切换">
+          <button id="combinedPrev" type="button" class="icon-button" aria-label="前移一个月">←</button>
+          <input id="combinedWindowSlider" class="year-slider" type="range" min="0" max="0" step="1" value="0" aria-label="选择 12 个月窗口" />
+          <strong id="combinedWindowLabel" class="chart-window-label">近 12 个月</strong>
+          <button id="combinedNext" type="button" class="icon-button" aria-label="后移一个月">→</button>
+        </div>
+        <div id="combinedChart" class="chart-wrap" aria-label="Combined daily stars and cumulative stars chart"></div>
+      </section>
+
+      <section class="panel chart-panel">
+        <div class="panel-heading">
+          <div>
+            <h2>独立访客与新增 Star 对照</h2>
+            <p>把 GitHub Traffic 的每日访客、clone 与 UTC 日增 stars 对齐，观察流量规模和 star 转化是否同步。</p>
+          </div>
+          <div class="legend">
+            <span><i class="legend-dot visitors"></i>独立访客</span>
+            <span><i class="legend-dot daily"></i>新增 stars</span>
+            <span><i class="legend-dot clones"></i>Clones</span>
+            <span><i class="legend-dot cloners"></i>独立 cloners</span>
+          </div>
+        </div>
+        <div id="visitorStarChart" class="chart-wrap" aria-label="Unique visitors, clones, and daily stars comparison chart"></div>
+        <div class="table-wrap compact-table">
+          <table>
+            <thead>
+              <tr>
+                <th>日期</th>
+                <th>独立访客</th>
+                <th>新增 stars</th>
+                <th>Star / UV</th>
+                <th>Clones</th>
+                <th>独立 cloners</th>
+              </tr>
+            </thead>
+            <tbody id="visitorStarTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="two-col">
+        <article class="panel">
+          <div class="panel-heading compact">
+            <div>
+              <h2>阶段归因</h2>
+              <p>把数据拐点和运营动作分开看：已知动作解释台阶，平台分发解释突刺。</p>
+            </div>
+          </div>
+          <div id="phaseCards" class="phase-list"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading compact">
+            <div>
+              <h2>来源页聚合</h2>
+              <p>Trendshift 与 Star History 作为外部校验入口；下方月柱为 Gross 新增口径。</p>
+            </div>
+          </div>
+          <div class="source-stack">
+            <a class="source-card" href="https://trendshift.io/repositories/16045" target="_blank" rel="noreferrer">
+              <strong>Trendshift repository page</strong>
+              <span>查看第三方 last 60 days / monthly activities 走势。</span>
+            </a>
+            <a class="source-card" href="https://www.star-history.com/?repos=OpenDCAI%2FDataFlow&type=date&legend=top-left" target="_blank" rel="noreferrer">
+              <strong>Star History</strong>
+              <span>查看仓库总 star 的长期趋势图。</span>
+            </a>
+          </div>
+          <div id="monthlyChart" class="mini-chart" aria-label="Monthly stars chart"></div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <div>
+            <h2>阶段新增用户地区比例</h2>
+            <p>1-5 月为历史快照，6 月为完整月 GitHub API 补齐，7 月为当前滚动月。</p>
+          </div>
+          <a class="inline-source" href="https://starmapper.bruniaux.com/OpenDCAI/DataFlow" target="_blank" rel="noreferrer">打开 Starmapper</a>
+        </div>
+        <div id="regionStats" class="region-grid"></div>
+        <div class="table-wrap compact-table region-breakdown-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>阶段</th>
+                <th>中国 Top 地区</th>
+                <th>海外 Top 地区</th>
+              </tr>
+            </thead>
+            <tbody id="regionBreakdownTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <div>
+            <h2>运营动作与日增日历</h2>
+            <p>按月对齐 UTC 日增、累计和已知传播动作。未列出的长期运营动作仍可能贡献底座。</p>
+          </div>
+          <div class="table-tools">
+            <a class="inline-source" href="https://wcny4qa9krto.feishu.cn/base/WmNJbCzzlaRe9FsdPAAcwD3unge?table=tblvJ2rljFYxTZJL&view=vewjFcPw8j" target="_blank" rel="noreferrer">内容日历</a>
+            <button id="calendarPrev" type="button" class="icon-button" aria-label="上一月">←</button>
+            <strong id="calendarMonthLabel" class="calendar-month-label"></strong>
+            <button id="calendarNext" type="button" class="icon-button" aria-label="下一月">→</button>
+          </div>
+        </div>
+        <div id="actionCalendar" class="action-calendar" aria-label="Action and daily stars calendar"></div>
+      </section>
+
+      <section class="panel chart-panel">
+        <div class="panel-heading">
+          <div>
+            <h2>竞品项目 Star 趋势对比</h2>
+            <p>对比数据处理、LLM 数据工程、数据准备相关开源项目的 star 总量和增长曲线。DataFlow 使用本地精确快照；其他项目使用公开 star-history 走势近似锚点，并用 GitHub 当前 star 总数校准终点。</p>
+          </div>
+          <a class="inline-source" href="https://www.star-history.com/#NVIDIA-NeMo/DataDesigner&OpenDCAI/DataFlow&datajuicer/data-juicer&NVIDIA-NeMo/Curator&huggingface/datatrove&InternScience/SciDataCopilot&OpenDataArena/OpenDataArena-Tool&Eventual-Inc/Daft&Date" target="_blank" rel="noreferrer">打开 Star History</a>
+        </div>
+        <div id="competitorLegend" class="competitor-legend" aria-label="Competitor star totals"></div>
+        <div id="competitorChart" class="chart-wrap competitor-chart" aria-label="Competitor star history comparison chart"></div>
+      </section>
+
+      <section class="panel chart-panel">
+        <div class="panel-heading">
+          <div>
+            <h2>GitHub Traffic 来源周报趋势</h2>
+            <p>每周五截图记录过去 14 天聚合数据；折线展示来源站点 UV 波动，表格融合来源站点与热门页面的 UV、Views 和环比变化。</p>
+          </div>
+          <div class="legend">
+            <span><i class="legend-dot visitors"></i>Unique visitors</span>
+            <span><i class="legend-dot daily"></i>Views</span>
+          </div>
+        </div>
+        <div id="trafficReferrerWeeklyChart" class="chart-wrap traffic-weekly-chart" aria-label="Referring sites weekly unique visitors trend"></div>
+        <details class="traffic-details">
+          <summary>展开详细数据表格</summary>
+          <div id="trafficTrendMatrix" class="traffic-matrix-wrap" aria-label="GitHub traffic weekly trend matrix"></div>
+        </details>
+      </section>
+
+      <section class="panel stargazer-overlap-panel">
+        <div class="panel-heading">
+          <div>
+            <h2>共同关注网络：兴趣相关度与潜在场景（7月）</h2>
+            <p>近全量分析 7 月当前新增 stargazer，观察这些用户还共同 star 了哪些项目，用于判断开发者兴趣结构和 DataFlow 的潜在使用场景。</p>
+          </div>
+        </div>
+
+        <div class="overlap-meta">
+          <span>生成时间：2026-07-21 CST</span>
+          <span>7 月新增 stargazer：983</span>
+          <span>抓取：980 / 983，失败 0</span>
+          <span>每人最多读取最近 300 个 starred repos</span>
+        </div>
+
+        <div class="overlap-insights">
+          <article>
+            <strong>兴趣网络规模扩大，结构仍高度集中</strong>
+            <span>980 个 7 月当前新增用户中，Top 12 项目平均被 574 个用户共同 star，占样本约 59%；nexent、LightRAG、vggt、GenieX、oneflow 继续高频出现，说明新增用户仍主要集中在 AI 工程、Agent、RAG 与模型基础设施交叉兴趣圈。</span>
+          </article>
+          <article>
+            <strong>Agent / RAG / LLM Infra 仍是核心兴趣轴</strong>
+            <span>Top 12 共同关注项目之间的用户集合平均重叠 95%，区间 88% - 100%。这更适合被理解为兴趣相关度和潜在场景线索，而不是直接使用关系。</span>
+          </article>
+        </div>
+
+        <div class="overlap-table-grid">
+          <div class="overlap-table-intro">
+            <div>
+              <h3>共同关注项目 Top 30：兴趣相关度 + 场景推断</h3>
+              <p>DataFlow 更像 AI 数据工程底座：在 Agent、RAG、训练、评测之前，负责把原始数据变成可用、可控、可评估的数据资产。因此很多项目不是直接竞品，而是 DataFlow 的下游应用、配合组件或相邻生态。</p>
+            </div>
+            <div class="overlap-scroll-actions" aria-label="横向滚动表格">
+              <button type="button" onclick="this.closest('.overlap-table-grid').querySelector('.overlap-table-wrap').scrollBy({ left: -640, behavior: 'smooth' })">←</button>
+              <button type="button" onclick="this.closest('.overlap-table-grid').querySelector('.overlap-table-wrap').scrollBy({ left: 640, behavior: 'smooth' })">→</button>
+            </div>
+          </div>
+          <div class="table-wrap overlap-table-wrap">
+            <table class="overlap-table">
+              <thead>
+                <tr>
+                  <th>项目</th>
+                  <th>共同用户</th>
+                  <th>样本占比</th>
+                  <th>关系</th>
+                  <th>分类</th>
+                  <th>Stars</th>
+                  <th>描述</th>
+                  <th>具体关系 / 可设计场景</th>
+                  <th>语言</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><a href="https://github.com/ModelEngine-Group/nexent" target="_blank" rel="noreferrer">ModelEngine-Group/nexent</a></td><td>607</td><td>62%</td><td><span class="relation-pill downstream">下游平台</span></td><td>Agent / Workflow</td><td>5,756</td><td>Nexent is a zero-code platform for auto-generating production-grade AI agents using Harness Engineering principles — unified tools, skills, memory, and orchestration with built-in constraints, feedback loops, and control planes.</td><td>这类项目偏 Agent / workflow 应用层。DataFlow 可作为前置数据工程层，准备知识库、任务样本、工具调用日志和评测数据，再交给 Agent 平台编排执行。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/HKUDS/LightRAG" target="_blank" rel="noreferrer">HKUDS/LightRAG</a></td><td>596</td><td>61%</td><td><span class="relation-pill downstream">典型下游</span></td><td>RAG / Search</td><td>37,926</td><td>[EMNLP2025] &quot;LightRAG: Simple and Fast Retrieval-Augmented Generation&quot;</td><td>RAG 效果强依赖文档切分、去重、结构化和元数据。DataFlow 可作为前置数据管道，把网页、PDF、表格变成高质量索引输入。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/facebookresearch/vggt" target="_blank" rel="noreferrer">facebookresearch/vggt</a></td><td>595</td><td>61%</td><td><span class="relation-pill downstream">典型下游</span></td><td>RAG / Search</td><td>13,924</td><td>[CVPR 2025 Best Paper Award] VGGT: Visual Geometry Grounded Transformer</td><td>视觉/几何模型需要图像、视频和标注数据的整理。DataFlow 可承接多模态数据清洗、样本筛选、元数据补全和评测集构建。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/qualcomm/GenieX" target="_blank" rel="noreferrer">qualcomm/GenieX</a></td><td>589</td><td>60%</td><td><span class="relation-pill downstream">下游训练</span></td><td>LLM Infra</td><td>8,234</td><td>Run frontier LLMs and VLMs locally on Qualcomm devices across NPU, GPU, and CPU with a few lines of code</td><td>这类项目偏模型训练、推理或基础设施。DataFlow 的关系是训练/评测前的数据准备：样本筛选、格式转换、质量打分、合成数据治理和 benchmark 构建。</td><td>Rust</td></tr>
+                <tr><td><a href="https://github.com/Oneflow-Inc/oneflow" target="_blank" rel="noreferrer">Oneflow-Inc/oneflow</a></td><td>584</td><td>60%</td><td><span class="relation-pill downstream">下游平台</span></td><td>Agent / Workflow</td><td>9,410</td><td>OneFlow is a deep learning framework designed to be user-friendly, scalable and efficient.</td><td>这类项目偏 Agent / workflow 应用层。DataFlow 可作为前置数据工程层，准备知识库、任务样本、工具调用日志和评测数据，再交给 Agent 平台编排执行。</td><td>C++</td></tr>
+                <tr><td><a href="https://github.com/Klavis-AI/klavis" target="_blank" rel="noreferrer">Klavis-AI/klavis</a></td><td>581</td><td>59%</td><td><span class="relation-pill complement">配合组件</span></td><td>Agent / Workflow</td><td>5,771</td><td>Klavis AI:  MCP integration platforms that let AI agents use tools reliably at any scale</td><td>Klavis 解决 Agent 调工具，DataFlow 解决 Agent 可用的数据输入。可设计场景：DataFlow 清洗企业文档、工单和表格，Klavis 让 Agent 调用 CRM、Slack、数据库完成动作。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/microsoft/UFO" target="_blank" rel="noreferrer">microsoft/UFO</a></td><td>571</td><td>58%</td><td><span class="relation-pill downstream">下游平台</span></td><td>Agent / Workflow</td><td>9,298</td><td>UFO³: Weaving the Digital Agent Galaxy</td><td>这类项目偏 Agent / workflow 应用层。DataFlow 可作为前置数据工程层，准备知识库、任务样本、工具调用日志和评测数据，再交给 Agent 平台编排执行。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/hyperai/tvm-cn" target="_blank" rel="noreferrer">hyperai/tvm-cn</a></td><td>567</td><td>58%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>Other</td><td>3,855</td><td>TVM Documentation in Chinese Simplified / TVM 中文文档</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号。可保留观察，但不应作为核心使用场景判断。</td><td>TypeScript</td></tr>
+                <tr><td><a href="https://github.com/Hunyuan-PromptEnhancer/PromptEnhancer" target="_blank" rel="noreferrer">Hunyuan-PromptEnhancer/PromptEnhancer</a></td><td>564</td><td>58%</td><td><span class="relation-pill downstream">下游训练</span></td><td>LLM Infra</td><td>3,729</td><td>[CVPR 2026] PromptEnhancer is a prompt-rewriting tool, refining prompts into clearer, structured versions for better image generation.</td><td>这类项目偏模型训练、推理或基础设施。DataFlow 的关系是训练/评测前的数据准备：样本筛选、格式转换、质量打分、合成数据治理和 benchmark 构建。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/dataelement/bisheng" target="_blank" rel="noreferrer">dataelement/bisheng</a></td><td>555</td><td>57%</td><td><span class="relation-pill downstream">下游平台</span></td><td>Agent / Workflow</td><td>11,720</td><td>BISHENG is an open LLM devops platform for next generation Enterprise AI applications. Powerful and comprehensive features include: GenAI workflow, RAG, Agent, Unified model management, Evaluation, SFT, Dataset Management, Enterprise-level System Management, Observability and more.</td><td>这类项目偏 Agent / workflow 应用层。DataFlow 可作为前置数据工程层，准备知识库、任务样本、工具调用日志和评测数据，再交给 Agent 平台编排执行。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/fudan-generative-vision/hallo" target="_blank" rel="noreferrer">fudan-generative-vision/hallo</a></td><td>542</td><td>55%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>Other</td><td>8,658</td><td>Hallo: Hierarchical Audio-Driven Visual Synthesis for Portrait Image Animation</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号。可保留观察，但不应作为核心使用场景判断。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/EvilGenius-dot/RustMinerSystem" target="_blank" rel="noreferrer">EvilGenius-dot/RustMinerSystem</a></td><td>540</td><td>55%</td><td><span class="relation-pill weak">弱相关</span></td><td>Other</td><td>3,876</td><td>💰唯一正版💰 minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy 矿池抽水 矿池代理 矿池中转 矿池抽水 minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号。可保留观察，但不应作为核心使用场景判断。</td><td>Rust</td></tr>
+                <tr><td><a href="https://github.com/FxPool/FXMinerProxy" target="_blank" rel="noreferrer">FxPool/FXMinerProxy</a></td><td>539</td><td>55%</td><td><span class="relation-pill weak">弱相关</span></td><td>Other</td><td>3,709</td><td>🔥minerproxy,minerproxy,minerproxy,minerproxy,minerproxy,minerproxy,minerproxy,minerproxy,minerproxy,minerproxy,矿池抽水,矿池中转,矿场运维专用</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号。可保留观察，但不应作为核心使用场景判断。</td><td>Go</td></tr>
+                <tr><td><a href="https://github.com/iflytek/astron-agent" target="_blank" rel="noreferrer">iflytek/astron-agent</a></td><td>537</td><td>55%</td><td><span class="relation-pill downstream">下游平台</span></td><td>Agent / Workflow</td><td>9,462</td><td>Enterprise-grade, commercial-friendly agentic workflow platform for building next-generation SuperAgents.</td><td>这类项目偏 Agent / workflow 应用层。DataFlow 可作为前置数据工程层，准备知识库、任务样本、工具调用日志和评测数据，再交给 Agent 平台编排执行。</td><td>Java</td></tr>
+                <tr><td><a href="https://github.com/limix-ldm-ai/LimiX" target="_blank" rel="noreferrer">limix-ldm-ai/LimiX</a></td><td>527</td><td>54%</td><td><span class="relation-pill competitor">相邻竞品</span></td><td>Data Engineering</td><td>3,822</td><td>LimiX: Unleashing Structured-Data Modeling Capability for Generalist Intelligence https://arxiv.org/abs/2509.03505</td><td>这类项目与 DataFlow 的数据准备、数据质量或数据治理定位更接近，可作为相邻竞品或能力参照，重点观察其数据诊断、结构化和治理能力。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/PKU-Alignment/align-anything" target="_blank" rel="noreferrer">PKU-Alignment/align-anything</a></td><td>516</td><td>53%</td><td><span class="relation-pill downstream">下游训练</span></td><td>LLM Infra</td><td>4,663</td><td>Align Anything: Training All-modality Model with Feedback</td><td>这类项目偏模型训练、推理或基础设施。DataFlow 的关系是训练/评测前的数据准备：样本筛选、格式转换、质量打分、合成数据治理和 benchmark 构建。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/TJU-DRL-LAB/AI-Optimizer" target="_blank" rel="noreferrer">TJU-DRL-LAB/AI-Optimizer</a></td><td>486</td><td>50%</td><td><span class="relation-pill weak">弱相关</span></td><td>Other</td><td>3,465</td><td>The next generation deep reinforcement learning tookit</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号。可保留观察，但不应作为核心使用场景判断。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/FoundationAgents/MetaGPT" target="_blank" rel="noreferrer">FoundationAgents/MetaGPT</a></td><td>485</td><td>49%</td><td><span class="relation-pill downstream">下游平台</span></td><td>Agent / Workflow</td><td>69,454</td><td>🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming</td><td>这类项目偏 Agent / workflow 应用层。DataFlow 可作为前置数据工程层，准备知识库、任务样本、工具调用日志和评测数据，再交给 Agent 平台编排执行。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/SuanmoSuanyangTechnology/MemoryBear" target="_blank" rel="noreferrer">SuanmoSuanyangTechnology/MemoryBear</a></td><td>477</td><td>49%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>Other</td><td>4,832</td><td>MemoryBear Equip AI with human-like memory capability</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号。可保留观察，但不应作为核心使用场景判断。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/juggleim/im-server" target="_blank" rel="noreferrer">juggleim/im-server</a></td><td>477</td><td>49%</td><td><span class="relation-pill weak">弱相关</span></td><td>Other</td><td>3,589</td><td>High-performance, scalable, self-hosted instant messaging server in Go — private chat, groups, chatrooms, WebSocket and REST APIs.</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号。可保留观察，但不应作为核心使用场景判断。</td><td>Go</td></tr>
+                <tr><td><a href="https://github.com/TaskingAI/TaskingAI" target="_blank" rel="noreferrer">TaskingAI/TaskingAI</a></td><td>473</td><td>48%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>Other</td><td>5,391</td><td>The open source platform for AI-native application development.</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号。可保留观察，但不应作为核心使用场景判断。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/Docta-ai/docta" target="_blank" rel="noreferrer">Docta-ai/docta</a></td><td>465</td><td>47%</td><td><span class="relation-pill competitor">相邻竞品</span></td><td>Data Engineering</td><td>3,481</td><td>A Doctor for your data</td><td>这类项目与 DataFlow 的数据准备、数据质量或数据治理定位更接近，可作为相邻竞品或能力参照，重点观察其数据诊断、结构化和治理能力。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/Everlyn-Labs/Everlyn-1" target="_blank" rel="noreferrer">Everlyn-Labs/Everlyn-1</a></td><td>463</td><td>47%</td><td><span class="relation-pill downstream">下游训练</span></td><td>LLM Infra</td><td>2,892</td><td>The first open autoregressive foundational video AI model.</td><td>这类项目偏模型训练、推理或基础设施。DataFlow 的关系是训练/评测前的数据准备：样本筛选、格式转换、质量打分、合成数据治理和 benchmark 构建。</td><td>-</td></tr>
+                <tr><td><a href="https://github.com/yikart/AiToEarn" target="_blank" rel="noreferrer">yikart/AiToEarn</a></td><td>459</td><td>47%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>Other</td><td>24,013</td><td>Let&#39;s use AI to Earn!</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号。可保留观察，但不应作为核心使用场景判断。</td><td>TypeScript</td></tr>
+                <tr><td><a href="https://github.com/risesoft-y9/Digital-Infrastructure" target="_blank" rel="noreferrer">risesoft-y9/Digital-Infrastructure</a></td><td>456</td><td>47%</td><td><span class="relation-pill weak">弱相关</span></td><td>Other</td><td>2,601</td><td>数字底座是一款面向大型政府、企业数字化转型，基于身份认证、组织架构、岗位职务、应用系统、资源角色、数据目录、安全控制等功能构建的统一且安全的管理支撑平台。数字底座基于三员管理模式，具备微服务、多租户、容器化和国产化，支持用户利用代码生成器快速构建自己的业务应用，同时可关联诸多成熟且好用的内部生态应用。</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号。可保留观察，但不应作为核心使用场景判断。</td><td>Java</td></tr>
+                <tr><td><a href="https://github.com/dgiot/dgiot" target="_blank" rel="noreferrer">dgiot/dgiot</a></td><td>446</td><td>46%</td><td><span class="relation-pill competitor">相邻竞品</span></td><td>Data Engineering</td><td>4,827</td><td>Open source platform for iot , 6 min Quick Deployment,10M devices connection,Carrier level Stability;物联网开源平台,6分钟快速部署,千万级承载,电信级稳定性. Low code for Object model-Rule Engine-Data Channel-Configuration Page; Fully open source, Multi industrial protocols are compatible.物模型-规则引擎-数据通道-组态页面全流程零代码开发、全业务全链路模拟压测、前后端完全开源、多行业工业协议兼容。QQ群:346566935</td><td>这类项目与 DataFlow 的数据准备、数据质量或数据治理定位更接近，可作为相邻竞品或能力参照，重点观察其数据诊断、结构化和治理能力。</td><td>Erlang</td></tr>
+                <tr><td><a href="https://github.com/nesaorg/nesa" target="_blank" rel="noreferrer">nesaorg/nesa</a></td><td>424</td><td>43%</td><td><span class="relation-pill downstream">下游训练</span></td><td>LLM Infra</td><td>3,166</td><td>Run AI models end-to-end encrypted.</td><td>这类项目偏模型训练、推理或基础设施。DataFlow 的关系是训练/评测前的数据准备：样本筛选、格式转换、质量打分、合成数据治理和 benchmark 构建。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/Orillusion/orillusion" target="_blank" rel="noreferrer">Orillusion/orillusion</a></td><td>419</td><td>43%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>Other</td><td>5,192</td><td>Orillusion is a pure Web3D rendering engine which is fully developed based on the WebGPU standard.</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号。可保留观察，但不应作为核心使用场景判断。</td><td>TypeScript</td></tr>
+                <tr><td><a href="https://github.com/lakesoul-io/LakeSoul" target="_blank" rel="noreferrer">lakesoul-io/LakeSoul</a></td><td>408</td><td>42%</td><td><span class="relation-pill downstream">典型下游</span></td><td>RAG / Search</td><td>3,243</td><td>LakeSoul is an end-to-end, realtime cloud-native Lakehouse framework for fast data ingestion, concurrent updates, incremental analytics, multimodal data processing and vector search — powering next-generation BI and AI workloads.</td><td>Lakehouse / 向量检索更偏数据存储与检索底座。DataFlow 可负责进入 Lakehouse 前的数据清洗、结构化、质量评估和多模态数据预处理。</td><td>Java</td></tr>
+                <tr><td><a href="https://github.com/LazyAGI/LazyLLM" target="_blank" rel="noreferrer">LazyAGI/LazyLLM</a></td><td>403</td><td>41%</td><td><span class="relation-pill downstream">下游平台</span></td><td>Agent / Workflow</td><td>3,855</td><td>Easiest and laziest way for  building multi-agent LLMs applications.</td><td>这类项目偏 Agent / workflow 应用层。DataFlow 可作为前置数据工程层，准备知识库、任务样本、工具调用日志和评测数据，再交给 Agent 平台编排执行。</td><td>Python</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="table-wrap overlap-category-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>兴趣分类</th>
+                  <th>共现次数</th>
+                  <th>占比</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Other</td><td>64,340</td><td>42%</td></tr>
+                <tr><td>Agent / Workflow</td><td>33,171</td><td>22%</td></tr>
+                <tr><td>LLM Infra</td><td>23,211</td><td>15%</td></tr>
+                <tr><td>Data Engineering</td><td>11,835</td><td>8%</td></tr>
+                <tr><td>RAG / Search</td><td>10,181</td><td>7%</td></tr>
+                <tr><td>Dev Tooling</td><td>5,675</td><td>4%</td></tr>
+                <tr><td>Evaluation</td><td>1,916</td><td>1%</td></tr>
+                <tr><td>Data Prep / Dataset</td><td>1,199</td><td>1%</td></tr>
+                <tr><td>Database / Storage</td><td>436</td><td>0%</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p class="overlap-note">口径：分析 2026-07-01 到 2026-07-21 给 OpenDCAI/DataFlow 点 star 的当前新增用户；读取每人最近最多 300 个公开 starred repos。GitHub 不提供共同 star 图谱接口，本分析由公开 stargazer 和用户 starred repos 聚合而来，适合判断兴趣相关度，不等同于真实使用关系。</p>
+      </section>
+
+      <details class="panel stargazer-overlap-panel overlap-archive">
+        <summary>展开 6 月共同关注网络</summary>
+        <div class="overlap-archive-body">
+        <div class="panel-heading">
+          <div>
+            <h2>共同关注网络：兴趣相关度与潜在场景（6月）</h2>
+            <p>抽样 6 月新增 stargazer，观察这些用户还共同 star 了哪些项目，用于判断开发者兴趣结构和 DataFlow 的潜在使用场景。</p>
+          </div>
+        </div>
+
+        <div class="overlap-meta">
+          <span>生成时间：2026-7-1 14:14:25 CST</span>
+          <span>6 月新增 stargazer：1,318</span>
+          <span>样本：400 / 1,318，失败 0</span>
+          <span>每人最多读取最近 300 个 starred repos</span>
+        </div>
+
+        <div class="overlap-insights">
+          <article>
+            <strong>共同关注高度集中且稳定</strong>
+            <span>400 个样本中，Top 12 项目平均被 237 个用户共同 star，占样本约 59%；Klavis、nexent、LightRAG 等核心项目稳定在 60% 左右，说明这批 6 月新增用户不是随机流量，而是高度重叠的 AI 工程兴趣网络。</span>
+          </article>
+          <article>
+            <strong>兴趣主轴偏 Agent / RAG / LLM Infra</strong>
+            <span>共同关注项目以 Agent / Workflow、RAG / Search、LLM Infra 为主，Data Engineering 和 Data Prep 占比不高但更贴近 DataFlow 的真实落点：为 Agent、RAG、训练和评测提供前置数据工程能力。</span>
+          </article>
+        </div>
+
+        <div class="overlap-table-grid">
+          <div class="overlap-table-intro">
+            <div>
+              <h3>共同关注项目 Top 30：兴趣相关度 + 场景推断</h3>
+              <p>DataFlow 更像 AI 数据工程底座：在 Agent、RAG、训练、评测之前，负责把原始数据变成可用、可控、可评估的数据资产。因此很多项目不是直接竞品，而是 DataFlow 的下游应用、配合组件或相邻生态。</p>
+            </div>
+            <div class="overlap-scroll-actions" aria-label="横向滚动表格">
+              <button type="button" onclick="this.closest('.overlap-table-grid').querySelector('.overlap-table-wrap').scrollBy({ left: -640, behavior: 'smooth' })">←</button>
+              <button type="button" onclick="this.closest('.overlap-table-grid').querySelector('.overlap-table-wrap').scrollBy({ left: 640, behavior: 'smooth' })">→</button>
+            </div>
+          </div>
+          <div class="table-wrap overlap-table-wrap">
+            <table class="overlap-table">
+              <thead>
+                <tr>
+                  <th>项目</th>
+                  <th>共同用户</th>
+                  <th>样本占比</th>
+                  <th>关系</th>
+                  <th>分类</th>
+                  <th>Stars</th>
+                  <th>描述</th>
+                  <th>具体关系 / 可设计场景</th>
+                  <th>语言</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><a href="https://github.com/Klavis-AI/klavis" target="_blank" rel="noreferrer">Klavis-AI/klavis</a></td><td>252</td><td>63%</td><td><span class="relation-pill complement">配合组件</span></td><td>Agent / Workflow</td><td>5,762</td><td>Klavis AI: MCP integration platforms that let AI agents use tools reliably at any scale</td><td>Klavis 解决 Agent 调工具，DataFlow 解决 Agent 可用的数据输入。实际场景是：DataFlow 清洗企业文档、工单和表格，Klavis 让 Agent 调用 CRM、Slack、数据库完成动作。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/ModelEngine-Group/nexent" target="_blank" rel="noreferrer">ModelEngine-Group/nexent</a></td><td>250</td><td>63%</td><td><span class="relation-pill downstream">下游平台</span></td><td>Agent / Workflow</td><td>5,408</td><td>Nexent is a zero-code platform for auto-generating production-grade AI agents using Harness Engineering principles — unified tools, skills, memory, and orchestration with built-in constraints, feedback loops, and control planes.</td><td>这类项目偏 Agent / workflow 应用层。DataFlow 可作为前置数据工程层，准备知识库、任务样本、工具调用日志和评测数据，再交给 Agent 平台编排执行。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/HKUDS/LightRAG" target="_blank" rel="noreferrer">HKUDS/LightRAG</a></td><td>242</td><td>61%</td><td><span class="relation-pill downstream">典型下游</span></td><td>RAG / Search</td><td>37,194</td><td>[EMNLP2025] &quot;LightRAG: Simple and Fast Retrieval-Augmented Generation&quot;</td><td>RAG 效果强依赖文档切分、去重、结构化和元数据。DataFlow 可以作为 LightRAG 前置数据管道，把网页、PDF、表格变成高质量索引输入。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/facebookresearch/vggt" target="_blank" rel="noreferrer">facebookresearch/vggt</a></td><td>242</td><td>61%</td><td><span class="relation-pill downstream">典型下游</span></td><td>RAG / Search</td><td>13,618</td><td>[CVPR 2025 Best Paper Award] VGGT: Visual Geometry Grounded Transformer</td><td>视觉/几何模型需要图像、视频和标注数据的整理。DataFlow 可承接多模态数据清洗、样本筛选、元数据补全和评测集构建。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/Hunyuan-PromptEnhancer/PromptEnhancer" target="_blank" rel="noreferrer">Hunyuan-PromptEnhancer/PromptEnhancer</a></td><td>239</td><td>60%</td><td><span class="relation-pill downstream">下游训练</span></td><td>LLM Infra</td><td>3,719</td><td>[CVPR 2026] PromptEnhancer is a prompt-rewriting tool, refining prompts into clearer, structured versions for better image generation.</td><td>这类项目偏模型训练、推理或基础设施。DataFlow 的关系是训练/评测前的数据准备：样本筛选、格式转换、质量打分、合成数据治理和 benchmark 构建。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/Oneflow-Inc/oneflow" target="_blank" rel="noreferrer">Oneflow-Inc/oneflow</a></td><td>237</td><td>59%</td><td><span class="relation-pill downstream">下游平台</span></td><td>Agent / Workflow</td><td>9,408</td><td>OneFlow is a deep learning framework designed to be user-friendly, scalable and efficient.</td><td>这类项目偏 Agent / workflow 应用层。DataFlow 可作为前置数据工程层，准备知识库、任务样本、工具调用日志和评测数据，再交给 Agent 平台编排执行。</td><td>C++</td></tr>
+                <tr><td><a href="https://github.com/iflytek/astron-agent" target="_blank" rel="noreferrer">iflytek/astron-agent</a></td><td>237</td><td>59%</td><td><span class="relation-pill downstream">下游平台</span></td><td>Agent / Workflow</td><td>8,584</td><td>Enterprise-grade, commercial-friendly agentic workflow platform for building next-generation SuperAgents.</td><td>这类项目偏 Agent / workflow 应用层。DataFlow 可作为前置数据工程层，准备知识库、任务样本、工具调用日志和评测数据，再交给 Agent 平台编排执行。</td><td>Java</td></tr>
+                <tr><td><a href="https://github.com/microsoft/UFO" target="_blank" rel="noreferrer">microsoft/UFO</a></td><td>236</td><td>59%</td><td><span class="relation-pill downstream">下游平台</span></td><td>Agent / Workflow</td><td>9,182</td><td>UFO³: Weaving the Digital Agent Galaxy</td><td>这类项目偏 Agent / workflow 应用层。DataFlow 可作为前置数据工程层，准备知识库、任务样本、工具调用日志和评测数据，再交给 Agent 平台编排执行。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/dataelement/bisheng" target="_blank" rel="noreferrer">dataelement/bisheng</a></td><td>230</td><td>57%</td><td><span class="relation-pill competitor">相邻竞品</span></td><td>Agent / Workflow</td><td>11,480</td><td>BISHENG is an open LLM devops platform for next generation Enterprise AI applications. Powerful and comprehensive features include: GenAI workflow, RAG, Agent, Unified model management, Evaluation, SFT, Dataset Management, Enterprise-level System Management, Observability and more.</td><td>这类项目偏 Agent / workflow 应用层。DataFlow 可作为前置数据工程层，准备知识库、任务样本、工具调用日志和评测数据，再交给 Agent 平台编排执行。</td><td>TypeScript</td></tr>
+                <tr><td><a href="https://github.com/hyperai/tvm-cn" target="_blank" rel="noreferrer">hyperai/tvm-cn</a></td><td>230</td><td>57%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>Other</td><td>3,825</td><td>TVM Documentation in Chinese Simplified / TVM 中文文档</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号。可保留观察，但不应作为核心使用场景判断。</td><td>TypeScript</td></tr>
+                <tr><td><a href="https://github.com/FxPool/FXMinerProxy" target="_blank" rel="noreferrer">FxPool/FXMinerProxy</a></td><td>226</td><td>56%</td><td><span class="relation-pill weak">弱相关</span></td><td>Other</td><td>3,707</td><td>🔥minerproxy,minerproxy,minerproxy,minerproxy,minerproxy,minerproxy,minerproxy,minerproxy,minerproxy,minerproxy,矿池抽水,矿池中转,矿场运维专用</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号。可保留观察，但不应作为核心使用场景判断。</td><td>Go</td></tr>
+                <tr><td><a href="https://github.com/PKU-Alignment/align-anything" target="_blank" rel="noreferrer">PKU-Alignment/align-anything</a></td><td>223</td><td>56%</td><td><span class="relation-pill downstream">下游训练</span></td><td>LLM Infra</td><td>4,662</td><td>Align Anything: Training All-modality Model with Feedback</td><td>这类项目偏模型训练、推理或基础设施。DataFlow 的关系是训练/评测前的数据准备：样本筛选、格式转换、质量打分、合成数据治理和 benchmark 构建。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/EvilGenius-dot/RustMinerSystem" target="_blank" rel="noreferrer">EvilGenius-dot/RustMinerSystem</a></td><td>222</td><td>56%</td><td><span class="relation-pill weak">弱相关</span></td><td>Other</td><td>3,873</td><td>💰唯一正版💰 minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy 矿池抽水 矿池代理 矿池中转 矿池抽水 minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy minerproxy</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号。可保留观察，但不应作为核心使用场景判断。</td><td>Rust</td></tr>
+                <tr><td><a href="https://github.com/limix-ldm-ai/LimiX" target="_blank" rel="noreferrer">limix-ldm-ai/LimiX</a></td><td>216</td><td>54%</td><td><span class="relation-pill competitor">相邻竞品</span></td><td>Data Engineering</td><td>3,593</td><td>LimiX: Unleashing Structured-Data Modeling Capability for Generalist Intelligence https://arxiv.org/abs/2509.03505</td><td>这类项目与 DataFlow 的数据准备、数据质量或数据治理定位更接近，可作为相邻竞品或能力参照，重点观察其数据诊断、结构化和治理能力。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/fudan-generative-vision/hallo" target="_blank" rel="noreferrer">fudan-generative-vision/hallo</a></td><td>212</td><td>53%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>Other</td><td>8,655</td><td>Hallo: Hierarchical Audio-Driven Visual Synthesis for Portrait Image Animation</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号。可保留观察，但不应作为核心使用场景判断。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/qualcomm/GenieX" target="_blank" rel="noreferrer">qualcomm/GenieX</a></td><td>212</td><td>53%</td><td><span class="relation-pill downstream">下游训练</span></td><td>LLM Infra</td><td>8,113</td><td>Run frontier LLMs and VLMs locally on Qualcomm devices across NPU, GPU, and CPU with a few lines of code</td><td>这类项目偏模型训练、推理或基础设施。DataFlow 的关系是训练/评测前的数据准备：样本筛选、格式转换、质量打分、合成数据治理和 benchmark 构建。</td><td>Rust</td></tr>
+                <tr><td><a href="https://github.com/FoundationAgents/MetaGPT" target="_blank" rel="noreferrer">FoundationAgents/MetaGPT</a></td><td>202</td><td>51%</td><td><span class="relation-pill downstream">下游平台</span></td><td>Agent / Workflow</td><td>69,129</td><td>🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming</td><td>这类项目偏 Agent / workflow 应用层。DataFlow 可作为前置数据工程层，准备知识库、任务样本、工具调用日志和评测数据，再交给 Agent 平台编排执行。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/Everlyn-Labs/Everlyn-1" target="_blank" rel="noreferrer">Everlyn-Labs/Everlyn-1</a></td><td>200</td><td>50%</td><td><span class="relation-pill downstream">下游训练</span></td><td>LLM Infra</td><td>2,892</td><td>The first open autoregressive foundational video AI model.</td><td>这类项目偏模型训练、推理或基础设施。DataFlow 的关系是训练/评测前的数据准备：样本筛选、格式转换、质量打分、合成数据治理和 benchmark 构建。</td><td>-</td></tr>
+                <tr><td><a href="https://github.com/TJU-DRL-LAB/AI-Optimizer" target="_blank" rel="noreferrer">TJU-DRL-LAB/AI-Optimizer</a></td><td>198</td><td>50%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>Other</td><td>3,463</td><td>The next generation deep reinforcement learning tookit</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号。可保留观察，但不应作为核心使用场景判断。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/TaskingAI/TaskingAI" target="_blank" rel="noreferrer">TaskingAI/TaskingAI</a></td><td>197</td><td>49%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>Other</td><td>5,388</td><td>The open source platform for AI-native application development.</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号。可保留观察，但不应作为核心使用场景判断。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/yikart/AiToEarn" target="_blank" rel="noreferrer">yikart/AiToEarn</a></td><td>196</td><td>49%</td><td><span class="relation-pill weak">弱相关</span></td><td>Other</td><td>22,287</td><td>Let&#39;s use AI to Earn!</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号。可保留观察，但不应作为核心使用场景判断。</td><td>TypeScript</td></tr>
+                <tr><td><a href="https://github.com/juggleim/im-server" target="_blank" rel="noreferrer">juggleim/im-server</a></td><td>191</td><td>48%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>Other</td><td>3,581</td><td>A high-performance IM server.</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号。可保留观察，但不应作为核心使用场景判断。</td><td>Go</td></tr>
+                <tr><td><a href="https://github.com/risesoft-y9/Digital-Infrastructure" target="_blank" rel="noreferrer">risesoft-y9/Digital-Infrastructure</a></td><td>189</td><td>47%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>Other</td><td>2,596</td><td>数字底座是一款面向大型政府、企业数字化转型，基于身份认证、组织架构、岗位职务、应用系统、资源角色、数据目录、安全控制等功能构建的统一且安全的管理支撑平台。数字底座基于三员管理模式，具备微服务、多租户、容器化和国产化，支持用户利用代码生成器快速构建自己的业务应用，同时可关联诸多成熟且好用的内部生态应用。</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号。可保留观察，但不应作为核心使用场景判断。</td><td>Java</td></tr>
+                <tr><td><a href="https://github.com/Orillusion/orillusion" target="_blank" rel="noreferrer">Orillusion/orillusion</a></td><td>184</td><td>46%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>Other</td><td>5,188</td><td>Orillusion is a pure Web3D rendering engine which is fully developed based on the WebGPU standard.</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号。可保留观察，但不应作为核心使用场景判断。</td><td>TypeScript</td></tr>
+                <tr><td><a href="https://github.com/SuanmoSuanyangTechnology/MemoryBear" target="_blank" rel="noreferrer">SuanmoSuanyangTechnology/MemoryBear</a></td><td>182</td><td>46%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>Other</td><td>4,646</td><td>MemoryBear Equip AI with human-like memory capability</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号。可保留观察，但不应作为核心使用场景判断。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/Docta-ai/docta" target="_blank" rel="noreferrer">Docta-ai/docta</a></td><td>179</td><td>45%</td><td><span class="relation-pill competitor">相邻竞品</span></td><td>Data Engineering</td><td>3,480</td><td>A Doctor for your data</td><td>这类项目与 DataFlow 的数据准备、数据质量或数据治理定位更接近，可作为相邻竞品或能力参照，重点观察其数据诊断、结构化和治理能力。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/dgiot/dgiot" target="_blank" rel="noreferrer">dgiot/dgiot</a></td><td>178</td><td>45%</td><td><span class="relation-pill competitor">相邻竞品</span></td><td>Data Engineering</td><td>4,824</td><td>Open source platform for iot , 6 min Quick Deployment,10M devices connection,Carrier level Stability;物联网开源平台,6分钟快速部署,千万级承载,电信级稳定性. Low code for Object model-Rule Engine-Data Channel-Configuration Page; Fully open source, Multi industrial protocols are compatible.物模型-规则引擎-数据通道-组态页面全流程零代码开发、全业务全链路模拟压测、前后端完全开源、多行业工业协议兼容。QQ群:346566935</td><td>这类项目与 DataFlow 的数据准备、数据质量或数据治理定位更接近，可作为相邻竞品或能力参照，重点观察其数据诊断、结构化和治理能力。</td><td>Erlang</td></tr>
+                <tr><td><a href="https://github.com/nesaorg/nesa" target="_blank" rel="noreferrer">nesaorg/nesa</a></td><td>175</td><td>44%</td><td><span class="relation-pill downstream">下游训练</span></td><td>LLM Infra</td><td>3,168</td><td>Run AI models end-to-end encrypted.</td><td>这类项目偏模型训练、推理或基础设施。DataFlow 的关系是训练/评测前的数据准备：样本筛选、格式转换、质量打分、合成数据治理和 benchmark 构建。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/open-gigaai/giga-brain-0" target="_blank" rel="noreferrer">open-gigaai/giga-brain-0</a></td><td>172</td><td>43%</td><td><span class="relation-pill downstream">下游训练</span></td><td>LLM Infra</td><td>2,547</td><td>GigaBrain-0: A World Model-Powered Vision-Language-Action Model</td><td>这类项目偏模型训练、推理或基础设施。DataFlow 的关系是训练/评测前的数据准备：样本筛选、格式转换、质量打分、合成数据治理和 benchmark 构建。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/lakesoul-io/LakeSoul" target="_blank" rel="noreferrer">lakesoul-io/LakeSoul</a></td><td>167</td><td>42%</td><td><span class="relation-pill downstream">典型下游</span></td><td>RAG / Search</td><td>3,240</td><td>LakeSoul is an end-to-end, realtime cloud-native Lakehouse framework for fast data ingestion, concurrent updates, incremental analytics, multimodal data processing and vector search — powering next-generation BI and AI workloads.</td><td>Lakehouse / 向量检索更偏数据存储与检索底座。DataFlow 可负责进入 Lakehouse 前的数据清洗、结构化、质量评估和多模态数据预处理。</td><td>Java</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="table-wrap overlap-category-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>兴趣分类</th>
+                  <th>共现次数</th>
+                  <th>占比</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Other</td><td>28,855</td><td>43%</td></tr>
+                <tr><td>Agent / Workflow</td><td>14,026</td><td>21%</td></tr>
+                <tr><td>LLM Infra</td><td>10,183</td><td>15%</td></tr>
+                <tr><td>Data Engineering</td><td>5,460</td><td>8%</td></tr>
+                <tr><td>RAG / Search</td><td>4,703</td><td>7%</td></tr>
+                <tr><td>Dev Tooling</td><td>2,615</td><td>4%</td></tr>
+                <tr><td>Evaluation</td><td>787</td><td>1%</td></tr>
+                <tr><td>Data Prep / Dataset</td><td>571</td><td>1%</td></tr>
+                <tr><td>Database / Storage</td><td>227</td><td>0%</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p class="overlap-note">口径：分析 2026-06-01 到 2026-06-30 给 OpenDCAI/DataFlow 点 star 的用户；按 6 月新增 stargazer 时间序列等距抽样 400 人，并读取每人最近最多 300 个公开 starred repos。GitHub 不提供共同 star 图谱接口，本分析由公开 stargazer 和用户 starred repos 聚合而来，适合判断兴趣相关度，不等同于真实使用关系。</p>
+        </div>
+      </details>
+    </main>
+
+    <script src="./app.js?v=142-85d4235"></script>
+  </body>
+</html>
