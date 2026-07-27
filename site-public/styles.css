@@ -263,6 +263,10 @@ main {
   background: var(--green);
 }
 
+.legend-dot.star-compare {
+  background: var(--accent);
+}
+
 .legend-dot.clones {
   background: #f97316;
 }
@@ -2080,6 +2084,10 @@ td:nth-child(5),
   background: var(--palette-teal);
 }
 
+.legend-dot.star-compare {
+  background: var(--palette-yellow);
+}
+
 .legend-dot.clones {
   background: var(--palette-orange);
 }
@@ -2123,7 +2131,11 @@ td:nth-child(5),
 }
 
 .star-compare-line {
-  stroke: var(--palette-sky);
+  stroke: var(--palette-yellow);
+}
+
+.star-point {
+  fill: var(--palette-yellow);
 }
 
 .clone-line {

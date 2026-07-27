@@ -536,6 +536,17 @@ const competitorSnapshots = {
     "tinyfish-io/bigset": 1675,
     "OpenDataArena/OpenDataArena-Tool": 146,
     "InternScience/SciDataCopilot": 43
+  },
+  "2026-07-27": {
+    "datajuicer/data-juicer": 6779,
+    "Eventual-Inc/Daft": 5663,
+    "OpenDCAI/DataFlow": 7031,
+    "huggingface/datatrove": 3228,
+    "NVIDIA-NeMo/DataDesigner": 2127,
+    "NVIDIA-NeMo/Curator": 1684,
+    "tinyfish-io/bigset": 1676,
+    "OpenDataArena/OpenDataArena-Tool": 146,
+    "InternScience/SciDataCopilot": 43
   }
 };
 
@@ -819,7 +830,13 @@ const trafficRows = [
   ["2026-07-16", 129, 84, 87, 26],
   ["2026-07-17", 134, 74, 34, 29],
   ["2026-07-18", 88, 45, 56, 30],
-  ["2026-07-19", 156, 53, 11, 11]
+  ["2026-07-19", 156, 53, 11, 11],
+  ["2026-07-20", 198, 90, 129, 30],
+  ["2026-07-21", 150, 89, 76, 35],
+  ["2026-07-22", 258, 134, 68, 44],
+  ["2026-07-23", 208, 102, 48, 31],
+  ["2026-07-24", 349, 172, 74, 58],
+  ["2026-07-25", 556, 291, 139, 93]
 ].map(([date, views, visitors, clones, cloners]) => ({ date, views, visitors, clones, cloners }));
 
 const trafficSourceSnapshots = [
@@ -1010,6 +1027,33 @@ const trafficSourceSnapshots = [
       ["/graphs/contributors", 22, 15],
       ["/tree/main/dataflow/operators", 19, 16],
       ["/blob/main/awesome_dataflow.md", 18, 17]
+    ]
+  },
+  {
+    date: "2026-07-25",
+    referrers: [
+      ["github.com", 724, 310],
+      ["Google", 345, 213],
+      ["Bing", 103, 49],
+      ["huggingface.co", 34, 17],
+      ["opendcai.github.io", 34, 15],
+      ["chatgpt.com", 27, 11],
+      ["zwt233.github.io", 23, 12],
+      ["wcny4qa9krto.feishu.cn", 15, 8],
+      ["reddit.com", 11, 6],
+      ["Baidu", 9, 3]
+    ],
+    content: [
+      ["Overview", 1413, 920],
+      ["/blob/main/README-zh.md", 527, 300],
+      ["/issues", 81, 40],
+      ["/tree/main/dataflow", 76, 54],
+      ["/tree/main", 75, 60],
+      ["/pulls", 38, 23],
+      ["/blob/main/awesome_dataflow.md", 32, 28],
+      ["/graphs/contributors", 26, 14],
+      ["/discussions", 19, 5],
+      ["/tree/main/dataflow/operators", 17, 14]
     ]
   }
 ].map((snapshot) => ({
@@ -1322,7 +1366,7 @@ function renderVisitorStarChart() {
   const margin = { top: 54, right: 72, bottom: 58, left: 58 };
   const chartW = width - margin.left - margin.right;
   const chartH = height - margin.top - margin.bottom;
-  const maxValue = 150;
+  const maxValue = 300;
   const clamp = (value) => Math.min(value, maxValue);
   const x = (index) => margin.left + (index / (rows.length - 1)) * chartW;
   const y = (value) => margin.top + chartH - (clamp(value) / maxValue) * chartH;
@@ -1330,7 +1374,7 @@ function renderVisitorStarChart() {
   const starLine = rows.map((item, index) => `${x(index)},${y(item.stars)}`).join(" ");
   const cloneLine = rows.map((item, index) => `${x(index)},${y(item.clones)}`).join(" ");
   const clonerLine = rows.map((item, index) => `${x(index)},${y(item.cloners)}`).join(" ");
-  const ticks = [0, 30, 60, 90, 120, 150];
+  const ticks = [0, 60, 120, 180, 240, 300];
   const grid = ticks
     .map((tick) => `<line class="grid-line" x1="${margin.left}" y1="${y(tick)}" x2="${width - margin.right}" y2="${y(tick)}"></line><text class="chart-label" x="16" y="${y(tick) + 4}">${tick}</text>`)
     .join("");
