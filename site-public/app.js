@@ -101,7 +101,7 @@ const dailyCounts = [
   ["2026-07-12", 34], ["2026-07-13", 48], ["2026-07-14", 50], ["2026-07-15", 38],
   ["2026-07-16", 46], ["2026-07-17", 46], ["2026-07-18", 45], ["2026-07-19", 50],
   ["2026-07-20", 52], ["2026-07-21", 38], ["2026-07-22", 42], ["2026-07-23", 32],
-  ["2026-07-24", 112], ["2026-07-25", 97], ["2026-07-26", 33], ["2026-07-27", 15]
+  ["2026-07-24", 112], ["2026-07-25", 97], ["2026-07-26", 33], ["2026-07-27", 26]
 ];
 
 let competitorSnapshotDate = "2026-07-27";
@@ -529,7 +529,7 @@ const competitorSnapshots = {
   "2026-07-27": {
     "datajuicer/data-juicer": 6779,
     "Eventual-Inc/Daft": 5663,
-    "OpenDCAI/DataFlow": 7031,
+    "OpenDCAI/DataFlow": 7042,
     "huggingface/datatrove": 3228,
     "NVIDIA-NeMo/DataDesigner": 2127,
     "NVIDIA-NeMo/Curator": 1684,
@@ -543,7 +543,7 @@ const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
     total: 6779,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 3,
     color: "#f2c94c",
     points: [
@@ -563,7 +563,7 @@ const competitorRepos = [
   {
     name: "Eventual-Inc/Daft",
     total: 5663,
-    yesterday: -1,
+    yesterday: 0,
     twoDayChange: 3,
     color: "#f2994a",
     points: [
@@ -585,9 +585,9 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 7031,
-    yesterday: 6,
-    twoDayChange: 71,
+    total: 7042,
+    yesterday: 11,
+    twoDayChange: 82,
     color: "#2d9cdb",
     points: null
   },
@@ -646,7 +646,7 @@ const competitorRepos = [
   {
     name: "tinyfish-io/bigset",
     total: 1676,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 2,
     color: "#14b8a6",
     points: [
@@ -1175,13 +1175,13 @@ const phaseRegionStats = [
   {
     phaseId: "july",
     status: "complete",
-    totalStars: 1332,
-    known: 986,
-    china: 254,
+    totalStars: 1349,
+    known: 987,
+    china: 255,
     overseas: 732,
-    unknown: 346,
+    unknown: 362,
     note: "07/01-07/27 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["Shanghai 43","Beijing 20","China 19","Hong Kong 13","Taiwan 12","Beijing, China 9","Shenzhen 9","Shanghai, China 8","Taipei 7","Shenzhen, China 5"],
+    topChinaLocations: ["Shanghai 43","Beijing 20","China 20","Hong Kong 13","Taiwan 12","Beijing, China 9","Shenzhen 9","Shanghai, China 8","Taipei 7","Shenzhen, China 5"],
     topOverseasLocations: ["United States 134","Japan 76","Singapore 36","South Korea 22","India 19","United Kingdom 12","France 11","Canada 10","Germany 9","Thailand 9"]
   }
 ];
