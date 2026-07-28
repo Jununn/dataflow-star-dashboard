@@ -539,10 +539,10 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 43
   },
   "2026-07-28": {
-    "datajuicer/data-juicer": 6788,
-    "Eventual-Inc/Daft": 5667,
+    "datajuicer/data-juicer": 6791,
+    "Eventual-Inc/Daft": 5668,
     "OpenDCAI/DataFlow": 7086,
-    "huggingface/datatrove": 3233,
+    "huggingface/datatrove": 3234,
     "NVIDIA-NeMo/DataDesigner": 2128,
     "NVIDIA-NeMo/Curator": 1685,
     "tinyfish-io/bigset": 1676,
@@ -554,9 +554,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 6788,
+    total: 6791,
     yesterday: 3,
-    twoDayChange: 11,
+    twoDayChange: 14,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -569,14 +569,14 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-07-28", 6788]
+      ["2026-07-28", 6791]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
-    total: 5667,
-    yesterday: 0,
-    twoDayChange: 4,
+    total: 5668,
+    yesterday: 1,
+    twoDayChange: 5,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -592,22 +592,22 @@ const competitorRepos = [
       ["2025-10-01", 4400],
       ["2026-01-01", 4900],
       ["2026-04-01", 5350],
-      ["2026-07-28", 5667]
+      ["2026-07-28", 5668]
     ]
   },
   {
     name: "OpenDCAI/DataFlow",
     total: 7086,
-    yesterday: 3,
+    yesterday: 0,
     twoDayChange: 87,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
-    total: 3233,
+    total: 3234,
     yesterday: 1,
-    twoDayChange: 7,
+    twoDayChange: 8,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -620,13 +620,13 @@ const competitorRepos = [
       ["2025-06-01", 2400],
       ["2025-10-01", 2650],
       ["2026-03-01", 2900],
-      ["2026-07-28", 3233]
+      ["2026-07-28", 3234]
     ]
   },
   {
     name: "NVIDIA-NeMo/DataDesigner",
     total: 2128,
-    yesterday: -1,
+    yesterday: 0,
     twoDayChange: 2,
     color: "#e94b35",
     points: [
