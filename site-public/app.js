@@ -555,7 +555,7 @@ const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
     total: 6791,
-    yesterday: 3,
+    yesterday: 0,
     twoDayChange: 14,
     color: "#f2c94c",
     points: [
@@ -575,7 +575,7 @@ const competitorRepos = [
   {
     name: "Eventual-Inc/Daft",
     total: 5668,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 5,
     color: "#f2994a",
     points: [
@@ -606,7 +606,7 @@ const competitorRepos = [
   {
     name: "huggingface/datatrove",
     total: 3234,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 8,
     color: "#3fb950",
     points: [
