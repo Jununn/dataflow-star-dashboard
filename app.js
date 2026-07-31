@@ -102,7 +102,7 @@ const dailyCounts = [
   ["2026-07-16", 46], ["2026-07-17", 46], ["2026-07-18", 45], ["2026-07-19", 50],
   ["2026-07-20", 52], ["2026-07-21", 38], ["2026-07-22", 42], ["2026-07-23", 32],
   ["2026-07-24", 112], ["2026-07-25", 97], ["2026-07-26", 33], ["2026-07-27", 64],
-  ["2026-07-28", 28], ["2026-07-29", 22], ["2026-07-30", 17], ["2026-07-31", 5]
+  ["2026-07-28", 28], ["2026-07-29", 22], ["2026-07-30", 17], ["2026-07-31", 7]
 ];
 
 let competitorSnapshotDate = "2026-07-31";
@@ -563,7 +563,7 @@ const competitorSnapshots = {
   "2026-07-31": {
     "datajuicer/data-juicer": 6814,
     "Eventual-Inc/Daft": 5674,
-    "OpenDCAI/DataFlow": 7147,
+    "OpenDCAI/DataFlow": 7149,
     "huggingface/datatrove": 3239,
     "NVIDIA-NeMo/DataDesigner": 2133,
     "NVIDIA-NeMo/Curator": 1689,
@@ -619,9 +619,9 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 7147,
-    yesterday: 0,
-    twoDayChange: 34,
+    total: 7149,
+    yesterday: 2,
+    twoDayChange: 36,
     color: "#2d9cdb",
     points: null
   },
@@ -1196,11 +1196,11 @@ const phaseRegionStats = [
   {
     phaseId: "may",
     status: "complete",
-    totalStars: 1120,
+    totalStars: 1119,
     known: 781,
     china: 196,
     overseas: 585,
-    unknown: 339,
+    unknown: 338,
     note: "05/01-05/31 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Shanghai 25","China 19","Beijing 16","Beijing, China 14","Hong Kong 12","Taiwan 12","Shenzhen 6","Shanghai, China 5","Hangzhou 4","Hangzhou, China 4"],
     topOverseasLocations: ["United States 98","Japan 47","Singapore 20","Germany 19","Canada 14","India 14","South Korea 14","United Kingdom 14","France 12","Vietnam 11"]
@@ -1208,11 +1208,11 @@ const phaseRegionStats = [
   {
     phaseId: "june",
     status: "complete",
-    totalStars: 1316,
+    totalStars: 1315,
     known: 1058,
     china: 283,
     overseas: 775,
-    unknown: 258,
+    unknown: 257,
     note: "06/01-06/30 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Shanghai 25","Hong Kong 24","China 23","Beijing 22","Taiwan 15","Shanghai, China 13","Beijing, China 12","Shenzhen 9","Guangzhou 7","Hangzhou, China 7"],
     topOverseasLocations: ["United States 142","Japan 71","Singapore 36","South Korea 29","India 23","United Kingdom 22","Australia 20","Germany 11","Canada 10","France 10"]
@@ -1220,14 +1220,14 @@ const phaseRegionStats = [
   {
     phaseId: "july",
     status: "complete",
-    totalStars: 1394,
-    known: 1004,
-    china: 261,
-    overseas: 743,
-    unknown: 390,
-    note: "07/01-07/28 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["Shanghai 43","China 22","Beijing 20","Hong Kong 13","Taiwan 12","Beijing, China 9","Shanghai, China 9","Shenzhen 9","Taipei 7","Shenzhen, China 5"],
-    topOverseasLocations: ["United States 137","Japan 76","Singapore 36","South Korea 22","India 19","United Kingdom 13","France 11","Australia 10","Canada 10","Germany 10"]
+    totalStars: 1461,
+    known: 1021,
+    china: 276,
+    overseas: 745,
+    unknown: 440,
+    note: "07/01-07/31 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    topChinaLocations: ["Shanghai 43","China 22","Beijing 20","Hong Kong 13","Taiwan 12","Beijing, China 9","Shanghai, China 9","Shenzhen 9","Taipei 7","Hangzhou 5"],
+    topOverseasLocations: ["United States 138","Japan 76","Singapore 36","South Korea 22","India 20","United Kingdom 13","France 11","Australia 10","Canada 10","Germany 10"]
   }
 ];
 
