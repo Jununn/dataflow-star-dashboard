@@ -565,6 +565,36 @@ svg {
   background: #f8fafc;
 }
 
+.star-uv-details {
+  padding-bottom: 18px;
+}
+
+.star-uv-chart {
+  margin: 0 24px 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.star-uv-line {
+  fill: none;
+  stroke: #eab308;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3.2;
+}
+
+.star-uv-point {
+  fill: #eab308;
+  stroke: #fff;
+  stroke-width: 1.5;
+  cursor: crosshair;
+}
+
+.star-uv-point:hover {
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
 .traffic-matrix-wrap {
   overflow-x: auto;
   padding: 0 24px 24px;

@@ -1,4 +1,4 @@
-let startTotal = 1785;
+let startTotal = 1784;
 const historicalStartTotal = 72;
 const historicalNonZeroDailyCounts = [
   ["2025-06-04", 1], ["2025-06-05", 8], ["2025-06-06", 26], ["2025-06-07", 21],
@@ -103,7 +103,7 @@ const dailyCounts = [
   ["2026-07-20", 52], ["2026-07-21", 38], ["2026-07-22", 42], ["2026-07-23", 32],
   ["2026-07-24", 112], ["2026-07-25", 97], ["2026-07-26", 33], ["2026-07-27", 64],
   ["2026-07-28", 28], ["2026-07-29", 22], ["2026-07-30", 17], ["2026-07-31", 21],
-  ["2026-08-01", 10], ["2026-08-02", 8], ["2026-08-03", 4]
+  ["2026-08-01", 10], ["2026-08-02", 8], ["2026-08-03", 6]
 ];
 
 let competitorSnapshotDate = "2026-08-03";
@@ -563,33 +563,11 @@ const competitorSnapshots = {
   },
   "2026-07-31": {
     "datajuicer/data-juicer": 6814,
-    "Eventual-Inc/Daft": 5676,
-    "OpenDCAI/DataFlow": 7161,
-    "huggingface/datatrove": 3241,
-    "NVIDIA-NeMo/DataDesigner": 2135,
-    "NVIDIA-NeMo/Curator": 1692,
-    "tinyfish-io/bigset": 1678,
-    "OpenDataArena/OpenDataArena-Tool": 146,
-    "InternScience/SciDataCopilot": 43
-  },
-  "2026-08-01": {
-    "datajuicer/data-juicer": 6814,
-    "Eventual-Inc/Daft": 5679,
-    "OpenDCAI/DataFlow": 7168,
-    "huggingface/datatrove": 3242,
-    "NVIDIA-NeMo/DataDesigner": 2137,
-    "NVIDIA-NeMo/Curator": 1694,
-    "tinyfish-io/bigset": 1678,
-    "OpenDataArena/OpenDataArena-Tool": 146,
-    "InternScience/SciDataCopilot": 43
-  },
-  "2026-08-02": {
-    "datajuicer/data-juicer": 6814,
-    "Eventual-Inc/Daft": 5679,
-    "OpenDCAI/DataFlow": 7180,
-    "huggingface/datatrove": 3243,
-    "NVIDIA-NeMo/DataDesigner": 2137,
-    "NVIDIA-NeMo/Curator": 1695,
+    "Eventual-Inc/Daft": 5674,
+    "OpenDCAI/DataFlow": 7147,
+    "huggingface/datatrove": 3239,
+    "NVIDIA-NeMo/DataDesigner": 2133,
+    "NVIDIA-NeMo/Curator": 1689,
     "tinyfish-io/bigset": 1678,
     "OpenDataArena/OpenDataArena-Tool": 146,
     "InternScience/SciDataCopilot": 43
@@ -597,9 +575,9 @@ const competitorSnapshots = {
   "2026-08-03": {
     "datajuicer/data-juicer": 6815,
     "Eventual-Inc/Daft": 5681,
-    "OpenDCAI/DataFlow": 7185,
+    "OpenDCAI/DataFlow": 7186,
     "huggingface/datatrove": 3244,
-    "NVIDIA-NeMo/DataDesigner": 2139,
+    "NVIDIA-NeMo/DataDesigner": 2140,
     "NVIDIA-NeMo/Curator": 1695,
     "tinyfish-io/bigset": 1678,
     "OpenDataArena/OpenDataArena-Tool": 146,
@@ -611,8 +589,8 @@ const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
     total: 6815,
-    yesterday: 1,
-    twoDayChange: 1,
+    yesterday: 0,
+    twoDayChange: 0,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -631,8 +609,8 @@ const competitorRepos = [
   {
     name: "Eventual-Inc/Daft",
     total: 5681,
-    yesterday: 2,
-    twoDayChange: 2,
+    yesterday: 0,
+    twoDayChange: 0,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -653,17 +631,17 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 7185,
-    yesterday: 5,
-    twoDayChange: 17,
+    total: 7186,
+    yesterday: 0,
+    twoDayChange: 14,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
     total: 3244,
-    yesterday: 1,
-    twoDayChange: 2,
+    yesterday: 0,
+    twoDayChange: 0,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -681,23 +659,23 @@ const competitorRepos = [
   },
   {
     name: "NVIDIA-NeMo/DataDesigner",
-    total: 2139,
-    yesterday: 2,
-    twoDayChange: 2,
+    total: 2140,
+    yesterday: 0,
+    twoDayChange: 0,
     color: "#e94b35",
     points: [
       ["2025-10-16", 0],
       ["2026-01-01", 500],
       ["2026-03-01", 700],
       ["2026-04-01", 1000],
-      ["2026-08-03", 2139]
+      ["2026-08-03", 2140]
     ]
   },
   {
     name: "NVIDIA-NeMo/Curator",
     total: 1695,
     yesterday: 0,
-    twoDayChange: 1,
+    twoDayChange: 0,
     color: "#e879b4",
     points: [
       ["2024-03-14", 0],
@@ -843,7 +821,10 @@ const actions = [
   ["2026-07-29", "GitHub", "pr: awesome-generative-ai", "https://github.com/filipecalegario/awesome-generative-ai/pull/646"],
   ["2026-07-30", "Reddit", "dataflow-text2sql", "https://www.reddit.com/r/LLMDevs/comments/1vapccq/designing_texttosql_as_a_data_pipeline_not_a/"],
   ["2026-07-30", "LinkedIn", "dataflow-oss", "https://www.linkedin.com/feed/update/urn:li:activity:7488536985482141696?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEUUBPQBFc8EfKdyeyOBsOUABAvO12iGjao"],
-  ["2026-07-30", "Medium", "dataflow-harness", "https://medium.com/@yijunx/peking-university-open-sourced-one-of-the-hardest-types-of-harness-engineering-for-ai-data-465a2a26bbe6?postPublishedType=initial"]
+  ["2026-07-30", "Medium", "dataflow-harness", "https://medium.com/@yijunx/peking-university-open-sourced-one-of-the-hardest-types-of-harness-engineering-for-ai-data-465a2a26bbe6?postPublishedType=initial"],
+  ["2026-07-31", "Reddit", "dataflow-text2sql", "https://www.reddit.com/r/ETL/comments/1vbja9a/designing_texttosql_as_a_data_pipeline_not_a/"],
+  ["2026-07-31", "Reddit", "oss", "https://www.reddit.com/r/LovingOpenSourceAI/comments/1vbndtm/opensource_ai_infrastructure_matters_because_the/"],
+  ["2026-08-01", "X", "dataflow-harness", "https://x.com/stevencheng/status/2083521877973074383"]
 ].map(([date, channel, title, url]) => ({ date, channel, title, url }));
 
 const trafficRows = [
@@ -904,7 +885,11 @@ const trafficRows = [
   ["2026-07-24", 349, 172, 74, 58],
   ["2026-07-25", 556, 291, 139, 93],
   ["2026-07-26", 348, 171, 143, 47],
-  ["2026-07-27", 799, 430, 174, 99]
+  ["2026-07-27", 799, 430, 174, 99],
+  ["2026-07-28", 545, 313, 963, 51],
+  ["2026-07-29", 670, 328, 66, 54],
+  ["2026-07-30", 595, 287, 175, 63],
+  ["2026-07-31", 499, 258, 185, 122]
 ].map(([date, views, visitors, clones, cloners]) => ({ date, views, visitors, clones, cloners }));
 
 const trafficSourceSnapshots = [
@@ -1123,6 +1108,33 @@ const trafficSourceSnapshots = [
       ["/discussions", 19, 5],
       ["/tree/main/dataflow/operators", 17, 14]
     ]
+  },
+  {
+    date: "2026-08-03",
+    referrers: [
+      ["github.com", 1343, 553],
+      ["Google", 733, 391],
+      ["Bing", 254, 102],
+      ["opendcai.github.io", 82, 34],
+      ["chatgpt.com", 29, 19],
+      ["huggingface.co", 26, 18],
+      ["zwt233.github.io", 24, 19],
+      ["wcny4qa9krto.feishu.cn", 20, 10],
+      ["Baidu", 19, 11],
+      ["reddit.com", 19, 6]
+    ],
+    content: [
+      ["Overview", 2888, 1835],
+      ["/blob/main/README-zh.md", 1136, 646],
+      ["/tree/main", 157, 112],
+      ["/tree/main/dataflow", 143, 102],
+      ["/issues", 97, 60],
+      ["/blob/main/awesome_dataflow.md", 71, 58],
+      ["/pulls", 43, 26],
+      ["/tree/main/dataflow/operators", 28, 24],
+      ["/fork", 26, 24],
+      ["/releases", 23, 19]
+    ]
   }
 ].map((snapshot) => ({
   ...snapshot,
@@ -1230,11 +1242,11 @@ const phaseRegionStats = [
   {
     phaseId: "may",
     status: "complete",
-    totalStars: 1119,
+    totalStars: 1120,
     known: 781,
     china: 196,
     overseas: 585,
-    unknown: 338,
+    unknown: 339,
     note: "05/01-05/31 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Shanghai 25","China 19","Beijing 16","Beijing, China 14","Hong Kong 12","Taiwan 12","Shenzhen 6","Shanghai, China 5","Hangzhou 4","Hangzhou, China 4"],
     topOverseasLocations: ["United States 98","Japan 47","Singapore 20","Germany 19","Canada 14","India 14","South Korea 14","United Kingdom 14","France 12","Vietnam 11"]
@@ -1242,11 +1254,11 @@ const phaseRegionStats = [
   {
     phaseId: "june",
     status: "complete",
-    totalStars: 1315,
+    totalStars: 1316,
     known: 1058,
     china: 283,
     overseas: 775,
-    unknown: 257,
+    unknown: 258,
     note: "06/01-06/30 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Shanghai 25","Hong Kong 24","China 23","Beijing 22","Taiwan 15","Shanghai, China 13","Beijing, China 12","Shenzhen 9","Guangzhou 7","Hangzhou, China 7"],
     topOverseasLocations: ["United States 142","Japan 71","Singapore 36","South Korea 29","India 23","United Kingdom 22","Australia 20","Germany 11","Canada 10","France 10"]
@@ -1254,14 +1266,14 @@ const phaseRegionStats = [
   {
     phaseId: "july",
     status: "complete",
-    totalStars: 1497,
-    known: 1029,
-    china: 281,
-    overseas: 748,
-    unknown: 468,
-    note: "07/01-08/03 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["Shanghai 44","China 22","Beijing 21","Hong Kong 13","Taiwan 12","Beijing, China 9","Shanghai, China 9","Shenzhen 9","Taipei 7","Hangzhou 6"],
-    topOverseasLocations: ["United States 138","Japan 76","Singapore 36","South Korea 22","India 20","United Kingdom 13","France 11","Australia 10","Canada 10","Germany 10"]
+    totalStars: 1394,
+    known: 1004,
+    china: 261,
+    overseas: 743,
+    unknown: 390,
+    note: "07/01-07/28 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    topChinaLocations: ["Shanghai 43","China 22","Beijing 20","Hong Kong 13","Taiwan 12","Beijing, China 9","Shanghai, China 9","Shenzhen 9","Taipei 7","Shenzhen, China 5"],
+    topOverseasLocations: ["United States 137","Japan 76","Singapore 36","South Korea 22","India 19","United Kingdom 13","France 11","Australia 10","Canada 10","Germany 10"]
   }
 ];
 
@@ -1379,8 +1391,8 @@ function renderSummary() {
   const maxDay = data.reduce((max, item) => (item.stars > max.stars ? item : max), data[0]);
   const juneRows = data.filter((item) => item.date >= "2026-06-01" && item.date <= "2026-06-30");
   const juneAvg = juneRows.reduce((sum, item) => sum + item.stars, 0) / juneRows.length;
-  const julyRows = data.filter((item) => item.date >= "2026-07-01");
-  const julyAvg = julyRows.reduce((sum, item) => sum + item.stars, 0) / julyRows.length;
+  const augustRows = data.filter((item) => item.date >= "2026-08-01");
+  const augustAvg = augustRows.reduce((sum, item) => sum + item.stars, 0) / augustRows.length;
   const afterMarch1 = data.filter((item) => item.date >= "2026-03-01");
   const afterMarch1Total = afterMarch1.reduce((sum, item) => sum + item.stars, 0);
   const cards = [
@@ -1388,7 +1400,7 @@ function renderSummary() {
     ["3/1 后新增", formatNumber(afterMarch1Total), `2026-03-01 到 ${data.at(-1).date}，覆盖 3 月恢复、4 月抬升和 5 月高动量阶段。`],
     ["当前快照累计", formatNumber(data.at(-1).cumulative), "由 2026-01-01 前累计 1,805 加日增推算。"],
     ["最高单日", `${maxDay.stars}`, `${maxDay.date}，对应 5/15 后传播峰值。`],
-    ["7 月日均", julyAvg.toFixed(1), `6 月日均 ${juneAvg.toFixed(1)}，7 月当前仍保持较高动量。`]
+    ["8 月日均", augustAvg.toFixed(1), `6 月日均 ${juneAvg.toFixed(1)}，8 月当前为新月滚动观察。`]
   ];
   document.getElementById("summary").innerHTML = cards
     .map(([label, value, note]) => `<article class="metric"><span>${label}</span><strong>${value}</strong><p>${note}</p></article>`)
@@ -1494,14 +1506,62 @@ function renderVisitorStarChart() {
       const conversion = item.visitors ? ((item.stars / item.visitors) * 100).toFixed(1) : "0.0";
       return `<tr>
         <td>${item.date}</td>
+        <td>${conversion}%</td>
         <td>${item.visitors}</td>
         <td>${item.stars}</td>
-        <td>${conversion}%</td>
         <td>${item.clones}</td>
         <td>${item.cloners}</td>
       </tr>`;
     })
     .join("");
+  renderStarUvRateChart(rows);
+}
+
+function renderStarUvRateChart(rows) {
+  const target = document.getElementById("starUvChart");
+  if (!target) return;
+  const chartRows = rows.map((item) => ({
+    ...item,
+    rate: item.visitors ? (item.stars / item.visitors) * 100 : 0
+  }));
+  const width = 1080;
+  const height = 300;
+  const margin = { top: 38, right: 60, bottom: 58, left: 58 };
+  const chartW = width - margin.left - margin.right;
+  const chartH = height - margin.top - margin.bottom;
+  const maxRate = Math.max(20, Math.ceil(Math.max(...chartRows.map((item) => item.rate)) / 5) * 5);
+  const x = (index) => margin.left + (index / Math.max(chartRows.length - 1, 1)) * chartW;
+  const y = (value) => margin.top + chartH - (value / maxRate) * chartH;
+  const ticks = Array.from({ length: 5 }, (_, index) => (maxRate / 4) * index);
+  const grid = ticks
+    .map((tick) => `<line class="grid-line" x1="${margin.left}" y1="${y(tick)}" x2="${width - margin.right}" y2="${y(tick)}"></line><text class="chart-label" x="18" y="${y(tick) + 4}">${tick.toFixed(0)}%</text>`)
+    .join("");
+  const line = chartRows.map((item, index) => `${x(index)},${y(item.rate)}`).join(" ");
+  const points = chartRows
+    .map((item, index) => `<circle class="star-uv-point" cx="${x(index)}" cy="${y(item.rate)}" r="4" data-date="${item.date}" data-rate="${item.rate.toFixed(1)}" data-visitors="${item.visitors}" data-stars="${item.stars}"></circle>`)
+    .join("");
+  const hoverZones = chartRows
+    .map((item, index) => {
+      const zoneW = Math.max(28, chartW / chartRows.length);
+      return `<rect class="hover-zone" x="${x(index) - zoneW / 2}" y="${margin.top}" width="${zoneW}" height="${chartH}" data-date="${item.date}" data-rate="${item.rate.toFixed(1)}" data-visitors="${item.visitors}" data-stars="${item.stars}"></rect>`;
+    })
+    .join("");
+  const labels = chartRows
+    .map((item, index) => `<text class="chart-label" x="${x(index) - 18}" y="${height - 24}" transform="rotate(-35 ${x(index) - 18} ${height - 24})">${item.date.slice(5)}</text>`)
+    .join("");
+  target.innerHTML = `
+    <div id="starUvTooltip" class="chart-tooltip" hidden></div>
+    <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Star to unique visitor conversion rate">
+      ${grid}
+      <line x1="${margin.left}" y1="${margin.top + chartH}" x2="${width - margin.right}" y2="${margin.top + chartH}" stroke="#cbd5e1"></line>
+      <line x1="${margin.left}" y1="${margin.top}" x2="${margin.left}" y2="${margin.top + chartH}" stroke="#cbd5e1"></line>
+      <text class="axis-title" x="18" y="${margin.top + 12}" transform="rotate(-90 18 ${margin.top + 12})">Star / UV</text>
+      <polyline class="star-uv-line" points="${line}"></polyline>
+      ${points}
+      ${hoverZones}
+      ${labels}
+    </svg>`;
+  bindStarUvTooltip();
 }
 
 function renderMonthlyClonerAverages(rows) {
@@ -1538,6 +1598,24 @@ function bindVisitorStarTooltip() {
       tooltip.style.left = `${event.clientX - rect.left + wrap.scrollLeft}px`;
       tooltip.style.top = `${event.clientY - rect.top + wrap.scrollTop}px`;
       tooltip.innerHTML = `<strong>${zone.dataset.date}</strong><span>独立访客：${zone.dataset.visitors}</span><span>新增 stars：${zone.dataset.stars}</span><span>Clones：${zone.dataset.clones}</span><span>独立 cloners：${zone.dataset.cloners}</span>`;
+    });
+    zone.addEventListener("mouseleave", () => {
+      tooltip.hidden = true;
+    });
+  });
+}
+
+function bindStarUvTooltip() {
+  const wrap = document.getElementById("starUvChart");
+  const tooltip = document.getElementById("starUvTooltip");
+  if (!wrap || !tooltip) return;
+  wrap.querySelectorAll(".hover-zone, .star-uv-point").forEach((zone) => {
+    zone.addEventListener("mousemove", (event) => {
+      const rect = wrap.getBoundingClientRect();
+      tooltip.hidden = false;
+      tooltip.style.left = `${event.clientX - rect.left + wrap.scrollLeft}px`;
+      tooltip.style.top = `${event.clientY - rect.top + wrap.scrollTop}px`;
+      tooltip.innerHTML = `<strong>${zone.dataset.date}</strong><span>Star / UV：${zone.dataset.rate}%</span><span>新增 stars：${zone.dataset.stars}</span><span>独立访客：${zone.dataset.visitors}</span>`;
     });
     zone.addEventListener("mouseleave", () => {
       tooltip.hidden = true;

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Star Growth &amp; Actions Dashboard</title>
-    <link rel="stylesheet" href="./styles.css?v=173-c662fd8" />
+    <link rel="stylesheet" href="./styles.css?v=20260729-cloners-small" />
   </head>
   <body>
     <header class="page-header">
@@ -81,9 +81,9 @@
             <thead>
               <tr>
                 <th>日期</th>
+                <th>Star / UV</th>
                 <th>独立访客</th>
                 <th>新增 stars</th>
-                <th>Star / UV</th>
                 <th>Clones</th>
                 <th>独立 cloners</th>
               </tr>
@@ -91,6 +91,10 @@
             <tbody id="visitorStarTable"></tbody>
           </table>
         </div>
+        <details class="traffic-details star-uv-details">
+          <summary>展开 Star / UV 折线图</summary>
+          <div id="starUvChart" class="chart-wrap star-uv-chart" aria-label="Star to unique visitor conversion rate chart"></div>
+        </details>
       </section>
 
       <section class="two-col">
@@ -426,6 +430,6 @@
       </details>
     </main>
 
-    <script src="./app.js?v=173-c662fd8"></script>
+    <script src="./app.js?v=20260803-actions-staruv"></script>
   </body>
 </html>
