@@ -573,12 +573,12 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 43
   },
   "2026-08-03": {
-    "datajuicer/data-juicer": 6815,
+    "datajuicer/data-juicer": 6816,
     "Eventual-Inc/Daft": 5681,
     "OpenDCAI/DataFlow": 7186,
-    "huggingface/datatrove": 3244,
+    "huggingface/datatrove": 3245,
     "NVIDIA-NeMo/DataDesigner": 2140,
-    "NVIDIA-NeMo/Curator": 1695,
+    "NVIDIA-NeMo/Curator": 1697,
     "tinyfish-io/bigset": 1678,
     "OpenDataArena/OpenDataArena-Tool": 146,
     "InternScience/SciDataCopilot": 43
@@ -588,9 +588,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 6815,
-    yesterday: 0,
-    twoDayChange: 0,
+    total: 6816,
+    yesterday: 1,
+    twoDayChange: 1,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -603,7 +603,7 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-08-03", 6815]
+      ["2026-08-03", 6816]
     ]
   },
   {
@@ -639,9 +639,9 @@ const competitorRepos = [
   },
   {
     name: "huggingface/datatrove",
-    total: 3244,
-    yesterday: 0,
-    twoDayChange: 0,
+    total: 3245,
+    yesterday: 1,
+    twoDayChange: 1,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -654,7 +654,7 @@ const competitorRepos = [
       ["2025-06-01", 2400],
       ["2025-10-01", 2650],
       ["2026-03-01", 2900],
-      ["2026-08-03", 3244]
+      ["2026-08-03", 3245]
     ]
   },
   {
@@ -673,9 +673,9 @@ const competitorRepos = [
   },
   {
     name: "NVIDIA-NeMo/Curator",
-    total: 1695,
-    yesterday: 0,
-    twoDayChange: 0,
+    total: 1697,
+    yesterday: 2,
+    twoDayChange: 2,
     color: "#e879b4",
     points: [
       ["2024-03-14", 0],
@@ -686,7 +686,7 @@ const competitorRepos = [
       ["2025-07-01", 900],
       ["2025-12-01", 1200],
       ["2026-04-01", 1450],
-      ["2026-08-03", 1695]
+      ["2026-08-03", 1697]
     ]
   },
   {
@@ -1242,11 +1242,11 @@ const phaseRegionStats = [
   {
     phaseId: "may",
     status: "complete",
-    totalStars: 1120,
+    totalStars: 1119,
     known: 781,
     china: 196,
     overseas: 585,
-    unknown: 339,
+    unknown: 338,
     note: "05/01-05/31 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Shanghai 25","China 19","Beijing 16","Beijing, China 14","Hong Kong 12","Taiwan 12","Shenzhen 6","Shanghai, China 5","Hangzhou 4","Hangzhou, China 4"],
     topOverseasLocations: ["United States 98","Japan 47","Singapore 20","Germany 19","Canada 14","India 14","South Korea 14","United Kingdom 14","France 12","Vietnam 11"]
@@ -1254,11 +1254,11 @@ const phaseRegionStats = [
   {
     phaseId: "june",
     status: "complete",
-    totalStars: 1316,
+    totalStars: 1315,
     known: 1058,
     china: 283,
     overseas: 775,
-    unknown: 258,
+    unknown: 257,
     note: "06/01-06/30 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Shanghai 25","Hong Kong 24","China 23","Beijing 22","Taiwan 15","Shanghai, China 13","Beijing, China 12","Shenzhen 9","Guangzhou 7","Hangzhou, China 7"],
     topOverseasLocations: ["United States 142","Japan 71","Singapore 36","South Korea 29","India 23","United Kingdom 22","Australia 20","Germany 11","Canada 10","France 10"]
@@ -1266,14 +1266,14 @@ const phaseRegionStats = [
   {
     phaseId: "july",
     status: "complete",
-    totalStars: 1394,
-    known: 1004,
-    china: 261,
-    overseas: 743,
-    unknown: 390,
-    note: "07/01-07/28 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["Shanghai 43","China 22","Beijing 20","Hong Kong 13","Taiwan 12","Beijing, China 9","Shanghai, China 9","Shenzhen 9","Taipei 7","Shenzhen, China 5"],
-    topOverseasLocations: ["United States 137","Japan 76","Singapore 36","South Korea 22","India 19","United Kingdom 13","France 11","Australia 10","Canada 10","Germany 10"]
+    totalStars: 1499,
+    known: 1030,
+    china: 282,
+    overseas: 748,
+    unknown: 469,
+    note: "07/01-08/03 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    topChinaLocations: ["Shanghai 45","China 22","Beijing 21","Hong Kong 13","Taiwan 12","Beijing, China 9","Shanghai, China 9","Shenzhen 9","Taipei 7","Hangzhou 6"],
+    topOverseasLocations: ["United States 138","Japan 76","Singapore 36","South Korea 22","India 20","United Kingdom 13","France 11","Australia 10","Canada 10","Germany 10"]
   }
 ];
 
