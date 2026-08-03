@@ -103,11 +103,11 @@ const dailyCounts = [
   ["2026-07-20", 52], ["2026-07-21", 38], ["2026-07-22", 42], ["2026-07-23", 32],
   ["2026-07-24", 112], ["2026-07-25", 97], ["2026-07-26", 33], ["2026-07-27", 64],
   ["2026-07-28", 28], ["2026-07-29", 22], ["2026-07-30", 17], ["2026-07-31", 21],
-  ["2026-08-01", 10], ["2026-08-02", 8], ["2026-08-03", 6]
+  ["2026-08-01", 10], ["2026-08-02", 8], ["2026-08-03", 8]
 ];
 
 let competitorSnapshotDate = "2026-08-03";
-let competitorPreviousSnapshotDate = "2026-08-01";
+let competitorPreviousSnapshotDate = "2026-07-31";
 
 const competitorSnapshots = {
   "2026-06-16": {
@@ -573,13 +573,13 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 43
   },
   "2026-08-03": {
-    "datajuicer/data-juicer": 6816,
+    "datajuicer/data-juicer": 6818,
     "Eventual-Inc/Daft": 5681,
-    "OpenDCAI/DataFlow": 7186,
-    "huggingface/datatrove": 3245,
+    "OpenDCAI/DataFlow": 7188,
+    "huggingface/datatrove": 3247,
     "NVIDIA-NeMo/DataDesigner": 2140,
-    "NVIDIA-NeMo/Curator": 1697,
-    "tinyfish-io/bigset": 1678,
+    "NVIDIA-NeMo/Curator": 1698,
+    "tinyfish-io/bigset": 1680,
     "OpenDataArena/OpenDataArena-Tool": 146,
     "InternScience/SciDataCopilot": 43
   }
@@ -588,9 +588,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 6816,
-    yesterday: 1,
-    twoDayChange: 1,
+    total: 6818,
+    yesterday: 3,
+    twoDayChange: 4,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -603,14 +603,14 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-08-03", 6816]
+      ["2026-08-03", 6818]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
     total: 5681,
     yesterday: 0,
-    twoDayChange: 0,
+    twoDayChange: 7,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -631,17 +631,17 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 7186,
-    yesterday: 0,
-    twoDayChange: 14,
+    total: 7188,
+    yesterday: 2,
+    twoDayChange: 41,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
-    total: 3245,
-    yesterday: 1,
-    twoDayChange: 1,
+    total: 3247,
+    yesterday: 3,
+    twoDayChange: 8,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -654,14 +654,14 @@ const competitorRepos = [
       ["2025-06-01", 2400],
       ["2025-10-01", 2650],
       ["2026-03-01", 2900],
-      ["2026-08-03", 3245]
+      ["2026-08-03", 3247]
     ]
   },
   {
     name: "NVIDIA-NeMo/DataDesigner",
     total: 2140,
     yesterday: 0,
-    twoDayChange: 0,
+    twoDayChange: 7,
     color: "#e94b35",
     points: [
       ["2025-10-16", 0],
@@ -673,9 +673,9 @@ const competitorRepos = [
   },
   {
     name: "NVIDIA-NeMo/Curator",
-    total: 1697,
-    yesterday: 2,
-    twoDayChange: 2,
+    total: 1698,
+    yesterday: 3,
+    twoDayChange: 9,
     color: "#e879b4",
     points: [
       ["2024-03-14", 0],
@@ -686,18 +686,18 @@ const competitorRepos = [
       ["2025-07-01", 900],
       ["2025-12-01", 1200],
       ["2026-04-01", 1450],
-      ["2026-08-03", 1697]
+      ["2026-08-03", 1698]
     ]
   },
   {
     name: "tinyfish-io/bigset",
-    total: 1678,
-    yesterday: 0,
-    twoDayChange: 0,
+    total: 1680,
+    yesterday: 2,
+    twoDayChange: 2,
     color: "#14b8a6",
     points: [
       ["2026-05-15", 0],
-      ["2026-08-03", 1678]
+      ["2026-08-03", 1680]
     ]
   },
   {
@@ -824,7 +824,10 @@ const actions = [
   ["2026-07-30", "Medium", "dataflow-harness", "https://medium.com/@yijunx/peking-university-open-sourced-one-of-the-hardest-types-of-harness-engineering-for-ai-data-465a2a26bbe6?postPublishedType=initial"],
   ["2026-07-31", "Reddit", "dataflow-text2sql", "https://www.reddit.com/r/ETL/comments/1vbja9a/designing_texttosql_as_a_data_pipeline_not_a/"],
   ["2026-07-31", "Reddit", "oss", "https://www.reddit.com/r/LovingOpenSourceAI/comments/1vbndtm/opensource_ai_infrastructure_matters_because_the/"],
-  ["2026-08-01", "X", "dataflow-harness", "https://x.com/stevencheng/status/2083521877973074383"]
+  ["2026-08-01", "X", "dataflow-harness", "https://x.com/stevencheng/status/2083521877973074383"],
+  ["2026-08-03", "Reddit", "ai-ready-data", "https://www.reddit.com/r/AIforOPS/comments/1ve85tx/aiready_data_preparation_may_be_the_most/"],
+  ["2026-08-03", "LinkedIn", "ai-ready-data", "https://www.linkedin.com/feed/update/urn:li:activity:7489971989697404928/"],
+  ["2026-08-03", "Reddit", "ai-ready-data", "https://www.reddit.com/r/LocalLLM/comments/1ve8n0r/using_pipelines_and_operators_for_prefinetuning/"]
 ].map(([date, channel, title, url]) => ({ date, channel, title, url }));
 
 const trafficRows = [
@@ -1242,11 +1245,11 @@ const phaseRegionStats = [
   {
     phaseId: "may",
     status: "complete",
-    totalStars: 1119,
+    totalStars: 1120,
     known: 781,
     china: 196,
     overseas: 585,
-    unknown: 338,
+    unknown: 339,
     note: "05/01-05/31 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Shanghai 25","China 19","Beijing 16","Beijing, China 14","Hong Kong 12","Taiwan 12","Shenzhen 6","Shanghai, China 5","Hangzhou 4","Hangzhou, China 4"],
     topOverseasLocations: ["United States 98","Japan 47","Singapore 20","Germany 19","Canada 14","India 14","South Korea 14","United Kingdom 14","France 12","Vietnam 11"]
@@ -1254,11 +1257,11 @@ const phaseRegionStats = [
   {
     phaseId: "june",
     status: "complete",
-    totalStars: 1315,
+    totalStars: 1316,
     known: 1058,
     china: 283,
     overseas: 775,
-    unknown: 257,
+    unknown: 258,
     note: "06/01-06/30 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Shanghai 25","Hong Kong 24","China 23","Beijing 22","Taiwan 15","Shanghai, China 13","Beijing, China 12","Shenzhen 9","Guangzhou 7","Hangzhou, China 7"],
     topOverseasLocations: ["United States 142","Japan 71","Singapore 36","South Korea 29","India 23","United Kingdom 22","Australia 20","Germany 11","Canada 10","France 10"]
@@ -1266,14 +1269,14 @@ const phaseRegionStats = [
   {
     phaseId: "july",
     status: "complete",
-    totalStars: 1499,
-    known: 1030,
-    china: 282,
-    overseas: 748,
-    unknown: 469,
-    note: "07/01-08/03 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["Shanghai 45","China 22","Beijing 21","Hong Kong 13","Taiwan 12","Beijing, China 9","Shanghai, China 9","Shenzhen 9","Taipei 7","Hangzhou 6"],
-    topOverseasLocations: ["United States 138","Japan 76","Singapore 36","South Korea 22","India 20","United Kingdom 13","France 11","Australia 10","Canada 10","Germany 10"]
+    totalStars: 1394,
+    known: 1004,
+    china: 261,
+    overseas: 743,
+    unknown: 390,
+    note: "07/01-07/28 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    topChinaLocations: ["Shanghai 43","China 22","Beijing 20","Hong Kong 13","Taiwan 12","Beijing, China 9","Shanghai, China 9","Shenzhen 9","Taipei 7","Shenzhen, China 5"],
+    topOverseasLocations: ["United States 137","Japan 76","Singapore 36","South Korea 22","India 19","United Kingdom 13","France 11","Australia 10","Canada 10","Germany 10"]
   }
 ];
 

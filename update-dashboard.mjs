@@ -265,9 +265,12 @@ async function main() {
   const currentSnapshot = Object.fromEntries(repoNames.map((name) => [name, repoInfos.get(name)?.stargazers_count || 0]));
   competitorSnapshots[endDate] = currentSnapshot;
   const twoDaysAgo = addDays(endDate, -2);
-  const comparisonSnapshot = competitorSnapshots[twoDaysAgo] || {};
+  const comparisonDate = competitorSnapshots[twoDaysAgo]
+    ? twoDaysAgo
+    : Object.keys(competitorSnapshots).filter((date) => date < endDate).sort().at(-1);
+  const comparisonSnapshot = comparisonDate ? competitorSnapshots[comparisonDate] : {};
   const inferredTwoDayChanges = new Map();
-  if (!competitorSnapshots[twoDaysAgo]) {
+  if (!comparisonDate) {
     for (const name of repoNames) {
       inferredTwoDayChanges.set(name, await safeRecentStarsAfter(name, twoDaysAgo));
     }
@@ -293,7 +296,7 @@ async function main() {
   source = replaceStartTotal(source, adjustedStartTotal);
   source = replaceConstArray(source, "dailyCounts", updatedRows);
   source = replaceConstString(source, "competitorSnapshotDate", endDate);
-  source = replaceConstString(source, "competitorPreviousSnapshotDate", twoDaysAgo);
+  source = replaceConstString(source, "competitorPreviousSnapshotDate", comparisonDate || twoDaysAgo);
   source = replaceConstObject(source, "competitorSnapshots", competitorSnapshots);
   source = replaceCompetitors(source, nextCompetitors);
   source = updateCurrentPhases(source, endDate, totalStars);
