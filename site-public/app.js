@@ -617,7 +617,7 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 43
   },
   "2026-08-04": {
-    "datajuicer/data-juicer": 6825,
+    "datajuicer/data-juicer": 6826,
     "Eventual-Inc/Daft": 5683,
     "OpenDCAI/DataFlow": 7195,
     "huggingface/datatrove": 3247,
@@ -632,9 +632,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 6825,
-    yesterday: 6,
-    twoDayChange: 7,
+    total: 6826,
+    yesterday: 1,
+    twoDayChange: 8,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -647,13 +647,13 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-08-04", 6825]
+      ["2026-08-04", 6826]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
     total: 5683,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 2,
     color: "#f2994a",
     points: [
@@ -676,7 +676,7 @@ const competitorRepos = [
   {
     name: "OpenDCAI/DataFlow",
     total: 7195,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 7,
     color: "#2d9cdb",
     points: null
