@@ -569,6 +569,85 @@ svg {
   padding-bottom: 18px;
 }
 
+.main-chart-tools {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.chart-mode-button {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #ffffff;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 850;
+  min-width: 72px;
+  padding: 5px 7px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.chart-mode-button:hover,
+.chart-mode-button[aria-pressed="true"] {
+  border-color: #93c5fd;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.webui-dataflow-line,
+.webui-daily-line {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3.2;
+}
+
+.webui-dataflow-line {
+  stroke: #2563eb;
+}
+
+.webui-daily-line {
+  stroke: #14b8a6;
+}
+
+.webui-compare-point {
+  stroke: #ffffff;
+  stroke-width: 1.6;
+  cursor: crosshair;
+}
+
+.webui-compare-point.dataflow {
+  fill: #2563eb;
+}
+
+.webui-compare-point.webui {
+  fill: #14b8a6;
+}
+
+.legend-dot.dataflow-line {
+  background: #2563eb;
+}
+
+.legend-dot.webui-line {
+  background: #14b8a6;
+}
+
+.webui-total-labels {
+  fill: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.webui-total-labels .dataflow-total-dot {
+  fill: #2563eb;
+}
+
+.webui-total-labels .webui-total-dot {
+  fill: #14b8a6;
+}
+
 .star-uv-chart {
   margin: 0 24px 6px;
   border: 1px solid var(--line);

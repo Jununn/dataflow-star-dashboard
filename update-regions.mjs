@@ -178,7 +178,8 @@ const latestDailyDate = [...dailyCountsSource.matchAll(/\["(\d{4}-\d{2}-\d{2})",
 const targetRanges = [
   { phaseId: "may", start: "2026-05-01", end: "2026-05-31" },
   { phaseId: "june", start: "2026-06-01", end: "2026-06-30" },
-  { phaseId: "july", start: "2026-07-01", end: latestDailyDate }
+  { phaseId: "july", start: "2026-07-01", end: "2026-07-31" },
+  { phaseId: "august", start: "2026-08-01", end: latestDailyDate }
 ];
 
 function isRateLimitError(error) {

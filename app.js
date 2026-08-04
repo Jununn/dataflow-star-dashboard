@@ -106,6 +106,39 @@ const dailyCounts = [
   ["2026-08-01", 10], ["2026-08-02", 8], ["2026-08-03", 10], ["2026-08-04", 4]
 ];
 
+const webuiStarMeta = {
+  repo: "OpenDCAI/DataFlow-WebUI",
+  total: 166,
+  startDate: "2026-07-15",
+  endDate: "2026-08-04",
+  beforeStart: 24,
+  generatedAt: "2026-08-04T05:39:28.194Z"
+};
+
+const webuiDailyCounts = [
+  ["2026-07-15", 0],
+  ["2026-07-16", 0],
+  ["2026-07-17", 0],
+  ["2026-07-18", 0],
+  ["2026-07-19", 0],
+  ["2026-07-20", 1],
+  ["2026-07-21", 0],
+  ["2026-07-22", 10],
+  ["2026-07-23", 10],
+  ["2026-07-24", 21],
+  ["2026-07-25", 16],
+  ["2026-07-26", 3],
+  ["2026-07-27", 20],
+  ["2026-07-28", 9],
+  ["2026-07-29", 10],
+  ["2026-07-30", 10],
+  ["2026-07-31", 10],
+  ["2026-08-01", 5],
+  ["2026-08-02", 5],
+  ["2026-08-03", 8],
+  ["2026-08-04", 4]
+];
+
 let competitorSnapshotDate = "2026-08-04";
 let competitorPreviousSnapshotDate = "2026-08-03";
 
@@ -573,15 +606,15 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 43
   },
   "2026-08-03": {
-    "datajuicer/data-juicer": 6819,
+    "datajuicer/data-juicer": 6818,
     "Eventual-Inc/Daft": 5681,
-    "OpenDCAI/DataFlow": 7189,
+    "OpenDCAI/DataFlow": 7188,
     "huggingface/datatrove": 3247,
-    "NVIDIA-NeMo/DataDesigner": 2141,
+    "NVIDIA-NeMo/DataDesigner": 2140,
     "NVIDIA-NeMo/Curator": 1698,
     "tinyfish-io/bigset": 1680,
     "OpenDataArena/OpenDataArena-Tool": 146,
-    "InternScience/SciDataCopilot": 44
+    "InternScience/SciDataCopilot": 43
   },
   "2026-08-04": {
     "datajuicer/data-juicer": 6819,
@@ -600,8 +633,8 @@ const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
     total: 6819,
-    yesterday: 0,
-    twoDayChange: 0,
+    yesterday: 1,
+    twoDayChange: 1,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -643,8 +676,8 @@ const competitorRepos = [
   {
     name: "OpenDCAI/DataFlow",
     total: 7194,
-    yesterday: 1,
-    twoDayChange: 5,
+    yesterday: 6,
+    twoDayChange: 6,
     color: "#2d9cdb",
     points: null
   },
@@ -671,8 +704,8 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/DataDesigner",
     total: 2144,
-    yesterday: 0,
-    twoDayChange: 3,
+    yesterday: 4,
+    twoDayChange: 4,
     color: "#e94b35",
     points: [
       ["2025-10-16", 0],
@@ -685,7 +718,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/Curator",
     total: 1699,
-    yesterday: 0,
+    yesterday: 1,
     twoDayChange: 1,
     color: "#e879b4",
     points: [
@@ -703,7 +736,7 @@ const competitorRepos = [
   {
     name: "tinyfish-io/bigset",
     total: 1681,
-    yesterday: 0,
+    yesterday: 1,
     twoDayChange: 1,
     color: "#14b8a6",
     points: [
@@ -727,8 +760,8 @@ const competitorRepos = [
   {
     name: "InternScience/SciDataCopilot",
     total: 44,
-    yesterday: 0,
-    twoDayChange: 0,
+    yesterday: 1,
+    twoDayChange: 1,
     color: "#7c6bd8",
     points: [
       ["2026-02-09", 0],
@@ -1203,8 +1236,15 @@ const phases = [
     id: "july",
     label: "7 月：高位续航",
     start: "2026-07-01",
+    end: "2026-07-31",
+    note: "7/1-7/31 为完整月数据；7 月高位续航后进入 8 月滚动观察。"
+  },
+  {
+    id: "august",
+    label: "8 月：滚动观察",
+    start: "2026-08-01",
     end: "2026-08-04",
-    note: "7/1-08/04 为当前滚动月，数据随每日更新继续补齐。"
+    note: "8/1-08/04 为当前滚动月，数据随每日更新继续补齐。"
   }
 ];
 
@@ -1256,11 +1296,11 @@ const phaseRegionStats = [
   {
     phaseId: "may",
     status: "complete",
-    totalStars: 1119,
+    totalStars: 1120,
     known: 781,
     china: 196,
     overseas: 585,
-    unknown: 338,
+    unknown: 339,
     note: "05/01-05/31 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Shanghai 25","China 19","Beijing 16","Beijing, China 14","Hong Kong 12","Taiwan 12","Shenzhen 6","Shanghai, China 5","Hangzhou 4","Hangzhou, China 4"],
     topOverseasLocations: ["United States 98","Japan 47","Singapore 20","Germany 19","Canada 14","India 14","South Korea 14","United Kingdom 14","France 12","Vietnam 11"]
@@ -1268,11 +1308,11 @@ const phaseRegionStats = [
   {
     phaseId: "june",
     status: "complete",
-    totalStars: 1315,
+    totalStars: 1316,
     known: 1058,
     china: 283,
     overseas: 775,
-    unknown: 257,
+    unknown: 258,
     note: "06/01-06/30 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Shanghai 25","Hong Kong 24","China 23","Beijing 22","Taiwan 15","Shanghai, China 13","Beijing, China 12","Shenzhen 9","Guangzhou 7","Hangzhou, China 7"],
     topOverseasLocations: ["United States 142","Japan 71","Singapore 36","South Korea 29","India 23","United Kingdom 22","Australia 20","Germany 11","Canada 10","France 10"]
@@ -1280,14 +1320,26 @@ const phaseRegionStats = [
   {
     phaseId: "july",
     status: "complete",
-    totalStars: 1507,
-    known: 1032,
-    china: 284,
-    overseas: 748,
-    unknown: 475,
-    note: "07/01-08/04 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["Shanghai 45","China 23","Beijing 21","Hong Kong 13","Taiwan 12","Beijing, China 9","Shanghai, China 9","Shenzhen 9","Taipei 7","Hangzhou 6"],
-    topOverseasLocations: ["United States 138","Japan 76","Singapore 36","South Korea 22","India 20","United Kingdom 13","France 11","Australia 10","Canada 10","Germany 10"]
+    totalStars: 1394,
+    known: 1004,
+    china: 261,
+    overseas: 743,
+    unknown: 390,
+    note: "07/01-07/28 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    topChinaLocations: ["Shanghai 43","China 22","Beijing 20","Hong Kong 13","Taiwan 12","Beijing, China 9","Shanghai, China 9","Shenzhen 9","Taipei 7","Shenzhen, China 5"],
+    topOverseasLocations: ["United States 137","Japan 76","Singapore 36","South Korea 22","India 19","United Kingdom 13","France 11","Australia 10","Canada 10","Germany 10"]
+  },
+  {
+    phaseId: "august",
+    status: "complete",
+    totalStars: 33,
+    known: 7,
+    china: 6,
+    overseas: 1,
+    unknown: 26,
+    note: "08/01-08/04 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    topChinaLocations: ["Beijing 1","Beijing,China 1","China 1","Hangzhou 1","Shanghai 1","xi'an, China 1"],
+    topOverseasLocations: ["Utah 1"]
   }
 ];
 
@@ -1318,6 +1370,7 @@ let data = [];
 let combinedData = [];
 let calendarMonth = dailyCounts.at(-1)[0].slice(0, 7);
 let combinedWindowIndex = -1;
+let mainChartMode = "dataflow";
 
 function rebuildDerivedData() {
   data = dailyCounts.map(([date, stars], index) => {
@@ -1421,8 +1474,114 @@ function renderSummary() {
     .join("");
 }
 
+
 function renderMainChart() {
+  updateMainChartControls();
+  if (mainChartMode === "webui") {
+    renderWebuiDailyComparisonChart();
+    return;
+  }
   renderTrendChart("mainChart", "chartTooltip", data, { height: 480, hotThreshold: 50, maxStarsFloor: 100, bands: phases, weekendBars: true, monthlyAvgLabels: true });
+}
+
+function getWebuiComparisonRows() {
+  const webuiMap = new Map(webuiDailyCounts);
+  let webuiCumulative = webuiStarMeta.beforeStart;
+  return data
+    .filter((item) => item.date >= webuiStarMeta.startDate && item.date <= webuiStarMeta.endDate)
+    .map((item) => {
+      const webuiStars = webuiMap.get(item.date) || 0;
+      webuiCumulative += webuiStars;
+      return {
+        date: item.date,
+        dataflowStars: item.stars,
+        dataflowCumulative: item.cumulative,
+        webuiStars,
+        webuiCumulative
+      };
+    });
+}
+
+function updateMainChartControls() {
+  const legend = document.getElementById("mainChartLegend");
+  const toggle = document.getElementById("mainChartModeToggle");
+  if (legend) {
+    legend.innerHTML = mainChartMode === "webui"
+      ? `<span><i class="legend-dot dataflow-line"></i>DataFlow 日增</span><span><i class="legend-dot webui-line"></i>WebUI 日增</span>`
+      : `<span><i class="legend-dot daily"></i>日增</span><span><i class="legend-dot cumulative"></i>累计</span><span><i class="legend-dot action"></i>运营动作</span>`;
+  }
+  if (toggle) {
+    toggle.textContent = mainChartMode === "webui" ? "← 返回日增累计" : "WebUI 日增对比 →";
+    toggle.setAttribute("aria-pressed", String(mainChartMode === "webui"));
+  }
+}
+
+function renderWebuiDailyComparisonChart() {
+  const rows = getWebuiComparisonRows();
+  const width = Math.max(1080, data.length * 8);
+  const height = 480;
+  const margin = { top: 34, right: 70, bottom: 64, left: 54 };
+  const chartW = width - margin.left - margin.right;
+  const chartH = height - margin.top - margin.bottom;
+  const maxValue = Math.max(25, ...rows.flatMap((row) => [row.dataflowStars, row.webuiStars]));
+  const x = (i) => margin.left + (i / Math.max(1, rows.length - 1)) * chartW;
+  const y = (value) => margin.top + chartH - (value / maxValue) * chartH;
+  const gridTicks = [0, Math.round(maxValue * 0.25), Math.round(maxValue * 0.5), Math.round(maxValue * 0.75), maxValue];
+  const grid = gridTicks.map((tick) => {
+    const gy = y(tick);
+    return `<line class="grid-line" x1="${margin.left}" y1="${gy}" x2="${width - margin.right}" y2="${gy}"></line><text class="chart-label" x="12" y="${gy + 4}">${tick}</text>`;
+  }).join("");
+  const line = (key, cls) => `<polyline class="${cls}" points="${rows.map((row, i) => `${x(i)},${y(row[key])}`).join(" ")}"></polyline>`;
+  const points = rows.map((row, i) => `
+    <circle class="webui-compare-point dataflow" cx="${x(i)}" cy="${y(row.dataflowStars)}" r="4"></circle>
+    <circle class="webui-compare-point webui" cx="${x(i)}" cy="${y(row.webuiStars)}" r="4"></circle>
+  `).join("");
+  const labels = rows.map((row, i) => {
+    if (i % 2 !== 0 && i !== rows.length - 1) return "";
+    return `<text class="chart-label" x="${x(i) - 18}" y="${height - 24}">${row.date.slice(5)}</text>`;
+  }).join("");
+  const hoverZones = rows.map((row, i) => {
+    const zoneW = Math.max(20, chartW / rows.length);
+    const zx = x(i) - zoneW / 2;
+    return `<rect class="hover-zone" x="${zx}" y="${margin.top}" width="${zoneW}" height="${chartH}" data-date="${row.date}" data-dataflow="${row.dataflowStars}" data-webui="${row.webuiStars}" data-delta="${row.dataflowStars - row.webuiStars}" data-dataflow-cumulative="${row.dataflowCumulative}" data-webui-cumulative="${row.webuiCumulative}"></rect>`;
+  }).join("");
+  const totalsLabel = `
+    <g class="webui-total-labels" transform="translate(${width - margin.right - 184}, ${margin.top - 18})">
+      <text x="0" y="0"><tspan class="dataflow-total-dot">●</tspan> DataFlow ${formatNumber(data.at(-1).cumulative)}</text>
+      <text x="0" y="20"><tspan class="webui-total-dot">●</tspan> WebUI ${formatNumber(webuiStarMeta.total)}</text>
+    </g>`;
+  document.getElementById("mainChart").innerHTML = `
+    <div id="webuiCompareTooltip" class="chart-tooltip" hidden></div>
+    <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="DataFlow and WebUI daily stars comparison">
+      ${grid}
+      ${line("dataflowStars", "webui-dataflow-line")}
+      ${line("webuiStars", "webui-daily-line")}
+      ${points}
+      ${hoverZones}
+      <line x1="${margin.left}" y1="${margin.top + chartH}" x2="${width - margin.right}" y2="${margin.top + chartH}" stroke="#cbd5e1"></line>
+      ${labels}
+      <text class="chart-label" x="${margin.left}" y="${margin.top - 12}">${webuiStarMeta.startDate} 至 ${webuiStarMeta.endDate}</text>
+      ${totalsLabel}
+    </svg>`;
+  bindWebuiCompareTooltip();
+}
+
+function bindWebuiCompareTooltip() {
+  const wrap = document.getElementById("mainChart");
+  const tooltip = document.getElementById("webuiCompareTooltip");
+  if (!wrap || !tooltip) return;
+  wrap.querySelectorAll(".hover-zone").forEach((zone) => {
+    zone.addEventListener("mousemove", (event) => {
+      const rect = wrap.getBoundingClientRect();
+      tooltip.hidden = false;
+      tooltip.style.left = `${event.clientX - rect.left + wrap.scrollLeft}px`;
+      tooltip.style.top = `${event.clientY - rect.top + wrap.scrollTop}px`;
+      tooltip.innerHTML = `<strong>${zone.dataset.date}</strong><span>DataFlow 日增：${zone.dataset.dataflow}</span><span>WebUI 日增：${zone.dataset.webui}</span><span>差值：${zone.dataset.delta}</span><span>WebUI 累计：${formatNumber(Number(zone.dataset.webuiCumulative))}</span>`;
+    });
+    zone.addEventListener("mouseleave", () => {
+      tooltip.hidden = true;
+    });
+  });
 }
 
 function renderCombinedChart() {
@@ -2146,6 +2305,13 @@ function initCalendar() {
   });
 }
 
+function initMainChartModeToggle() {
+  document.getElementById("mainChartModeToggle")?.addEventListener("click", () => {
+    mainChartMode = mainChartMode === "webui" ? "dataflow" : "webui";
+    renderMainChart();
+  });
+}
+
 function initCombinedWindowControls() {
   document.getElementById("combinedPrev")?.addEventListener("click", () => {
     combinedWindowIndex -= 1;
@@ -2281,6 +2447,7 @@ async function refreshLiveData() {
 }
 
 initCalendar();
+initMainChartModeToggle();
 initCombinedWindowControls();
 renderAll();
 refreshLiveData();

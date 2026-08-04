@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Star Growth &amp; Actions Dashboard</title>
-    <link rel="stylesheet" href="./styles.css?v=179-fc99cbf" />
+    <link rel="stylesheet" href="./styles.css?v=20260804-region-august-webui" />
   </head>
   <body>
     <header class="page-header">
@@ -32,10 +32,13 @@
             <h2>每日新增与累计趋势</h2>
             <p>柱状为 UTC 日增 stars；折线为按快照推算的累计 stars。高亮区间对应阶段性运营判断。</p>
           </div>
-          <div class="legend">
-            <span><i class="legend-dot daily"></i>日增</span>
-            <span><i class="legend-dot cumulative"></i>累计</span>
-            <span><i class="legend-dot action"></i>运营动作</span>
+          <div class="main-chart-tools">
+            <div id="mainChartLegend" class="legend">
+              <span><i class="legend-dot daily"></i>日增</span>
+              <span><i class="legend-dot cumulative"></i>累计</span>
+              <span><i class="legend-dot action"></i>运营动作</span>
+            </div>
+            <button id="mainChartModeToggle" type="button" class="chart-mode-button">WebUI 日增对比 →</button>
           </div>
         </div>
         <div id="mainChart" class="chart-wrap" aria-label="Daily stars and cumulative stars chart"></div>
@@ -548,6 +551,6 @@
       </details>
     </main>
 
-    <script src="./app.js?v=179-fc99cbf"></script>
+    <script src="./app.js?v=20260804-region-august-webui"></script>
   </body>
 </html>
