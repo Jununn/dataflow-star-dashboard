@@ -597,7 +597,8 @@ svg {
 }
 
 .webui-dataflow-line,
-.webui-daily-line {
+.webui-daily-line,
+.dataflex-daily-line {
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -605,11 +606,15 @@ svg {
 }
 
 .webui-dataflow-line {
-  stroke: #2563eb;
+  stroke: #60a5fa;
 }
 
 .webui-daily-line {
-  stroke: #14b8a6;
+  stroke: #34d399;
+}
+
+.dataflex-daily-line {
+  stroke: #a78bfa;
 }
 
 .webui-compare-point {
@@ -619,19 +624,27 @@ svg {
 }
 
 .webui-compare-point.dataflow {
-  fill: #2563eb;
+  fill: #60a5fa;
 }
 
 .webui-compare-point.webui {
-  fill: #14b8a6;
+  fill: #34d399;
+}
+
+.webui-compare-point.dataflex {
+  fill: #a78bfa;
 }
 
 .legend-dot.dataflow-line {
-  background: #2563eb;
+  background: #60a5fa;
 }
 
 .legend-dot.webui-line {
-  background: #14b8a6;
+  background: #34d399;
+}
+
+.legend-dot.dataflex-line {
+  background: #a78bfa;
 }
 
 .webui-total-labels {
@@ -641,11 +654,15 @@ svg {
 }
 
 .webui-total-labels .dataflow-total-dot {
-  fill: #2563eb;
+  fill: #60a5fa;
 }
 
 .webui-total-labels .webui-total-dot {
-  fill: #14b8a6;
+  fill: #34d399;
+}
+
+.webui-total-labels .dataflex-total-dot {
+  fill: #a78bfa;
 }
 
 .star-uv-chart {

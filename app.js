@@ -109,11 +109,11 @@ const dailyCounts = [
 
 const webuiStarMeta = {
   repo: "OpenDCAI/DataFlow-WebUI",
-  total: 166,
+  total: 175,
   startDate: "2026-07-15",
-  endDate: "2026-08-04",
+  endDate: "2026-08-05",
   beforeStart: 24,
-  generatedAt: "2026-08-04T05:39:28.194Z"
+  generatedAt: "2026-08-05T00:00:00.000Z"
 };
 
 const webuiDailyCounts = [
@@ -137,7 +137,52 @@ const webuiDailyCounts = [
   ["2026-08-01", 5],
   ["2026-08-02", 5],
   ["2026-08-03", 8],
-  ["2026-08-04", 4]
+  ["2026-08-04", 4],
+  ["2026-08-05", 9]
+];
+
+const dataflexStarMeta = {
+  repo: "OpenDCAI/DataFlex",
+  total: 1884,
+  startDate: "2026-04-03",
+  endDate: "2026-08-05",
+  beforeStart: 143,
+  generatedAt: "2026-08-05T03:40:00.000Z"
+};
+
+const dataflexDailyCounts = [
+  ["2026-04-03", 21], ["2026-04-04", 13], ["2026-04-05", 2], ["2026-04-06", 2],
+  ["2026-04-07", 4], ["2026-04-08", 5], ["2026-04-09", 8], ["2026-04-10", 3],
+  ["2026-04-11", 18], ["2026-04-12", 10], ["2026-04-13", 5], ["2026-04-14", 5],
+  ["2026-04-15", 14], ["2026-04-16", 16], ["2026-04-17", 8], ["2026-04-18", 7],
+  ["2026-04-19", 3], ["2026-04-20", 26], ["2026-04-21", 50], ["2026-04-22", 21],
+  ["2026-04-23", 14], ["2026-04-24", 17], ["2026-04-25", 12], ["2026-04-26", 21],
+  ["2026-04-27", 17], ["2026-04-28", 21], ["2026-04-29", 19], ["2026-04-30", 12],
+  ["2026-05-01", 7], ["2026-05-02", 14], ["2026-05-03", 16], ["2026-05-04", 12],
+  ["2026-05-05", 11], ["2026-05-06", 14], ["2026-05-07", 13], ["2026-05-08", 8],
+  ["2026-05-09", 12], ["2026-05-10", 7], ["2026-05-11", 8], ["2026-05-12", 10],
+  ["2026-05-13", 14], ["2026-05-14", 11], ["2026-05-15", 11], ["2026-05-16", 9],
+  ["2026-05-17", 8], ["2026-05-18", 12], ["2026-05-19", 9], ["2026-05-20", 7],
+  ["2026-05-21", 7], ["2026-05-22", 15], ["2026-05-23", 11], ["2026-05-24", 8],
+  ["2026-05-25", 12], ["2026-05-26", 15], ["2026-05-27", 9], ["2026-05-28", 16],
+  ["2026-05-29", 14], ["2026-05-30", 9], ["2026-05-31", 9], ["2026-06-01", 15],
+  ["2026-06-02", 14], ["2026-06-03", 12], ["2026-06-04", 12], ["2026-06-05", 15],
+  ["2026-06-06", 11], ["2026-06-07", 14], ["2026-06-08", 16], ["2026-06-09", 13],
+  ["2026-06-10", 15], ["2026-06-11", 15], ["2026-06-12", 14], ["2026-06-13", 10],
+  ["2026-06-14", 11], ["2026-06-15", 10], ["2026-06-16", 7], ["2026-06-17", 15],
+  ["2026-06-18", 14], ["2026-06-19", 18], ["2026-06-20", 9], ["2026-06-21", 15],
+  ["2026-06-22", 8], ["2026-06-23", 15], ["2026-06-24", 15], ["2026-06-25", 12],
+  ["2026-06-26", 17], ["2026-06-27", 16], ["2026-06-28", 37], ["2026-06-29", 20],
+  ["2026-06-30", 15], ["2026-07-01", 18], ["2026-07-02", 15], ["2026-07-03", 10],
+  ["2026-07-04", 14], ["2026-07-05", 18], ["2026-07-06", 21], ["2026-07-07", 16],
+  ["2026-07-08", 11], ["2026-07-09", 14], ["2026-07-10", 13], ["2026-07-11", 16],
+  ["2026-07-12", 15], ["2026-07-13", 18], ["2026-07-14", 20], ["2026-07-15", 19],
+  ["2026-07-16", 16], ["2026-07-17", 18], ["2026-07-18", 27], ["2026-07-19", 10],
+  ["2026-07-20", 28], ["2026-07-21", 24], ["2026-07-22", 7], ["2026-07-23", 0],
+  ["2026-07-24", 14], ["2026-07-25", 27], ["2026-07-26", 20], ["2026-07-27", 22],
+  ["2026-07-28", 18], ["2026-07-29", 14], ["2026-07-30", 20], ["2026-07-31", 30],
+  ["2026-08-01", 14], ["2026-08-02", 20], ["2026-08-03", 12], ["2026-08-04", 17],
+  ["2026-08-05", 3]
 ];
 
 let competitorSnapshotDate = "2026-08-05";
@@ -1482,6 +1527,8 @@ function renderSummary() {
   const maxDay = data.reduce((max, item) => (item.stars > max.stars ? item : max), data[0]);
   const juneRows = data.filter((item) => item.date >= "2026-06-01" && item.date <= "2026-06-30");
   const juneAvg = juneRows.reduce((sum, item) => sum + item.stars, 0) / juneRows.length;
+  const julyRows = data.filter((item) => item.date >= "2026-07-01" && item.date <= "2026-07-31");
+  const julyAvg = julyRows.reduce((sum, item) => sum + item.stars, 0) / julyRows.length;
   const augustRows = data.filter((item) => item.date >= "2026-08-01");
   const augustAvg = augustRows.reduce((sum, item) => sum + item.stars, 0) / augustRows.length;
   const afterMarch1 = data.filter((item) => item.date >= "2026-03-01");
@@ -1491,7 +1538,7 @@ function renderSummary() {
     ["3/1 后新增", formatNumber(afterMarch1Total), `2026-03-01 到 ${data.at(-1).date}，覆盖 3 月恢复、4 月抬升和 5 月高动量阶段。`],
     ["当前快照累计", formatNumber(data.at(-1).cumulative), "由 2026-01-01 前累计 1,805 加日增推算。"],
     ["最高单日", `${maxDay.stars}`, `${maxDay.date}，对应 5/15 后传播峰值。`],
-    ["8 月日均", augustAvg.toFixed(1), `6 月日均 ${juneAvg.toFixed(1)}，8 月当前为新月滚动观察。`]
+    ["8 月日均", augustAvg.toFixed(1), `7 月日均 ${julyAvg.toFixed(1)}，8 月当前为新月滚动观察。`]
   ];
   document.getElementById("summary").innerHTML = cards
     .map(([label, value, note]) => `<article class="metric"><span>${label}</span><strong>${value}</strong><p>${note}</p></article>`)
@@ -1510,18 +1557,25 @@ function renderMainChart() {
 
 function getWebuiComparisonRows() {
   const webuiMap = new Map(webuiDailyCounts);
+  const dataflexMap = new Map(dataflexDailyCounts);
   let webuiCumulative = webuiStarMeta.beforeStart;
+  let dataflexCumulative = dataflexStarMeta.beforeStart;
   return data
-    .filter((item) => item.date >= webuiStarMeta.startDate && item.date <= webuiStarMeta.endDate)
+    .filter((item) => item.date >= dataflexStarMeta.startDate && item.date <= dataflexStarMeta.endDate)
     .map((item) => {
-      const webuiStars = webuiMap.get(item.date) || 0;
-      webuiCumulative += webuiStars;
+      const hasWebuiData = item.date >= webuiStarMeta.startDate && item.date <= webuiStarMeta.endDate;
+      const webuiStars = hasWebuiData ? webuiMap.get(item.date) || 0 : null;
+      if (hasWebuiData) webuiCumulative += webuiStars;
+      const dataflexStars = dataflexMap.get(item.date) || 0;
+      dataflexCumulative += dataflexStars;
       return {
         date: item.date,
         dataflowStars: item.stars,
         dataflowCumulative: item.cumulative,
         webuiStars,
-        webuiCumulative
+        webuiCumulative: hasWebuiData ? webuiCumulative : null,
+        dataflexStars,
+        dataflexCumulative
       };
     });
 }
@@ -1531,11 +1585,11 @@ function updateMainChartControls() {
   const toggle = document.getElementById("mainChartModeToggle");
   if (legend) {
     legend.innerHTML = mainChartMode === "webui"
-      ? `<span><i class="legend-dot dataflow-line"></i>DataFlow 日增</span><span><i class="legend-dot webui-line"></i>WebUI 日增</span>`
+      ? `<span><i class="legend-dot dataflow-line"></i>DataFlow 日增</span><span><i class="legend-dot webui-line"></i>WebUI 日增</span><span><i class="legend-dot dataflex-line"></i>DataFlex 日增</span>`
       : `<span><i class="legend-dot daily"></i>日增</span><span><i class="legend-dot cumulative"></i>累计</span><span><i class="legend-dot action"></i>运营动作</span>`;
   }
   if (toggle) {
-    toggle.textContent = mainChartMode === "webui" ? "← 返回日增累计" : "WebUI 日增对比 →";
+    toggle.textContent = mainChartMode === "webui" ? "← 返回日增累计" : "DataFlex / WebUI 日增对比 →";
     toggle.setAttribute("aria-pressed", String(mainChartMode === "webui"));
   }
 }
@@ -1544,10 +1598,10 @@ function renderWebuiDailyComparisonChart() {
   const rows = getWebuiComparisonRows();
   const width = Math.max(1080, data.length * 8);
   const height = 480;
-  const margin = { top: 34, right: 70, bottom: 64, left: 54 };
+  const margin = { top: 70, right: 70, bottom: 64, left: 54 };
   const chartW = width - margin.left - margin.right;
   const chartH = height - margin.top - margin.bottom;
-  const maxValue = Math.max(25, ...rows.flatMap((row) => [row.dataflowStars, row.webuiStars]));
+  const maxValue = Math.max(25, ...rows.flatMap((row) => [row.dataflowStars, row.webuiStars, row.dataflexStars]).filter((value) => Number.isFinite(value)));
   const x = (i) => margin.left + (i / Math.max(1, rows.length - 1)) * chartW;
   const y = (value) => margin.top + chartH - (value / maxValue) * chartH;
   const gridTicks = [0, Math.round(maxValue * 0.25), Math.round(maxValue * 0.5), Math.round(maxValue * 0.75), maxValue];
@@ -1555,24 +1609,45 @@ function renderWebuiDailyComparisonChart() {
     const gy = y(tick);
     return `<line class="grid-line" x1="${margin.left}" y1="${gy}" x2="${width - margin.right}" y2="${gy}"></line><text class="chart-label" x="12" y="${gy + 4}">${tick}</text>`;
   }).join("");
-  const line = (key, cls) => `<polyline class="${cls}" points="${rows.map((row, i) => `${x(i)},${y(row[key])}`).join(" ")}"></polyline>`;
+  const line = (key, cls) => {
+    const segments = [];
+    let points = [];
+    rows.forEach((row, i) => {
+      const value = row[key];
+      if (!Number.isFinite(value)) {
+        if (points.length) segments.push(points);
+        points = [];
+        return;
+      }
+      points.push(`${x(i)},${y(value)}`);
+    });
+    if (points.length) segments.push(points);
+    return segments.map((segment) => `<polyline class="${cls}" points="${segment.join(" ")}"></polyline>`).join("");
+  };
   const points = rows.map((row, i) => `
     <circle class="webui-compare-point dataflow" cx="${x(i)}" cy="${y(row.dataflowStars)}" r="4"></circle>
-    <circle class="webui-compare-point webui" cx="${x(i)}" cy="${y(row.webuiStars)}" r="4"></circle>
+    ${Number.isFinite(row.webuiStars) ? `<circle class="webui-compare-point webui" cx="${x(i)}" cy="${y(row.webuiStars)}" r="4"></circle>` : ""}
+    <circle class="webui-compare-point dataflex" cx="${x(i)}" cy="${y(row.dataflexStars)}" r="4"></circle>
   `).join("");
+  const labelInterval = rows.length > 80 ? 7 : rows.length > 40 ? 4 : 2;
   const labels = rows.map((row, i) => {
-    if (i % 2 !== 0 && i !== rows.length - 1) return "";
+    if (i % labelInterval !== 0 && i !== rows.length - 1) return "";
     return `<text class="chart-label" x="${x(i) - 18}" y="${height - 24}">${row.date.slice(5)}</text>`;
   }).join("");
   const hoverZones = rows.map((row, i) => {
     const zoneW = Math.max(20, chartW / rows.length);
     const zx = x(i) - zoneW / 2;
-    return `<rect class="hover-zone" x="${zx}" y="${margin.top}" width="${zoneW}" height="${chartH}" data-date="${row.date}" data-dataflow="${row.dataflowStars}" data-webui="${row.webuiStars}" data-delta="${row.dataflowStars - row.webuiStars}" data-dataflow-cumulative="${row.dataflowCumulative}" data-webui-cumulative="${row.webuiCumulative}"></rect>`;
+    const webuiDelta = Number.isFinite(row.webuiStars) ? row.dataflowStars - row.webuiStars : "";
+    return `<rect class="hover-zone" x="${zx}" y="${margin.top}" width="${zoneW}" height="${chartH}" data-date="${row.date}" data-dataflow="${row.dataflowStars}" data-webui="${row.webuiStars ?? ""}" data-dataflex="${row.dataflexStars}" data-webui-delta="${webuiDelta}" data-dataflex-delta="${row.dataflowStars - row.dataflexStars}" data-dataflow-cumulative="${row.dataflowCumulative}" data-webui-cumulative="${row.webuiCumulative ?? ""}" data-dataflex-cumulative="${row.dataflexCumulative}"></rect>`;
   }).join("");
+  const dataflowCurrentTotal = data.at(-1).cumulative;
+  const combinedCurrentTotal = dataflowCurrentTotal + webuiStarMeta.total + dataflexStarMeta.total;
   const totalsLabel = `
-    <g class="webui-total-labels" transform="translate(${width - margin.right - 184}, ${margin.top - 18})">
-      <text x="0" y="0"><tspan class="dataflow-total-dot">●</tspan> DataFlow ${formatNumber(data.at(-1).cumulative)}</text>
-      <text x="0" y="20"><tspan class="webui-total-dot">●</tspan> WebUI ${formatNumber(webuiStarMeta.total)}</text>
+    <g class="webui-total-labels" transform="translate(${width - margin.right - 408}, 18)">
+      <text x="0" y="0"><tspan class="dataflow-total-dot">●</tspan> DataFlow ${formatNumber(dataflowCurrentTotal)}</text>
+      <text x="146" y="0"><tspan class="webui-total-dot">●</tspan> WebUI ${formatNumber(webuiStarMeta.total)}</text>
+      <text x="268" y="0"><tspan class="dataflex-total-dot">●</tspan> DataFlex ${formatNumber(dataflexStarMeta.total)}</text>
+      <text x="0" y="26">三项目当前 Star 总数 ${formatNumber(combinedCurrentTotal)}</text>
     </g>`;
   document.getElementById("mainChart").innerHTML = `
     <div id="webuiCompareTooltip" class="chart-tooltip" hidden></div>
@@ -1580,11 +1655,12 @@ function renderWebuiDailyComparisonChart() {
       ${grid}
       ${line("dataflowStars", "webui-dataflow-line")}
       ${line("webuiStars", "webui-daily-line")}
+      ${line("dataflexStars", "dataflex-daily-line")}
       ${points}
       ${hoverZones}
       <line x1="${margin.left}" y1="${margin.top + chartH}" x2="${width - margin.right}" y2="${margin.top + chartH}" stroke="#cbd5e1"></line>
       ${labels}
-      <text class="chart-label" x="${margin.left}" y="${margin.top - 12}">${webuiStarMeta.startDate} 至 ${webuiStarMeta.endDate}</text>
+      <text class="chart-label" x="${margin.left}" y="${margin.top - 12}">${dataflexStarMeta.startDate} 至 ${dataflexStarMeta.endDate}</text>
       ${totalsLabel}
     </svg>`;
   bindWebuiCompareTooltip();
@@ -1600,7 +1676,10 @@ function bindWebuiCompareTooltip() {
       tooltip.hidden = false;
       tooltip.style.left = `${event.clientX - rect.left + wrap.scrollLeft}px`;
       tooltip.style.top = `${event.clientY - rect.top + wrap.scrollTop}px`;
-      tooltip.innerHTML = `<strong>${zone.dataset.date}</strong><span>DataFlow 日增：${zone.dataset.dataflow}</span><span>WebUI 日增：${zone.dataset.webui}</span><span>差值：${zone.dataset.delta}</span><span>WebUI 累计：${formatNumber(Number(zone.dataset.webuiCumulative))}</span>`;
+      const webuiDaily = zone.dataset.webui || "-";
+      const webuiDelta = zone.dataset.webuiDelta || "-";
+      const webuiCumulative = zone.dataset.webuiCumulative ? formatNumber(Number(zone.dataset.webuiCumulative)) : "-";
+      tooltip.innerHTML = `<strong>${zone.dataset.date}</strong><span>DataFlow 日增：${zone.dataset.dataflow}</span><span>WebUI 日增：${webuiDaily}</span><span>DataFlex 日增：${zone.dataset.dataflex}</span><span>DataFlow-WebUI 差值：${webuiDelta}</span><span>DataFlow-DataFlex 差值：${zone.dataset.dataflexDelta}</span><span>WebUI 累计：${webuiCumulative}</span><span>DataFlex 累计：${formatNumber(Number(zone.dataset.dataflexCumulative))}</span>`;
     });
     zone.addEventListener("mouseleave", () => {
       tooltip.hidden = true;
