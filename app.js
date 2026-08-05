@@ -104,7 +104,7 @@ const dailyCounts = [
   ["2026-07-24", 112], ["2026-07-25", 97], ["2026-07-26", 33], ["2026-07-27", 64],
   ["2026-07-28", 28], ["2026-07-29", 22], ["2026-07-30", 17], ["2026-07-31", 21],
   ["2026-08-01", 10], ["2026-08-02", 8], ["2026-08-03", 10], ["2026-08-04", 6],
-  ["2026-08-05", 9]
+  ["2026-08-05", 10]
 ];
 
 const webuiStarMeta = {
@@ -676,8 +676,8 @@ const competitorSnapshots = {
   "2026-08-05": {
     "datajuicer/data-juicer": 6832,
     "Eventual-Inc/Daft": 5684,
-    "OpenDCAI/DataFlow": 7204,
-    "huggingface/datatrove": 3248,
+    "OpenDCAI/DataFlow": 7205,
+    "huggingface/datatrove": 3249,
     "NVIDIA-NeMo/DataDesigner": 2145,
     "NVIDIA-NeMo/Curator": 1702,
     "tinyfish-io/bigset": 1682,
@@ -732,17 +732,17 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 7204,
-    yesterday: 0,
-    twoDayChange: 16,
+    total: 7205,
+    yesterday: 1,
+    twoDayChange: 17,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
-    total: 3248,
-    yesterday: 0,
-    twoDayChange: 1,
+    total: 3249,
+    yesterday: 1,
+    twoDayChange: 2,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -755,7 +755,7 @@ const competitorRepos = [
       ["2025-06-01", 2400],
       ["2025-10-01", 2650],
       ["2026-03-01", 2900],
-      ["2026-08-05", 3248]
+      ["2026-08-05", 3249]
     ]
   },
   {
@@ -1400,11 +1400,11 @@ const phaseRegionStats = [
   {
     phaseId: "august",
     status: "complete",
-    totalStars: 43,
+    totalStars: 44,
     known: 10,
     china: 8,
     overseas: 2,
-    unknown: 33,
+    unknown: 34,
     note: "08/01-08/05 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Beijing 1","Beijing, China 1","Beijing,China 1","China 1","Hangzhou 1","Shanghai 1","Shenzhen 1","xi'an, China 1"],
     topOverseasLocations: ["Utah 1","xian 1"]
