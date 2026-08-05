@@ -645,7 +645,7 @@ const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
     total: 6832,
-    yesterday: 5,
+    yesterday: 0,
     twoDayChange: 14,
     color: "#f2c94c",
     points: [
@@ -665,7 +665,7 @@ const competitorRepos = [
   {
     name: "Eventual-Inc/Daft",
     total: 5684,
-    yesterday: -1,
+    yesterday: 0,
     twoDayChange: 3,
     color: "#f2994a",
     points: [
@@ -688,7 +688,7 @@ const competitorRepos = [
   {
     name: "OpenDCAI/DataFlow",
     total: 7204,
-    yesterday: 8,
+    yesterday: 0,
     twoDayChange: 16,
     color: "#2d9cdb",
     points: null
@@ -696,7 +696,7 @@ const competitorRepos = [
   {
     name: "huggingface/datatrove",
     total: 3248,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 1,
     color: "#3fb950",
     points: [
@@ -730,7 +730,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/Curator",
     total: 1702,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 4,
     color: "#e879b4",
     points: [
@@ -1355,14 +1355,14 @@ const phaseRegionStats = [
   {
     phaseId: "august",
     status: "complete",
-    totalStars: 35,
-    known: 7,
-    china: 6,
-    overseas: 1,
-    unknown: 28,
+    totalStars: 43,
+    known: 10,
+    china: 8,
+    overseas: 2,
+    unknown: 33,
     note: "08/01-08/05 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["Beijing 1","Beijing,China 1","China 1","Hangzhou 1","Shanghai 1","xi'an, China 1"],
-    topOverseasLocations: ["Utah 1"]
+    topChinaLocations: ["Beijing 1","Beijing, China 1","Beijing,China 1","China 1","Hangzhou 1","Shanghai 1","Shenzhen 1","xi'an, China 1"],
+    topOverseasLocations: ["Utah 1","xian 1"]
   }
 ];
 
