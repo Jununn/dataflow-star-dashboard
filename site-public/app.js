@@ -677,7 +677,7 @@ const competitorSnapshots = {
     "datajuicer/data-juicer": 6832,
     "Eventual-Inc/Daft": 5684,
     "OpenDCAI/DataFlow": 7205,
-    "huggingface/datatrove": 3249,
+    "huggingface/datatrove": 3250,
     "NVIDIA-NeMo/DataDesigner": 2145,
     "NVIDIA-NeMo/Curator": 1702,
     "tinyfish-io/bigset": 1682,
@@ -733,16 +733,16 @@ const competitorRepos = [
   {
     name: "OpenDCAI/DataFlow",
     total: 7205,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 17,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
-    total: 3249,
+    total: 3250,
     yesterday: 1,
-    twoDayChange: 2,
+    twoDayChange: 3,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -755,7 +755,7 @@ const competitorRepos = [
       ["2025-06-01", 2400],
       ["2025-10-01", 2650],
       ["2026-03-01", 2900],
-      ["2026-08-05", 3249]
+      ["2026-08-05", 3250]
     ]
   },
   {
