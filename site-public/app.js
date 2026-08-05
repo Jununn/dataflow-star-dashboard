@@ -104,7 +104,7 @@ const dailyCounts = [
   ["2026-07-24", 112], ["2026-07-25", 97], ["2026-07-26", 33], ["2026-07-27", 64],
   ["2026-07-28", 28], ["2026-07-29", 22], ["2026-07-30", 17], ["2026-07-31", 21],
   ["2026-08-01", 10], ["2026-08-02", 8], ["2026-08-03", 10], ["2026-08-04", 6],
-  ["2026-08-05", 2]
+  ["2026-08-05", 9]
 ];
 
 const webuiStarMeta = {
@@ -629,12 +629,12 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 44
   },
   "2026-08-05": {
-    "datajuicer/data-juicer": 6829,
-    "Eventual-Inc/Daft": 5685,
-    "OpenDCAI/DataFlow": 7197,
+    "datajuicer/data-juicer": 6832,
+    "Eventual-Inc/Daft": 5684,
+    "OpenDCAI/DataFlow": 7204,
     "huggingface/datatrove": 3248,
     "NVIDIA-NeMo/DataDesigner": 2145,
-    "NVIDIA-NeMo/Curator": 1701,
+    "NVIDIA-NeMo/Curator": 1702,
     "tinyfish-io/bigset": 1682,
     "OpenDataArena/OpenDataArena-Tool": 146,
     "InternScience/SciDataCopilot": 44
@@ -644,9 +644,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 6829,
-    yesterday: 2,
-    twoDayChange: 11,
+    total: 6832,
+    yesterday: 5,
+    twoDayChange: 14,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -659,14 +659,14 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-08-05", 6829]
+      ["2026-08-05", 6832]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
-    total: 5685,
-    yesterday: 0,
-    twoDayChange: 4,
+    total: 5684,
+    yesterday: -1,
+    twoDayChange: 3,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -682,14 +682,14 @@ const competitorRepos = [
       ["2025-10-01", 4400],
       ["2026-01-01", 4900],
       ["2026-04-01", 5350],
-      ["2026-08-05", 5685]
+      ["2026-08-05", 5684]
     ]
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 7197,
-    yesterday: 1,
-    twoDayChange: 9,
+    total: 7204,
+    yesterday: 8,
+    twoDayChange: 16,
     color: "#2d9cdb",
     points: null
   },
@@ -729,9 +729,9 @@ const competitorRepos = [
   },
   {
     name: "NVIDIA-NeMo/Curator",
-    total: 1701,
-    yesterday: 1,
-    twoDayChange: 3,
+    total: 1702,
+    yesterday: 2,
+    twoDayChange: 4,
     color: "#e879b4",
     points: [
       ["2024-03-14", 0],
@@ -742,7 +742,7 @@ const competitorRepos = [
       ["2025-07-01", 900],
       ["2025-12-01", 1200],
       ["2026-04-01", 1450],
-      ["2026-08-05", 1701]
+      ["2026-08-05", 1702]
     ]
   },
   {
@@ -864,6 +864,8 @@ const actions = [
   ["2026-07-18", "线下活动", "WAIC", "#"],
   ["2026-07-19", "线下活动", "WAIC", "#"],
   ["2026-07-20", "线下活动", "WAIC", "#"],
+  ["2026-07-21", "小红书", "k12", "https://www.xiaohongshu.com/discovery/item/6a5f7eb100000000100284a5?source=webshare&xhsshare=pc_web&xsec_token=ABiSjJXYUk5JGI80L2kw0YI7pgXsyf2f7ENnXWjAs863Y=&xsec_source=pc_share"],
+  ["2026-07-22", "小红书", "dataflow-harness", "http://xhslink.cn/o/AUuzHT2zRYy"],
   ["2026-07-24", "Reddit", "dataflow-harness", "https://www.reddit.com/r/codex/comments/1v55eih/using_codex_as_a_harness_for_aiready_data/"],
   ["2026-07-24", "Reddit", "dataflow-harness", "https://www.reddit.com/r/vibecoding/comments/1v55u11/vibe_coding_the_hard_part_of_rag_turning_messy/"],
   ["2026-07-24", "LinkedIn", "dataflow-harness", "https://www.linkedin.com/feed/update/urn:li:groupPost:7018767-7486354047265026048/"],
@@ -886,7 +888,10 @@ const actions = [
   ["2026-08-03", "Reddit", "ai-ready-data", "https://www.reddit.com/r/LocalLLM/comments/1ve8n0r/using_pipelines_and_operators_for_prefinetuning/"],
   ["2026-08-04", "Reddit", "dataflow-rag", "https://www.reddit.com/r/Rag/comments/1vf3yr6/before_embeddings_how_are_you_handling_messy/"],
   ["2026-08-04", "Reddit", "dataflow-dataset", "https://www.reddit.com/r/datasets/comments/1vf70q1/building_highquality_datasets_from_small_messy/"],
-  ["2026-08-04", "LinkedIn", "dataflow-dataprep", "https://www.linkedin.com/feed/update/urn:li:share:7490368066812514304/"]
+  ["2026-08-04", "LinkedIn", "dataflow-dataprep", "https://www.linkedin.com/feed/update/urn:li:share:7490368066812514304/"],
+  ["2026-08-05", "Facebook", "dataflow-oss", "https://www.facebook.com/groups/dataannotation/permalink/1758416958627671/"],
+  ["2026-08-05", "Facebook", "dataflow-oss", "https://www.facebook.com/groups/968349588962639/permalink/1066916472439283/"],
+  ["2026-08-05", "Reddit", "dataflow-oss", "https://www.reddit.com/r/LLMDevs/comments/1vg1raj/how_much_of_llm_development_is_actually_data/"]
 ].map(([date, channel, title, url]) => ({ date, channel, title, url }));
 
 const trafficRows = [
@@ -1254,15 +1259,15 @@ const phases = [
     id: "july",
     label: "7 月：高位续航",
     start: "2026-07-01",
-    end: "2026-08-05",
-    note: "7/1-08/05 为当前滚动月，数据随每日更新继续补齐。"
+    end: "2026-07-31",
+    note: "7/1-7/31 为完整月数据；延续高位传播后进入月末回落。"
   },
   {
     id: "august",
     label: "8 月：滚动观察",
     start: "2026-08-01",
-    end: "2026-08-04",
-    note: "8/1-08/04 为当前滚动月，数据随每日更新继续补齐。"
+    end: "2026-08-05",
+    note: "8/1-08/05 为当前滚动月，数据随每日更新继续补齐。"
   }
 ];
 
@@ -1350,11 +1355,11 @@ const phaseRegionStats = [
   {
     phaseId: "august",
     status: "complete",
-    totalStars: 36,
+    totalStars: 35,
     known: 7,
     china: 6,
     overseas: 1,
-    unknown: 29,
+    unknown: 28,
     note: "08/01-08/05 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Beijing 1","Beijing,China 1","China 1","Hangzhou 1","Shanghai 1","xi'an, China 1"],
     topOverseasLocations: ["Utah 1"]
@@ -1464,6 +1469,7 @@ function getChannelClass(channel) {
   const normalized = channel.toLowerCase();
   if (normalized.includes("reddit")) return "channel-reddit";
   if (normalized.includes("linkedin")) return "channel-linkedin";
+  if (normalized.includes("facebook")) return "channel-facebook";
   if (channel.includes("公众号")) return "channel-wechat";
   if (channel.includes("小红书")) return "channel-xhs";
   if (channel.includes("线下")) return "channel-offline";
