@@ -2160,11 +2160,12 @@ function renderPhaseCards() {
     .map((phase) => {
       const items = data.filter((item) => item.phase?.id === phase.id);
       const total = items.reduce((sum, item) => sum + item.stars, 0);
-      const avg = total / items.length;
-      const max = items.reduce((best, item) => (item.stars > best.stars ? item : best), items[0]);
+      const avg = items.length ? total / items.length : 0;
+      const max = items.length ? items.reduce((best, item) => (item.stars > best.stars ? item : best), items[0]) : null;
+      const peak = max ? `最高 ${max.date} / ${max.stars}` : "暂无日增数据";
       return `<article class="phase-card">
         <strong>${phase.label}</strong>
-        <p>${phase.start} 至 ${phase.end}，新增 ${total} stars，日均 ${avg.toFixed(1)}，最高 ${max.date} / ${max.stars}。${phase.note}</p>
+        <p>${phase.start} 至 ${phase.end}，新增 ${total} stars，日均 ${avg.toFixed(1)}，${peak}。${phase.note}</p>
       </article>`;
     })
     .join("");
@@ -2433,10 +2434,10 @@ function updateRecentDailyCounts(totalStars, recentStargazers) {
   const currentTotal = startTotal + nextRows.reduce((sum, [, stars]) => sum + stars, 0);
   startTotal += totalStars - currentTotal;
   dailyCounts.splice(0, dailyCounts.length, ...nextRows);
-  const june = phases.find((phase) => phase.id === "june");
-  if (june && endDate >= "2026-06-01") {
-    june.end = endDate;
-    june.note = `6/1-${endDate.slice(5).replace("-", "/")} 为浏览器实时快照，公开总数已到 ${formatNumber(totalStars)}；日增按 starred_at 统计，累计差额通过基线对齐。`;
+  const livePhase = phases.find((phase) => endDate >= phase.start && endDate <= phase.end) || phases.at(-1);
+  if (livePhase && endDate >= livePhase.start) {
+    livePhase.end = endDate;
+    livePhase.note = `${livePhase.start.slice(5).replace("-", "/")}-${endDate.slice(5).replace("-", "/")} 为浏览器实时快照，公开总数已到 ${formatNumber(totalStars)}；日增按 starred_at 统计，累计差额通过基线对齐。`;
   }
   return endDate;
 }
