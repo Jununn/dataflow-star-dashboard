@@ -104,7 +104,7 @@ const dailyCounts = [
   ["2026-07-24", 112], ["2026-07-25", 97], ["2026-07-26", 33], ["2026-07-27", 64],
   ["2026-07-28", 28], ["2026-07-29", 22], ["2026-07-30", 17], ["2026-07-31", 21],
   ["2026-08-01", 10], ["2026-08-02", 8], ["2026-08-03", 10], ["2026-08-04", 6],
-  ["2026-08-05", 12], ["2026-08-06", 0]
+  ["2026-08-05", 12], ["2026-08-06", 1]
 ];
 
 const webuiStarMeta = {
@@ -685,9 +685,9 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 44
   },
   "2026-08-06": {
-    "datajuicer/data-juicer": 6833,
+    "datajuicer/data-juicer": 6835,
     "Eventual-Inc/Daft": 5688,
-    "OpenDCAI/DataFlow": 7207,
+    "OpenDCAI/DataFlow": 7208,
     "huggingface/datatrove": 3250,
     "NVIDIA-NeMo/DataDesigner": 2146,
     "NVIDIA-NeMo/Curator": 1702,
@@ -700,9 +700,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 6833,
-    yesterday: 1,
-    twoDayChange: 7,
+    total: 6835,
+    yesterday: 2,
+    twoDayChange: 9,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -715,13 +715,13 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-08-06", 6833]
+      ["2026-08-06", 6835]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
     total: 5688,
-    yesterday: 4,
+    yesterday: 0,
     twoDayChange: 5,
     color: "#f2994a",
     points: [
@@ -743,9 +743,9 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 7207,
-    yesterday: 2,
-    twoDayChange: 12,
+    total: 7208,
+    yesterday: 1,
+    twoDayChange: 13,
     color: "#2d9cdb",
     points: null
   },
@@ -772,7 +772,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/DataDesigner",
     total: 2146,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 2,
     color: "#e94b35",
     points: [
@@ -1411,11 +1411,11 @@ const phaseRegionStats = [
   {
     phaseId: "august",
     status: "complete",
-    totalStars: 46,
+    totalStars: 47,
     known: 11,
     china: 8,
     overseas: 3,
-    unknown: 35,
+    unknown: 36,
     note: "08/01-08/06 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Beijing 1","Beijing, China 1","Beijing,China 1","China 1","Hangzhou 1","Shanghai 1","Shenzhen 1","xi'an, China 1"],
     topOverseasLocations: ["Utah 1","xian 1","上海.浦东 1"]
