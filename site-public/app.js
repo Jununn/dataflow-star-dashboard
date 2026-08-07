@@ -113,7 +113,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-08-07",
   beforeStart: 24,
-  generatedAt: "2026-08-07T09:45:51.369Z"
+  generatedAt: "2026-08-07T09:48:50.996Z"
 };
 
 const webuiDailyCounts = [
@@ -131,7 +131,7 @@ const dataflexStarMeta = {
   startDate: "2026-04-03",
   endDate: "2026-08-07",
   beforeStart: 107,
-  generatedAt: "2026-08-07T09:46:09.630Z"
+  generatedAt: "2026-08-07T09:48:57.007Z"
 };
 
 const dataflexDailyCounts = [
@@ -696,7 +696,7 @@ const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
     total: 6843,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 11,
     color: "#f2c94c",
     points: [
@@ -716,7 +716,7 @@ const competitorRepos = [
   {
     name: "Eventual-Inc/Daft",
     total: 5694,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 10,
     color: "#f2994a",
     points: [
