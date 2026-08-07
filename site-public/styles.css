@@ -1214,7 +1214,9 @@ svg {
 .table-wrap {
   max-height: 620px;
   overflow: auto;
-  border-top: 1px solid var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #ffffff;
 }
 
 .stargazer-overlap-panel {
@@ -1263,7 +1265,7 @@ svg {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 16px;
+  margin: 0 24px 16px;
 }
 
 .overlap-meta span {
@@ -1279,7 +1281,7 @@ svg {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 12px;
-  margin-bottom: 18px;
+  margin: 0 24px 18px;
 }
 
 .overlap-insights article {
@@ -1341,6 +1343,7 @@ svg {
 .overlap-table-grid {
   display: grid;
   gap: 18px;
+  margin: 0 24px;
 }
 
 .overlap-table-intro {
@@ -1441,7 +1444,7 @@ svg {
 }
 
 .overlap-note {
-  margin: 14px 0 0;
+  margin: 14px 24px 0;
   color: var(--muted);
   font-size: 13px;
   line-height: 1.6;
@@ -1449,11 +1452,19 @@ svg {
 
 .compact-table {
   max-height: 320px;
+  margin: 0 24px 24px;
 }
 
 .region-breakdown-wrap {
-  margin-top: 18px;
+  margin: 18px 24px 24px;
   max-height: none;
+}
+
+.region-breakdown-wrap th:first-child,
+.region-breakdown-wrap td:first-child {
+  width: 76px;
+  min-width: 76px;
+  white-space: nowrap;
 }
 
 table {

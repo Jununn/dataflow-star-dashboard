@@ -2468,11 +2468,26 @@ function renderAll() {
   renderActionCalendar();
 }
 
-function updateLiveStatus(message, stale = false) {
+function updateLiveStatus(message, stale = false, title = "") {
   const status = document.getElementById("liveStatus");
   if (!status) return;
   status.textContent = message;
   status.classList.toggle("is-stale", stale);
+  status.title = title;
+}
+
+function formatRefreshTime(value) {
+  const date = value instanceof Date ? value : new Date(value);
+  if (Number.isNaN(date.getTime())) return "";
+  const pad = (number) => String(number).padStart(2, "0");
+  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())} ${pad(date.getHours())}:${pad(date.getMinutes())}`;
+}
+
+function getLastRefreshStatus() {
+  const modifiedAt = formatRefreshTime(document.lastModified);
+  if (modifiedAt) return `上次刷新：${modifiedAt}`;
+  const latestDate = dailyCounts.at(-1)?.[0];
+  return latestDate ? `上次刷新：${latestDate} 00:00` : "本地快照";
 }
 
 function dateAdd(date, days) {
@@ -2568,7 +2583,7 @@ async function refreshLiveData() {
     updateLiveStatus(`在线 ${formatNumber(repoInfo.stargazers_count)}`);
   } catch (error) {
     console.warn(error);
-    updateLiveStatus(`在线失败：${error.message}`, true);
+    updateLiveStatus(getLastRefreshStatus(), true, `在线更新失败：${error.message}`);
   }
 }
 
