@@ -696,7 +696,7 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 44
   },
   "2026-08-07": {
-    "datajuicer/data-juicer": 6841,
+    "datajuicer/data-juicer": 6843,
     "Eventual-Inc/Daft": 5693,
     "OpenDCAI/DataFlow": 7217,
     "huggingface/datatrove": 3251,
@@ -711,9 +711,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 6841,
-    yesterday: 1,
-    twoDayChange: 9,
+    total: 6843,
+    yesterday: 2,
+    twoDayChange: 11,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -726,7 +726,7 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-08-07", 6841]
+      ["2026-08-07", 6843]
     ]
   },
   {
@@ -755,7 +755,7 @@ const competitorRepos = [
   {
     name: "OpenDCAI/DataFlow",
     total: 7217,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 12,
     color: "#2d9cdb",
     points: null
@@ -763,7 +763,7 @@ const competitorRepos = [
   {
     name: "huggingface/datatrove",
     total: 3251,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 1,
     color: "#3fb950",
     points: [
@@ -815,7 +815,7 @@ const competitorRepos = [
   {
     name: "tinyfish-io/bigset",
     total: 1684,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 2,
     color: "#14b8a6",
     points: [
