@@ -16,8 +16,7 @@ export function loadGithubToken(root) {
     const trimmed = line.trim();
     if (!trimmed || trimmed.startsWith("#")) continue;
     const match = trimmed.match(/^(GITHUB_TOKEN|GH_TOKEN)\s*=\s*(.*)$/);
-    if (!match) continue;
-    const value = match[2].replace(/^["']|["']$/g, "").trim();
+    const value = (match ? match[2] : trimmed).replace(/^["']|["']$/g, "").trim();
     if (!value || value.includes("YOUR_") || value.includes("替换")) return "";
     if (!/^[\x20-\x7E]+$/.test(value)) return "";
     return value;

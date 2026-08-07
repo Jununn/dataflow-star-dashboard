@@ -20,6 +20,10 @@ const repoNames = [
   "OpenDataArena/OpenDataArena-Tool",
   "InternScience/SciDataCopilot"
 ];
+const comparisonStarRepos = [
+  { metaName: "webuiStarMeta", rowsName: "webuiDailyCounts", repo: "OpenDCAI/DataFlow-WebUI", startDate: "2026-07-15" },
+  { metaName: "dataflexStarMeta", rowsName: "dataflexDailyCounts", repo: "OpenDCAI/DataFlex", startDate: "2026-04-03" }
+];
 
 function utcDate(date) {
   return date.toISOString().slice(0, 10);
@@ -144,6 +148,17 @@ function renderRows(rows) {
   return `[\n${lines.join(",\n")}\n]`;
 }
 
+function renderStarMeta(meta) {
+  return `{
+  repo: "${meta.repo}",
+  total: ${meta.total},
+  startDate: "${meta.startDate}",
+  endDate: "${meta.endDate}",
+  beforeStart: ${meta.beforeStart},
+  generatedAt: "${meta.generatedAt}"
+}`;
+}
+
 function renderPoints(points) {
   return `[\n${points.map(([date, value]) => `      ["${date}", ${value}]`).join(",\n")}\n    ]`;
 }
@@ -166,6 +181,10 @@ function renderSnapshots(snapshots) {
 
 function replaceConstArray(source, name, rows) {
   return source.replace(new RegExp(`const ${name} = \\[[\\s\\S]*?\\n\\];`), `const ${name} = ${renderRows(rows)};`);
+}
+
+function replaceStarMeta(source, name, meta) {
+  return source.replace(new RegExp(`const ${name} = \\{[\\s\\S]*?\\n\\};`), `const ${name} = ${renderStarMeta(meta)};`);
 }
 
 function replaceConstString(source, name, value) {
@@ -240,6 +259,52 @@ function cumulative(startTotal, rows) {
   return startTotal + rows.reduce((sum, [, count]) => sum + count, 0);
 }
 
+async function stargazersSince(repoName, startDate) {
+  const repo = await github(`/repos/${repoName}`);
+  const maxPage = Math.ceil(repo.stargazers_count / 100);
+  const startTimestamp = `${startDate}T00:00:00Z`;
+  const rows = [];
+  for (let page = maxPage; page >= 1; page -= 1) {
+    const pageRows = await github(`/repos/${repoName}/stargazers?per_page=100&page=${page}`, {
+      headers: { Accept: "application/vnd.github.star+json" }
+    });
+    if (!pageRows.length) break;
+    rows.push(...pageRows.filter((item) => item?.starred_at && item.starred_at >= startTimestamp));
+    const oldest = pageRows
+      .map((item) => item?.starred_at)
+      .filter(Boolean)
+      .sort()[0];
+    if (oldest && oldest < startTimestamp) break;
+  }
+  return { repo, rows };
+}
+
+async function updateComparisonStarSeries(source, endDate) {
+  for (const config of comparisonStarRepos) {
+    const existingMeta = readConstObject(source, config.metaName);
+    const startDate = existingMeta.startDate || config.startDate;
+    const { repo, rows } = await stargazersSince(config.repo, startDate);
+    const byDay = new Map();
+    for (const item of rows) {
+      const day = item.starred_at.slice(0, 10);
+      byDay.set(day, (byDay.get(day) || 0) + 1);
+    }
+    const nextRows = datesBetween(startDate, endDate).map((date) => [date, byDay.get(date) || 0]);
+    const starsSinceStart = rows.length;
+    const nextMeta = {
+      repo: config.repo,
+      total: repo.stargazers_count,
+      startDate,
+      endDate,
+      beforeStart: repo.stargazers_count - starsSinceStart,
+      generatedAt: new Date().toISOString()
+    };
+    source = replaceStarMeta(source, config.metaName, nextMeta);
+    source = replaceConstArray(source, config.rowsName, nextRows);
+  }
+  return source;
+}
+
 async function main() {
   let source = readFileSync(appPath, "utf8");
   const startTotal = readStartTotal(source);
@@ -311,6 +376,7 @@ async function main() {
   source = replaceConstObject(source, "competitorSnapshots", competitorSnapshots);
   source = replaceCompetitors(source, nextCompetitors);
   source = updateCurrentPhases(source, endDate, totalStars);
+  source = await updateComparisonStarSeries(source, endDate);
   writeFileSync(appPath, source);
 
   execFileSync("node", ["-c", appPath], { stdio: "pipe" });
