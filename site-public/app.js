@@ -105,7 +105,7 @@ const dailyCounts = [
   ["2026-07-28", 28], ["2026-07-29", 22], ["2026-07-30", 17], ["2026-07-31", 21],
   ["2026-08-01", 10], ["2026-08-02", 8], ["2026-08-03", 10], ["2026-08-04", 6],
   ["2026-08-05", 12], ["2026-08-06", 7], ["2026-08-07", 10], ["2026-08-08", 5],
-  ["2026-08-09", 8], ["2026-08-10", 2]
+  ["2026-08-09", 8], ["2026-08-10", 3]
 ];
 
 const webuiStarMeta = {
@@ -114,7 +114,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-08-10",
   beforeStart: 24,
-  generatedAt: "2026-08-10T02:49:00.490Z"
+  generatedAt: "2026-08-10T04:12:47.900Z"
 };
 
 const webuiDailyCounts = [
@@ -129,11 +129,11 @@ const webuiDailyCounts = [
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 1977,
+  total: 1978,
   startDate: "2026-04-03",
   endDate: "2026-08-10",
   beforeStart: 107,
-  generatedAt: "2026-08-10T02:49:08.092Z"
+  generatedAt: "2026-08-10T04:12:53.540Z"
 };
 
 const dataflexDailyCounts = [
@@ -169,7 +169,7 @@ const dataflexDailyCounts = [
   ["2026-07-28", 18], ["2026-07-29", 15], ["2026-07-30", 20], ["2026-07-31", 30],
   ["2026-08-01", 14], ["2026-08-02", 20], ["2026-08-03", 12], ["2026-08-04", 17],
   ["2026-08-05", 22], ["2026-08-06", 21], ["2026-08-07", 11], ["2026-08-08", 18],
-  ["2026-08-09", 22], ["2026-08-10", 3]
+  ["2026-08-09", 22], ["2026-08-10", 4]
 ];
 
 let competitorSnapshotDate = "2026-08-10";
@@ -716,9 +716,9 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 44
   },
   "2026-08-10": {
-    "datajuicer/data-juicer": 6850,
+    "datajuicer/data-juicer": 6852,
     "Eventual-Inc/Daft": 5698,
-    "OpenDCAI/DataFlow": 7237,
+    "OpenDCAI/DataFlow": 7238,
     "huggingface/datatrove": 3255,
     "NVIDIA-NeMo/DataDesigner": 2148,
     "NVIDIA-NeMo/Curator": 1706,
@@ -731,9 +731,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 6850,
-    yesterday: 3,
-    twoDayChange: 2,
+    total: 6852,
+    yesterday: 2,
+    twoDayChange: 4,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -746,13 +746,13 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-08-10", 6850]
+      ["2026-08-10", 6852]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
     total: 5698,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 4,
     color: "#f2994a",
     points: [
@@ -774,16 +774,16 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 7237,
-    yesterday: 6,
-    twoDayChange: 11,
+    total: 7238,
+    yesterday: 1,
+    twoDayChange: 12,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
     total: 3255,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 3,
     color: "#3fb950",
     points: [
@@ -835,7 +835,7 @@ const competitorRepos = [
   {
     name: "tinyfish-io/bigset",
     total: 1686,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 2,
     color: "#14b8a6",
     points: [
@@ -846,7 +846,7 @@ const competitorRepos = [
   {
     name: "OpenDataArena/OpenDataArena-Tool",
     total: 145,
-    yesterday: -1,
+    yesterday: 0,
     twoDayChange: -1,
     color: "#8a6b55",
     points: [
@@ -1442,11 +1442,11 @@ const phaseRegionStats = [
   {
     phaseId: "august",
     status: "complete",
-    totalStars: 78,
+    totalStars: 79,
     known: 21,
     china: 15,
     overseas: 6,
-    unknown: 57,
+    unknown: 58,
     note: "08/01-08/10 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Beijing 4","Shanghai 3","China 2","Beijing China 1","Beijing, China 1","Beijing,China 1","Hangzhou 1","Shenzhen 1","xi'an, China 1"],
     topOverseasLocations: ["Brazil 1","shang'hai 1","Utah 1","xian 1","上海.浦东 1","中国广东省广州市天河区林和中路 188 号恒源大厦 1"]
