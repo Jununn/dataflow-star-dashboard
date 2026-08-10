@@ -1046,7 +1046,13 @@ const trafficRows = [
   ["2026-07-31", 499, 258, 185, 122],
   ["2026-08-01", 236, 134, 28, 25],
   ["2026-08-02", 194, 113, 50, 35],
-  ["2026-08-03", 493, 227, 81, 46]
+  ["2026-08-03", 493, 227, 81, 46],
+  ["2026-08-04", 457, 207, 49, 40],
+  ["2026-08-05", 300, 155, 42, 35],
+  ["2026-08-06", 299, 147, 41, 37],
+  ["2026-08-07", 279, 143, 58, 32],
+  ["2026-08-08", 96, 56, 44, 21],
+  ["2026-08-09", 174, 75, 129, 106]
 ].map(([date, views, visitors, clones, cloners]) => ({ date, views, visitors, clones, cloners }));
 
 const trafficSourceSnapshots = [
@@ -1291,6 +1297,33 @@ const trafficSourceSnapshots = [
       ["/fork", 29, 26],
       ["/tree/main/dataflow/operators", 29, 24],
       ["/releases", 26, 22]
+    ]
+  },
+  {
+    date: "2026-08-09",
+    referrers: [
+      ["github.com", 1367, 531],
+      ["Google", 851, 393],
+      ["Bing", 251, 106],
+      ["opendcai.github.io", 100, 40],
+      ["link.zhihu.com", 40, 16],
+      ["zwt233.github.io", 38, 26],
+      ["chatgpt.com", 32, 20],
+      ["wcny4qa9krto.feishu.cn", 20, 6],
+      ["reddit.com", 18, 6],
+      ["Baidu", 12, 10]
+    ],
+    content: [
+      ["Overview", 2999, 1830],
+      ["/blob/main/README-zh.md", 1219, 661],
+      ["/tree/main", 189, 116],
+      ["/tree/main/dataflow", 141, 99],
+      ["/issues", 87, 43],
+      ["/blob/main/awesome_dataflow.md", 60, 49],
+      ["/pulls", 47, 24],
+      ["/graphs/traffic", 36, 1],
+      ["/pulse", 33, 3],
+      ["/releases", 32, 20]
     ]
   }
 ].map((snapshot) => ({
