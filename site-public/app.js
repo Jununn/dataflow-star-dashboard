@@ -105,16 +105,16 @@ const dailyCounts = [
   ["2026-07-28", 28], ["2026-07-29", 22], ["2026-07-30", 17], ["2026-07-31", 21],
   ["2026-08-01", 10], ["2026-08-02", 8], ["2026-08-03", 10], ["2026-08-04", 6],
   ["2026-08-05", 12], ["2026-08-06", 7], ["2026-08-07", 10], ["2026-08-08", 5],
-  ["2026-08-09", 8], ["2026-08-10", 32], ["2026-08-11", 10]
+  ["2026-08-09", 8], ["2026-08-10", 32], ["2026-08-11", 28]
 ];
 
 const webuiStarMeta = {
   repo: "OpenDCAI/DataFlow-WebUI",
-  total: 187,
+  total: 191,
   startDate: "2026-07-15",
   endDate: "2026-08-11",
   beforeStart: 24,
-  generatedAt: "2026-08-11T04:00:20.332Z"
+  generatedAt: "2026-08-11T10:48:40.005Z"
 };
 
 const webuiDailyCounts = [
@@ -124,16 +124,16 @@ const webuiDailyCounts = [
   ["2026-07-27", 20], ["2026-07-28", 9], ["2026-07-29", 10], ["2026-07-30", 10],
   ["2026-07-31", 10], ["2026-08-01", 5], ["2026-08-02", 5], ["2026-08-03", 8],
   ["2026-08-04", 7], ["2026-08-05", 6], ["2026-08-06", 1], ["2026-08-07", 3],
-  ["2026-08-08", 5], ["2026-08-09", 2], ["2026-08-10", 0], ["2026-08-11", 1]
+  ["2026-08-08", 5], ["2026-08-09", 2], ["2026-08-10", 0], ["2026-08-11", 5]
 ];
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 1994,
+  total: 2002,
   startDate: "2026-04-03",
   endDate: "2026-08-11",
   beforeStart: 107,
-  generatedAt: "2026-08-11T04:00:24.896Z"
+  generatedAt: "2026-08-11T10:49:04.435Z"
 };
 
 const dataflexDailyCounts = [
@@ -169,7 +169,7 @@ const dataflexDailyCounts = [
   ["2026-07-28", 18], ["2026-07-29", 15], ["2026-07-30", 20], ["2026-07-31", 30],
   ["2026-08-01", 14], ["2026-08-02", 20], ["2026-08-03", 12], ["2026-08-04", 17],
   ["2026-08-05", 22], ["2026-08-06", 21], ["2026-08-07", 11], ["2026-08-08", 18],
-  ["2026-08-09", 22], ["2026-08-10", 19], ["2026-08-11", 1]
+  ["2026-08-09", 22], ["2026-08-10", 19], ["2026-08-11", 9]
 ];
 
 let competitorSnapshotDate = "2026-08-11";
@@ -716,23 +716,23 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 44
   },
   "2026-08-10": {
-    "datajuicer/data-juicer": 6856,
-    "Eventual-Inc/Daft": 5700,
-    "OpenDCAI/DataFlow": 7252,
-    "huggingface/datatrove": 3256,
-    "NVIDIA-NeMo/DataDesigner": 2151,
-    "NVIDIA-NeMo/Curator": 1707,
+    "datajuicer/data-juicer": 6852,
+    "Eventual-Inc/Daft": 5698,
+    "OpenDCAI/DataFlow": 7238,
+    "huggingface/datatrove": 3255,
+    "NVIDIA-NeMo/DataDesigner": 2148,
+    "NVIDIA-NeMo/Curator": 1706,
     "tinyfish-io/bigset": 1686,
     "OpenDataArena/OpenDataArena-Tool": 145,
     "InternScience/SciDataCopilot": 44
   },
   "2026-08-11": {
-    "datajuicer/data-juicer": 6857,
-    "Eventual-Inc/Daft": 5701,
-    "OpenDCAI/DataFlow": 7277,
+    "datajuicer/data-juicer": 6865,
+    "Eventual-Inc/Daft": 5705,
+    "OpenDCAI/DataFlow": 7295,
     "huggingface/datatrove": 3257,
     "NVIDIA-NeMo/DataDesigner": 2153,
-    "NVIDIA-NeMo/Curator": 1707,
+    "NVIDIA-NeMo/Curator": 1708,
     "tinyfish-io/bigset": 1686,
     "OpenDataArena/OpenDataArena-Tool": 145,
     "InternScience/SciDataCopilot": 44
@@ -742,9 +742,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 6857,
-    yesterday: 0,
-    twoDayChange: 10,
+    total: 6865,
+    yesterday: 13,
+    twoDayChange: 18,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -757,14 +757,14 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-08-11", 6857]
+      ["2026-08-11", 6865]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
-    total: 5701,
-    yesterday: 0,
-    twoDayChange: 4,
+    total: 5705,
+    yesterday: 7,
+    twoDayChange: 8,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -780,21 +780,21 @@ const competitorRepos = [
       ["2025-10-01", 4400],
       ["2026-01-01", 4900],
       ["2026-04-01", 5350],
-      ["2026-08-11", 5701]
+      ["2026-08-11", 5705]
     ]
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 7277,
-    yesterday: 2,
-    twoDayChange: 46,
+    total: 7295,
+    yesterday: 57,
+    twoDayChange: 64,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
     total: 3257,
-    yesterday: 0,
+    yesterday: 2,
     twoDayChange: 4,
     color: "#3fb950",
     points: [
@@ -814,7 +814,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/DataDesigner",
     total: 2153,
-    yesterday: 0,
+    yesterday: 5,
     twoDayChange: 5,
     color: "#e94b35",
     points: [
@@ -827,9 +827,9 @@ const competitorRepos = [
   },
   {
     name: "NVIDIA-NeMo/Curator",
-    total: 1707,
-    yesterday: 0,
-    twoDayChange: 1,
+    total: 1708,
+    yesterday: 2,
+    twoDayChange: 2,
     color: "#e879b4",
     points: [
       ["2024-03-14", 0],
@@ -840,7 +840,7 @@ const competitorRepos = [
       ["2025-07-01", 900],
       ["2025-12-01", 1200],
       ["2026-04-01", 1450],
-      ["2026-08-11", 1707]
+      ["2026-08-11", 1708]
     ]
   },
   {
@@ -989,7 +989,11 @@ const actions = [
   ["2026-08-04", "LinkedIn", "dataflow-dataprep", "https://www.linkedin.com/feed/update/urn:li:share:7490368066812514304/"],
   ["2026-08-05", "Facebook", "dataflow-oss", "https://www.facebook.com/groups/dataannotation/permalink/1758416958627671/"],
   ["2026-08-05", "Facebook", "dataflow-oss", "https://www.facebook.com/groups/968349588962639/permalink/1066916472439283/"],
-  ["2026-08-05", "Reddit", "dataflow-oss", "https://www.reddit.com/r/LLMDevs/comments/1vg1raj/how_much_of_llm_development_is_actually_data/"]
+  ["2026-08-05", "Reddit", "dataflow-oss", "https://www.reddit.com/r/LLMDevs/comments/1vg1raj/how_much_of_llm_development_is_actually_data/"],
+  ["2026-08-06", "Facebook", "dataflow-oss", "https://www.facebook.com/groups/aibusinesstools/permalink/1926024228803499/"],
+  ["2026-08-06", "Facebook", "dataflow-oss", "https://www.facebook.com/groups/3670562573177653/my_pending_content"],
+  ["2026-08-06", "Reddit", "dataflow-oss-agent", "https://www.reddit.com/r/AgentsOfAI/comments/1vgyi29/does_data_cleaning_need_its_own_agent/"],
+  ["2026-08-11", "Reddit", "dataflow-oss", "https://www.reddit.com/r/LocalLLM/comments/1vldvh4/better_data_pipelines_before_finetuning_local/"]
 ].map(([date, channel, title, url]) => ({ date, channel, title, url }));
 
 const trafficRows = [
@@ -1486,14 +1490,14 @@ const phaseRegionStats = [
   {
     phaseId: "august",
     status: "complete",
-    totalStars: 116,
-    known: 25,
-    china: 16,
-    overseas: 9,
-    unknown: 91,
-    note: "08/01-08/11 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["Beijing 4","China 3","Shanghai 3","Beijing China 1","Beijing, China 1","Beijing,China 1","Hangzhou 1","Shenzhen 1","xi'an, China 1"],
-    topOverseasLocations: ["United States 2","Australia 1","Brazil 1","shang'hai 1","Utah 1","xian 1","上海.浦东 1","中国广东省广州市天河区林和中路 188 号恒源大厦 1"]
+    totalStars: 79,
+    known: 21,
+    china: 15,
+    overseas: 6,
+    unknown: 58,
+    note: "08/01-08/10 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    topChinaLocations: ["Beijing 4","Shanghai 3","China 2","Beijing China 1","Beijing, China 1","Beijing,China 1","Hangzhou 1","Shenzhen 1","xi'an, China 1"],
+    topOverseasLocations: ["Brazil 1","shang'hai 1","Utah 1","xian 1","上海.浦东 1","中国广东省广州市天河区林和中路 188 号恒源大厦 1"]
   }
 ];
 
