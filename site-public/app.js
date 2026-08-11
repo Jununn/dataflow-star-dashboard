@@ -105,7 +105,7 @@ const dailyCounts = [
   ["2026-07-28", 28], ["2026-07-29", 22], ["2026-07-30", 17], ["2026-07-31", 21],
   ["2026-08-01", 10], ["2026-08-02", 8], ["2026-08-03", 10], ["2026-08-04", 6],
   ["2026-08-05", 12], ["2026-08-06", 7], ["2026-08-07", 10], ["2026-08-08", 5],
-  ["2026-08-09", 8], ["2026-08-10", 32], ["2026-08-11", 28]
+  ["2026-08-09", 8], ["2026-08-10", 32], ["2026-08-11", 30]
 ];
 
 const webuiStarMeta = {
@@ -114,7 +114,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-08-11",
   beforeStart: 24,
-  generatedAt: "2026-08-11T10:57:08.860Z"
+  generatedAt: "2026-08-11T11:42:50.700Z"
 };
 
 const webuiDailyCounts = [
@@ -133,7 +133,7 @@ const dataflexStarMeta = {
   startDate: "2026-04-03",
   endDate: "2026-08-11",
   beforeStart: 107,
-  generatedAt: "2026-08-11T10:57:14.305Z"
+  generatedAt: "2026-08-11T11:42:57.127Z"
 };
 
 const dataflexDailyCounts = [
@@ -729,7 +729,7 @@ const competitorSnapshots = {
   "2026-08-11": {
     "datajuicer/data-juicer": 6865,
     "Eventual-Inc/Daft": 5705,
-    "OpenDCAI/DataFlow": 7295,
+    "OpenDCAI/DataFlow": 7297,
     "huggingface/datatrove": 3257,
     "NVIDIA-NeMo/DataDesigner": 2153,
     "NVIDIA-NeMo/Curator": 1708,
@@ -785,9 +785,9 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 7295,
-    yesterday: 0,
-    twoDayChange: 64,
+    total: 7297,
+    yesterday: 2,
+    twoDayChange: 66,
     color: "#2d9cdb",
     points: null
   },
@@ -1490,11 +1490,11 @@ const phaseRegionStats = [
   {
     phaseId: "august",
     status: "complete",
-    totalStars: 136,
+    totalStars: 138,
     known: 30,
     china: 17,
     overseas: 13,
-    unknown: 106,
+    unknown: 108,
     note: "08/01-08/11 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Beijing 4","China 3","Shanghai 3","Beijing, China 2","Beijing China 1","Beijing,China 1","Hangzhou 1","Shenzhen 1","xi'an, China 1"],
     topOverseasLocations: ["United States 4","Australia 1","Brazil 1","Hawaii 1","shang'hai 1","Utah 1","Vientiane, Laos 1","xian 1","上海.浦东 1","中国广东省广州市天河区林和中路 188 号恒源大厦 1"]
