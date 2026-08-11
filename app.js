@@ -114,7 +114,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-08-11",
   beforeStart: 24,
-  generatedAt: "2026-08-11T10:48:40.005Z"
+  generatedAt: "2026-08-11T10:55:11.252Z"
 };
 
 const webuiDailyCounts = [
@@ -133,7 +133,7 @@ const dataflexStarMeta = {
   startDate: "2026-04-03",
   endDate: "2026-08-11",
   beforeStart: 107,
-  generatedAt: "2026-08-11T10:49:04.435Z"
+  generatedAt: "2026-08-11T10:55:17.395Z"
 };
 
 const dataflexDailyCounts = [
@@ -743,7 +743,7 @@ const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
     total: 6865,
-    yesterday: 13,
+    yesterday: 0,
     twoDayChange: 18,
     color: "#f2c94c",
     points: [
@@ -763,7 +763,7 @@ const competitorRepos = [
   {
     name: "Eventual-Inc/Daft",
     total: 5705,
-    yesterday: 7,
+    yesterday: 0,
     twoDayChange: 8,
     color: "#f2994a",
     points: [
@@ -786,7 +786,7 @@ const competitorRepos = [
   {
     name: "OpenDCAI/DataFlow",
     total: 7295,
-    yesterday: 57,
+    yesterday: 0,
     twoDayChange: 64,
     color: "#2d9cdb",
     points: null
@@ -794,7 +794,7 @@ const competitorRepos = [
   {
     name: "huggingface/datatrove",
     total: 3257,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 4,
     color: "#3fb950",
     points: [
@@ -814,7 +814,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/DataDesigner",
     total: 2153,
-    yesterday: 5,
+    yesterday: 0,
     twoDayChange: 5,
     color: "#e94b35",
     points: [
@@ -828,7 +828,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/Curator",
     total: 1708,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 2,
     color: "#e879b4",
     points: [
@@ -1490,14 +1490,14 @@ const phaseRegionStats = [
   {
     phaseId: "august",
     status: "complete",
-    totalStars: 79,
-    known: 21,
-    china: 15,
-    overseas: 6,
-    unknown: 58,
-    note: "08/01-08/10 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["Beijing 4","Shanghai 3","China 2","Beijing China 1","Beijing, China 1","Beijing,China 1","Hangzhou 1","Shenzhen 1","xi'an, China 1"],
-    topOverseasLocations: ["Brazil 1","shang'hai 1","Utah 1","xian 1","上海.浦东 1","中国广东省广州市天河区林和中路 188 号恒源大厦 1"]
+    totalStars: 136,
+    known: 30,
+    china: 17,
+    overseas: 13,
+    unknown: 106,
+    note: "08/01-08/11 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    topChinaLocations: ["Beijing 4","China 3","Shanghai 3","Beijing, China 2","Beijing China 1","Beijing,China 1","Hangzhou 1","Shenzhen 1","xi'an, China 1"],
+    topOverseasLocations: ["United States 4","Australia 1","Brazil 1","Hawaii 1","shang'hai 1","Utah 1","Vientiane, Laos 1","xian 1","上海.浦东 1","中国广东省广州市天河区林和中路 188 号恒源大厦 1"]
   }
 ];
 
