@@ -114,7 +114,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-08-11",
   beforeStart: 24,
-  generatedAt: "2026-08-11T10:55:11.252Z"
+  generatedAt: "2026-08-11T10:57:08.860Z"
 };
 
 const webuiDailyCounts = [
@@ -133,7 +133,7 @@ const dataflexStarMeta = {
   startDate: "2026-04-03",
   endDate: "2026-08-11",
   beforeStart: 107,
-  generatedAt: "2026-08-11T10:55:17.395Z"
+  generatedAt: "2026-08-11T10:57:14.305Z"
 };
 
 const dataflexDailyCounts = [
