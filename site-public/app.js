@@ -114,7 +114,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-08-12",
   beforeStart: 24,
-  generatedAt: "2026-08-12T11:00:59.459Z"
+  generatedAt: "2026-08-12T11:45:30.497Z"
 };
 
 const webuiDailyCounts = [
@@ -134,7 +134,7 @@ const dataflexStarMeta = {
   startDate: "2026-04-03",
   endDate: "2026-08-12",
   beforeStart: 107,
-  generatedAt: "2026-08-12T11:01:05.144Z"
+  generatedAt: "2026-08-12T11:45:37.595Z"
 };
 
 const dataflexDailyCounts = [
@@ -739,7 +739,7 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 44
   },
   "2026-08-12": {
-    "datajuicer/data-juicer": 6870,
+    "datajuicer/data-juicer": 6871,
     "Eventual-Inc/Daft": 5707,
     "OpenDCAI/DataFlow": 7349,
     "huggingface/datatrove": 3258,
@@ -754,9 +754,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 6870,
-    yesterday: 3,
-    twoDayChange: 18,
+    total: 6871,
+    yesterday: 1,
+    twoDayChange: 19,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -769,13 +769,13 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-08-12", 6870]
+      ["2026-08-12", 6871]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
     total: 5707,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 9,
     color: "#f2994a",
     points: [
@@ -798,7 +798,7 @@ const competitorRepos = [
   {
     name: "OpenDCAI/DataFlow",
     total: 7349,
-    yesterday: 10,
+    yesterday: 0,
     twoDayChange: 111,
     color: "#2d9cdb",
     points: null
@@ -826,7 +826,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/DataDesigner",
     total: 2156,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 8,
     color: "#e94b35",
     points: [
@@ -840,7 +840,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/Curator",
     total: 1712,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 6,
     color: "#e879b4",
     points: [
@@ -858,7 +858,7 @@ const competitorRepos = [
   {
     name: "tinyfish-io/bigset",
     total: 1686,
-    yesterday: -1,
+    yesterday: 0,
     twoDayChange: 0,
     color: "#14b8a6",
     points: [
