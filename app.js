@@ -1,4 +1,4 @@
-let startTotal = 1780;
+let startTotal = 1779;
 const historicalStartTotal = 72;
 const historicalNonZeroDailyCounts = [
   ["2025-06-04", 1], ["2025-06-05", 8], ["2025-06-06", 26], ["2025-06-07", 21],
@@ -106,16 +106,16 @@ const dailyCounts = [
   ["2026-08-01", 10], ["2026-08-02", 8], ["2026-08-03", 10], ["2026-08-04", 6],
   ["2026-08-05", 12], ["2026-08-06", 7], ["2026-08-07", 10], ["2026-08-08", 5],
   ["2026-08-09", 8], ["2026-08-10", 32], ["2026-08-11", 60], ["2026-08-12", 35],
-  ["2026-08-13", 7]
+  ["2026-08-13", 15]
 ];
 
 const webuiStarMeta = {
   repo: "OpenDCAI/DataFlow-WebUI",
-  total: 193,
+  total: 194,
   startDate: "2026-07-15",
   endDate: "2026-08-13",
   beforeStart: 24,
-  generatedAt: "2026-08-13T04:25:19.794Z"
+  generatedAt: "2026-08-13T11:46:12.032Z"
 };
 
 const webuiDailyCounts = [
@@ -126,7 +126,7 @@ const webuiDailyCounts = [
   ["2026-07-31", 10], ["2026-08-01", 5], ["2026-08-02", 5], ["2026-08-03", 8],
   ["2026-08-04", 7], ["2026-08-05", 6], ["2026-08-06", 1], ["2026-08-07", 3],
   ["2026-08-08", 5], ["2026-08-09", 2], ["2026-08-10", 0], ["2026-08-11", 5],
-  ["2026-08-12", 2], ["2026-08-13", 0]
+  ["2026-08-12", 2], ["2026-08-13", 1]
 ];
 
 const dataflexStarMeta = {
@@ -135,7 +135,7 @@ const dataflexStarMeta = {
   startDate: "2026-04-03",
   endDate: "2026-08-13",
   beforeStart: 107,
-  generatedAt: "2026-08-13T04:25:24.484Z"
+  generatedAt: "2026-08-13T11:46:18.533Z"
 };
 
 const dataflexDailyCounts = [
@@ -752,13 +752,13 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 44
   },
   "2026-08-13": {
-    "datajuicer/data-juicer": 6874,
+    "datajuicer/data-juicer": 6879,
     "Eventual-Inc/Daft": 5708,
-    "OpenDCAI/DataFlow": 7368,
-    "huggingface/datatrove": 3261,
+    "OpenDCAI/DataFlow": 7375,
+    "huggingface/datatrove": 3262,
     "NVIDIA-NeMo/DataDesigner": 2156,
     "NVIDIA-NeMo/Curator": 1713,
-    "tinyfish-io/bigset": 1688,
+    "tinyfish-io/bigset": 1687,
     "OpenDataArena/OpenDataArena-Tool": 145,
     "InternScience/SciDataCopilot": 44
   }
@@ -767,9 +767,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 6874,
-    yesterday: 1,
-    twoDayChange: 9,
+    total: 6879,
+    yesterday: 5,
+    twoDayChange: 14,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -782,13 +782,13 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-08-13", 6874]
+      ["2026-08-13", 6879]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
     total: 5708,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 3,
     color: "#f2994a",
     points: [
@@ -810,17 +810,17 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 7368,
-    yesterday: 1,
-    twoDayChange: 71,
+    total: 7375,
+    yesterday: 7,
+    twoDayChange: 78,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
-    total: 3261,
+    total: 3262,
     yesterday: 1,
-    twoDayChange: 4,
+    twoDayChange: 5,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -833,7 +833,7 @@ const competitorRepos = [
       ["2025-06-01", 2400],
       ["2025-10-01", 2650],
       ["2026-03-01", 2900],
-      ["2026-08-13", 3261]
+      ["2026-08-13", 3262]
     ]
   },
   {
@@ -870,13 +870,13 @@ const competitorRepos = [
   },
   {
     name: "tinyfish-io/bigset",
-    total: 1688,
-    yesterday: 0,
-    twoDayChange: 2,
+    total: 1687,
+    yesterday: -1,
+    twoDayChange: 1,
     color: "#14b8a6",
     points: [
       ["2026-05-15", 0],
-      ["2026-08-13", 1688]
+      ["2026-08-13", 1687]
     ]
   },
   {
@@ -1515,14 +1515,14 @@ const phaseRegionStats = [
   {
     phaseId: "august",
     status: "complete",
-    totalStars: 210,
-    known: 41,
+    totalStars: 218,
+    known: 42,
     china: 19,
-    overseas: 22,
-    unknown: 169,
+    overseas: 23,
+    unknown: 176,
     note: "08/01-08/13 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Beijing 5","China 3","Shanghai 3","Beijing, China 2","Beijing,China 2","Beijing China 1","Hangzhou 1","Shenzhen 1","xi'an, China 1"],
-    topOverseasLocations: ["United States 7","Australia 1","Brazil 1","Hawaii 1","India 1","Minneapolis, Minnesota 1","Moscow 1","Portugal 1","Santiago, Chile 1","shang'hai 1"]
+    topOverseasLocations: ["United States 7","Australia 1","Brazil 1","Hawaii 1","India 1","Lisbon, Portugal 1","Minneapolis, Minnesota 1","Moscow 1","Portugal 1","Santiago, Chile 1"]
   }
 ];
 
