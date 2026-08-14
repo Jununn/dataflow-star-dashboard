@@ -989,6 +989,7 @@ const actions = [
   ["2026-07-20", "线下活动", "WAIC", "#"],
   ["2026-07-21", "小红书", "k12", "https://www.xiaohongshu.com/discovery/item/6a5f7eb100000000100284a5?source=webshare&xhsshare=pc_web&xsec_token=ABiSjJXYUk5JGI80L2kw0YI7pgXsyf2f7ENnXWjAs863Y=&xsec_source=pc_share"],
   ["2026-07-22", "小红书", "dataflow-harness", "http://xhslink.cn/o/AUuzHT2zRYy"],
+  ["2026-07-22", "HuggingFace", "dataflow-harness 论文", "https://huggingface.co/papers/2607.16617"],
   ["2026-07-24", "Reddit", "dataflow-harness", "https://www.reddit.com/r/codex/comments/1v55eih/using_codex_as_a_harness_for_aiready_data/"],
   ["2026-07-24", "Reddit", "dataflow-harness", "https://www.reddit.com/r/vibecoding/comments/1v55u11/vibe_coding_the_hard_part_of_rag_turning_messy/"],
   ["2026-07-24", "LinkedIn", "dataflow-harness", "https://www.linkedin.com/feed/update/urn:li:groupPost:7018767-7486354047265026048/"],
