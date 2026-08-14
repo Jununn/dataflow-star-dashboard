@@ -115,7 +115,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-08-14",
   beforeStart: 24,
-  generatedAt: "2026-08-14T03:59:13.432Z"
+  generatedAt: "2026-08-14T04:21:59.232Z"
 };
 
 const webuiDailyCounts = [
@@ -131,11 +131,11 @@ const webuiDailyCounts = [
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 2043,
+  total: 2044,
   startDate: "2026-04-03",
   endDate: "2026-08-14",
   beforeStart: 107,
-  generatedAt: "2026-08-14T03:59:19.249Z"
+  generatedAt: "2026-08-14T04:22:03.469Z"
 };
 
 const dataflexDailyCounts = [
@@ -172,7 +172,7 @@ const dataflexDailyCounts = [
   ["2026-08-01", 14], ["2026-08-02", 20], ["2026-08-03", 12], ["2026-08-04", 17],
   ["2026-08-05", 22], ["2026-08-06", 21], ["2026-08-07", 11], ["2026-08-08", 18],
   ["2026-08-09", 22], ["2026-08-10", 19], ["2026-08-11", 24], ["2026-08-12", 18],
-  ["2026-08-13", 5], ["2026-08-14", 3]
+  ["2026-08-13", 5], ["2026-08-14", 4]
 ];
 
 let competitorSnapshotDate = "2026-08-14";
@@ -822,7 +822,7 @@ const competitorRepos = [
   {
     name: "OpenDCAI/DataFlow",
     total: 7398,
-    yesterday: 3,
+    yesterday: 0,
     twoDayChange: 49,
     color: "#2d9cdb",
     points: null
