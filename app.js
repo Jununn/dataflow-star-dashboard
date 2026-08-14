@@ -106,7 +106,7 @@ const dailyCounts = [
   ["2026-08-01", 10], ["2026-08-02", 8], ["2026-08-03", 10], ["2026-08-04", 6],
   ["2026-08-05", 12], ["2026-08-06", 7], ["2026-08-07", 10], ["2026-08-08", 5],
   ["2026-08-09", 8], ["2026-08-10", 32], ["2026-08-11", 60], ["2026-08-12", 35],
-  ["2026-08-13", 29], ["2026-08-14", 6]
+  ["2026-08-13", 29], ["2026-08-14", 9]
 ];
 
 const webuiStarMeta = {
@@ -115,7 +115,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-08-14",
   beforeStart: 24,
-  generatedAt: "2026-08-14T02:52:34.890Z"
+  generatedAt: "2026-08-14T03:59:13.432Z"
 };
 
 const webuiDailyCounts = [
@@ -135,7 +135,7 @@ const dataflexStarMeta = {
   startDate: "2026-04-03",
   endDate: "2026-08-14",
   beforeStart: 107,
-  generatedAt: "2026-08-14T02:52:41.239Z"
+  generatedAt: "2026-08-14T03:59:19.249Z"
 };
 
 const dataflexDailyCounts = [
@@ -765,7 +765,7 @@ const competitorSnapshots = {
   "2026-08-14": {
     "datajuicer/data-juicer": 6883,
     "Eventual-Inc/Daft": 5709,
-    "OpenDCAI/DataFlow": 7395,
+    "OpenDCAI/DataFlow": 7398,
     "huggingface/datatrove": 3264,
     "NVIDIA-NeMo/DataDesigner": 2156,
     "NVIDIA-NeMo/Curator": 1713,
@@ -779,7 +779,7 @@ const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
     total: 6883,
-    yesterday: 4,
+    yesterday: 0,
     twoDayChange: 12,
     color: "#f2c94c",
     points: [
@@ -799,7 +799,7 @@ const competitorRepos = [
   {
     name: "Eventual-Inc/Daft",
     total: 5709,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 2,
     color: "#f2994a",
     points: [
@@ -821,16 +821,16 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 7395,
-    yesterday: 20,
-    twoDayChange: 46,
+    total: 7398,
+    yesterday: 3,
+    twoDayChange: 49,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
     total: 3264,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 6,
     color: "#3fb950",
     points: [
@@ -882,7 +882,7 @@ const competitorRepos = [
   {
     name: "tinyfish-io/bigset",
     total: 1686,
-    yesterday: -1,
+    yesterday: 0,
     twoDayChange: 0,
     color: "#14b8a6",
     points: [
@@ -1527,11 +1527,11 @@ const phaseRegionStats = [
   {
     phaseId: "august",
     status: "complete",
-    totalStars: 238,
+    totalStars: 241,
     known: 47,
     china: 21,
     overseas: 26,
-    unknown: 191,
+    unknown: 194,
     note: "08/01-08/14 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Beijing 5","China 3","Shanghai 3","Beijing, China 2","Beijing,China 2","Beijing China 1","Hangzhou 1","NewZealand｜China 1","Shenzhen 1","xi'an, China 1"],
     topOverseasLocations: ["United States 7","Australia 1","Brazil 1","Hawaii 1","India 1","Lisbon, Portugal 1","Minneapolis, Minnesota 1","Moscow 1","Portland, OR 1","Portugal 1"]
