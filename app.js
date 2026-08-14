@@ -1642,6 +1642,7 @@ function getChannelClass(channel) {
   if (normalized.includes("reddit")) return "channel-reddit";
   if (normalized.includes("linkedin")) return "channel-linkedin";
   if (normalized.includes("facebook")) return "channel-facebook";
+  if (normalized.includes("huggingface")) return "channel-huggingface";
   if (channel.includes("公众号")) return "channel-wechat";
   if (channel.includes("小红书")) return "channel-xhs";
   if (channel.includes("线下")) return "channel-offline";

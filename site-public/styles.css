@@ -1166,6 +1166,15 @@ svg {
   color: #4338ca;
 }
 
+.calendar-action.channel-huggingface {
+  border-color: #fde68a;
+  background: #fffbeb;
+}
+
+.calendar-action.channel-huggingface span {
+  color: #f59e0b;
+}
+
 .calendar-action.channel-wechat {
   border-color: #bbf7d0;
   background: #f0fdf4;
@@ -2074,6 +2083,11 @@ td:nth-child(5),
 .calendar-action.channel-facebook {
   border-color: #c9d3ff;
   background: #f0f3ff;
+}
+
+.calendar-action.channel-huggingface {
+  border-color: #ffe08a;
+  background: #fff8dc;
 }
 
 .calendar-action.channel-wechat {
