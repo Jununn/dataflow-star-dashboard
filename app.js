@@ -106,7 +106,7 @@ const dailyCounts = [
   ["2026-08-01", 10], ["2026-08-02", 8], ["2026-08-03", 10], ["2026-08-04", 6],
   ["2026-08-05", 12], ["2026-08-06", 7], ["2026-08-07", 10], ["2026-08-08", 5],
   ["2026-08-09", 8], ["2026-08-10", 32], ["2026-08-11", 60], ["2026-08-12", 35],
-  ["2026-08-13", 29], ["2026-08-14", 26]
+  ["2026-08-13", 29], ["2026-08-14", 28]
 ];
 
 const webuiStarMeta = {
@@ -115,7 +115,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-08-14",
   beforeStart: 24,
-  generatedAt: "2026-08-14T10:43:05.921Z"
+  generatedAt: "2026-08-14T11:42:43.744Z"
 };
 
 const webuiDailyCounts = [
@@ -135,7 +135,7 @@ const dataflexStarMeta = {
   startDate: "2026-04-03",
   endDate: "2026-08-14",
   beforeStart: 107,
-  generatedAt: "2026-08-14T10:43:12.463Z"
+  generatedAt: "2026-08-14T11:42:49.642Z"
 };
 
 const dataflexDailyCounts = [
@@ -765,8 +765,8 @@ const competitorSnapshots = {
   "2026-08-14": {
     "datajuicer/data-juicer": 6885,
     "Eventual-Inc/Daft": 5709,
-    "OpenDCAI/DataFlow": 7415,
-    "huggingface/datatrove": 3265,
+    "OpenDCAI/DataFlow": 7417,
+    "huggingface/datatrove": 3267,
     "NVIDIA-NeMo/DataDesigner": 2156,
     "NVIDIA-NeMo/Curator": 1714,
     "tinyfish-io/bigset": 1688,
@@ -779,7 +779,7 @@ const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
     total: 6885,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 14,
     color: "#f2c94c",
     points: [
@@ -821,17 +821,17 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 7415,
-    yesterday: 17,
-    twoDayChange: 66,
+    total: 7417,
+    yesterday: 2,
+    twoDayChange: 68,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
-    total: 3265,
-    yesterday: 1,
-    twoDayChange: 7,
+    total: 3267,
+    yesterday: 2,
+    twoDayChange: 9,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -844,7 +844,7 @@ const competitorRepos = [
       ["2025-06-01", 2400],
       ["2025-10-01", 2650],
       ["2026-03-01", 2900],
-      ["2026-08-14", 3265]
+      ["2026-08-14", 3267]
     ]
   },
   {
@@ -864,7 +864,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/Curator",
     total: 1714,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 2,
     color: "#e879b4",
     points: [
@@ -882,7 +882,7 @@ const competitorRepos = [
   {
     name: "tinyfish-io/bigset",
     total: 1688,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 2,
     color: "#14b8a6",
     points: [
