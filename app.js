@@ -1,4 +1,4 @@
-let startTotal = 1758;
+let startTotal = 1759;
 const historicalStartTotal = 72;
 const historicalNonZeroDailyCounts = [
   ["2025-06-04", 1], ["2025-06-05", 8], ["2025-06-06", 26], ["2025-06-07", 21],
@@ -105,9 +105,9 @@ const dailyCounts = [
   ["2026-07-28", 28], ["2026-07-29", 22], ["2026-07-30", 17], ["2026-07-31", 21],
   ["2026-08-01", 10], ["2026-08-02", 8], ["2026-08-03", 10], ["2026-08-04", 6],
   ["2026-08-05", 12], ["2026-08-06", 7], ["2026-08-07", 10], ["2026-08-08", 5],
-  ["2026-08-09", 8], ["2026-08-10", 32], ["2026-08-11", 60], ["2026-08-12", 35],
-  ["2026-08-13", 29], ["2026-08-14", 35], ["2026-08-15", 34], ["2026-08-16", 40],
-  ["2026-08-17", 5]
+  ["2026-08-09", 8], ["2026-08-10", 31], ["2026-08-11", 60], ["2026-08-12", 35],
+  ["2026-08-13", 29], ["2026-08-14", 35], ["2026-08-15", 33], ["2026-08-16", 40],
+  ["2026-08-17", 18]
 ];
 
 const webuiStarMeta = {
@@ -116,7 +116,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-08-17",
   beforeStart: 24,
-  generatedAt: "2026-08-17T03:27:26.515Z"
+  generatedAt: "2026-08-17T10:11:28.222Z"
 };
 
 const webuiDailyCounts = [
@@ -133,11 +133,11 @@ const webuiDailyCounts = [
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 2090,
+  total: 2098,
   startDate: "2026-04-03",
   endDate: "2026-08-17",
   beforeStart: 106,
-  generatedAt: "2026-08-17T03:27:31.425Z"
+  generatedAt: "2026-08-17T10:11:45.058Z"
 };
 
 const dataflexDailyCounts = [
@@ -175,11 +175,11 @@ const dataflexDailyCounts = [
   ["2026-08-05", 22], ["2026-08-06", 21], ["2026-08-07", 11], ["2026-08-08", 18],
   ["2026-08-09", 22], ["2026-08-10", 19], ["2026-08-11", 24], ["2026-08-12", 18],
   ["2026-08-13", 5], ["2026-08-14", 16], ["2026-08-15", 8], ["2026-08-16", 25],
-  ["2026-08-17", 2]
+  ["2026-08-17", 10]
 ];
 
 let competitorSnapshotDate = "2026-08-17";
-let competitorPreviousSnapshotDate = "2026-08-15";
+let competitorPreviousSnapshotDate = "2026-08-14";
 
 const competitorSnapshots = {
   "2026-06-16": {
@@ -766,46 +766,24 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 44
   },
   "2026-08-14": {
-    "datajuicer/data-juicer": 6885,
+    "datajuicer/data-juicer": 6883,
     "Eventual-Inc/Daft": 5709,
-    "OpenDCAI/DataFlow": 7417,
-    "huggingface/datatrove": 3267,
+    "OpenDCAI/DataFlow": 7395,
+    "huggingface/datatrove": 3264,
     "NVIDIA-NeMo/DataDesigner": 2156,
-    "NVIDIA-NeMo/Curator": 1714,
-    "tinyfish-io/bigset": 1688,
-    "OpenDataArena/OpenDataArena-Tool": 145,
-    "InternScience/SciDataCopilot": 44
-  },
-  "2026-08-15": {
-    "datajuicer/data-juicer": 6885,
-    "Eventual-Inc/Daft": 5710,
-    "OpenDCAI/DataFlow": 7443,
-    "huggingface/datatrove": 3277,
-    "NVIDIA-NeMo/DataDesigner": 2159,
-    "NVIDIA-NeMo/Curator": 1714,
-    "tinyfish-io/bigset": 1689,
-    "OpenDataArena/OpenDataArena-Tool": 145,
-    "InternScience/SciDataCopilot": 44
-  },
-  "2026-08-16": {
-    "datajuicer/data-juicer": 6889,
-    "Eventual-Inc/Daft": 5712,
-    "OpenDCAI/DataFlow": 7471,
-    "huggingface/datatrove": 3280,
-    "NVIDIA-NeMo/DataDesigner": 2160,
-    "NVIDIA-NeMo/Curator": 1714,
-    "tinyfish-io/bigset": 1690,
+    "NVIDIA-NeMo/Curator": 1713,
+    "tinyfish-io/bigset": 1686,
     "OpenDataArena/OpenDataArena-Tool": 145,
     "InternScience/SciDataCopilot": 44
   },
   "2026-08-17": {
-    "datajuicer/data-juicer": 6894,
-    "Eventual-Inc/Daft": 5713,
-    "OpenDCAI/DataFlow": 7482,
-    "huggingface/datatrove": 3282,
+    "datajuicer/data-juicer": 6897,
+    "Eventual-Inc/Daft": 5716,
+    "OpenDCAI/DataFlow": 7494,
+    "huggingface/datatrove": 3287,
     "NVIDIA-NeMo/DataDesigner": 2162,
-    "NVIDIA-NeMo/Curator": 1715,
-    "tinyfish-io/bigset": 1675,
+    "NVIDIA-NeMo/Curator": 1716,
+    "tinyfish-io/bigset": 1676,
     "OpenDataArena/OpenDataArena-Tool": 145,
     "InternScience/SciDataCopilot": 44
   }
@@ -814,9 +792,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 6894,
-    yesterday: 0,
-    twoDayChange: 9,
+    total: 6897,
+    yesterday: 14,
+    twoDayChange: 14,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -829,14 +807,14 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-08-17", 6894]
+      ["2026-08-17", 6897]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
-    total: 5713,
-    yesterday: 0,
-    twoDayChange: 3,
+    total: 5716,
+    yesterday: 7,
+    twoDayChange: 7,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -852,22 +830,22 @@ const competitorRepos = [
       ["2025-10-01", 4400],
       ["2026-01-01", 4900],
       ["2026-04-01", 5350],
-      ["2026-08-17", 5713]
+      ["2026-08-17", 5716]
     ]
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 7482,
-    yesterday: 1,
-    twoDayChange: 39,
+    total: 7494,
+    yesterday: 99,
+    twoDayChange: 99,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
-    total: 3282,
-    yesterday: 0,
-    twoDayChange: 5,
+    total: 3287,
+    yesterday: 23,
+    twoDayChange: 23,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -880,14 +858,14 @@ const competitorRepos = [
       ["2025-06-01", 2400],
       ["2025-10-01", 2650],
       ["2026-03-01", 2900],
-      ["2026-08-17", 3282]
+      ["2026-08-17", 3287]
     ]
   },
   {
     name: "NVIDIA-NeMo/DataDesigner",
     total: 2162,
-    yesterday: 0,
-    twoDayChange: 3,
+    yesterday: 6,
+    twoDayChange: 6,
     color: "#e94b35",
     points: [
       ["2025-10-16", 0],
@@ -899,9 +877,9 @@ const competitorRepos = [
   },
   {
     name: "NVIDIA-NeMo/Curator",
-    total: 1715,
-    yesterday: 0,
-    twoDayChange: 1,
+    total: 1716,
+    yesterday: 3,
+    twoDayChange: 3,
     color: "#e879b4",
     points: [
       ["2024-03-14", 0],
@@ -912,18 +890,18 @@ const competitorRepos = [
       ["2025-07-01", 900],
       ["2025-12-01", 1200],
       ["2026-04-01", 1450],
-      ["2026-08-17", 1715]
+      ["2026-08-17", 1716]
     ]
   },
   {
     name: "tinyfish-io/bigset",
-    total: 1675,
-    yesterday: 0,
-    twoDayChange: -14,
+    total: 1676,
+    yesterday: -10,
+    twoDayChange: -10,
     color: "#14b8a6",
     points: [
       ["2026-05-15", 0],
-      ["2026-08-17", 1675]
+      ["2026-08-17", 1676]
     ]
   },
   {
@@ -1066,7 +1044,8 @@ const actions = [
   ["2026-08-06", "Facebook", "dataflow-oss", "https://www.facebook.com/groups/aibusinesstools/permalink/1926024228803499/"],
   ["2026-08-06", "Facebook", "dataflow-oss", "https://www.facebook.com/groups/3670562573177653/my_pending_content"],
   ["2026-08-06", "Reddit", "dataflow-oss-agent", "https://www.reddit.com/r/AgentsOfAI/comments/1vgyi29/does_data_cleaning_need_its_own_agent/"],
-  ["2026-08-11", "Reddit", "dataflow-oss", "https://www.reddit.com/r/LocalLLM/comments/1vldvh4/better_data_pipelines_before_finetuning_local/"]
+  ["2026-08-11", "Reddit", "dataflow-oss", "https://www.reddit.com/r/LocalLLM/comments/1vldvh4/better_data_pipelines_before_finetuning_local/"],
+  ["2026-08-14", "Reddit", "flow-oss", "https://www.reddit.com/r/ArtificialNtelligence/comments/1vo3kbt/converting_existing_data_may_be_one_of_the/"]
 ].map(([date, channel, title, url]) => ({ date, channel, title, url }));
 
 const trafficRows = [
@@ -1140,7 +1119,13 @@ const trafficRows = [
   ["2026-08-06", 299, 147, 41, 37],
   ["2026-08-07", 279, 143, 58, 32],
   ["2026-08-08", 96, 56, 44, 21],
-  ["2026-08-09", 174, 75, 129, 106]
+  ["2026-08-09", 174, 75, 129, 106],
+  ["2026-08-10", 583, 174, 65, 49],
+  ["2026-08-11", 333, 147, 141, 36],
+  ["2026-08-12", 373, 125, 136, 51],
+  ["2026-08-13", 304, 141, 48, 36],
+  ["2026-08-14", 341, 134, 115, 50],
+  ["2026-08-15", 106, 58, 32, 13]
 ].map(([date, views, visitors, clones, cloners]) => ({ date, views, visitors, clones, cloners }));
 
 const trafficSourceSnapshots = [
@@ -1413,6 +1398,33 @@ const trafficSourceSnapshots = [
       ["/pulse", 33, 3],
       ["/releases", 32, 20]
     ]
+  },
+  {
+    date: "2026-08-15",
+    referrers: [
+      ["github.com", 1083, 384],
+      ["Google", 708, 278],
+      ["Bing", 176, 73],
+      ["opendcai.github.io", 51, 20],
+      ["zwt233.github.io", 38, 20],
+      ["link.zhihu.com", 34, 13],
+      ["chatgpt.com", 21, 13],
+      ["wcny4qa9krto.feishu.cn", 18, 6],
+      ["doubao.com", 14, 10],
+      ["Baidu", 14, 3]
+    ],
+    content: [
+      ["Overview", 1951, 1088],
+      ["/blob/main/README-zh.md", 835, 433],
+      ["/tree/main", 172, 98],
+      ["/tree/main/dataflow", 141, 76],
+      ["/pulls", 107, 30],
+      ["/issues", 97, 40],
+      ["/graphs/contributors", 42, 17],
+      ["/tree/main/dataflow/operators", 33, 17],
+      ["/graphs/traffic", 32, 1],
+      ["/pulse", 31, 4]
+    ]
   }
 ].map((snapshot) => ({
   ...snapshot,
@@ -1563,14 +1575,14 @@ const phaseRegionStats = [
   {
     phaseId: "august",
     status: "complete",
-    totalStars: 344,
-    known: 71,
-    china: 22,
-    overseas: 49,
-    unknown: 273,
-    note: "08/01-08/17 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["Beijing 5","Shanghai 3","Beijing, China 2","Beijing,China 2","China 2","135 Yaguan Road,Haihe Education Park,Tianjin,China 1","Beijing China 1","Hangzhou 1","NewZealand｜China 1","No. 30 Shuangqing Road, Haidian District, Beijing 100084, P.R. China. 1"],
-    topOverseasLocations: ["United States 9","Japan 4","Australia 2","Hawaii 2","Sweden 2","中国 2","Brazil 1","Edinburgh 1","Emirates 1","First Law 1"]
+    totalStars: 238,
+    known: 47,
+    china: 21,
+    overseas: 26,
+    unknown: 191,
+    note: "08/01-08/14 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    topChinaLocations: ["Beijing 5","China 3","Shanghai 3","Beijing, China 2","Beijing,China 2","Beijing China 1","Hangzhou 1","NewZealand｜China 1","Shenzhen 1","xi'an, China 1"],
+    topOverseasLocations: ["United States 7","Australia 1","Brazil 1","Hawaii 1","India 1","Lisbon, Portugal 1","Minneapolis, Minnesota 1","Moscow 1","Portland, OR 1","Portugal 1"]
   }
 ];
 
@@ -1601,6 +1613,7 @@ let data = [];
 let combinedData = [];
 let calendarMonth = dailyCounts.at(-1)[0].slice(0, 7);
 let combinedWindowIndex = -1;
+let visitorTrafficWindowIndex = -1;
 let mainChartMode = "dataflow";
 
 function rebuildDerivedData() {
@@ -1638,6 +1651,28 @@ function getCombinedWindowOptions() {
       endDate,
       label: `${startMonth} - ${endMonth}`,
       data: windowData
+    };
+  }).filter((item) => item.data.length);
+}
+
+function getVisitorTrafficWindowOptions(rows) {
+  const months = [...new Set(rows.map((item) => item.date.slice(0, 7)))].sort();
+  if (months.length <= 2) {
+    return [{
+      label: "近 2 个月",
+      startDate: rows[0]?.date || "",
+      endDate: rows.at(-1)?.date || "",
+      data: rows
+    }];
+  }
+  return months.slice(0, -1).map((startMonth, index) => {
+    const windowMonths = months.slice(index, index + 2);
+    const windowRows = rows.filter((item) => windowMonths.includes(item.date.slice(0, 7)));
+    return {
+      label: `${windowMonths[0].slice(5)}-${windowMonths.at(-1).slice(5)} 月`,
+      startDate: windowRows[0]?.date || "",
+      endDate: windowRows.at(-1)?.date || "",
+      data: windowRows
     };
   }).filter((item) => item.data.length);
 }
@@ -1877,10 +1912,31 @@ function renderCombinedChart() {
 
 function renderVisitorStarChart() {
   const starByDate = new Map(data.map((item) => [item.date, item.stars]));
-  const rows = trafficRows.map((item) => ({
+  const allRows = trafficRows.map((item) => ({
     ...item,
     stars: starByDate.get(item.date) || 0
   }));
+  const windows = getVisitorTrafficWindowOptions(allRows);
+  if (!windows.length) return;
+  if (visitorTrafficWindowIndex < 0) visitorTrafficWindowIndex = windows.length - 1;
+  visitorTrafficWindowIndex = Math.min(Math.max(visitorTrafficWindowIndex, 0), windows.length - 1);
+  const current = windows[visitorTrafficWindowIndex];
+  const slider = document.getElementById("visitorTrafficWindowSlider");
+  const label = document.getElementById("visitorTrafficWindowLabel");
+  const prev = document.getElementById("visitorTrafficPrev");
+  const next = document.getElementById("visitorTrafficNext");
+  if (slider) {
+    slider.min = "0";
+    slider.max = String(windows.length - 1);
+    slider.value = String(visitorTrafficWindowIndex);
+    slider.disabled = windows.length <= 1;
+  }
+  if (label) {
+    label.textContent = `${current.label}（${current.startDate.slice(5)} 至 ${current.endDate.slice(5)}）`;
+  }
+  if (prev) prev.disabled = visitorTrafficWindowIndex <= 0;
+  if (next) next.disabled = visitorTrafficWindowIndex >= windows.length - 1;
+  const rows = current.data;
   const width = 1080;
   const height = 360;
   const margin = { top: 54, right: 72, bottom: 58, left: 58 };
@@ -1888,7 +1944,7 @@ function renderVisitorStarChart() {
   const chartH = height - margin.top - margin.bottom;
   const maxValue = 300;
   const clamp = (value) => Math.min(value, maxValue);
-  const x = (index) => margin.left + (index / (rows.length - 1)) * chartW;
+  const x = (index) => margin.left + (index / Math.max(rows.length - 1, 1)) * chartW;
   const y = (value) => margin.top + chartH - (clamp(value) / maxValue) * chartH;
   const visitorLine = rows.map((item, index) => `${x(index)},${y(item.visitors)}`).join(" ");
   const starLine = rows.map((item, index) => `${x(index)},${y(item.stars)}`).join(" ");
@@ -2595,6 +2651,21 @@ function initCombinedWindowControls() {
   });
 }
 
+function initVisitorTrafficWindowControls() {
+  document.getElementById("visitorTrafficPrev")?.addEventListener("click", () => {
+    visitorTrafficWindowIndex -= 1;
+    renderVisitorStarChart();
+  });
+  document.getElementById("visitorTrafficNext")?.addEventListener("click", () => {
+    visitorTrafficWindowIndex += 1;
+    renderVisitorStarChart();
+  });
+  document.getElementById("visitorTrafficWindowSlider")?.addEventListener("input", (event) => {
+    visitorTrafficWindowIndex = Number(event.target.value);
+    renderVisitorStarChart();
+  });
+}
+
 function renderAll() {
   rebuildDerivedData();
   renderSummary();
@@ -2732,5 +2803,6 @@ async function refreshLiveData() {
 initCalendar();
 initMainChartModeToggle();
 initCombinedWindowControls();
+initVisitorTrafficWindowControls();
 renderAll();
 refreshLiveData();
