@@ -108,7 +108,7 @@ const dailyCounts = [
   ["2026-08-09", 8], ["2026-08-10", 31], ["2026-08-11", 60], ["2026-08-12", 35],
   ["2026-08-13", 29], ["2026-08-14", 35], ["2026-08-15", 33], ["2026-08-16", 40],
   ["2026-08-17", 34], ["2026-08-18", 34], ["2026-08-19", 33], ["2026-08-20", 37],
-  ["2026-08-21", 3]
+  ["2026-08-21", 4]
 ];
 
 const webuiStarMeta = {
@@ -117,7 +117,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-08-21",
   beforeStart: 24,
-  generatedAt: "2026-08-21T02:37:47.489Z"
+  generatedAt: "2026-08-21T03:29:30.079Z"
 };
 
 const webuiDailyCounts = [
@@ -135,11 +135,11 @@ const webuiDailyCounts = [
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 2158,
+  total: 2159,
   startDate: "2026-04-03",
   endDate: "2026-08-21",
   beforeStart: 106,
-  generatedAt: "2026-08-21T02:37:53.834Z"
+  generatedAt: "2026-08-21T03:29:36.203Z"
 };
 
 const dataflexDailyCounts = [
@@ -178,7 +178,7 @@ const dataflexDailyCounts = [
   ["2026-08-09", 22], ["2026-08-10", 18], ["2026-08-11", 24], ["2026-08-12", 18],
   ["2026-08-13", 5], ["2026-08-14", 16], ["2026-08-15", 8], ["2026-08-16", 25],
   ["2026-08-17", 15], ["2026-08-18", 15], ["2026-08-19", 21], ["2026-08-20", 19],
-  ["2026-08-21", 1]
+  ["2026-08-21", 2]
 ];
 
 let competitorSnapshotDate = "2026-08-21";
@@ -826,7 +826,7 @@ const competitorSnapshots = {
   "2026-08-21": {
     "datajuicer/data-juicer": 6919,
     "Eventual-Inc/Daft": 5723,
-    "OpenDCAI/DataFlow": 7617,
+    "OpenDCAI/DataFlow": 7618,
     "huggingface/datatrove": 3301,
     "NVIDIA-NeMo/DataDesigner": 2169,
     "NVIDIA-NeMo/Curator": 1725,
@@ -840,7 +840,7 @@ const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
     total: 6919,
-    yesterday: 3,
+    yesterday: 0,
     twoDayChange: 8,
     color: "#f2c94c",
     points: [
@@ -860,7 +860,7 @@ const competitorRepos = [
   {
     name: "Eventual-Inc/Daft",
     total: 5723,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 4,
     color: "#f2994a",
     points: [
@@ -882,9 +882,9 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 7617,
-    yesterday: 21,
-    twoDayChange: 58,
+    total: 7618,
+    yesterday: 1,
+    twoDayChange: 59,
     color: "#2d9cdb",
     points: null
   },
@@ -943,7 +943,7 @@ const competitorRepos = [
   {
     name: "tinyfish-io/bigset",
     total: 1677,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 1,
     color: "#14b8a6",
     points: [
