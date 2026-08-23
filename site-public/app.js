@@ -108,7 +108,7 @@ const dailyCounts = [
   ["2026-08-09", 8], ["2026-08-10", 31], ["2026-08-11", 60], ["2026-08-12", 35],
   ["2026-08-13", 29], ["2026-08-14", 35], ["2026-08-15", 33], ["2026-08-16", 40],
   ["2026-08-17", 34], ["2026-08-18", 34], ["2026-08-19", 33], ["2026-08-20", 37],
-  ["2026-08-21", 37], ["2026-08-22", 39], ["2026-08-23", 5]
+  ["2026-08-21", 37], ["2026-08-22", 39], ["2026-08-23", 23]
 ];
 
 const webuiStarMeta = {
@@ -117,7 +117,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-08-23",
   beforeStart: 24,
-  generatedAt: "2026-08-23T03:29:23.904Z"
+  generatedAt: "2026-08-23T11:20:01.539Z"
 };
 
 const webuiDailyCounts = [
@@ -135,11 +135,11 @@ const webuiDailyCounts = [
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 2195,
+  total: 2201,
   startDate: "2026-04-03",
   endDate: "2026-08-23",
   beforeStart: 106,
-  generatedAt: "2026-08-23T03:29:29.186Z"
+  generatedAt: "2026-08-23T11:20:06.914Z"
 };
 
 const dataflexDailyCounts = [
@@ -178,7 +178,7 @@ const dataflexDailyCounts = [
   ["2026-08-09", 22], ["2026-08-10", 18], ["2026-08-11", 24], ["2026-08-12", 18],
   ["2026-08-13", 5], ["2026-08-14", 16], ["2026-08-15", 8], ["2026-08-16", 25],
   ["2026-08-17", 15], ["2026-08-18", 15], ["2026-08-19", 21], ["2026-08-20", 19],
-  ["2026-08-21", 17], ["2026-08-22", 19], ["2026-08-23", 2]
+  ["2026-08-21", 17], ["2026-08-22", 19], ["2026-08-23", 8]
 ];
 
 let competitorSnapshotDate = "2026-08-23";
@@ -846,10 +846,10 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 46
   },
   "2026-08-23": {
-    "datajuicer/data-juicer": 6923,
+    "datajuicer/data-juicer": 6922,
     "Eventual-Inc/Daft": 5726,
-    "OpenDCAI/DataFlow": 7695,
-    "huggingface/datatrove": 3300,
+    "OpenDCAI/DataFlow": 7713,
+    "huggingface/datatrove": 3301,
     "NVIDIA-NeMo/DataDesigner": 2172,
     "NVIDIA-NeMo/Curator": 1731,
     "tinyfish-io/bigset": 1681,
@@ -861,9 +861,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 6923,
-    yesterday: 1,
-    twoDayChange: 3,
+    total: 6922,
+    yesterday: -1,
+    twoDayChange: 2,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -876,13 +876,13 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-08-23", 6923]
+      ["2026-08-23", 6922]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
     total: 5726,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 1,
     color: "#f2994a",
     points: [
@@ -904,17 +904,17 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 7695,
-    yesterday: 22,
-    twoDayChange: 61,
+    total: 7713,
+    yesterday: 18,
+    twoDayChange: 79,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
-    total: 3300,
-    yesterday: 0,
-    twoDayChange: -1,
+    total: 3301,
+    yesterday: 1,
+    twoDayChange: 0,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -927,7 +927,7 @@ const competitorRepos = [
       ["2025-06-01", 2400],
       ["2025-10-01", 2650],
       ["2026-03-01", 2900],
-      ["2026-08-23", 3300]
+      ["2026-08-23", 3301]
     ]
   },
   {
@@ -947,7 +947,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/Curator",
     total: 1731,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 3,
     color: "#e879b4",
     points: [
@@ -965,7 +965,7 @@ const competitorRepos = [
   {
     name: "tinyfish-io/bigset",
     total: 1681,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 4,
     color: "#14b8a6",
     points: [
@@ -1644,13 +1644,13 @@ const phaseRegionStats = [
   {
     phaseId: "august",
     status: "complete",
-    totalStars: 558,
-    known: 108,
-    china: 28,
-    overseas: 80,
-    unknown: 450,
+    totalStars: 576,
+    known: 111,
+    china: 30,
+    overseas: 81,
+    unknown: 465,
     note: "08/01-08/23 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["Beijing 6","Shanghai 4","Beijing, China 3","China 3","Beijing,China 2","135 Yaguan Road,Haihe Education Park,Tianjin,China 1","Beijing China 1","Hangzhou 1","NewZealand｜China 1","No. 30 Shuangqing Road, Haidian District, Beijing 100084, P.R. China. 1"],
+    topChinaLocations: ["Beijing 6","Beijing, China 4","Shanghai 4","China 3","Beijing,China 2","135 Yaguan Road,Haihe Education Park,Tianjin,China 1","Beijing China 1","china 1","Hangzhou 1","NewZealand｜China 1"],
     topOverseasLocations: ["United States 16","Japan 6","Australia 3","Hawaii 3","India 3","Singapore 3","South Korea 2","Sweden 2","中国 2","1st Law 1"]
   }
 ];
