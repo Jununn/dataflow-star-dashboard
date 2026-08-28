@@ -1,8 +1,8 @@
 # 2026-08 DataFlow Stargazer 共同关注分析
 
-生成时间：2026-08-17T09:23:24.264Z
+生成时间：2026-08-28T03:08:48.979Z
 
-样本：300 / 354 个 8 月新增 stargazer；每人最多读取最近 300 个 starred repos。
+样本：650 / 650 个 8 月新增 stargazer；每人最多读取最近 300 个 starred repos。
 
 ## 快速判断
 
@@ -14,89 +14,89 @@
 
 | 项目 | 共同用户 | 样本占比 | 分类 | 语言 | Stars | 描述 |
 |---|---:|---:|---|---|---:|---|
-| [jd-opensource/JoyAI-Video-Edit](https://github.com/jd-opensource/JoyAI-Video-Edit) | 195 | 65% | Other | Python | 1,491 | [Official Repo] JoyAI-Video-Edit: Real-Time Open-Ended Video Editing with Autoregressive D |
-| [Orkas-AI/Orkas](https://github.com/Orkas-AI/Orkas) | 195 | 65% | Agent / Workflow | TypeScript | 1,277 | Open-source multi-agent AI desktop client — build and command your AI agent team through c |
-| [opensquilla/opensquilla](https://github.com/opensquilla/opensquilla) | 194 | 65% | Agent / Workflow | Python | 6,575 | OpenSquilla — Token-Efficient AI Agent with same budget, higher intelligence density |
-| [AgnesAI-Labs/AgnesAI-Models](https://github.com/AgnesAI-Labs/AgnesAI-Models) | 194 | 65% | Agent / Workflow | - | 3,353 | Official Agnes AI gateway and model catalog for OpenAI-compatible text, image, video, and  |
-| [AutoArk/GPA](https://github.com/AutoArk/GPA) | 194 | 65% | LLM Infra | Python | 2,406 | [AutoArk] GPA (General Purpose Audio) can do ASR, TTS and voice conversion with one tiny m |
-| [open-gigaai/giga-world-1](https://github.com/open-gigaai/giga-world-1) | 194 | 65% | LLM Infra | Python | 1,141 | A Roadmap to Build World Models for Robot Policy Evaluation |
-| [EvoScientist/EvoScientist](https://github.com/EvoScientist/EvoScientist) | 193 | 64% | RAG / Search | Python | 4,467 | 🔬 Harness Vibe Research with Self-evolving AI Scientists |
-| [Ontos-AI/knowhere](https://github.com/Ontos-AI/knowhere) | 193 | 64% | Agent / Workflow | Python | 2,457 | Knowhere extracts, parses, and outputs structured chunks ready for AI Agents and RAG. |
-| [Octoday-Hub/Embodied-AI](https://github.com/Octoday-Hub/Embodied-AI) | 193 | 64% | Other | - | 2,223 | 「Octoday Hub 星期八具身智能生态社区」聚合论文、项目、课程、工具、数据集、招聘等资源，连接全球开发者、研究者与产业伙伴。 |
-| [OpenSenseNova/SenseNova-Skills](https://github.com/OpenSenseNova/SenseNova-Skills) | 192 | 64% | Agent / Workflow | JavaScript | 4,878 | Modular SenseNova skills for building AI-powered office assistants and productivity workfl |
-| [EverMind-AI/Raven](https://github.com/EverMind-AI/Raven) | 192 | 64% | Agent / Workflow | Python | 3,541 | The memory-first, self-improving agent harness built on EverOS, with MiroThinker-powered d |
-| [kairos-agi/kairos](https://github.com/kairos-agi/kairos) | 192 | 64% | LLM Infra | Python | 2,417 | Official code for world model Kairos |
-| [team9ai/team9](https://github.com/team9ai/team9) | 192 | 64% | Agent / Workflow | TypeScript | 1,989 | Team9 is a collaborative workspace for AI agents, currently built on OpenClaw and its ecos |
-| [shiwenwen/hope-agent](https://github.com/shiwenwen/hope-agent) | 192 | 64% | Agent / Workflow | Rust | 1,422 | 🦭 会记忆、能持续推进目标、会动态编排多 Agent 的跨端桌面 AI 助手，也可服务化常驻 NAS / 云端 / A cross-device desktop AI agent |
-| [ascending-llc/jarvis-registry](https://github.com/ascending-llc/jarvis-registry) | 191 | 64% | Agent / Workflow | Python | 2,755 | Connect any AI copilot or autonomous agent to your enterprise tools — through a single, se |
-| [Einsia/OpenChronicle](https://github.com/Einsia/OpenChronicle) | 191 | 64% | Other | Python | 2,671 |  |
-| [Nathan-code-development/AIApplication](https://github.com/Nathan-code-development/AIApplication) | 191 | 64% | LLM Infra | C# | 1,037 | AI model square and chat with AI. |
-| [wdcpclover/ai4paper](https://github.com/wdcpclover/ai4paper) | 190 | 63% | Other | HTML | 3,027 | 内置知识库 · 2.4 亿文献源 · PDF 全文翻译零配置 · 无插件网页版 app.ai4paper.pro · AI 速搜文献 · AI 一键综述 · 小程序期刊订阅 · 原 |
-| [ZhangJinHaHaHa/AgentLens](https://github.com/ZhangJinHaHaHa/AgentLens) | 190 | 63% | Agent / Workflow | TypeScript | 1,036 | Agentlens is a trusted agent trading platform.  Here, you can quickly find the Agent that  |
-| [TestSprite/testsprite-cli](https://github.com/TestSprite/testsprite-cli) | 189 | 63% | Evaluation | TypeScript | 2,824 | Official TestSprite CLI — AI-powered automated testing from your terminal |
-| [TencentEdgeOne/edgeone-makers-tools](https://github.com/TencentEdgeOne/edgeone-makers-tools) | 189 | 63% | Other | JavaScript | 1,907 |  |
-| [Prismer-AI/PrismerCloud](https://github.com/Prismer-AI/PrismerCloud) | 189 | 63% | Other | TypeScript | 1,408 | Prismer Cloud |
-| [chaxiu/munk-ai](https://github.com/chaxiu/munk-ai) | 189 | 63% | Evaluation | Python | 1,059 | Self-improving AI testing engine across Android, iOS, and Web. |
-| [VexDB-THU/VexDB-Lite](https://github.com/VexDB-THU/VexDB-Lite) | 188 | 63% | RAG / Search | C++ | 2,031 | A cross-platform vector database, which can be integrated into existing databases as a plu |
-| [SuanmoSuanyangTechnology/MemoryBear](https://github.com/SuanmoSuanyangTechnology/MemoryBear) | 187 | 62% | Other | Python | 4,968 | MemoryBear Equip AI with human-like memory capability |
-| [AlanGin/A-Curated-Gas-Separation-Membrane-Database](https://github.com/AlanGin/A-Curated-Gas-Separation-Membrane-Database) | 187 | 62% | Data Engineering | - | 981 |  |
-| [deeplethe/forkd](https://github.com/deeplethe/forkd) | 186 | 62% | Agent / Workflow | Rust | 2,733 | Fork() for AI agent microVMs. Spawn 100 children in ~100ms from a warm parent; BRANCH a li |
-| [microsoft/UFO](https://github.com/microsoft/UFO) | 185 | 62% | Agent / Workflow | Python | 9,496 | UFO³: Weaving the Digital Agent Galaxy |
-| [olaxbt/ai-market-maker](https://github.com/olaxbt/ai-market-maker) | 185 | 62% | Agent / Workflow | Python | 2,052 | Agentic AI Hedge Fund OS (AIMM) |
-| [holaboss-ai/holaOS](https://github.com/holaboss-ai/holaOS) | 184 | 61% | Agent / Workflow | TypeScript | 8,395 | Open-source All in One AI agent workspace. Run any agent — Claude Code, Codex — across you |
+| [opensquilla/opensquilla](https://github.com/opensquilla/opensquilla) | 331 | 51% | Agent / Workflow | Python | 6,719 | OpenSquilla — Token-Efficient AI Agent with same budget, higher intelligence density |
+| [jd-opensource/JoyAI-Video-Edit](https://github.com/jd-opensource/JoyAI-Video-Edit) | 327 | 50% | Other | Python | 1,682 | [Official Repo] JoyAI-Video-Edit: Real-Time Open-Ended Video Editing with Autoregressive D |
+| [Orkas-AI/Orkas](https://github.com/Orkas-AI/Orkas) | 327 | 50% | Agent / Workflow | TypeScript | 1,475 | Open-source multi-agent AI desktop client — build and command your AI agent team through c |
+| [OpenSenseNova/SenseNova-Skills](https://github.com/OpenSenseNova/SenseNova-Skills) | 326 | 50% | Agent / Workflow | JavaScript | 5,111 | Modular SenseNova skills for building AI-powered office assistants and productivity workfl |
+| [AgnesAI-Labs/AgnesAI-Models](https://github.com/AgnesAI-Labs/AgnesAI-Models) | 326 | 50% | Agent / Workflow | - | 4,838 | Official Agnes AI gateway and model catalog for OpenAI-compatible text, image, video, and  |
+| [Ontos-AI/knowhere](https://github.com/Ontos-AI/knowhere) | 326 | 50% | Agent / Workflow | Python | 2,698 | Knowhere extracts, parses, and outputs structured chunks ready for AI Agents and RAG. |
+| [AutoArk/GPA](https://github.com/AutoArk/GPA) | 325 | 50% | LLM Infra | Python | 2,818 | [AutoArk] GPA (General Purpose Audio) can do ASR, TTS and voice conversion with one tiny m |
+| [open-gigaai/giga-world-1](https://github.com/open-gigaai/giga-world-1) | 325 | 50% | LLM Infra | Python | 1,147 | A Roadmap to Build World Models for Robot Policy Evaluation |
+| [EvoScientist/EvoScientist](https://github.com/EvoScientist/EvoScientist) | 324 | 50% | RAG / Search | Python | 4,515 | 🔬 Harness Vibe Research with Self-evolving AI Scientists |
+| [shiwenwen/hope-agent](https://github.com/shiwenwen/hope-agent) | 324 | 50% | Agent / Workflow | Rust | 1,514 | 🦭 会记忆、能持续推进目标、会动态编排多 Agent 的跨端桌面 AI 助手，也可服务化常驻 NAS / 云端 / A cross-device desktop AI agent |
+| [EverMind-AI/Raven](https://github.com/EverMind-AI/Raven) | 323 | 50% | Agent / Workflow | Python | 3,655 | The Harness of Harnesses: a trusted, persistent, self-evolving multi-agent ecosystem for a |
+| [Einsia/OpenChronicle](https://github.com/Einsia/OpenChronicle) | 323 | 50% | Other | Python | 2,670 |  |
+| [kairos-agi/kairos](https://github.com/kairos-agi/kairos) | 323 | 50% | LLM Infra | Python | 2,611 | Official code for world model Kairos |
+| [team9ai/team9](https://github.com/team9ai/team9) | 323 | 50% | Agent / Workflow | TypeScript | 1,984 | Team9 is a collaborative workspace for AI agents, currently built on OpenClaw and its ecos |
+| [ascending-llc/jarvis-registry](https://github.com/ascending-llc/jarvis-registry) | 322 | 50% | Agent / Workflow | Python | 2,769 | Connect any AI copilot or autonomous agent to your enterprise tools — through a single, se |
+| [Nathan-code-development/AIApplication](https://github.com/Nathan-code-development/AIApplication) | 322 | 50% | LLM Infra | C# | 1,046 | AI model square and chat with AI. |
+| [wdcpclover/ai4paper](https://github.com/wdcpclover/ai4paper) | 321 | 49% | Other | HTML | 3,189 | PDF 全文翻译，保留排版双语对照 · 2.4 亿文献检索一键入库 · 文库知识库问答 · AI 精读论文、综述与思维导图 · 列表直显期刊分区 / 中科院 / JCR / 影响因 |
+| [ZhangJinHaHaHa/AgentLens](https://github.com/ZhangJinHaHaHa/AgentLens) | 321 | 49% | Agent / Workflow | TypeScript | 1,035 | Agentlens is a trusted agent trading platform.  Here, you can quickly find the Agent that  |
+| [Octoday-Hub/Embodied-AI](https://github.com/Octoday-Hub/Embodied-AI) | 320 | 49% | Other | - | 2,349 | 「Octoday Hub 星期八具身智能生态社区」聚合论文、项目、课程、工具、数据集、招聘等资源，连接全球开发者、研究者与产业伙伴。 |
+| [TencentEdgeOne/edgeone-makers-tools](https://github.com/TencentEdgeOne/edgeone-makers-tools) | 320 | 49% | Other | JavaScript | 1,902 |  |
+| [chaxiu/munk-ai](https://github.com/chaxiu/munk-ai) | 320 | 49% | Evaluation | Python | 1,081 | Self-improving AI testing engine across Android, iOS, and Web. |
+| [Prismer-AI/PrismerCloud](https://github.com/Prismer-AI/PrismerCloud) | 319 | 49% | Other | TypeScript | 1,409 | Prismer Cloud |
+| [TestSprite/testsprite-cli](https://github.com/TestSprite/testsprite-cli) | 318 | 49% | Evaluation | TypeScript | 3,005 | Official TestSprite CLI — AI-powered automated testing from your terminal |
+| [holaboss-ai/holaOS](https://github.com/holaboss-ai/holaOS) | 316 | 49% | Agent / Workflow | TypeScript | 10,963 | Open-source agentic workspace enterprises can make their own. Connect the systems you alre |
+| [SuanmoSuanyangTechnology/MemoryBear](https://github.com/SuanmoSuanyangTechnology/MemoryBear) | 316 | 49% | Other | Python | 5,159 | MemoryBear Equip AI with human-like memory capability |
+| [VexDB-THU/VexDB-Lite](https://github.com/VexDB-THU/VexDB-Lite) | 316 | 49% | RAG / Search | C++ | 2,298 | A cross-platform vector database, which can be integrated into existing databases as a plu |
+| [olaxbt/ai-market-maker](https://github.com/olaxbt/ai-market-maker) | 311 | 48% | Agent / Workflow | Python | 2,076 | Agentic AI Hedge Fund OS (AIMM) |
+| [AlanGin/A-Curated-Gas-Separation-Membrane-Database](https://github.com/AlanGin/A-Curated-Gas-Separation-Membrane-Database) | 311 | 48% | Data Engineering | - | 981 |  |
+| [microsoft/UFO](https://github.com/microsoft/UFO) | 310 | 48% | Agent / Workflow | Python | 9,574 | UFO³: Weaving the Digital Agent Galaxy |
+| [deeplethe/forkd](https://github.com/deeplethe/forkd) | 308 | 47% | Agent / Workflow | Rust | 2,779 | Fork() for AI agent microVMs. Spawn 100 children in ~100ms from a warm parent; BRANCH a li |
 
 ## 兴趣分类
 
 | 分类 | 共现次数 | 占比 |
 |---|---:|---:|
-| Other | 17086 | 39% |
-| Agent / Workflow | 14456 | 33% |
-| LLM Infra | 4350 | 10% |
-| RAG / Search | 2740 | 6% |
-| Data Engineering | 1952 | 5% |
-| Dev Tooling | 1629 | 4% |
-| Evaluation | 731 | 2% |
-| Data Prep / Dataset | 276 | 1% |
-| Database / Storage | 110 | 0% |
+| Other | 30622 | 39% |
+| Agent / Workflow | 26414 | 34% |
+| LLM Infra | 7896 | 10% |
+| RAG / Search | 5005 | 6% |
+| Data Engineering | 3499 | 4% |
+| Dev Tooling | 2973 | 4% |
+| Evaluation | 1273 | 2% |
+| Data Prep / Dataset | 508 | 1% |
+| Database / Storage | 220 | 0% |
 
 ## 原始 Top 30（含泛项目）
 
 | 项目 | 共同用户 | 样本占比 | 分类 | 语言 | Stars | 描述 |
 |---|---:|---:|---|---|---:|---|
-| [jd-opensource/JoyAI-Video-Edit](https://github.com/jd-opensource/JoyAI-Video-Edit) | 195 | 65% | Other | Python | 1,491 | [Official Repo] JoyAI-Video-Edit: Real-Time Open-Ended Video Editing with Autoregressive D |
-| [Orkas-AI/Orkas](https://github.com/Orkas-AI/Orkas) | 195 | 65% | Agent / Workflow | TypeScript | 1,277 | Open-source multi-agent AI desktop client — build and command your AI agent team through c |
-| [opensquilla/opensquilla](https://github.com/opensquilla/opensquilla) | 194 | 65% | Agent / Workflow | Python | 6,575 | OpenSquilla — Token-Efficient AI Agent with same budget, higher intelligence density |
-| [AgnesAI-Labs/AgnesAI-Models](https://github.com/AgnesAI-Labs/AgnesAI-Models) | 194 | 65% | Agent / Workflow | - | 3,353 | Official Agnes AI gateway and model catalog for OpenAI-compatible text, image, video, and  |
-| [AutoArk/GPA](https://github.com/AutoArk/GPA) | 194 | 65% | LLM Infra | Python | 2,406 | [AutoArk] GPA (General Purpose Audio) can do ASR, TTS and voice conversion with one tiny m |
-| [open-gigaai/giga-world-1](https://github.com/open-gigaai/giga-world-1) | 194 | 65% | LLM Infra | Python | 1,141 | A Roadmap to Build World Models for Robot Policy Evaluation |
-| [EvoScientist/EvoScientist](https://github.com/EvoScientist/EvoScientist) | 193 | 64% | RAG / Search | Python | 4,467 | 🔬 Harness Vibe Research with Self-evolving AI Scientists |
-| [Ontos-AI/knowhere](https://github.com/Ontos-AI/knowhere) | 193 | 64% | Agent / Workflow | Python | 2,457 | Knowhere extracts, parses, and outputs structured chunks ready for AI Agents and RAG. |
-| [Octoday-Hub/Embodied-AI](https://github.com/Octoday-Hub/Embodied-AI) | 193 | 64% | Other | - | 2,223 | 「Octoday Hub 星期八具身智能生态社区」聚合论文、项目、课程、工具、数据集、招聘等资源，连接全球开发者、研究者与产业伙伴。 |
-| [OpenSenseNova/SenseNova-Skills](https://github.com/OpenSenseNova/SenseNova-Skills) | 192 | 64% | Agent / Workflow | JavaScript | 4,878 | Modular SenseNova skills for building AI-powered office assistants and productivity workfl |
-| [EverMind-AI/Raven](https://github.com/EverMind-AI/Raven) | 192 | 64% | Agent / Workflow | Python | 3,541 | The memory-first, self-improving agent harness built on EverOS, with MiroThinker-powered d |
-| [kairos-agi/kairos](https://github.com/kairos-agi/kairos) | 192 | 64% | LLM Infra | Python | 2,417 | Official code for world model Kairos |
-| [team9ai/team9](https://github.com/team9ai/team9) | 192 | 64% | Agent / Workflow | TypeScript | 1,989 | Team9 is a collaborative workspace for AI agents, currently built on OpenClaw and its ecos |
-| [shiwenwen/hope-agent](https://github.com/shiwenwen/hope-agent) | 192 | 64% | Agent / Workflow | Rust | 1,422 | 🦭 会记忆、能持续推进目标、会动态编排多 Agent 的跨端桌面 AI 助手，也可服务化常驻 NAS / 云端 / A cross-device desktop AI agent |
-| [ascending-llc/jarvis-registry](https://github.com/ascending-llc/jarvis-registry) | 191 | 64% | Agent / Workflow | Python | 2,755 | Connect any AI copilot or autonomous agent to your enterprise tools — through a single, se |
-| [Einsia/OpenChronicle](https://github.com/Einsia/OpenChronicle) | 191 | 64% | Other | Python | 2,671 |  |
-| [Nathan-code-development/AIApplication](https://github.com/Nathan-code-development/AIApplication) | 191 | 64% | LLM Infra | C# | 1,037 | AI model square and chat with AI. |
-| [wdcpclover/ai4paper](https://github.com/wdcpclover/ai4paper) | 190 | 63% | Other | HTML | 3,027 | 内置知识库 · 2.4 亿文献源 · PDF 全文翻译零配置 · 无插件网页版 app.ai4paper.pro · AI 速搜文献 · AI 一键综述 · 小程序期刊订阅 · 原 |
-| [ZhangJinHaHaHa/AgentLens](https://github.com/ZhangJinHaHaHa/AgentLens) | 190 | 63% | Agent / Workflow | TypeScript | 1,036 | Agentlens is a trusted agent trading platform.  Here, you can quickly find the Agent that  |
-| [TestSprite/testsprite-cli](https://github.com/TestSprite/testsprite-cli) | 189 | 63% | Evaluation | TypeScript | 2,824 | Official TestSprite CLI — AI-powered automated testing from your terminal |
-| [TencentEdgeOne/edgeone-makers-tools](https://github.com/TencentEdgeOne/edgeone-makers-tools) | 189 | 63% | Other | JavaScript | 1,907 |  |
-| [Prismer-AI/PrismerCloud](https://github.com/Prismer-AI/PrismerCloud) | 189 | 63% | Other | TypeScript | 1,408 | Prismer Cloud |
-| [chaxiu/munk-ai](https://github.com/chaxiu/munk-ai) | 189 | 63% | Evaluation | Python | 1,059 | Self-improving AI testing engine across Android, iOS, and Web. |
-| [VexDB-THU/VexDB-Lite](https://github.com/VexDB-THU/VexDB-Lite) | 188 | 63% | RAG / Search | C++ | 2,031 | A cross-platform vector database, which can be integrated into existing databases as a plu |
-| [SuanmoSuanyangTechnology/MemoryBear](https://github.com/SuanmoSuanyangTechnology/MemoryBear) | 187 | 62% | Other | Python | 4,968 | MemoryBear Equip AI with human-like memory capability |
-| [AlanGin/A-Curated-Gas-Separation-Membrane-Database](https://github.com/AlanGin/A-Curated-Gas-Separation-Membrane-Database) | 187 | 62% | Data Engineering | - | 981 |  |
-| [deeplethe/forkd](https://github.com/deeplethe/forkd) | 186 | 62% | Agent / Workflow | Rust | 2,733 | Fork() for AI agent microVMs. Spawn 100 children in ~100ms from a warm parent; BRANCH a li |
-| [microsoft/UFO](https://github.com/microsoft/UFO) | 185 | 62% | Agent / Workflow | Python | 9,496 | UFO³: Weaving the Digital Agent Galaxy |
-| [olaxbt/ai-market-maker](https://github.com/olaxbt/ai-market-maker) | 185 | 62% | Agent / Workflow | Python | 2,052 | Agentic AI Hedge Fund OS (AIMM) |
-| [holaboss-ai/holaOS](https://github.com/holaboss-ai/holaOS) | 184 | 61% | Agent / Workflow | TypeScript | 8,395 | Open-source All in One AI agent workspace. Run any agent — Claude Code, Codex — across you |
+| [opensquilla/opensquilla](https://github.com/opensquilla/opensquilla) | 331 | 51% | Agent / Workflow | Python | 6,719 | OpenSquilla — Token-Efficient AI Agent with same budget, higher intelligence density |
+| [jd-opensource/JoyAI-Video-Edit](https://github.com/jd-opensource/JoyAI-Video-Edit) | 327 | 50% | Other | Python | 1,682 | [Official Repo] JoyAI-Video-Edit: Real-Time Open-Ended Video Editing with Autoregressive D |
+| [Orkas-AI/Orkas](https://github.com/Orkas-AI/Orkas) | 327 | 50% | Agent / Workflow | TypeScript | 1,475 | Open-source multi-agent AI desktop client — build and command your AI agent team through c |
+| [OpenSenseNova/SenseNova-Skills](https://github.com/OpenSenseNova/SenseNova-Skills) | 326 | 50% | Agent / Workflow | JavaScript | 5,111 | Modular SenseNova skills for building AI-powered office assistants and productivity workfl |
+| [AgnesAI-Labs/AgnesAI-Models](https://github.com/AgnesAI-Labs/AgnesAI-Models) | 326 | 50% | Agent / Workflow | - | 4,838 | Official Agnes AI gateway and model catalog for OpenAI-compatible text, image, video, and  |
+| [Ontos-AI/knowhere](https://github.com/Ontos-AI/knowhere) | 326 | 50% | Agent / Workflow | Python | 2,698 | Knowhere extracts, parses, and outputs structured chunks ready for AI Agents and RAG. |
+| [AutoArk/GPA](https://github.com/AutoArk/GPA) | 325 | 50% | LLM Infra | Python | 2,818 | [AutoArk] GPA (General Purpose Audio) can do ASR, TTS and voice conversion with one tiny m |
+| [open-gigaai/giga-world-1](https://github.com/open-gigaai/giga-world-1) | 325 | 50% | LLM Infra | Python | 1,147 | A Roadmap to Build World Models for Robot Policy Evaluation |
+| [EvoScientist/EvoScientist](https://github.com/EvoScientist/EvoScientist) | 324 | 50% | RAG / Search | Python | 4,515 | 🔬 Harness Vibe Research with Self-evolving AI Scientists |
+| [shiwenwen/hope-agent](https://github.com/shiwenwen/hope-agent) | 324 | 50% | Agent / Workflow | Rust | 1,514 | 🦭 会记忆、能持续推进目标、会动态编排多 Agent 的跨端桌面 AI 助手，也可服务化常驻 NAS / 云端 / A cross-device desktop AI agent |
+| [EverMind-AI/Raven](https://github.com/EverMind-AI/Raven) | 323 | 50% | Agent / Workflow | Python | 3,655 | The Harness of Harnesses: a trusted, persistent, self-evolving multi-agent ecosystem for a |
+| [Einsia/OpenChronicle](https://github.com/Einsia/OpenChronicle) | 323 | 50% | Other | Python | 2,670 |  |
+| [kairos-agi/kairos](https://github.com/kairos-agi/kairos) | 323 | 50% | LLM Infra | Python | 2,611 | Official code for world model Kairos |
+| [team9ai/team9](https://github.com/team9ai/team9) | 323 | 50% | Agent / Workflow | TypeScript | 1,984 | Team9 is a collaborative workspace for AI agents, currently built on OpenClaw and its ecos |
+| [ascending-llc/jarvis-registry](https://github.com/ascending-llc/jarvis-registry) | 322 | 50% | Agent / Workflow | Python | 2,769 | Connect any AI copilot or autonomous agent to your enterprise tools — through a single, se |
+| [Nathan-code-development/AIApplication](https://github.com/Nathan-code-development/AIApplication) | 322 | 50% | LLM Infra | C# | 1,046 | AI model square and chat with AI. |
+| [wdcpclover/ai4paper](https://github.com/wdcpclover/ai4paper) | 321 | 49% | Other | HTML | 3,189 | PDF 全文翻译，保留排版双语对照 · 2.4 亿文献检索一键入库 · 文库知识库问答 · AI 精读论文、综述与思维导图 · 列表直显期刊分区 / 中科院 / JCR / 影响因 |
+| [ZhangJinHaHaHa/AgentLens](https://github.com/ZhangJinHaHaHa/AgentLens) | 321 | 49% | Agent / Workflow | TypeScript | 1,035 | Agentlens is a trusted agent trading platform.  Here, you can quickly find the Agent that  |
+| [Octoday-Hub/Embodied-AI](https://github.com/Octoday-Hub/Embodied-AI) | 320 | 49% | Other | - | 2,349 | 「Octoday Hub 星期八具身智能生态社区」聚合论文、项目、课程、工具、数据集、招聘等资源，连接全球开发者、研究者与产业伙伴。 |
+| [TencentEdgeOne/edgeone-makers-tools](https://github.com/TencentEdgeOne/edgeone-makers-tools) | 320 | 49% | Other | JavaScript | 1,902 |  |
+| [chaxiu/munk-ai](https://github.com/chaxiu/munk-ai) | 320 | 49% | Evaluation | Python | 1,081 | Self-improving AI testing engine across Android, iOS, and Web. |
+| [Prismer-AI/PrismerCloud](https://github.com/Prismer-AI/PrismerCloud) | 319 | 49% | Other | TypeScript | 1,409 | Prismer Cloud |
+| [TestSprite/testsprite-cli](https://github.com/TestSprite/testsprite-cli) | 318 | 49% | Evaluation | TypeScript | 3,005 | Official TestSprite CLI — AI-powered automated testing from your terminal |
+| [holaboss-ai/holaOS](https://github.com/holaboss-ai/holaOS) | 316 | 49% | Agent / Workflow | TypeScript | 10,963 | Open-source agentic workspace enterprises can make their own. Connect the systems you alre |
+| [SuanmoSuanyangTechnology/MemoryBear](https://github.com/SuanmoSuanyangTechnology/MemoryBear) | 316 | 49% | Other | Python | 5,159 | MemoryBear Equip AI with human-like memory capability |
+| [VexDB-THU/VexDB-Lite](https://github.com/VexDB-THU/VexDB-Lite) | 316 | 49% | RAG / Search | C++ | 2,298 | A cross-platform vector database, which can be integrated into existing databases as a plu |
+| [olaxbt/ai-market-maker](https://github.com/olaxbt/ai-market-maker) | 311 | 48% | Agent / Workflow | Python | 2,076 | Agentic AI Hedge Fund OS (AIMM) |
+| [AlanGin/A-Curated-Gas-Separation-Membrane-Database](https://github.com/AlanGin/A-Curated-Gas-Separation-Membrane-Database) | 311 | 48% | Data Engineering | - | 981 |  |
+| [microsoft/UFO](https://github.com/microsoft/UFO) | 310 | 48% | Agent / Workflow | Python | 9,574 | UFO³: Weaving the Digital Agent Galaxy |
+| [deeplethe/forkd](https://github.com/deeplethe/forkd) | 308 | 47% | Agent / Workflow | Rust | 2,779 | Fork() for AI agent microVMs. Spawn 100 children in ~100ms from a warm parent; BRANCH a li |
 
 ## 口径
 
-- 只分析 2026-08-01 到 2026-08-17 给 OpenDCAI/DataFlow 点 star 的用户。
+- 只分析 2026-08-01 到 2026-08-28 给 OpenDCAI/DataFlow 点 star 的用户。
 - 抽样方式：按 8 月新增 stargazer 时间序列等距抽样，避免只看最近几天。
 - 每个用户最多取最近 300 个 starred repos；很早以前 star 的项目不会进入本次样本。
 - “过滤泛项目”会去掉超大型学习清单、通用 awesome list、面试资料等噪声，但原始 Top 表仍保留。
