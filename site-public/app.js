@@ -110,16 +110,16 @@ const dailyCounts = [
   ["2026-08-17", 34], ["2026-08-18", 34], ["2026-08-19", 33], ["2026-08-20", 37],
   ["2026-08-21", 37], ["2026-08-22", 39], ["2026-08-23", 44], ["2026-08-24", 17],
   ["2026-08-25", 9], ["2026-08-26", 4], ["2026-08-27", 21], ["2026-08-28", 17],
-  ["2026-08-29", 24], ["2026-08-30", 10], ["2026-08-31", 10]
+  ["2026-08-29", 24], ["2026-08-30", 10], ["2026-08-31", 12]
 ];
 
 const webuiStarMeta = {
   repo: "OpenDCAI/DataFlow-WebUI",
-  total: 222,
+  total: 223,
   startDate: "2026-07-15",
   endDate: "2026-08-31",
   beforeStart: 24,
-  generatedAt: "2026-08-31T08:49:06.536Z"
+  generatedAt: "2026-08-31T17:55:13.644Z"
 };
 
 const webuiDailyCounts = [
@@ -134,16 +134,16 @@ const webuiDailyCounts = [
   ["2026-08-16", 1], ["2026-08-17", 0], ["2026-08-18", 0], ["2026-08-19", 1],
   ["2026-08-20", 1], ["2026-08-21", 0], ["2026-08-22", 0], ["2026-08-23", 0],
   ["2026-08-24", 3], ["2026-08-25", 5], ["2026-08-26", 3], ["2026-08-27", 4],
-  ["2026-08-28", 2], ["2026-08-29", 5], ["2026-08-30", 0], ["2026-08-31", 2]
+  ["2026-08-28", 2], ["2026-08-29", 5], ["2026-08-30", 0], ["2026-08-31", 3]
 ];
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 2356,
+  total: 2365,
   startDate: "2026-04-03",
   endDate: "2026-08-31",
   beforeStart: 106,
-  generatedAt: "2026-08-31T08:49:13.206Z"
+  generatedAt: "2026-08-31T17:55:21.092Z"
 };
 
 const dataflexDailyCounts = [
@@ -184,7 +184,7 @@ const dataflexDailyCounts = [
   ["2026-08-17", 15], ["2026-08-18", 15], ["2026-08-19", 21], ["2026-08-20", 19],
   ["2026-08-21", 17], ["2026-08-22", 19], ["2026-08-23", 21], ["2026-08-24", 25],
   ["2026-08-25", 18], ["2026-08-26", 15], ["2026-08-27", 21], ["2026-08-28", 17],
-  ["2026-08-29", 21], ["2026-08-30", 20], ["2026-08-31", 5]
+  ["2026-08-29", 21], ["2026-08-30", 20], ["2026-08-31", 14]
 ];
 
 let competitorSnapshotDate = "2026-08-31";
@@ -844,10 +844,10 @@ const competitorSnapshots = {
   "2026-08-31": {
     "datajuicer/data-juicer": 6956,
     "Eventual-Inc/Daft": 5733,
-    "OpenDCAI/DataFlow": 7844,
-    "huggingface/datatrove": 3313,
-    "NVIDIA-NeMo/DataDesigner": 2194,
-    "NVIDIA-NeMo/Curator": 1740,
+    "OpenDCAI/DataFlow": 7846,
+    "huggingface/datatrove": 3314,
+    "NVIDIA-NeMo/DataDesigner": 2196,
+    "NVIDIA-NeMo/Curator": 1741,
     "tinyfish-io/bigset": 1690,
     "OpenDataArena/OpenDataArena-Tool": 145,
     "InternScience/SciDataCopilot": 46
@@ -858,7 +858,7 @@ const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
     total: 6956,
-    yesterday: 5,
+    yesterday: 0,
     twoDayChange: 7,
     color: "#f2c94c",
     points: [
@@ -900,17 +900,17 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 7844,
-    yesterday: 8,
-    twoDayChange: 21,
+    total: 7846,
+    yesterday: 2,
+    twoDayChange: 23,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
-    total: 3313,
+    total: 3314,
     yesterday: 1,
-    twoDayChange: 3,
+    twoDayChange: 4,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -923,28 +923,28 @@ const competitorRepos = [
       ["2025-06-01", 2400],
       ["2025-10-01", 2650],
       ["2026-03-01", 2900],
-      ["2026-08-31", 3313]
+      ["2026-08-31", 3314]
     ]
   },
   {
     name: "NVIDIA-NeMo/DataDesigner",
-    total: 2194,
-    yesterday: 0,
-    twoDayChange: 4,
+    total: 2196,
+    yesterday: 2,
+    twoDayChange: 6,
     color: "#e94b35",
     points: [
       ["2025-10-16", 0],
       ["2026-01-01", 500],
       ["2026-03-01", 700],
       ["2026-04-01", 1000],
-      ["2026-08-31", 2194]
+      ["2026-08-31", 2196]
     ]
   },
   {
     name: "NVIDIA-NeMo/Curator",
-    total: 1740,
-    yesterday: 0,
-    twoDayChange: 0,
+    total: 1741,
+    yesterday: 1,
+    twoDayChange: 1,
     color: "#e879b4",
     points: [
       ["2024-03-14", 0],
@@ -955,7 +955,7 @@ const competitorRepos = [
       ["2025-07-01", 900],
       ["2025-12-01", 1200],
       ["2026-04-01", 1450],
-      ["2026-08-31", 1740]
+      ["2026-08-31", 1741]
     ]
   },
   {
@@ -1681,11 +1681,11 @@ const phaseRegionStats = [
   {
     phaseId: "august",
     status: "complete",
-    totalStars: 709,
+    totalStars: 711,
     known: 130,
     china: 41,
     overseas: 89,
-    unknown: 579,
+    unknown: 581,
     note: "08/01-08/31 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Beijing 6","Beijing, China 5","Shanghai 5","China 4","Beijing,China 3","Hangzhou 3","135 Yaguan Road,Haihe Education Park,Tianjin,China 1","beijing 1","Beijing China 1","china 1"],
     topOverseasLocations: ["United States 17","Japan 6","Australia 3","Hawaii 3","India 3","Singapore 3","Earth 2","South Korea 2","Sweden 2","United Kingdom 2"]
