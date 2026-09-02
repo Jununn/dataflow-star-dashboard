@@ -1142,7 +1142,10 @@ const actions = [
   ["2026-08-25", "Reddit", "dataflow-rag数据处理", "https://www.reddit.com/r/Rag/comments/1vxuz91/as_rag_use_cases_expand_data_preparation_is/"],
   ["2026-08-25", "LinkedIn", "dataflow-数据处理", "https://www.linkedin.com/feed/update/urn:li:activity:7497950062715654144?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEUUBPQBFc8EfKdyeyOBsOUABAvO12iGjao"],
   ["2026-08-27", "Reddit", "dataflow-agent知识库", "https://www.reddit.com/r/AI_Agents/comments/1vzq1b0/for_agents_using_knowledge_bases_maybe_clean_the/"],
-  ["2026-08-27", "LinkedIn", "dataflow-agent知识助手", "https://www.linkedin.com/feed/update/urn:li:activity:7498687335715418112?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEUUBPQBFc8EfKdyeyOBsOUABAvO12iGjao"]
+  ["2026-08-27", "LinkedIn", "dataflow-agent知识助手", "https://www.linkedin.com/feed/update/urn:li:activity:7498687335715418112?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEUUBPQBFc8EfKdyeyOBsOUABAvO12iGjao"],
+  ["2026-08-31", "Reddit", "dataflow-ai应用数据管道", "https://www.reddit.com/r/AI_Application/comments/1w39vfd/validated_opensource_data_pipelines_for_rag_and/"],
+  ["2026-08-31", "Reddit", "dataflow- ai conding data", "https://www.reddit.com/r/AI_Coders/comments/1w39rx3/old_data_needs_new_processing_for_ai_coding/"],
+  ["2026-09-01", "Facebook", "dataflow-数据处理", "https://www.facebook.com/groups/dataannotation/permalink/1782028909599809/"]
 ].map(([date, channel, title, url]) => ({ date, channel, title, url }));
 
 const trafficRows = [
