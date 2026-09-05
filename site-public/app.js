@@ -111,7 +111,7 @@ const dailyCounts = [
   ["2026-08-21", 37], ["2026-08-22", 39], ["2026-08-23", 44], ["2026-08-24", 17],
   ["2026-08-25", 9], ["2026-08-26", 4], ["2026-08-27", 21], ["2026-08-28", 17],
   ["2026-08-29", 24], ["2026-08-30", 10], ["2026-08-31", 16], ["2026-09-01", 20],
-  ["2026-09-02", 21], ["2026-09-03", 23], ["2026-09-04", 18], ["2026-09-05", 9]
+  ["2026-09-02", 21], ["2026-09-03", 23], ["2026-09-04", 18], ["2026-09-05", 15]
 ];
 
 const webuiStarMeta = {
@@ -120,7 +120,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-09-05",
   beforeStart: 24,
-  generatedAt: "2026-09-05T07:03:23.179Z"
+  generatedAt: "2026-09-05T13:41:08.252Z"
 };
 
 const webuiDailyCounts = [
@@ -142,11 +142,11 @@ const webuiDailyCounts = [
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 2456,
+  total: 2460,
   startDate: "2026-04-03",
   endDate: "2026-09-05",
   beforeStart: 106,
-  generatedAt: "2026-09-05T07:03:28.873Z"
+  generatedAt: "2026-09-05T13:41:15.933Z"
 };
 
 const dataflexDailyCounts = [
@@ -188,7 +188,7 @@ const dataflexDailyCounts = [
   ["2026-08-21", 17], ["2026-08-22", 19], ["2026-08-23", 21], ["2026-08-24", 25],
   ["2026-08-25", 18], ["2026-08-26", 15], ["2026-08-27", 21], ["2026-08-28", 17],
   ["2026-08-29", 21], ["2026-08-30", 20], ["2026-08-31", 16], ["2026-09-01", 22],
-  ["2026-09-02", 26], ["2026-09-03", 21], ["2026-09-04", 13], ["2026-09-05", 7]
+  ["2026-09-02", 26], ["2026-09-03", 21], ["2026-09-04", 13], ["2026-09-05", 11]
 ];
 
 let competitorSnapshotDate = "2026-09-05";
@@ -901,14 +901,14 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 46
   },
   "2026-09-05": {
-    "datajuicer/data-juicer": 6994,
+    "datajuicer/data-juicer": 6996,
     "Eventual-Inc/Daft": 5747,
-    "OpenDCAI/DataFlow": 7938,
-    "huggingface/datatrove": 3321,
+    "OpenDCAI/DataFlow": 7944,
+    "huggingface/datatrove": 3323,
     "NVIDIA-NeMo/DataDesigner": 2199,
     "NVIDIA-NeMo/Curator": 1751,
-    "tinyfish-io/bigset": 1697,
-    "OpenDataArena/OpenDataArena-Tool": 145,
+    "tinyfish-io/bigset": 1698,
+    "OpenDataArena/OpenDataArena-Tool": 146,
     "InternScience/SciDataCopilot": 46
   }
 };
@@ -916,9 +916,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 6994,
-    yesterday: 3,
-    twoDayChange: 4,
+    total: 6996,
+    yesterday: 2,
+    twoDayChange: 6,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -931,13 +931,13 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-09-05", 6994]
+      ["2026-09-05", 6996]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
     total: 5747,
-    yesterday: 3,
+    yesterday: 0,
     twoDayChange: 9,
     color: "#f2994a",
     points: [
@@ -959,17 +959,17 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 7938,
-    yesterday: 12,
-    twoDayChange: 33,
+    total: 7944,
+    yesterday: 6,
+    twoDayChange: 39,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
-    total: 3321,
-    yesterday: 0,
-    twoDayChange: 0,
+    total: 3323,
+    yesterday: 2,
+    twoDayChange: 2,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -982,13 +982,13 @@ const competitorRepos = [
       ["2025-06-01", 2400],
       ["2025-10-01", 2650],
       ["2026-03-01", 2900],
-      ["2026-09-05", 3321]
+      ["2026-09-05", 3323]
     ]
   },
   {
     name: "NVIDIA-NeMo/DataDesigner",
     total: 2199,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 1,
     color: "#e94b35",
     points: [
@@ -1019,26 +1019,26 @@ const competitorRepos = [
   },
   {
     name: "tinyfish-io/bigset",
-    total: 1697,
-    yesterday: 0,
-    twoDayChange: 0,
+    total: 1698,
+    yesterday: 1,
+    twoDayChange: 1,
     color: "#14b8a6",
     points: [
       ["2026-05-15", 0],
-      ["2026-09-05", 1697]
+      ["2026-09-05", 1698]
     ]
   },
   {
     name: "OpenDataArena/OpenDataArena-Tool",
-    total: 145,
-    yesterday: 0,
-    twoDayChange: 0,
+    total: 146,
+    yesterday: 1,
+    twoDayChange: 1,
     color: "#8a6b55",
     points: [
       ["2025-07-19", 0],
       ["2025-11-01", 60],
       ["2026-03-01", 120],
-      ["2026-09-05", 145]
+      ["2026-09-05", 146]
     ]
   },
   {
@@ -1743,14 +1743,14 @@ const phaseRegionStats = [
   {
     phaseId: "august",
     status: "complete",
-    totalStars: 805,
-    known: 147,
+    totalStars: 811,
+    known: 148,
     china: 47,
-    overseas: 100,
-    unknown: 658,
+    overseas: 101,
+    unknown: 663,
     note: "08/01-09/05 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Beijing 7","Shanghai 7","Beijing, China 5","China 5","Beijing,China 3","Hangzhou 3","beijing 2","135 Yaguan Road,Haihe Education Park,Tianjin,China 1","Beijing China 1","china 1"],
-    topOverseasLocations: ["United States 19","Japan 6","Singapore 4","Australia 3","Hawaii 3","India 3","United Kingdom 3","Earth 2","Germany 2","Portland, OR 2"]
+    topOverseasLocations: ["United States 19","Japan 6","Australia 4","Singapore 4","Hawaii 3","India 3","United Kingdom 3","Earth 2","Germany 2","Portland, OR 2"]
   }
 ];
 
