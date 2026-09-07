@@ -1,4 +1,4 @@
-let startTotal = 1752;
+let startTotal = 1751;
 const historicalStartTotal = 72;
 const historicalNonZeroDailyCounts = [
   ["2025-06-04", 1], ["2025-06-05", 8], ["2025-06-06", 26], ["2025-06-07", 21],
@@ -112,16 +112,16 @@ const dailyCounts = [
   ["2026-08-25", 9], ["2026-08-26", 4], ["2026-08-27", 21], ["2026-08-28", 17],
   ["2026-08-29", 24], ["2026-08-30", 10], ["2026-08-31", 16], ["2026-09-01", 20],
   ["2026-09-02", 21], ["2026-09-03", 23], ["2026-09-04", 18], ["2026-09-05", 25],
-  ["2026-09-06", 22], ["2026-09-07", 7]
+  ["2026-09-06", 22], ["2026-09-07", 11]
 ];
 
 const webuiStarMeta = {
   repo: "OpenDCAI/DataFlow-WebUI",
-  total: 233,
+  total: 234,
   startDate: "2026-07-15",
   endDate: "2026-09-07",
   beforeStart: 24,
-  generatedAt: "2026-09-07T07:28:42.513Z"
+  generatedAt: "2026-09-07T16:17:21.227Z"
 };
 
 const webuiDailyCounts = [
@@ -138,16 +138,16 @@ const webuiDailyCounts = [
   ["2026-08-24", 3], ["2026-08-25", 5], ["2026-08-26", 3], ["2026-08-27", 4],
   ["2026-08-28", 2], ["2026-08-29", 5], ["2026-08-30", 0], ["2026-08-31", 3],
   ["2026-09-01", 1], ["2026-09-02", 3], ["2026-09-03", 2], ["2026-09-04", 2],
-  ["2026-09-05", 0], ["2026-09-06", 1], ["2026-09-07", 1]
+  ["2026-09-05", 0], ["2026-09-06", 1], ["2026-09-07", 2]
 ];
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 2494,
+  total: 2502,
   startDate: "2026-04-03",
   endDate: "2026-09-07",
   beforeStart: 106,
-  generatedAt: "2026-09-07T07:28:49.121Z"
+  generatedAt: "2026-09-07T16:17:29.525Z"
 };
 
 const dataflexDailyCounts = [
@@ -190,7 +190,7 @@ const dataflexDailyCounts = [
   ["2026-08-25", 18], ["2026-08-26", 15], ["2026-08-27", 21], ["2026-08-28", 17],
   ["2026-08-29", 21], ["2026-08-30", 20], ["2026-08-31", 16], ["2026-09-01", 22],
   ["2026-09-02", 26], ["2026-09-03", 21], ["2026-09-04", 13], ["2026-09-05", 15],
-  ["2026-09-06", 20], ["2026-09-07", 11]
+  ["2026-09-06", 20], ["2026-09-07", 19]
 ];
 
 let competitorSnapshotDate = "2026-09-07";
@@ -925,12 +925,12 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 46
   },
   "2026-09-07": {
-    "datajuicer/data-juicer": 7003,
-    "Eventual-Inc/Daft": 5749,
-    "OpenDCAI/DataFlow": 7981,
-    "huggingface/datatrove": 3325,
-    "NVIDIA-NeMo/DataDesigner": 2200,
-    "NVIDIA-NeMo/Curator": 1752,
+    "datajuicer/data-juicer": 7010,
+    "Eventual-Inc/Daft": 5750,
+    "OpenDCAI/DataFlow": 7984,
+    "huggingface/datatrove": 3326,
+    "NVIDIA-NeMo/DataDesigner": 2202,
+    "NVIDIA-NeMo/Curator": 1753,
     "tinyfish-io/bigset": 1697,
     "OpenDataArena/OpenDataArena-Tool": 146,
     "InternScience/SciDataCopilot": 46
@@ -940,9 +940,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 7003,
-    yesterday: 1,
-    twoDayChange: 7,
+    total: 7010,
+    yesterday: 7,
+    twoDayChange: 14,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -955,14 +955,14 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-09-07", 7003]
+      ["2026-09-07", 7010]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
-    total: 5749,
+    total: 5750,
     yesterday: 1,
-    twoDayChange: 2,
+    twoDayChange: 3,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -978,22 +978,22 @@ const competitorRepos = [
       ["2025-10-01", 4400],
       ["2026-01-01", 4900],
       ["2026-04-01", 5350],
-      ["2026-09-07", 5749]
+      ["2026-09-07", 5750]
     ]
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 7981,
-    yesterday: 4,
-    twoDayChange: 37,
+    total: 7984,
+    yesterday: 3,
+    twoDayChange: 40,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
-    total: 3325,
+    total: 3326,
     yesterday: 1,
-    twoDayChange: 2,
+    twoDayChange: 3,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -1006,28 +1006,28 @@ const competitorRepos = [
       ["2025-06-01", 2400],
       ["2025-10-01", 2650],
       ["2026-03-01", 2900],
-      ["2026-09-07", 3325]
+      ["2026-09-07", 3326]
     ]
   },
   {
     name: "NVIDIA-NeMo/DataDesigner",
-    total: 2200,
+    total: 2202,
     yesterday: 2,
-    twoDayChange: 1,
+    twoDayChange: 3,
     color: "#e94b35",
     points: [
       ["2025-10-16", 0],
       ["2026-01-01", 500],
       ["2026-03-01", 700],
       ["2026-04-01", 1000],
-      ["2026-09-07", 2200]
+      ["2026-09-07", 2202]
     ]
   },
   {
     name: "NVIDIA-NeMo/Curator",
-    total: 1752,
-    yesterday: 0,
-    twoDayChange: 1,
+    total: 1753,
+    yesterday: 1,
+    twoDayChange: 2,
     color: "#e879b4",
     points: [
       ["2024-03-14", 0],
@@ -1038,7 +1038,7 @@ const competitorRepos = [
       ["2025-07-01", 900],
       ["2025-12-01", 1200],
       ["2026-04-01", 1450],
-      ["2026-09-07", 1752]
+      ["2026-09-07", 1753]
     ]
   },
   {
@@ -1755,23 +1755,23 @@ const phaseRegionStats = [
   {
     phaseId: "july",
     status: "complete",
-    totalStars: 1474,
-    known: 1026,
+    totalStars: 1473,
+    known: 1025,
     china: 277,
-    overseas: 749,
+    overseas: 748,
     unknown: 448,
     note: "07/01-07/31 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Shanghai 44","China 22","Beijing 20","Hong Kong 14","Taiwan 12","Beijing, China 9","Shanghai, China 9","Shenzhen 9","Taipei 7","Hangzhou 5"],
-    topOverseasLocations: ["United States 138","Japan 76","Singapore 36","South Korea 23","India 20","United Kingdom 13","France 11","Australia 10","Canada 10","Germany 10"]
+    topOverseasLocations: ["United States 137","Japan 76","Singapore 36","South Korea 23","India 20","United Kingdom 13","France 11","Australia 10","Canada 10","Germany 10"]
   },
   {
     phaseId: "august",
     status: "complete",
-    totalStars: 849,
-    known: 152,
-    china: 47,
+    totalStars: 853,
+    known: 153,
+    china: 48,
     overseas: 105,
-    unknown: 697,
+    unknown: 700,
     note: "08/01-09/07 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Beijing 7","Shanghai 7","Beijing, China 5","China 5","Beijing,China 3","Hangzhou 3","beijing 2","135 Yaguan Road,Haihe Education Park,Tianjin,China 1","Beijing China 1","china 1"],
     topOverseasLocations: ["United States 20","Japan 6","Australia 4","Singapore 4","Hawaii 3","India 3","United Kingdom 3","Earth 2","Germany 2","Portland, OR 2"]
