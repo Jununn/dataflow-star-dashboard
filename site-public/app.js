@@ -112,7 +112,7 @@ const dailyCounts = [
   ["2026-08-25", 9], ["2026-08-26", 4], ["2026-08-27", 21], ["2026-08-28", 17],
   ["2026-08-29", 24], ["2026-08-30", 10], ["2026-08-31", 16], ["2026-09-01", 20],
   ["2026-09-02", 21], ["2026-09-03", 23], ["2026-09-04", 18], ["2026-09-05", 25],
-  ["2026-09-06", 22], ["2026-09-07", 15], ["2026-09-08", 1]
+  ["2026-09-06", 22], ["2026-09-07", 15], ["2026-09-08", 9]
 ];
 
 const webuiStarMeta = {
@@ -121,7 +121,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-09-08",
   beforeStart: 24,
-  generatedAt: "2026-09-08T02:40:44.521Z"
+  generatedAt: "2026-09-08T07:22:10.106Z"
 };
 
 const webuiDailyCounts = [
@@ -143,11 +143,11 @@ const webuiDailyCounts = [
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 2508,
+  total: 2512,
   startDate: "2026-04-03",
   endDate: "2026-09-08",
   beforeStart: 106,
-  generatedAt: "2026-09-08T02:40:52.449Z"
+  generatedAt: "2026-09-08T07:22:17.329Z"
 };
 
 const dataflexDailyCounts = [
@@ -190,7 +190,7 @@ const dataflexDailyCounts = [
   ["2026-08-25", 18], ["2026-08-26", 15], ["2026-08-27", 21], ["2026-08-28", 17],
   ["2026-08-29", 21], ["2026-08-30", 20], ["2026-08-31", 16], ["2026-09-01", 22],
   ["2026-09-02", 26], ["2026-09-03", 21], ["2026-09-04", 13], ["2026-09-05", 15],
-  ["2026-09-06", 20], ["2026-09-07", 23], ["2026-09-08", 2]
+  ["2026-09-06", 20], ["2026-09-07", 23], ["2026-09-08", 6]
 ];
 
 let competitorSnapshotDate = "2026-09-08";
@@ -936,9 +936,9 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 46
   },
   "2026-09-08": {
-    "datajuicer/data-juicer": 7014,
-    "Eventual-Inc/Daft": 5752,
-    "OpenDCAI/DataFlow": 7989,
+    "datajuicer/data-juicer": 7017,
+    "Eventual-Inc/Daft": 5753,
+    "OpenDCAI/DataFlow": 7997,
     "huggingface/datatrove": 3326,
     "NVIDIA-NeMo/DataDesigner": 2203,
     "NVIDIA-NeMo/Curator": 1754,
@@ -951,9 +951,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 7014,
-    yesterday: 4,
-    twoDayChange: 12,
+    total: 7017,
+    yesterday: 3,
+    twoDayChange: 15,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -966,14 +966,14 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-09-08", 7014]
+      ["2026-09-08", 7017]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
-    total: 5752,
-    yesterday: 2,
-    twoDayChange: 4,
+    total: 5753,
+    yesterday: 1,
+    twoDayChange: 5,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -989,14 +989,14 @@ const competitorRepos = [
       ["2025-10-01", 4400],
       ["2026-01-01", 4900],
       ["2026-04-01", 5350],
-      ["2026-09-08", 5752]
+      ["2026-09-08", 5753]
     ]
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 7989,
-    yesterday: 5,
-    twoDayChange: 22,
+    total: 7997,
+    yesterday: 8,
+    twoDayChange: 30,
     color: "#2d9cdb",
     points: null
   },
@@ -1023,7 +1023,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/DataDesigner",
     total: 2203,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 5,
     color: "#e94b35",
     points: [
@@ -1037,7 +1037,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/Curator",
     total: 1754,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 2,
     color: "#e879b4",
     points: [
@@ -1778,11 +1778,11 @@ const phaseRegionStats = [
   {
     phaseId: "august",
     status: "complete",
-    totalStars: 858,
-    known: 153,
-    china: 48,
+    totalStars: 866,
+    known: 154,
+    china: 49,
     overseas: 105,
-    unknown: 705,
+    unknown: 712,
     note: "08/01-09/08 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Beijing 7","Shanghai 7","Beijing, China 5","China 5","Beijing,China 3","Hangzhou 3","beijing 2","135 Yaguan Road,Haihe Education Park,Tianjin,China 1","Beijing China 1","china 1"],
     topOverseasLocations: ["United States 20","Japan 6","Australia 4","Singapore 4","Hawaii 3","India 3","United Kingdom 3","Earth 2","Germany 2","Portland, OR 2"]
