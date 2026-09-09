@@ -230,35 +230,6 @@ main {
   padding: 0 24px 12px;
 }
 
-.main-chart-scroll-controls {
-  grid-template-columns: auto minmax(180px, 1fr) auto;
-  padding-top: 2px;
-}
-
-.main-chart-scroll-controls .year-slider {
-  min-width: 0;
-}
-
-.is-horizontally-scrollable {
-  scrollbar-color: #aebbd0 #eef2f7;
-  scrollbar-width: auto;
-}
-
-.is-horizontally-scrollable::-webkit-scrollbar {
-  height: 12px;
-}
-
-.is-horizontally-scrollable::-webkit-scrollbar-track {
-  border-radius: 999px;
-  background: #eef2f7;
-}
-
-.is-horizontally-scrollable::-webkit-scrollbar-thumb {
-  border: 3px solid #eef2f7;
-  border-radius: 999px;
-  background: #aebbd0;
-}
-
 .chart-window-label {
   color: var(--ink);
   font-size: 14px;

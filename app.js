@@ -2021,15 +2021,14 @@ function renderMainChart() {
     renderWebuiDailyComparisonChart();
     return;
   }
-  renderTrendChart("mainChart", "chartTooltip", data, {
+  const mainChartData = data.filter((item) => item.date >= "2026-03-01");
+  renderTrendChart("mainChart", "chartTooltip", mainChartData, {
     height: 480,
     hotThreshold: 50,
     maxStarsFloor: 100,
     bands: phases,
     weekendBars: true,
-    monthlyAvgLabels: true,
-    horizontalScroll: true,
-    initialDate: "2026-03-01"
+    monthlyAvgLabels: true
   });
 }
 
@@ -2039,7 +2038,7 @@ function getWebuiComparisonRows() {
   let webuiCumulative = webuiStarMeta.beforeStart;
   let dataflexCumulative = dataflexStarMeta.beforeStart;
   return data
-    .filter((item) => item.date >= dataflexStarMeta.startDate && item.date <= dataflexStarMeta.endDate)
+    .filter((item) => item.date >= "2026-03-01" && item.date <= dataflexStarMeta.endDate)
     .map((item) => {
       const hasWebuiData = item.date >= webuiStarMeta.startDate && item.date <= webuiStarMeta.endDate;
       const webuiStars = hasWebuiData ? webuiMap.get(item.date) || 0 : null;
@@ -2074,7 +2073,7 @@ function updateMainChartControls() {
 
 function renderWebuiDailyComparisonChart() {
   const rows = getWebuiComparisonRows();
-  const width = Math.max(1080, data.length * 8);
+  const width = Math.max(1080, data.length * 9);
   const height = 480;
   const margin = { top: 70, right: 70, bottom: 64, left: 54 };
   const chartW = width - margin.left - margin.right;
@@ -2141,13 +2140,6 @@ function renderWebuiDailyComparisonChart() {
       <text class="chart-label" x="${margin.left}" y="${margin.top - 12}">${dataflexStarMeta.startDate} 至 ${dataflexStarMeta.endDate}</text>
       ${totalsLabel}
     </svg>`;
-  const chart = document.getElementById("mainChart");
-  const svg = chart.querySelector("svg");
-  chart.classList.add("is-horizontally-scrollable");
-  svg.style.maxWidth = "none";
-  svg.style.width = `${width}px`;
-  chart.scrollLeft = 0;
-  requestAnimationFrame(() => syncMainChartScrollControls());
   bindWebuiCompareTooltip();
 }
 
@@ -2610,7 +2602,7 @@ function bindCompetitorTooltip() {
 }
 
 function renderTrendChart(containerId, tooltipId, series, options) {
-  const width = Math.max(1080, series.length * 8);
+  const width = Math.max(1080, series.length * 9);
   const height = options.height;
   const margin = { top: 34, right: 70, bottom: 64, left: 54 };
   const chartW = width - margin.left - margin.right;
@@ -2694,20 +2686,8 @@ function renderTrendChart(containerId, tooltipId, series, options) {
     </svg>`;
   const container = document.getElementById(containerId);
   const svg = container.querySelector("svg");
-  container.classList.toggle("is-horizontally-scrollable", Boolean(options.horizontalScroll));
-  if (options.horizontalScroll) {
-    svg.style.maxWidth = "none";
-    svg.style.width = `${width}px`;
-    const initialIndex = Math.max(0, series.findIndex((item) => item.date >= (options.initialDate || series[0].date)));
-    requestAnimationFrame(() => {
-      const targetLeft = Math.max(0, x(initialIndex) - margin.left - 12);
-      container.scrollLeft = targetLeft;
-      syncMainChartScrollControls();
-    });
-  } else {
-    svg.style.maxWidth = "";
-    svg.style.width = "";
-  }
+  svg.style.maxWidth = "";
+  svg.style.width = "";
   bindChartTooltip(containerId, tooltipId);
 }
 
@@ -2920,39 +2900,6 @@ function bindCalendarActionTooltip() {
   });
 }
 
-function syncMainChartScrollControls() {
-  const chart = document.getElementById("mainChart");
-  const slider = document.getElementById("mainChartScrollSlider");
-  const prev = document.getElementById("mainChartScrollPrev");
-  const next = document.getElementById("mainChartScrollNext");
-  if (!chart || !slider || !prev || !next) return;
-  const maxScroll = Math.max(0, chart.scrollWidth - chart.clientWidth);
-  slider.max = String(Math.round(maxScroll));
-  slider.value = String(Math.min(maxScroll, Math.round(chart.scrollLeft)));
-  slider.disabled = maxScroll <= 0;
-  prev.disabled = chart.scrollLeft <= 1;
-  next.disabled = chart.scrollLeft >= maxScroll - 1;
-}
-
-function initMainChartScrollControls() {
-  const chart = document.getElementById("mainChart");
-  const slider = document.getElementById("mainChartScrollSlider");
-  const prev = document.getElementById("mainChartScrollPrev");
-  const next = document.getElementById("mainChartScrollNext");
-  if (!chart || !slider || !prev || !next) return;
-  chart.addEventListener("scroll", syncMainChartScrollControls, { passive: true });
-  slider.addEventListener("input", (event) => {
-    chart.scrollLeft = Number(event.target.value);
-  });
-  prev.addEventListener("click", () => {
-    chart.scrollBy({ left: -Math.max(240, chart.clientWidth * 0.72), behavior: "smooth" });
-  });
-  next.addEventListener("click", () => {
-    chart.scrollBy({ left: Math.max(240, chart.clientWidth * 0.72), behavior: "smooth" });
-  });
-  window.addEventListener("resize", syncMainChartScrollControls);
-}
-
 function initCalendar() {
   document.getElementById("calendarPrev")?.addEventListener("click", () => {
     calendarMonth = addMonths(calendarMonth, -1);
@@ -3137,7 +3084,6 @@ async function refreshLiveData() {
 
 initCalendar();
 initMainChartModeToggle();
-initMainChartScrollControls();
 initCombinedWindowControls();
 initVisitorTrafficWindowControls();
 renderAll();
