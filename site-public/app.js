@@ -1226,7 +1226,12 @@ const actions = [
   ["2026-08-27", "LinkedIn", "dataflow-agent知识助手", "https://www.linkedin.com/feed/update/urn:li:activity:7498687335715418112?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEUUBPQBFc8EfKdyeyOBsOUABAvO12iGjao"],
   ["2026-08-31", "Reddit", "dataflow-ai应用数据管道", "https://www.reddit.com/r/AI_Application/comments/1w39vfd/validated_opensource_data_pipelines_for_rag_and/"],
   ["2026-08-31", "Reddit", "dataflow- ai conding data", "https://www.reddit.com/r/AI_Coders/comments/1w39rx3/old_data_needs_new_processing_for_ai_coding/"],
-  ["2026-09-01", "Facebook", "dataflow-数据处理", "https://www.facebook.com/groups/dataannotation/permalink/1782028909599809/"]
+  ["2026-09-01", "Facebook", "dataflow-数据处理", "https://www.facebook.com/groups/dataannotation/permalink/1782028909599809/"],
+  ["2026-09-02", "Reddit", "dataflow-rag data", "https://www.reddit.com/r/Rag/comments/1w56xe3/data_cleaning_comes_before_a_rag_knowledge_base/"],
+  ["2026-09-02", "LinkedIn", "dataflow-rag", "https://www.linkedin.com/feed/update/urn:li:groupPost:6731624-7500868171680141312/"],
+  ["2026-09-04", "Reddit", "dataflow-oss", "https://www.reddit.com/r/datascienceproject/comments/1w70y12/largescale_training_data_processing_is_becoming/"],
+  ["2026-09-04", "Reddit", "dataflow+dataflex", "https://www.reddit.com/r/LLMDevs/comments/1w71345/llm_development_is_turning_data_into_a/"],
+  ["2026-09-04", "LinkedIn", "dataflow+dataflex", "https://www.linkedin.com/feed/update/urn:li:groupPost:7036558-7501594450029215744/"]
 ].map(([date, channel, title, url]) => ({ date, channel, title, url }));
 
 const trafficRows = [
@@ -1313,7 +1318,21 @@ const trafficRows = [
   ["2026-08-19", 277, 136, 37, 28],
   ["2026-08-20", 328, 133, 309, 26],
   ["2026-08-21", 314, 123, 32, 24],
-  ["2026-08-22", 140, 57, 29, 20]
+  ["2026-08-22", 140, 57, 29, 20],
+  ["2026-08-23", 140, 64, 53, 23],
+  ["2026-08-24", 363, 161, 41, 36],
+  ["2026-08-25", 278, 141, 58, 43],
+  ["2026-08-26", 305, 141, 46, 31],
+  ["2026-08-27", 411, 203, 127, 51],
+  ["2026-08-28", 312, 134, 34, 30],
+  ["2026-08-29", 134, 65, 34, 26],
+  ["2026-08-30", 113, 52, 1431, 34],
+  ["2026-08-31", 294, 121, 158, 50],
+  ["2026-09-01", 256, 104, 110, 36],
+  ["2026-09-02", 252, 114, 41, 27],
+  ["2026-09-03", 207, 103, 44, 28],
+  ["2026-09-04", 198, 86, 275, 40],
+  ["2026-09-05", 99, 49, 24, 22]
 ].map(([date, views, visitors, clones, cloners]) => ({ date, views, visitors, clones, cloners }));
 
 const trafficSourceSnapshots = [
@@ -1640,6 +1659,33 @@ const trafficSourceSnapshots = [
       ["/tree/main/dataflow/core", 31, 17],
       ["/tree/main/dataflow/operators", 31, 17]
     ]
+  },
+  {
+    date: "2026-09-05",
+    referrers: [
+      ["github.com", 774, 306],
+      ["Google", 564, 243],
+      ["Bing", 133, 67],
+      ["zwt233.github.io", 35, 13],
+      ["opendcai.github.io", 30, 12],
+      ["chatgpt.com", 25, 13],
+      ["wcny4qa9krto.feishu.cn", 22, 9],
+      ["arxiv.org", 16, 6],
+      ["link.zhihu.com", 14, 7],
+      ["reddit.com", 12, 4]
+    ],
+    content: [
+      ["Overview", 1520, 909],
+      ["/blob/main/README-zh.md", 683, 354],
+      ["/tree/main/dataflow", 93, 66],
+      ["/tree/main", 80, 54],
+      ["/issues", 72, 31],
+      ["/discussions", 54, 11],
+      ["/pulls", 45, 18],
+      ["/stargazers", 32, 2],
+      ["/pull/522", 22, 8],
+      ["/tree/main/dataflow/operators", 18, 16]
+    ]
   }
 ].map((snapshot) => ({
   ...snapshot,
@@ -1701,8 +1747,15 @@ const phases = [
     id: "august",
     label: "8 月：滚动观察",
     start: "2026-08-01",
+    end: "2026-08-31",
+    note: "8/1-8/31 为完整月数据；日增按 starred_at 统计，月柱为 Gross 新增口径。"
+  },
+  {
+    id: "september",
+    label: "9 月：滚动观察",
+    start: "2026-09-01",
     end: "2026-09-09",
-    note: "8/1-09/09 为当前滚动月，数据随每日更新继续补齐。"
+    note: "9/1-09/09 为当前滚动月，数据随每日更新继续补齐。"
   }
 ];
 
@@ -1943,8 +1996,10 @@ function renderSummary() {
   const juneAvg = juneRows.reduce((sum, item) => sum + item.stars, 0) / juneRows.length;
   const julyRows = data.filter((item) => item.date >= "2026-07-01" && item.date <= "2026-07-31");
   const julyAvg = julyRows.reduce((sum, item) => sum + item.stars, 0) / julyRows.length;
-  const augustRows = data.filter((item) => item.date >= "2026-08-01");
+  const augustRows = data.filter((item) => item.date >= "2026-08-01" && item.date <= "2026-08-31");
   const augustAvg = augustRows.reduce((sum, item) => sum + item.stars, 0) / augustRows.length;
+  const septemberRows = data.filter((item) => item.date >= "2026-09-01");
+  const septemberAvg = septemberRows.reduce((sum, item) => sum + item.stars, 0) / septemberRows.length;
   const afterMarch1 = data.filter((item) => item.date >= "2026-03-01");
   const afterMarch1Total = afterMarch1.reduce((sum, item) => sum + item.stars, 0);
   const cards = [
@@ -1952,7 +2007,7 @@ function renderSummary() {
     ["3/1 后新增", formatNumber(afterMarch1Total), `2026-03-01 到 ${data.at(-1).date}，覆盖 3 月恢复、4 月抬升和 5 月高动量阶段。`],
     ["当前快照累计", formatNumber(data.at(-1).cumulative), "由 2026-01-01 前累计 1,805 加日增推算。"],
     ["最高单日", `${maxDay.stars}`, `${maxDay.date}，对应 5/15 后传播峰值。`],
-    ["8 月日均", augustAvg.toFixed(1), `7 月日均 ${julyAvg.toFixed(1)}，8 月当前为新月滚动观察。`]
+    ["9 月日均", septemberAvg.toFixed(1), `8 月日均 ${augustAvg.toFixed(1)}，9 月当前为新月滚动观察。`]
   ];
   document.getElementById("summary").innerHTML = cards
     .map(([label, value, note]) => `<article class="metric"><span>${label}</span><strong>${value}</strong><p>${note}</p></article>`)
@@ -1966,7 +2021,16 @@ function renderMainChart() {
     renderWebuiDailyComparisonChart();
     return;
   }
-  renderTrendChart("mainChart", "chartTooltip", data, { height: 480, hotThreshold: 50, maxStarsFloor: 100, bands: phases, weekendBars: true, monthlyAvgLabels: true });
+  renderTrendChart("mainChart", "chartTooltip", data, {
+    height: 480,
+    hotThreshold: 50,
+    maxStarsFloor: 100,
+    bands: phases,
+    weekendBars: true,
+    monthlyAvgLabels: true,
+    horizontalScroll: true,
+    initialDate: "2026-03-01"
+  });
 }
 
 function getWebuiComparisonRows() {
@@ -2077,6 +2141,13 @@ function renderWebuiDailyComparisonChart() {
       <text class="chart-label" x="${margin.left}" y="${margin.top - 12}">${dataflexStarMeta.startDate} 至 ${dataflexStarMeta.endDate}</text>
       ${totalsLabel}
     </svg>`;
+  const chart = document.getElementById("mainChart");
+  const svg = chart.querySelector("svg");
+  chart.classList.add("is-horizontally-scrollable");
+  svg.style.maxWidth = "none";
+  svg.style.width = `${width}px`;
+  chart.scrollLeft = 0;
+  requestAnimationFrame(() => syncMainChartScrollControls());
   bindWebuiCompareTooltip();
 }
 
@@ -2621,6 +2692,22 @@ function renderTrendChart(containerId, tooltipId, series, options) {
       <text class="chart-label" x="${width - margin.right + 8}" y="${yCum(maxCum) + 4}">${formatNumber(maxCum)}</text>
       <text class="chart-label" x="${width - margin.right + 8}" y="${yCum(minCum) + 4}">${formatNumber(minCum)}</text>
     </svg>`;
+  const container = document.getElementById(containerId);
+  const svg = container.querySelector("svg");
+  container.classList.toggle("is-horizontally-scrollable", Boolean(options.horizontalScroll));
+  if (options.horizontalScroll) {
+    svg.style.maxWidth = "none";
+    svg.style.width = `${width}px`;
+    const initialIndex = Math.max(0, series.findIndex((item) => item.date >= (options.initialDate || series[0].date)));
+    requestAnimationFrame(() => {
+      const targetLeft = Math.max(0, x(initialIndex) - margin.left - 12);
+      container.scrollLeft = targetLeft;
+      syncMainChartScrollControls();
+    });
+  } else {
+    svg.style.maxWidth = "";
+    svg.style.width = "";
+  }
   bindChartTooltip(containerId, tooltipId);
 }
 
@@ -2833,6 +2920,39 @@ function bindCalendarActionTooltip() {
   });
 }
 
+function syncMainChartScrollControls() {
+  const chart = document.getElementById("mainChart");
+  const slider = document.getElementById("mainChartScrollSlider");
+  const prev = document.getElementById("mainChartScrollPrev");
+  const next = document.getElementById("mainChartScrollNext");
+  if (!chart || !slider || !prev || !next) return;
+  const maxScroll = Math.max(0, chart.scrollWidth - chart.clientWidth);
+  slider.max = String(Math.round(maxScroll));
+  slider.value = String(Math.min(maxScroll, Math.round(chart.scrollLeft)));
+  slider.disabled = maxScroll <= 0;
+  prev.disabled = chart.scrollLeft <= 1;
+  next.disabled = chart.scrollLeft >= maxScroll - 1;
+}
+
+function initMainChartScrollControls() {
+  const chart = document.getElementById("mainChart");
+  const slider = document.getElementById("mainChartScrollSlider");
+  const prev = document.getElementById("mainChartScrollPrev");
+  const next = document.getElementById("mainChartScrollNext");
+  if (!chart || !slider || !prev || !next) return;
+  chart.addEventListener("scroll", syncMainChartScrollControls, { passive: true });
+  slider.addEventListener("input", (event) => {
+    chart.scrollLeft = Number(event.target.value);
+  });
+  prev.addEventListener("click", () => {
+    chart.scrollBy({ left: -Math.max(240, chart.clientWidth * 0.72), behavior: "smooth" });
+  });
+  next.addEventListener("click", () => {
+    chart.scrollBy({ left: Math.max(240, chart.clientWidth * 0.72), behavior: "smooth" });
+  });
+  window.addEventListener("resize", syncMainChartScrollControls);
+}
+
 function initCalendar() {
   document.getElementById("calendarPrev")?.addEventListener("click", () => {
     calendarMonth = addMonths(calendarMonth, -1);
@@ -3017,6 +3137,7 @@ async function refreshLiveData() {
 
 initCalendar();
 initMainChartModeToggle();
+initMainChartScrollControls();
 initCombinedWindowControls();
 initVisitorTrafficWindowControls();
 renderAll();

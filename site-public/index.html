@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Dataflow Star Dashboard</title>
     <link rel="icon" type="image/png" href="./favicon.png" />
-    <link rel="stylesheet" href="./styles.css?v=294-4d8a67f" />
+    <link rel="stylesheet" href="./styles.css?v=20260907-main-chart-scroll" />
   </head>
   <body>
     <header class="page-header">
@@ -44,6 +44,11 @@
             </div>
             <button id="mainChartModeToggle" type="button" class="chart-mode-button">DataFlex / WebUI 日增对比 →</button>
           </div>
+        </div>
+        <div class="chart-window-controls main-chart-scroll-controls" aria-label="主趋势图横向浏览">
+          <button id="mainChartScrollPrev" type="button" class="icon-button" aria-label="向左查看更早月份">←</button>
+          <input id="mainChartScrollSlider" class="year-slider" type="range" min="0" max="0" step="1" value="0" aria-label="主趋势图横向滚动位置" />
+          <button id="mainChartScrollNext" type="button" class="icon-button" aria-label="向右查看更新月份">→</button>
         </div>
         <div id="mainChart" class="chart-wrap" aria-label="Daily stars and cumulative stars chart"></div>
       </section>
@@ -214,6 +219,121 @@
       <section class="panel stargazer-overlap-panel">
         <div class="panel-heading">
           <div>
+            <h2>共同关注网络：兴趣相关度与潜在场景（9月）</h2>
+            <p>分析 9 月新增 stargazer，观察这些用户还共同 star 了哪些项目，用于判断当前开发者兴趣结构和 DataFlow 的潜在使用场景。</p>
+          </div>
+        </div>
+
+        <div class="overlap-meta">
+          <span>生成时间：2026-09-07 11:43 CST</span>
+          <span>9 月新增 stargazer：134</span>
+          <span>抓取：134 / 134，成功 134，失败 0</span>
+          <span>每人最多读取最近 300 个 starred repos</span>
+        </div>
+
+        <div class="overlap-insights">
+          <article>
+            <strong>9 月共同关注高度集中在 Agent、Coding 与数据工作流</strong>
+            <span>Top 12 项目中，openJiuwen-ai/jiuwenswarm、fuxicodex/Fuxi、Orkas-AI/Orkas、Pinvou/pinvou-agent 等 Agent / coding 项目占据核心位置，同时出现 jonexaiorg/jonex、tsingyuai/growth-lab 等数据解析、知识工程和增长自动化项目。</span>
+          </article>
+          <article>
+            <strong>9 月样本仍存在明显同源兴趣结构</strong>
+            <span>Top 12 共同关注项目之间的用户集合平均重叠 99%，区间 96% - 100%。这说明本周新增用户的兴趣结构高度集中，主要落在 Agent / Workflow、LLM Infra 与 RAG / Search 周边。</span>
+          </article>
+        </div>
+
+        <div class="overlap-table-grid">
+          <div class="overlap-table-intro">
+            <div>
+              <h3>共同关注项目 Top 30：兴趣相关度 + 场景推断</h3>
+            </div>
+            <div class="overlap-scroll-actions" aria-label="横向滚动表格">
+              <button type="button" onclick="this.closest('.overlap-table-grid').querySelector('.overlap-table-wrap').scrollBy({ left: -640, behavior: 'smooth' })">←</button>
+              <button type="button" onclick="this.closest('.overlap-table-grid').querySelector('.overlap-table-wrap').scrollBy({ left: 640, behavior: 'smooth' })">→</button>
+            </div>
+          </div>
+          <div class="table-wrap overlap-table-wrap">
+            <table class="overlap-table">
+              <thead>
+                <tr>
+                  <th>项目</th>
+                  <th>共同用户</th>
+                  <th>样本占比</th>
+                  <th>关系</th>
+                  <th>分类</th>
+                  <th>Stars</th>
+                  <th>描述</th>
+                  <th>具体关系 / 可设计场景</th>
+                  <th>语言</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><a href="https://github.com/openJiuwen-ai/jiuwenswarm" target="_blank" rel="noreferrer">openJiuwen-ai/jiuwenswarm</a></td><td>107</td><td>80%</td><td><span class="relation-pill downstream">下游平台</span></td><td>Agent / Workflow</td><td>8,174</td><td>JiuwenSwarm is an intelligent AI Agent built on openJiuwen. It extends the powerful capabilities of large language models directly to your fingertips through various communication apps you use daily.</td><td>这类项目偏 Agent / workflow 应用层。DataFlow 可作为前置数据工程层，准备知识库、任务样本、工具调用日志和评测数据。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/fuxicodex/Fuxi" target="_blank" rel="noreferrer">fuxicodex/Fuxi</a></td><td>107</td><td>80%</td><td><span class="relation-pill downstream">下游平台</span></td><td>Agent / Workflow</td><td>3,377</td><td>FuXi is a fast, self-contained AI coding agent that lives in your terminal — edit code, run commands, and drive tools, with cost-aware routing across LLM providers.</td><td>这类项目偏 Agent / workflow 应用层。DataFlow 可作为前置数据工程层，准备知识库、任务样本、工具调用日志和评测数据。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/tsingyuai/growth-lab" target="_blank" rel="noreferrer">tsingyuai/growth-lab</a></td><td>107</td><td>80%</td><td><span class="relation-pill downstream">典型下游</span></td><td>RAG / Search</td><td>1,989</td><td>An end-to-end growth tool that understands the product, fetch the data it needs, researches the market, executes campaigns, and reviews results to improve the next round of growth. 从代码到市场的开源端到端增长工具。</td><td>RAG、知识图谱和代码检索效果强依赖文档切分、结构化、元数据和索引质量。DataFlow 可作为前置数据管道，把原始资料变成高质量检索输入。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/jd-opensource/JoyAI-Video-Edit" target="_blank" rel="noreferrer">jd-opensource/JoyAI-Video-Edit</a></td><td>107</td><td>80%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>Other</td><td>1,805</td><td>[Official Repo] JoyAI-Video-Edit: Real-Time Open-Ended Video Editing with Autoregressive Diffusion</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号，保留观察。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/Orkas-AI/Orkas" target="_blank" rel="noreferrer">Orkas-AI/Orkas</a></td><td>107</td><td>80%</td><td><span class="relation-pill downstream">下游平台</span></td><td>Agent / Workflow</td><td>1,771</td><td>Open-source multi-agent AI desktop client for building and commanding AI agent teams through conversation.</td><td>这类项目偏 Agent / workflow 应用层。DataFlow 可作为前置数据工程层，准备知识库、任务样本、工具调用日志和评测数据。</td><td>TypeScript</td></tr>
+                <tr><td><a href="https://github.com/Pinvou/pinvou-agent" target="_blank" rel="noreferrer">Pinvou/pinvou-agent</a></td><td>107</td><td>80%</td><td><span class="relation-pill downstream">下游平台</span></td><td>Agent / Workflow</td><td>1,662</td><td>Open-source desktop AI agent for tools, files, knowledge, workflows, and real deliverables.</td><td>这类项目偏 Agent / workflow 应用层。DataFlow 可作为前置数据工程层，准备知识库、任务样本、工具调用日志和评测数据。</td><td>Rust</td></tr>
+                <tr><td><a href="https://github.com/open-gigaai/giga-world-1" target="_blank" rel="noreferrer">open-gigaai/giga-world-1</a></td><td>107</td><td>80%</td><td><span class="relation-pill downstream">下游训练</span></td><td>LLM Infra</td><td>1,153</td><td>A Roadmap to Build World Models for Robot Policy Evaluation</td><td>这类项目偏模型训练、推理或基础设施。DataFlow 的关系是训练/评测前的数据准备：样本筛选、格式转换、质量打分和 benchmark 构建。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/jonexaiorg/jonex" target="_blank" rel="noreferrer">jonexaiorg/jonex</a></td><td>107</td><td>80%</td><td><span class="relation-pill complement">数据链路</span></td><td>Data Prep / Dataset</td><td>1,002</td><td>All-in-One Multimodal Parsing Engine + Ontology-Powered, LLM Wiki-Driven AI-Ready Knowledge Engine</td><td>这类项目与数据解析、数据集构建和知识工程直接相关，可观察 DataFlow 在多模态解析、结构化和数据质量处理上的协同空间。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/DolphinAI2026/dolphin-code" target="_blank" rel="noreferrer">DolphinAI2026/dolphin-code</a></td><td>107</td><td>80%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>Other</td><td>976</td><td>-</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号，保留观察。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/TokenRhythm/opensquilla" target="_blank" rel="noreferrer">TokenRhythm/opensquilla</a></td><td>106</td><td>79%</td><td><span class="relation-pill downstream">下游平台</span></td><td>Agent / Workflow</td><td>6,961</td><td>OpenSquilla — Token-Efficient AI Agent with same budget, higher intelligence density</td><td>这类项目偏 Agent / workflow 应用层。DataFlow 可作为前置数据工程层，准备知识库、任务样本、工具调用日志和评测数据。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/AgnesAI-Labs/AgnesAI-Models" target="_blank" rel="noreferrer">AgnesAI-Labs/AgnesAI-Models</a></td><td>106</td><td>79%</td><td><span class="relation-pill downstream">下游平台</span></td><td>Agent / Workflow</td><td>5,072</td><td>Official Agnes AI gateway and model catalog for OpenAI-compatible text, image, video, and agent workflows.</td><td>这类项目偏 Agent / workflow 应用层。DataFlow 可作为前置数据工程层，准备知识库、任务样本、工具调用日志和评测数据。</td><td>-</td></tr>
+                <tr><td><a href="https://github.com/Ontos-AI/knowhere" target="_blank" rel="noreferrer">Ontos-AI/knowhere</a></td><td>106</td><td>79%</td><td><span class="relation-pill downstream">下游平台</span></td><td>Agent / Workflow</td><td>2,945</td><td>Knowhere extracts, parses, and outputs structured chunks ready for AI Agents and RAG.</td><td>这类项目偏 Agent / workflow 应用层。DataFlow 可作为前置数据工程层，准备知识库、任务样本、工具调用日志和评测数据。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/kairos-agi/kairos" target="_blank" rel="noreferrer">kairos-agi/kairos</a></td><td>106</td><td>79%</td><td><span class="relation-pill downstream">下游训练</span></td><td>LLM Infra</td><td>2,700</td><td>Official code for world model Kairos</td><td>这类项目偏模型训练、推理或基础设施。DataFlow 的关系是训练/评测前的数据准备：样本筛选、格式转换、质量打分和 benchmark 构建。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/AutoArk/GPA" target="_blank" rel="noreferrer">AutoArk/GPA</a></td><td>105</td><td>78%</td><td><span class="relation-pill downstream">下游训练</span></td><td>LLM Infra</td><td>3,127</td><td>[AutoArk] GPA (General Purpose Audio) can do ASR, TTS and voice conversion with one tiny model!</td><td>这类项目偏模型训练、推理或基础设施。DataFlow 的关系是训练/评测前的数据准备：样本筛选、格式转换、质量打分和 benchmark 构建。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/chaxiu/munk-ai" target="_blank" rel="noreferrer">chaxiu/munk-ai</a></td><td>105</td><td>78%</td><td><span class="relation-pill complement">评测配合</span></td><td>Evaluation</td><td>1,082</td><td>Self-improving AI testing engine across Android, iOS, and Web.</td><td>评测类项目需要稳定、可复现的输入样本和指标数据，DataFlow 可承担评测前的数据整理、case 生成和过滤。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/Nathan-code-development/AIApplication" target="_blank" rel="noreferrer">Nathan-code-development/AIApplication</a></td><td>105</td><td>78%</td><td><span class="relation-pill downstream">下游训练</span></td><td>LLM Infra</td><td>1,044</td><td>AI model square and chat with AI.</td><td>这类项目偏模型训练、推理或基础设施。DataFlow 的关系是训练/评测前的数据准备：样本筛选、格式转换、质量打分和 benchmark 构建。</td><td>C#</td></tr>
+                <tr><td><a href="https://github.com/AlanGin/A-Curated-Gas-Separation-Membrane-Database" target="_blank" rel="noreferrer">AlanGin/A-Curated-Gas-Separation-Membrane-Database</a></td><td>105</td><td>78%</td><td><span class="relation-pill competitor">相邻竞品</span></td><td>Data Engineering</td><td>978</td><td>-</td><td>这类项目与 DataFlow 的数据准备、数据质量或数据治理定位更接近，可作为相邻能力参照。</td><td>-</td></tr>
+                <tr><td><a href="https://github.com/EvoScientist/EvoScientist" target="_blank" rel="noreferrer">EvoScientist/EvoScientist</a></td><td>104</td><td>78%</td><td><span class="relation-pill downstream">典型下游</span></td><td>RAG / Search</td><td>4,659</td><td>Harness Vibe Research with Self-evolving AI Scientists</td><td>RAG、知识图谱和代码检索效果强依赖文档切分、结构化、元数据和索引质量。DataFlow 可作为前置数据管道，把原始资料变成高质量检索输入。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/wdcpclover/ai4paper" target="_blank" rel="noreferrer">wdcpclover/ai4paper</a></td><td>104</td><td>78%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>Other</td><td>3,313</td><td>PDF 全文翻译、文献检索、知识库问答与 AI 精读工具。</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号，保留观察。</td><td>HTML</td></tr>
+                <tr><td><a href="https://github.com/ascending-llc/jarvis-registry" target="_blank" rel="noreferrer">ascending-llc/jarvis-registry</a></td><td>104</td><td>78%</td><td><span class="relation-pill downstream">下游平台</span></td><td>Agent / Workflow</td><td>2,773</td><td>Connect AI copilots and autonomous agents to enterprise tools through an MCP / Agent gateway.</td><td>这类项目偏 Agent / workflow 应用层。DataFlow 可作为前置数据工程层，准备知识库、任务样本、工具调用日志和评测数据。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/TencentEdgeOne/edgeone-makers-tools" target="_blank" rel="noreferrer">TencentEdgeOne/edgeone-makers-tools</a></td><td>104</td><td>78%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>Other</td><td>1,896</td><td>-</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号，保留观察。</td><td>JavaScript</td></tr>
+                <tr><td><a href="https://github.com/shiwenwen/hope-agent" target="_blank" rel="noreferrer">shiwenwen/hope-agent</a></td><td>104</td><td>78%</td><td><span class="relation-pill downstream">下游平台</span></td><td>Agent / Workflow</td><td>1,553</td><td>跨端桌面 AI 助手，支持记忆、目标推进、动态编排和服务化部署。</td><td>这类项目偏 Agent / workflow 应用层。DataFlow 可作为前置数据工程层，准备知识库、任务样本、工具调用日志和评测数据。</td><td>Rust</td></tr>
+                <tr><td><a href="https://github.com/OpenSenseNova/SenseNova-Skills" target="_blank" rel="noreferrer">OpenSenseNova/SenseNova-Skills</a></td><td>103</td><td>77%</td><td><span class="relation-pill downstream">下游平台</span></td><td>Agent / Workflow</td><td>5,413</td><td>Modular SenseNova skills for building AI-powered office assistants and productivity workflows</td><td>这类项目偏 Agent / workflow 应用层。DataFlow 可作为前置数据工程层，准备知识库、任务样本、工具调用日志和评测数据。</td><td>JavaScript</td></tr>
+                <tr><td><a href="https://github.com/Einsia/OpenChronicle" target="_blank" rel="noreferrer">Einsia/OpenChronicle</a></td><td>103</td><td>77%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>Other</td><td>2,669</td><td>-</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号，保留观察。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/Octoday-Hub/Embodied-AI" target="_blank" rel="noreferrer">Octoday-Hub/Embodied-AI</a></td><td>103</td><td>77%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>Other</td><td>2,452</td><td>具身智能生态社区，聚合论文、项目、课程、工具、数据集与招聘资源。</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号，保留观察。</td><td>-</td></tr>
+                <tr><td><a href="https://github.com/team9ai/team9" target="_blank" rel="noreferrer">team9ai/team9</a></td><td>103</td><td>77%</td><td><span class="relation-pill downstream">下游平台</span></td><td>Agent / Workflow</td><td>1,984</td><td>Collaborative workspace for AI agents, built on OpenClaw and its ecosystem.</td><td>这类项目偏 Agent / workflow 应用层。DataFlow 可作为前置数据工程层，准备知识库、任务样本、工具调用日志和评测数据。</td><td>TypeScript</td></tr>
+                <tr><td><a href="https://github.com/Prismer-AI/PrismerCloud" target="_blank" rel="noreferrer">Prismer-AI/PrismerCloud</a></td><td>102</td><td>76%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>Other</td><td>1,410</td><td>Prismer Cloud</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号，保留观察。</td><td>TypeScript</td></tr>
+                <tr><td><a href="https://github.com/AutoArk/open-audio-opd" target="_blank" rel="noreferrer">AutoArk/open-audio-opd</a></td><td>102</td><td>76%</td><td><span class="relation-pill downstream">下游训练</span></td><td>LLM Infra</td><td>1,133</td><td>Industrial audio policy distillation training stack for ASR and TTS.</td><td>这类项目偏模型训练、推理或基础设施。DataFlow 的关系是训练/评测前的数据准备：样本筛选、格式转换、质量打分和 benchmark 构建。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/SuanmoSuanyangTechnology/MemoryBear" target="_blank" rel="noreferrer">SuanmoSuanyangTechnology/MemoryBear</a></td><td>101</td><td>75%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>Other</td><td>5,617</td><td>MemoryBear Equip AI with human-like memory capability</td><td>和 DataFlow 的直接产品链路较弱，更像样本中的泛技术兴趣或行业场景信号，保留观察。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/EverMind-AI/Raven" target="_blank" rel="noreferrer">EverMind-AI/Raven</a></td><td>101</td><td>75%</td><td><span class="relation-pill downstream">下游平台</span></td><td>Agent / Workflow</td><td>3,767</td><td>A trusted, persistent, self-evolving multi-agent ecosystem for all-domain collaboration.</td><td>这类项目偏 Agent / workflow 应用层。DataFlow 可作为前置数据工程层，准备知识库、任务样本、工具调用日志和评测数据。</td><td>Python</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="table-wrap overlap-category-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>兴趣分类</th>
+                  <th>共现次数</th>
+                  <th>占比</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Other</td><td>9,210</td><td>38%</td></tr>
+                <tr><td>Agent / Workflow</td><td>8,794</td><td>36%</td></tr>
+                <tr><td>LLM Infra</td><td>2,478</td><td>10%</td></tr>
+                <tr><td>RAG / Search</td><td>1,501</td><td>6%</td></tr>
+                <tr><td>Dev Tooling</td><td>899</td><td>4%</td></tr>
+                <tr><td>Data Engineering</td><td>842</td><td>3%</td></tr>
+                <tr><td>Evaluation</td><td>418</td><td>2%</td></tr>
+                <tr><td>Data Prep / Dataset</td><td>170</td><td>1%</td></tr>
+                <tr><td>Database / Storage</td><td>52</td><td>0%</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p class="overlap-note">口径：分析 2026-09-01 到 2026-09-07 给 OpenDCAI/DataFlow 点 star 的用户；覆盖 9 月当前新增 134 人，已抓取 134 人，并读取每人最近最多 300 个公开 starred repos；抓取失败 0 人。GitHub 不提供共同 star 图谱接口，本分析由公开 stargazer 和用户 starred repos 聚合而来，适合判断兴趣相关度，不等同于真实使用关系。完整结果见 <a href="./reports/stargazer-overlap-2026-09.md" target="_blank" rel="noreferrer">9 月分析报告</a>。</p>
+      </section>
+
+      <details class="panel stargazer-overlap-panel overlap-archive">
+        <summary>展开 8 月共同关注网络（715 人样本）</summary>
+        <div class="overlap-archive-body">
+        <div class="panel-heading">
+          <div>
             <h2>共同关注网络：兴趣相关度与潜在场景（8月）</h2>
             <p>滚动分析 8 月新增 stargazer，观察这些用户还共同 star 了哪些项目，用于判断开发者兴趣结构和 DataFlow 的潜在使用场景。</p>
           </div>
@@ -322,7 +442,8 @@
         </div>
 
         <p class="overlap-note">口径：分析 2026-08-01 到 2026-08-31 给 OpenDCAI/DataFlow 点 star 的用户；覆盖 8 月总增量 715 人，已打满抓取 715 人，并读取每人最近最多 300 个公开 starred repos；抓取失败 0 人。GitHub 不提供共同 star 图谱接口，本分析由公开 stargazer 和用户 starred repos 聚合而来，适合判断兴趣相关度，不等同于真实使用关系。</p>
-      </section>
+        </div>
+      </details>
 
       <details class="panel stargazer-overlap-panel overlap-archive">
         <summary>展开 7 月共同关注网络</summary>
@@ -560,6 +681,6 @@
       </details>
     </main>
 
-    <script src="./app.js?v=294-4d8a67f"></script>
+    <script src="./app.js?v=20260907-main-chart-scroll"></script>
   </body>
 </html>

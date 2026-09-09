@@ -246,12 +246,20 @@ function updateCurrentPhases(source, endDate, total) {
   });
   if (endDate <= "2026-07-31") return source;
 
-  return replacePhase(source, "august", {
+  source = replacePhase(source, "august", {
     id: "august",
     label: "8 月：滚动观察",
     start: "2026-08-01",
+    end: "2026-08-31",
+    note: "8/1-8/31 为完整月数据；日增按 starred_at 统计，月柱为 Gross 新增口径。"
+  });
+  if (endDate <= "2026-08-31") return source;
+  return replacePhase(source, "september", {
+    id: "september",
+    label: "9 月：滚动观察",
+    start: "2026-09-01",
     end: endDate,
-    note: `8/1-${endDate.slice(5).replace("-", "/")} 为当前滚动月，数据随每日更新继续补齐。`
+    note: `9/1-${endDate.slice(5).replace("-", "/")} 为当前滚动月，数据随每日更新继续补齐。`
   });
 }
 
