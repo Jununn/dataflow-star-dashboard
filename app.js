@@ -112,16 +112,16 @@ const dailyCounts = [
   ["2026-08-25", 9], ["2026-08-26", 4], ["2026-08-27", 21], ["2026-08-28", 17],
   ["2026-08-29", 24], ["2026-08-30", 10], ["2026-08-31", 16], ["2026-09-01", 20],
   ["2026-09-02", 21], ["2026-09-03", 23], ["2026-09-04", 18], ["2026-09-05", 25],
-  ["2026-09-06", 22], ["2026-09-07", 15], ["2026-09-08", 30], ["2026-09-09", 9]
+  ["2026-09-06", 22], ["2026-09-07", 15], ["2026-09-08", 30], ["2026-09-09", 14]
 ];
 
 const webuiStarMeta = {
   repo: "OpenDCAI/DataFlow-WebUI",
-  total: 234,
+  total: 235,
   startDate: "2026-07-15",
   endDate: "2026-09-09",
   beforeStart: 24,
-  generatedAt: "2026-09-09T03:17:31.816Z"
+  generatedAt: "2026-09-09T07:23:00.854Z"
 };
 
 const webuiDailyCounts = [
@@ -139,16 +139,16 @@ const webuiDailyCounts = [
   ["2026-08-28", 2], ["2026-08-29", 5], ["2026-08-30", 0], ["2026-08-31", 3],
   ["2026-09-01", 1], ["2026-09-02", 3], ["2026-09-03", 2], ["2026-09-04", 2],
   ["2026-09-05", 0], ["2026-09-06", 1], ["2026-09-07", 2], ["2026-09-08", 0],
-  ["2026-09-09", 0]
+  ["2026-09-09", 1]
 ];
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 2534,
+  total: 2536,
   startDate: "2026-04-03",
   endDate: "2026-09-09",
   beforeStart: 106,
-  generatedAt: "2026-09-09T03:17:37.199Z"
+  generatedAt: "2026-09-09T07:23:08.716Z"
 };
 
 const dataflexDailyCounts = [
@@ -191,7 +191,7 @@ const dataflexDailyCounts = [
   ["2026-08-25", 18], ["2026-08-26", 15], ["2026-08-27", 21], ["2026-08-28", 17],
   ["2026-08-29", 21], ["2026-08-30", 20], ["2026-08-31", 16], ["2026-09-01", 22],
   ["2026-09-02", 26], ["2026-09-03", 21], ["2026-09-04", 13], ["2026-09-05", 15],
-  ["2026-09-06", 20], ["2026-09-07", 23], ["2026-09-08", 27], ["2026-09-09", 1]
+  ["2026-09-06", 20], ["2026-09-07", 23], ["2026-09-08", 27], ["2026-09-09", 3]
 ];
 
 let competitorSnapshotDate = "2026-09-09";
@@ -948,9 +948,9 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 46
   },
   "2026-09-09": {
-    "datajuicer/data-juicer": 7020,
-    "Eventual-Inc/Daft": 5755,
-    "OpenDCAI/DataFlow": 8027,
+    "datajuicer/data-juicer": 7021,
+    "Eventual-Inc/Daft": 5756,
+    "OpenDCAI/DataFlow": 8032,
     "huggingface/datatrove": 3327,
     "NVIDIA-NeMo/DataDesigner": 2204,
     "NVIDIA-NeMo/Curator": 1755,
@@ -963,9 +963,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 7020,
-    yesterday: 0,
-    twoDayChange: 10,
+    total: 7021,
+    yesterday: 1,
+    twoDayChange: 11,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -978,14 +978,14 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-09-09", 7020]
+      ["2026-09-09", 7021]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
-    total: 5755,
-    yesterday: 0,
-    twoDayChange: 5,
+    total: 5756,
+    yesterday: 1,
+    twoDayChange: 6,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -1001,14 +1001,14 @@ const competitorRepos = [
       ["2025-10-01", 4400],
       ["2026-01-01", 4900],
       ["2026-04-01", 5350],
-      ["2026-09-09", 5755]
+      ["2026-09-09", 5756]
     ]
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 8027,
-    yesterday: 2,
-    twoDayChange: 43,
+    total: 8032,
+    yesterday: 5,
+    twoDayChange: 48,
     color: "#2d9cdb",
     points: null
   },
@@ -1843,11 +1843,11 @@ const phaseRegionStats = [
   {
     phaseId: "august",
     status: "complete",
-    totalStars: 894,
+    totalStars: 901,
     known: 155,
     china: 49,
     overseas: 106,
-    unknown: 739,
+    unknown: 746,
     note: "08/01-09/09 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Beijing 7","Shanghai 7","Beijing, China 5","China 5","Beijing,China 3","Hangzhou 3","beijing 2","135 Yaguan Road,Haihe Education Park,Tianjin,China 1","Beijing China 1","china 1"],
     topOverseasLocations: ["United States 20","Japan 6","Australia 4","Singapore 4","Germany 3","Hawaii 3","India 3","United Kingdom 3","Earth 2","Portland, OR 2"]
