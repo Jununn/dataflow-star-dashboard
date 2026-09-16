@@ -1,4 +1,4 @@
-let startTotal = 1747;
+let startTotal = 1746;
 const historicalStartTotal = 72;
 const historicalNonZeroDailyCounts = [
   ["2025-06-04", 1], ["2025-06-05", 8], ["2025-06-06", 26], ["2025-06-07", 21],
@@ -114,16 +114,16 @@ const dailyCounts = [
   ["2026-09-02", 21], ["2026-09-03", 23], ["2026-09-04", 18], ["2026-09-05", 25],
   ["2026-09-06", 22], ["2026-09-07", 15], ["2026-09-08", 29], ["2026-09-09", 29],
   ["2026-09-10", 23], ["2026-09-11", 38], ["2026-09-12", 21], ["2026-09-13", 26],
-  ["2026-09-14", 31], ["2026-09-15", 0], ["2026-09-16", 0]
+  ["2026-09-14", 31], ["2026-09-15", 0], ["2026-09-16", 3]
 ];
 
 const webuiStarMeta = {
   repo: "OpenDCAI/DataFlow-WebUI",
-  total: 237,
+  total: 238,
   startDate: "2026-07-15",
   endDate: "2026-09-16",
   beforeStart: 24,
-  generatedAt: "2026-09-16T02:40:33.957Z"
+  generatedAt: "2026-09-16T07:50:10.868Z"
 };
 
 const webuiDailyCounts = [
@@ -142,16 +142,16 @@ const webuiDailyCounts = [
   ["2026-09-01", 1], ["2026-09-02", 3], ["2026-09-03", 2], ["2026-09-04", 2],
   ["2026-09-05", 0], ["2026-09-06", 1], ["2026-09-07", 2], ["2026-09-08", 0],
   ["2026-09-09", 1], ["2026-09-10", 0], ["2026-09-11", 1], ["2026-09-12", 0],
-  ["2026-09-13", 0], ["2026-09-14", 0], ["2026-09-15", 1], ["2026-09-16", 0]
+  ["2026-09-13", 0], ["2026-09-14", 0], ["2026-09-15", 1], ["2026-09-16", 1]
 ];
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 2665,
+  total: 2671,
   startDate: "2026-04-03",
   endDate: "2026-09-16",
   beforeStart: 106,
-  generatedAt: "2026-09-16T02:40:41.315Z"
+  generatedAt: "2026-09-16T07:50:19.654Z"
 };
 
 const dataflexDailyCounts = [
@@ -196,7 +196,7 @@ const dataflexDailyCounts = [
   ["2026-09-02", 26], ["2026-09-03", 21], ["2026-09-04", 13], ["2026-09-05", 15],
   ["2026-09-06", 20], ["2026-09-07", 23], ["2026-09-08", 27], ["2026-09-09", 14],
   ["2026-09-10", 20], ["2026-09-11", 19], ["2026-09-12", 16], ["2026-09-13", 11],
-  ["2026-09-14", 20], ["2026-09-15", 30], ["2026-09-16", 2]
+  ["2026-09-14", 20], ["2026-09-15", 30], ["2026-09-16", 8]
 ];
 
 let competitorSnapshotDate = "2026-09-16";
@@ -1030,12 +1030,12 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 46
   },
   "2026-09-16": {
-    "datajuicer/data-juicer": 7049,
+    "datajuicer/data-juicer": 7050,
     "Eventual-Inc/Daft": 5768,
-    "OpenDCAI/DataFlow": 8181,
+    "OpenDCAI/DataFlow": 8183,
     "huggingface/datatrove": 3336,
-    "NVIDIA-NeMo/DataDesigner": 2217,
-    "NVIDIA-NeMo/Curator": 1768,
+    "NVIDIA-NeMo/DataDesigner": 2219,
+    "NVIDIA-NeMo/Curator": 1769,
     "tinyfish-io/bigset": 1701,
     "OpenDataArena/OpenDataArena-Tool": 146,
     "InternScience/SciDataCopilot": 46
@@ -1045,9 +1045,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 7049,
-    yesterday: 4,
-    twoDayChange: 8,
+    total: 7050,
+    yesterday: 1,
+    twoDayChange: 9,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -1060,13 +1060,13 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-09-16", 7049]
+      ["2026-09-16", 7050]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
     total: 5768,
-    yesterday: -1,
+    yesterday: 0,
     twoDayChange: 6,
     color: "#f2994a",
     points: [
@@ -1088,16 +1088,16 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 8181,
-    yesterday: -2,
-    twoDayChange: 5,
+    total: 8183,
+    yesterday: 2,
+    twoDayChange: 7,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
     total: 3336,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 3,
     color: "#3fb950",
     points: [
@@ -1116,23 +1116,23 @@ const competitorRepos = [
   },
   {
     name: "NVIDIA-NeMo/DataDesigner",
-    total: 2217,
-    yesterday: 1,
-    twoDayChange: 7,
+    total: 2219,
+    yesterday: 2,
+    twoDayChange: 9,
     color: "#e94b35",
     points: [
       ["2025-10-16", 0],
       ["2026-01-01", 500],
       ["2026-03-01", 700],
       ["2026-04-01", 1000],
-      ["2026-09-16", 2217]
+      ["2026-09-16", 2219]
     ]
   },
   {
     name: "NVIDIA-NeMo/Curator",
-    total: 1768,
+    total: 1769,
     yesterday: 1,
-    twoDayChange: 2,
+    twoDayChange: 3,
     color: "#e879b4",
     points: [
       ["2024-03-14", 0],
@@ -1143,7 +1143,7 @@ const competitorRepos = [
       ["2025-07-01", 900],
       ["2025-12-01", 1200],
       ["2026-04-01", 1450],
-      ["2026-09-16", 1768]
+      ["2026-09-16", 1769]
     ]
   },
   {
