@@ -123,7 +123,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-09-17",
   beforeStart: 24,
-  generatedAt: "2026-09-17T07:54:55.094Z"
+  generatedAt: "2026-09-17T08:55:43.203Z"
 };
 
 const webuiDailyCounts = [
@@ -148,11 +148,11 @@ const webuiDailyCounts = [
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 2690,
+  total: 2692,
   startDate: "2026-04-03",
   endDate: "2026-09-17",
   beforeStart: 106,
-  generatedAt: "2026-09-17T07:55:02.802Z"
+  generatedAt: "2026-09-17T08:55:50.902Z"
 };
 
 const dataflexDailyCounts = [
@@ -197,7 +197,7 @@ const dataflexDailyCounts = [
   ["2026-09-02", 26], ["2026-09-03", 21], ["2026-09-04", 13], ["2026-09-05", 15],
   ["2026-09-06", 20], ["2026-09-07", 23], ["2026-09-08", 27], ["2026-09-09", 14],
   ["2026-09-10", 20], ["2026-09-11", 19], ["2026-09-12", 16], ["2026-09-13", 11],
-  ["2026-09-14", 20], ["2026-09-15", 30], ["2026-09-16", 20], ["2026-09-17", 7]
+  ["2026-09-14", 20], ["2026-09-15", 30], ["2026-09-16", 20], ["2026-09-17", 9]
 ];
 
 let competitorSnapshotDate = "2026-09-17";
@@ -1042,7 +1042,7 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 46
   },
   "2026-09-17": {
-    "datajuicer/data-juicer": 7055,
+    "datajuicer/data-juicer": 7056,
     "Eventual-Inc/Daft": 5773,
     "OpenDCAI/DataFlow": 8182,
     "huggingface/datatrove": 3340,
@@ -1057,9 +1057,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 7055,
-    yesterday: 2,
-    twoDayChange: 10,
+    total: 7056,
+    yesterday: 1,
+    twoDayChange: 11,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -1072,13 +1072,13 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-09-17", 7055]
+      ["2026-09-17", 7056]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
     total: 5773,
-    yesterday: 3,
+    yesterday: 0,
     twoDayChange: 4,
     color: "#f2994a",
     points: [
@@ -1109,7 +1109,7 @@ const competitorRepos = [
   {
     name: "huggingface/datatrove",
     total: 3340,
-    yesterday: 3,
+    yesterday: 0,
     twoDayChange: 5,
     color: "#3fb950",
     points: [
@@ -1129,7 +1129,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/DataDesigner",
     total: 2220,
-    yesterday: -1,
+    yesterday: 0,
     twoDayChange: 4,
     color: "#e94b35",
     points: [
@@ -1161,7 +1161,7 @@ const competitorRepos = [
   {
     name: "tinyfish-io/bigset",
     total: 1702,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 1,
     color: "#14b8a6",
     points: [
