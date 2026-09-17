@@ -1,4 +1,4 @@
-let startTotal = 1743;
+let startTotal = 1742;
 const historicalStartTotal = 72;
 const historicalNonZeroDailyCounts = [
   ["2025-06-04", 1], ["2025-06-05", 8], ["2025-06-06", 26], ["2025-06-07", 21],
@@ -114,16 +114,16 @@ const dailyCounts = [
   ["2026-09-02", 21], ["2026-09-03", 23], ["2026-09-04", 18], ["2026-09-05", 25],
   ["2026-09-06", 22], ["2026-09-07", 15], ["2026-09-08", 29], ["2026-09-09", 29],
   ["2026-09-10", 23], ["2026-09-11", 38], ["2026-09-12", 21], ["2026-09-13", 26],
-  ["2026-09-14", 31], ["2026-09-15", 0], ["2026-09-16", 5], ["2026-09-17", 0]
+  ["2026-09-14", 31], ["2026-09-15", 0], ["2026-09-16", 5], ["2026-09-17", 3]
 ];
 
 const webuiStarMeta = {
   repo: "OpenDCAI/DataFlow-WebUI",
-  total: 238,
+  total: 239,
   startDate: "2026-07-15",
   endDate: "2026-09-17",
   beforeStart: 24,
-  generatedAt: "2026-09-17T08:55:43.203Z"
+  generatedAt: "2026-09-17T15:26:32.327Z"
 };
 
 const webuiDailyCounts = [
@@ -143,16 +143,16 @@ const webuiDailyCounts = [
   ["2026-09-05", 0], ["2026-09-06", 1], ["2026-09-07", 2], ["2026-09-08", 0],
   ["2026-09-09", 1], ["2026-09-10", 0], ["2026-09-11", 1], ["2026-09-12", 0],
   ["2026-09-13", 0], ["2026-09-14", 0], ["2026-09-15", 1], ["2026-09-16", 1],
-  ["2026-09-17", 0]
+  ["2026-09-17", 1]
 ];
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 2692,
+  total: 2696,
   startDate: "2026-04-03",
   endDate: "2026-09-17",
   beforeStart: 106,
-  generatedAt: "2026-09-17T08:55:50.902Z"
+  generatedAt: "2026-09-17T15:26:42.434Z"
 };
 
 const dataflexDailyCounts = [
@@ -197,7 +197,7 @@ const dataflexDailyCounts = [
   ["2026-09-02", 26], ["2026-09-03", 21], ["2026-09-04", 13], ["2026-09-05", 15],
   ["2026-09-06", 20], ["2026-09-07", 23], ["2026-09-08", 27], ["2026-09-09", 14],
   ["2026-09-10", 20], ["2026-09-11", 19], ["2026-09-12", 16], ["2026-09-13", 11],
-  ["2026-09-14", 20], ["2026-09-15", 30], ["2026-09-16", 20], ["2026-09-17", 9]
+  ["2026-09-14", 20], ["2026-09-15", 30], ["2026-09-16", 20], ["2026-09-17", 13]
 ];
 
 let competitorSnapshotDate = "2026-09-17";
@@ -1042,11 +1042,11 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 46
   },
   "2026-09-17": {
-    "datajuicer/data-juicer": 7056,
-    "Eventual-Inc/Daft": 5773,
-    "OpenDCAI/DataFlow": 8182,
+    "datajuicer/data-juicer": 7057,
+    "Eventual-Inc/Daft": 5774,
+    "OpenDCAI/DataFlow": 8184,
     "huggingface/datatrove": 3340,
-    "NVIDIA-NeMo/DataDesigner": 2220,
+    "NVIDIA-NeMo/DataDesigner": 2223,
     "NVIDIA-NeMo/Curator": 1769,
     "tinyfish-io/bigset": 1702,
     "OpenDataArena/OpenDataArena-Tool": 146,
@@ -1057,9 +1057,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 7056,
+    total: 7057,
     yesterday: 1,
-    twoDayChange: 11,
+    twoDayChange: 12,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -1072,14 +1072,14 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-09-17", 7056]
+      ["2026-09-17", 7057]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
-    total: 5773,
-    yesterday: 0,
-    twoDayChange: 4,
+    total: 5774,
+    yesterday: 1,
+    twoDayChange: 5,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -1095,14 +1095,14 @@ const competitorRepos = [
       ["2025-10-01", 4400],
       ["2026-01-01", 4900],
       ["2026-04-01", 5350],
-      ["2026-09-17", 5773]
+      ["2026-09-17", 5774]
     ]
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 8182,
-    yesterday: 0,
-    twoDayChange: -1,
+    total: 8184,
+    yesterday: 2,
+    twoDayChange: 1,
     color: "#2d9cdb",
     points: null
   },
@@ -1128,16 +1128,16 @@ const competitorRepos = [
   },
   {
     name: "NVIDIA-NeMo/DataDesigner",
-    total: 2220,
-    yesterday: 0,
-    twoDayChange: 4,
+    total: 2223,
+    yesterday: 3,
+    twoDayChange: 7,
     color: "#e94b35",
     points: [
       ["2025-10-16", 0],
       ["2026-01-01", 500],
       ["2026-03-01", 700],
       ["2026-04-01", 1000],
-      ["2026-09-17", 2220]
+      ["2026-09-17", 2223]
     ]
   },
   {
