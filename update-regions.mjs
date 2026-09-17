@@ -179,7 +179,8 @@ const targetRanges = [
   { phaseId: "may", start: "2026-05-01", end: "2026-05-31" },
   { phaseId: "june", start: "2026-06-01", end: "2026-06-30" },
   { phaseId: "july", start: "2026-07-01", end: "2026-07-31" },
-  { phaseId: "august", start: "2026-08-01", end: latestDailyDate }
+  { phaseId: "august", start: "2026-08-01", end: "2026-08-31" },
+  { phaseId: "september", start: "2026-09-01", end: latestDailyDate }
 ];
 
 function isRateLimitError(error) {

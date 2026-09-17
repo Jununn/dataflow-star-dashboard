@@ -1325,7 +1325,10 @@ const actions = [
   ["2026-09-02", "LinkedIn", "dataflow-rag", "https://www.linkedin.com/feed/update/urn:li:groupPost:6731624-7500868171680141312/"],
   ["2026-09-04", "Reddit", "dataflow-oss", "https://www.reddit.com/r/datascienceproject/comments/1w70y12/largescale_training_data_processing_is_becoming/"],
   ["2026-09-04", "Reddit", "dataflow+dataflex", "https://www.reddit.com/r/LLMDevs/comments/1w71345/llm_development_is_turning_data_into_a/"],
-  ["2026-09-04", "LinkedIn", "dataflow+dataflex", "https://www.linkedin.com/feed/update/urn:li:groupPost:7036558-7501594450029215744/"]
+  ["2026-09-04", "LinkedIn", "dataflow+dataflex", "https://www.linkedin.com/feed/update/urn:li:groupPost:7036558-7501594450029215744/"],
+  ["2026-09-11", "Reddit", "dataflow-rag数据准备", "https://www.reddit.com/r/Rag/comments/1wddw34/rag_data_preparation_still_takes_too_much_manual/"],
+  ["2026-09-11", "Reddit", "dataflow-rag data", "https://www.reddit.com/r/ETL/comments/1wddwch/rag_data_preparation_still_takes_too_much_manual/"],
+  ["2026-09-16", "Facebook", "dataflow-rag", "https://www.facebook.com/groups/968349588962639/permalink/1101843982279865/"]
 ].map(([date, channel, title, url]) => ({ date, channel, title, url }));
 
 const trafficRows = [
@@ -1945,6 +1948,18 @@ const phaseRegionStats = [
     note: "08/01-09/11 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Beijing 7","Shanghai 7","Beijing, China 5","China 5","Beijing,China 3","Hangzhou 3","beijing 2","135 Yaguan Road,Haihe Education Park,Tianjin,China 1","Beijing China 1","china 1"],
     topOverseasLocations: ["United States 21","Japan 6","Australia 4","Singapore 4","Germany 3","Hawaii 3","India 3","United Kingdom 3","Earth 2","Portland, OR 2"]
+  },
+  {
+    phaseId: "september",
+    status: "complete",
+    totalStars: 201,
+    known: 23,
+    china: 8,
+    overseas: 15,
+    unknown: 178,
+    note: "09/01-09/09 地区统计已用 GitHub GraphQL 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    topChinaLocations: ["Shanghai 2","beijing 1","Beijing 1","China 1","hefei China 1","Shenzhen, China 1","Shenzhen, Guangdong, China 1"],
+    topOverseasLocations: ["Germany 2","United States 2","🔗 Bridging wet lab and dry lab 1","Australia 1","Chong Qing 1","Indonesia 1","Lisboa 1","Manila, Philippines 1","Portland, OR 1","SF 1"]
   }
 ];
 
