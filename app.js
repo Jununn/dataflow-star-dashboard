@@ -1,4 +1,4 @@
-let startTotal = 1736;
+let startTotal = 1735;
 const historicalStartTotal = 72;
 const historicalNonZeroDailyCounts = [
   ["2025-06-04", 1], ["2025-06-05", 8], ["2025-06-06", 26], ["2025-06-07", 21],
@@ -126,7 +126,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-09-26",
   beforeStart: 24,
-  generatedAt: "2026-09-26T07:56:18.627Z"
+  generatedAt: "2026-09-26T14:53:17.770Z"
 };
 
 const webuiDailyCounts = [
@@ -157,7 +157,7 @@ const dataflexStarMeta = {
   startDate: "2026-04-03",
   endDate: "2026-09-26",
   beforeStart: 106,
-  generatedAt: "2026-09-26T07:56:25.941Z"
+  generatedAt: "2026-09-26T14:53:25.574Z"
 };
 
 const dataflexDailyCounts = [
@@ -1149,9 +1149,9 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 46
   },
   "2026-09-26": {
-    "datajuicer/data-juicer": 7094,
-    "Eventual-Inc/Daft": 5782,
-    "OpenDCAI/DataFlow": 8212,
+    "datajuicer/data-juicer": 7095,
+    "Eventual-Inc/Daft": 5783,
+    "OpenDCAI/DataFlow": 8211,
     "huggingface/datatrove": 3356,
     "NVIDIA-NeMo/DataDesigner": 2285,
     "NVIDIA-NeMo/Curator": 1783,
@@ -1164,9 +1164,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 7094,
+    total: 7095,
     yesterday: 1,
-    twoDayChange: 2,
+    twoDayChange: 3,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -1179,14 +1179,14 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-09-26", 7094]
+      ["2026-09-26", 7095]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
-    total: 5782,
-    yesterday: 0,
-    twoDayChange: 1,
+    total: 5783,
+    yesterday: 1,
+    twoDayChange: 2,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -1202,21 +1202,21 @@ const competitorRepos = [
       ["2025-10-01", 4400],
       ["2026-01-01", 4900],
       ["2026-04-01", 5350],
-      ["2026-09-26", 5782]
+      ["2026-09-26", 5783]
     ]
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 8212,
-    yesterday: 2,
-    twoDayChange: 2,
+    total: 8211,
+    yesterday: -1,
+    twoDayChange: 1,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
     total: 3356,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 4,
     color: "#3fb950",
     points: [
@@ -1236,7 +1236,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/DataDesigner",
     total: 2285,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 8,
     color: "#e94b35",
     points: [
@@ -1250,7 +1250,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/Curator",
     total: 1783,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 3,
     color: "#e879b4",
     points: [
