@@ -1,4 +1,4 @@
-let startTotal = 1735;
+let startTotal = 1734;
 const historicalStartTotal = 72;
 const historicalNonZeroDailyCounts = [
   ["2025-06-04", 1], ["2025-06-05", 8], ["2025-06-06", 26], ["2025-06-07", 21],
@@ -126,7 +126,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-09-28",
   beforeStart: 24,
-  generatedAt: "2026-09-28T08:52:45.291Z"
+  generatedAt: "2026-09-28T18:30:15.659Z"
 };
 
 const webuiDailyCounts = [
@@ -153,11 +153,11 @@ const webuiDailyCounts = [
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 2848,
+  total: 2849,
   startDate: "2026-04-03",
   endDate: "2026-09-28",
   beforeStart: 106,
-  generatedAt: "2026-09-28T08:52:52.604Z"
+  generatedAt: "2026-09-28T18:30:26.162Z"
 };
 
 const dataflexDailyCounts = [
@@ -205,7 +205,7 @@ const dataflexDailyCounts = [
   ["2026-09-14", 20], ["2026-09-15", 30], ["2026-09-16", 20], ["2026-09-17", 15],
   ["2026-09-18", 19], ["2026-09-19", 27], ["2026-09-20", 18], ["2026-09-21", 16],
   ["2026-09-22", 23], ["2026-09-23", 21], ["2026-09-24", 12], ["2026-09-25", 14],
-  ["2026-09-26", 0], ["2026-09-27", 0], ["2026-09-28", 1]
+  ["2026-09-26", 0], ["2026-09-27", 0], ["2026-09-28", 2]
 ];
 
 let competitorSnapshotDate = "2026-09-28";
@@ -1171,13 +1171,13 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 46
   },
   "2026-09-28": {
-    "datajuicer/data-juicer": 7098,
-    "Eventual-Inc/Daft": 5788,
-    "OpenDCAI/DataFlow": 8215,
+    "datajuicer/data-juicer": 7100,
+    "Eventual-Inc/Daft": 5789,
+    "OpenDCAI/DataFlow": 8214,
     "huggingface/datatrove": 3360,
-    "NVIDIA-NeMo/DataDesigner": 2287,
-    "NVIDIA-NeMo/Curator": 1783,
-    "tinyfish-io/bigset": 1709,
+    "NVIDIA-NeMo/DataDesigner": 2288,
+    "NVIDIA-NeMo/Curator": 1784,
+    "tinyfish-io/bigset": 1708,
     "OpenDataArena/OpenDataArena-Tool": 146,
     "InternScience/SciDataCopilot": 46
   }
@@ -1186,9 +1186,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 7098,
+    total: 7100,
     yesterday: 2,
-    twoDayChange: 3,
+    twoDayChange: 5,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -1201,14 +1201,14 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-09-28", 7098]
+      ["2026-09-28", 7100]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
-    total: 5788,
-    yesterday: 3,
-    twoDayChange: 5,
+    total: 5789,
+    yesterday: 1,
+    twoDayChange: 6,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -1224,21 +1224,21 @@ const competitorRepos = [
       ["2025-10-01", 4400],
       ["2026-01-01", 4900],
       ["2026-04-01", 5350],
-      ["2026-09-28", 5788]
+      ["2026-09-28", 5789]
     ]
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 8215,
-    yesterday: 4,
-    twoDayChange: 4,
+    total: 8214,
+    yesterday: -1,
+    twoDayChange: 3,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
     total: 3360,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 4,
     color: "#3fb950",
     points: [
@@ -1257,23 +1257,23 @@ const competitorRepos = [
   },
   {
     name: "NVIDIA-NeMo/DataDesigner",
-    total: 2287,
-    yesterday: 2,
-    twoDayChange: 2,
+    total: 2288,
+    yesterday: 1,
+    twoDayChange: 3,
     color: "#e94b35",
     points: [
       ["2025-10-16", 0],
       ["2026-01-01", 500],
       ["2026-03-01", 700],
       ["2026-04-01", 1000],
-      ["2026-09-28", 2287]
+      ["2026-09-28", 2288]
     ]
   },
   {
     name: "NVIDIA-NeMo/Curator",
-    total: 1783,
-    yesterday: 0,
-    twoDayChange: 0,
+    total: 1784,
+    yesterday: 1,
+    twoDayChange: 1,
     color: "#e879b4",
     points: [
       ["2024-03-14", 0],
@@ -1284,18 +1284,18 @@ const competitorRepos = [
       ["2025-07-01", 900],
       ["2025-12-01", 1200],
       ["2026-04-01", 1450],
-      ["2026-09-28", 1783]
+      ["2026-09-28", 1784]
     ]
   },
   {
     name: "tinyfish-io/bigset",
-    total: 1709,
-    yesterday: 1,
-    twoDayChange: 2,
+    total: 1708,
+    yesterday: -1,
+    twoDayChange: 1,
     color: "#14b8a6",
     points: [
       ["2026-05-15", 0],
-      ["2026-09-28", 1709]
+      ["2026-09-28", 1708]
     ]
   },
   {
