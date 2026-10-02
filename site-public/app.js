@@ -118,16 +118,16 @@ const dailyCounts = [
   ["2026-09-18", 4], ["2026-09-19", 3], ["2026-09-20", 3], ["2026-09-21", 5],
   ["2026-09-22", 2], ["2026-09-23", 6], ["2026-09-24", 9], ["2026-09-25", 0],
   ["2026-09-26", 2], ["2026-09-27", 1], ["2026-09-28", 3], ["2026-09-29", 3],
-  ["2026-09-30", 4], ["2026-10-01", 1]
+  ["2026-09-30", 4], ["2026-10-01", 1], ["2026-10-02", 3]
 ];
 
 const webuiStarMeta = {
   repo: "OpenDCAI/DataFlow-WebUI",
   total: 247,
   startDate: "2026-07-15",
-  endDate: "2026-10-01",
+  endDate: "2026-10-02",
   beforeStart: 24,
-  generatedAt: "2026-10-01T17:16:50.800Z"
+  generatedAt: "2026-10-02T08:49:57.506Z"
 };
 
 const webuiDailyCounts = [
@@ -150,16 +150,16 @@ const webuiDailyCounts = [
   ["2026-09-17", 1], ["2026-09-18", 0], ["2026-09-19", 1], ["2026-09-20", 1],
   ["2026-09-21", 1], ["2026-09-22", 1], ["2026-09-23", 1], ["2026-09-24", 0],
   ["2026-09-25", 0], ["2026-09-26", 1], ["2026-09-27", 0], ["2026-09-28", 0],
-  ["2026-09-29", 0], ["2026-09-30", 1], ["2026-10-01", 1]
+  ["2026-09-29", 0], ["2026-09-30", 1], ["2026-10-01", 1], ["2026-10-02", 0]
 ];
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 2889,
+  total: 2900,
   startDate: "2026-04-03",
-  endDate: "2026-10-01",
+  endDate: "2026-10-02",
   beforeStart: 106,
-  generatedAt: "2026-10-01T17:17:01.113Z"
+  generatedAt: "2026-10-02T08:50:06.193Z"
 };
 
 const dataflexDailyCounts = [
@@ -208,11 +208,11 @@ const dataflexDailyCounts = [
   ["2026-09-18", 19], ["2026-09-19", 27], ["2026-09-20", 18], ["2026-09-21", 16],
   ["2026-09-22", 23], ["2026-09-23", 21], ["2026-09-24", 12], ["2026-09-25", 14],
   ["2026-09-26", 0], ["2026-09-27", 0], ["2026-09-28", 6], ["2026-09-29", 19],
-  ["2026-09-30", 6], ["2026-10-01", 11]
+  ["2026-09-30", 6], ["2026-10-01", 15], ["2026-10-02", 7]
 ];
 
-let competitorSnapshotDate = "2026-10-01";
-let competitorPreviousSnapshotDate = "2026-09-29";
+let competitorSnapshotDate = "2026-10-02";
+let competitorPreviousSnapshotDate = "2026-09-30";
 
 
 const competitorSnapshots = {
@@ -1216,6 +1216,17 @@ const competitorSnapshots = {
     "tinyfish-io/bigset": 1703,
     "OpenDataArena/OpenDataArena-Tool": 146,
     "InternScience/SciDataCopilot": 46
+  },
+  "2026-10-02": {
+    "datajuicer/data-juicer": 7110,
+    "Eventual-Inc/Daft": 5793,
+    "OpenDCAI/DataFlow": 8190,
+    "huggingface/datatrove": 3366,
+    "NVIDIA-NeMo/DataDesigner": 2296,
+    "NVIDIA-NeMo/Curator": 1789,
+    "tinyfish-io/bigset": 1703,
+    "OpenDataArena/OpenDataArena-Tool": 146,
+    "InternScience/SciDataCopilot": 46
   }
 };
 
@@ -1224,7 +1235,7 @@ const competitorRepos = [
     name: "datajuicer/data-juicer",
     total: 7110,
     yesterday: 0,
-    twoDayChange: 5,
+    twoDayChange: 2,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -1237,14 +1248,14 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-10-01", 7110]
+      ["2026-10-02", 7110]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
     total: 5793,
     yesterday: 0,
-    twoDayChange: 3,
+    twoDayChange: 1,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -1260,14 +1271,14 @@ const competitorRepos = [
       ["2025-10-01", 4400],
       ["2026-01-01", 4900],
       ["2026-04-01", 5350],
-      ["2026-10-01", 5793]
+      ["2026-10-02", 5793]
     ]
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 8187,
-    yesterday: -32,
-    twoDayChange: -27,
+    total: 8190,
+    yesterday: 3,
+    twoDayChange: -28,
     color: "#2d9cdb",
     points: null
   },
@@ -1275,7 +1286,7 @@ const competitorRepos = [
     name: "huggingface/datatrove",
     total: 3366,
     yesterday: 0,
-    twoDayChange: 2,
+    twoDayChange: 0,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -1288,13 +1299,13 @@ const competitorRepos = [
       ["2025-06-01", 2400],
       ["2025-10-01", 2650],
       ["2026-03-01", 2900],
-      ["2026-10-01", 3366]
+      ["2026-10-02", 3366]
     ]
   },
   {
     name: "NVIDIA-NeMo/DataDesigner",
-    total: 2295,
-    yesterday: 0,
+    total: 2296,
+    yesterday: 1,
     twoDayChange: 3,
     color: "#e94b35",
     points: [
@@ -1302,7 +1313,7 @@ const competitorRepos = [
       ["2026-01-01", 500],
       ["2026-03-01", 700],
       ["2026-04-01", 1000],
-      ["2026-10-01", 2295]
+      ["2026-10-02", 2296]
     ]
   },
   {
@@ -1320,18 +1331,18 @@ const competitorRepos = [
       ["2025-07-01", 900],
       ["2025-12-01", 1200],
       ["2026-04-01", 1450],
-      ["2026-10-01", 1789]
+      ["2026-10-02", 1789]
     ]
   },
   {
     name: "tinyfish-io/bigset",
     total: 1703,
-    yesterday: -8,
+    yesterday: 0,
     twoDayChange: -8,
     color: "#14b8a6",
     points: [
       ["2026-05-15", 0],
-      ["2026-10-01", 1703]
+      ["2026-10-02", 1703]
     ]
   },
   {
@@ -1344,7 +1355,7 @@ const competitorRepos = [
       ["2025-07-19", 0],
       ["2025-11-01", 60],
       ["2026-03-01", 120],
-      ["2026-10-01", 146]
+      ["2026-10-02", 146]
     ]
   },
   {
@@ -1355,7 +1366,7 @@ const competitorRepos = [
     color: "#7c6bd8",
     points: [
       ["2026-02-09", 0],
-      ["2026-10-01", 46]
+      ["2026-10-02", 46]
     ]
   }
 ];
@@ -2016,8 +2027,8 @@ const phases = [
     id: "september",
     label: "9 月：滚动观察",
     start: "2026-09-01",
-    end: "2026-10-01",
-    note: "9/1-10/01 为当前滚动月，数据随每日更新继续补齐。"
+    end: "2026-10-02",
+    note: "9/1-10/02 为当前滚动月，数据随每日更新继续补齐。"
   }
 ];
 
