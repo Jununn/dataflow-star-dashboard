@@ -119,7 +119,7 @@ const dailyCounts = [
   ["2026-09-22", 2], ["2026-09-23", 6], ["2026-09-24", 9], ["2026-09-25", 0],
   ["2026-09-26", 2], ["2026-09-27", 1], ["2026-09-28", 3], ["2026-09-29", 2],
   ["2026-09-30", 4], ["2026-10-01", 1], ["2026-10-02", 4], ["2026-10-03", 3],
-  ["2026-10-04", 0]
+  ["2026-10-04", 1]
 ];
 
 const webuiStarMeta = {
@@ -128,7 +128,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-10-04",
   beforeStart: 24,
-  generatedAt: "2026-10-04T08:39:31.587Z"
+  generatedAt: "2026-10-04T15:40:35.608Z"
 };
 
 const webuiDailyCounts = [
@@ -157,11 +157,11 @@ const webuiDailyCounts = [
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 2924,
+  total: 2927,
   startDate: "2026-04-03",
   endDate: "2026-10-04",
   beforeStart: 105,
-  generatedAt: "2026-10-04T08:39:38.720Z"
+  generatedAt: "2026-10-04T15:40:44.258Z"
 };
 
 const dataflexDailyCounts = [
@@ -211,7 +211,7 @@ const dataflexDailyCounts = [
   ["2026-09-22", 23], ["2026-09-23", 21], ["2026-09-24", 12], ["2026-09-25", 14],
   ["2026-09-26", 0], ["2026-09-27", 0], ["2026-09-28", 6], ["2026-09-29", 19],
   ["2026-09-30", 6], ["2026-10-01", 15], ["2026-10-02", 17], ["2026-10-03", 6],
-  ["2026-10-04", 9]
+  ["2026-10-04", 12]
 ];
 
 let competitorSnapshotDate = "2026-10-04";
@@ -1245,9 +1245,9 @@ const competitorSnapshots = {
   "2026-10-04": {
     "datajuicer/data-juicer": 7111,
     "Eventual-Inc/Daft": 5790,
-    "OpenDCAI/DataFlow": 8191,
-    "huggingface/datatrove": 3368,
-    "NVIDIA-NeMo/DataDesigner": 2301,
+    "OpenDCAI/DataFlow": 8192,
+    "huggingface/datatrove": 3369,
+    "NVIDIA-NeMo/DataDesigner": 2303,
     "NVIDIA-NeMo/Curator": 1791,
     "tinyfish-io/bigset": 1703,
     "OpenDataArena/OpenDataArena-Tool": 146,
@@ -1301,17 +1301,17 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 8191,
-    yesterday: 0,
-    twoDayChange: 3,
+    total: 8192,
+    yesterday: 1,
+    twoDayChange: 4,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
-    total: 3368,
-    yesterday: 0,
-    twoDayChange: 0,
+    total: 3369,
+    yesterday: 1,
+    twoDayChange: 1,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -1324,21 +1324,21 @@ const competitorRepos = [
       ["2025-06-01", 2400],
       ["2025-10-01", 2650],
       ["2026-03-01", 2900],
-      ["2026-10-04", 3368]
+      ["2026-10-04", 3369]
     ]
   },
   {
     name: "NVIDIA-NeMo/DataDesigner",
-    total: 2301,
+    total: 2303,
     yesterday: 2,
-    twoDayChange: 3,
+    twoDayChange: 5,
     color: "#e94b35",
     points: [
       ["2025-10-16", 0],
       ["2026-01-01", 500],
       ["2026-03-01", 700],
       ["2026-04-01", 1000],
-      ["2026-10-04", 2301]
+      ["2026-10-04", 2303]
     ]
   },
   {
@@ -1362,7 +1362,7 @@ const competitorRepos = [
   {
     name: "tinyfish-io/bigset",
     total: 1703,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 1,
     color: "#14b8a6",
     points: [
