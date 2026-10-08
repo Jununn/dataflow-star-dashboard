@@ -1576,7 +1576,13 @@ const actions = [
   ["2026-09-04", "LinkedIn", "dataflow+dataflex", "https://www.linkedin.com/feed/update/urn:li:groupPost:7036558-7501594450029215744/"],
   ["2026-09-11", "Reddit", "dataflow-rag数据准备", "https://www.reddit.com/r/Rag/comments/1wddw34/rag_data_preparation_still_takes_too_much_manual/"],
   ["2026-09-11", "Reddit", "dataflow-rag data", "https://www.reddit.com/r/ETL/comments/1wddwch/rag_data_preparation_still_takes_too_much_manual/"],
-  ["2026-09-16", "Facebook", "dataflow-rag", "https://www.facebook.com/groups/968349588962639/permalink/1101843982279865/"]
+  ["2026-09-16", "Facebook", "dataflow-rag", "https://www.facebook.com/groups/968349588962639/permalink/1101843982279865/"],
+  ["2026-09-18", "Reddit", "dataflow-oss", "https://www.reddit.com/r/LLMDevs/comments/1wjmaoq/oss_data_preparation_before_pretraining/"],
+  ["2026-09-18", "LinkedIn", "dataflow-ragoss", "https://www.linkedin.com/feed/update/urn:li:groupPost:8659061-7506658564321505280/"],
+  ["2026-09-30", "Facebook", "oss-dataflow", "https://www.facebook.com/groups/968349588962639/permalink/1114246904372906/"],
+  ["2026-09-30", "Reddit", "oss-dataflow", "https://www.reddit.com/r/Rag/comments/1wtydcs/a_lot_of_rag_quality_is_decided_before_retrieval/"],
+  ["2026-09-30", "Reddit", "oss-dataflow+flex", "https://www.reddit.com/r/LLMDevs/comments/1wty1gv/from_pdf_archives_to_a_trainable_model_a/"],
+  ["2026-09-30", "Reddit", "oss-dataflow+flex", "https://www.reddit.com/r/OpenSourceeAI/comments/1wty133/from_pdf_archives_to_a_trainable_model_a/"]
 ].map(([date, channel, title, url]) => ({ date, channel, title, url }));
 
 const trafficRows = [
@@ -2099,8 +2105,15 @@ const phases = [
     id: "september",
     label: "9 月：滚动观察",
     start: "2026-09-01",
+    end: "2026-09-30",
+    note: "9/1-9/30 为完整月数据；日增按 starred_at 统计。"
+  },
+  {
+    id: "october",
+    label: "10 月：滚动观察",
+    start: "2026-10-01",
     end: "2026-10-08",
-    note: "9/1-10/08 为当前滚动月，数据随每日更新继续补齐。"
+    note: "10/1-10/8 为当前滚动月，数据随每日更新继续补齐。"
   }
 ];
 
@@ -2355,16 +2368,16 @@ function renderSummary() {
   const julyAvg = julyRows.reduce((sum, item) => sum + item.stars, 0) / julyRows.length;
   const augustRows = data.filter((item) => item.date >= "2026-08-01" && item.date <= "2026-08-31");
   const augustAvg = augustRows.reduce((sum, item) => sum + item.stars, 0) / augustRows.length;
-  const septemberRows = data.filter((item) => item.date >= "2026-09-01");
+  const septemberRows = data.filter((item) => item.date >= "2026-09-01" && item.date <= "2026-09-30");
   const septemberAvg = septemberRows.reduce((sum, item) => sum + item.stars, 0) / septemberRows.length;
   const afterMarch1 = data.filter((item) => item.date >= "2026-03-01");
   const afterMarch1Total = afterMarch1.reduce((sum, item) => sum + item.stars, 0);
   const cards = [
     ["2026 新增 stars", formatNumber(totalAdded), `从 2026-01-01 到 ${data.at(-1).date} 的公开 stargazer 快照。`],
     ["3/1 后新增", formatNumber(afterMarch1Total), `2026-03-01 到 ${data.at(-1).date}，覆盖 3 月恢复、4 月抬升和 5 月高动量阶段。`],
-    ["当前快照累计", formatNumber(data.at(-1).cumulative), "由 2026-01-01 前累计 1,805 加日增推算。"],
+    ["当前快照累计", formatNumber(data.at(-1).cumulative), `由 2026-01-01 前累计基线 ${formatNumber(startTotal)} 加日增推算。`],
     ["最高单日", `${maxDay.stars}`, `${maxDay.date}，对应 5/15 后传播峰值。`],
-    ["9 月日均", septemberAvg.toFixed(1), `8 月日均 ${augustAvg.toFixed(1)}，9 月当前为新月滚动观察。`]
+    ["9 月日均", septemberAvg.toFixed(1), `8 月日均 ${augustAvg.toFixed(1)}，9 月为完整月数据。`]
   ];
   document.getElementById("summary").innerHTML = cards
     .map(([label, value, note]) => `<article class="metric"><span>${label}</span><strong>${value}</strong><p>${note}</p></article>`)
@@ -3189,6 +3202,14 @@ function renderActionCalendar() {
   const firstOffset = start.getUTCDay();
   const daysInMonth = end.getUTCDate();
   const rowsByDate = new Map(data.map((item) => [item.date, item]));
+  actions.forEach((action) => {
+    const item = rowsByDate.get(action.date);
+    if (!item) {
+      rowsByDate.set(action.date, { date: action.date, stars: 0, cumulative: null, actions: [action] });
+    } else if (item.cumulative === null) {
+      item.actions.push(action);
+    }
+  });
   const cells = [];
   const totalCells = Math.ceil((firstOffset + daysInMonth) / 7) * 7;
   const weekdays = ["日", "一", "二", "三", "四", "五", "六"];
