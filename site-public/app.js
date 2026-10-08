@@ -129,7 +129,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-10-08",
   beforeStart: 24,
-  generatedAt: "2026-10-08T09:19:55.167Z"
+  generatedAt: "2026-10-08T17:45:01.459Z"
 };
 
 const webuiDailyCounts = [
@@ -159,11 +159,11 @@ const webuiDailyCounts = [
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 2976,
+  total: 2981,
   startDate: "2026-04-03",
   endDate: "2026-10-08",
   beforeStart: 105,
-  generatedAt: "2026-10-08T09:20:04.672Z"
+  generatedAt: "2026-10-08T17:45:13.657Z"
 };
 
 const dataflexDailyCounts = [
@@ -214,7 +214,7 @@ const dataflexDailyCounts = [
   ["2026-09-26", 0], ["2026-09-27", 0], ["2026-09-28", 6], ["2026-09-29", 19],
   ["2026-09-30", 6], ["2026-10-01", 15], ["2026-10-02", 17], ["2026-10-03", 6],
   ["2026-10-04", 14], ["2026-10-05", 16], ["2026-10-06", 13], ["2026-10-07", 16],
-  ["2026-10-08", 3]
+  ["2026-10-08", 8]
 ];
 
 let competitorSnapshotDate = "2026-10-08";
@@ -1290,11 +1290,11 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 46
   },
   "2026-10-08": {
-    "datajuicer/data-juicer": 7122,
-    "Eventual-Inc/Daft": 5791,
+    "datajuicer/data-juicer": 7124,
+    "Eventual-Inc/Daft": 5792,
     "OpenDCAI/DataFlow": 8199,
-    "huggingface/datatrove": 3374,
-    "NVIDIA-NeMo/DataDesigner": 2312,
+    "huggingface/datatrove": 3375,
+    "NVIDIA-NeMo/DataDesigner": 2314,
     "NVIDIA-NeMo/Curator": 1802,
     "tinyfish-io/bigset": 1705,
     "OpenDataArena/OpenDataArena-Tool": 146,
@@ -1305,9 +1305,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 7122,
-    yesterday: 5,
-    twoDayChange: 6,
+    total: 7124,
+    yesterday: 2,
+    twoDayChange: 8,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -1320,14 +1320,14 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-10-08", 7122]
+      ["2026-10-08", 7124]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
-    total: 5791,
-    yesterday: 0,
-    twoDayChange: 0,
+    total: 5792,
+    yesterday: 1,
+    twoDayChange: 1,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -1343,22 +1343,22 @@ const competitorRepos = [
       ["2025-10-01", 4400],
       ["2026-01-01", 4900],
       ["2026-04-01", 5350],
-      ["2026-10-08", 5791]
+      ["2026-10-08", 5792]
     ]
   },
   {
     name: "OpenDCAI/DataFlow",
     total: 8199,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 4,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
-    total: 3374,
+    total: 3375,
     yesterday: 1,
-    twoDayChange: 2,
+    twoDayChange: 3,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -1371,27 +1371,27 @@ const competitorRepos = [
       ["2025-06-01", 2400],
       ["2025-10-01", 2650],
       ["2026-03-01", 2900],
-      ["2026-10-08", 3374]
+      ["2026-10-08", 3375]
     ]
   },
   {
     name: "NVIDIA-NeMo/DataDesigner",
-    total: 2312,
-    yesterday: 3,
-    twoDayChange: 2,
+    total: 2314,
+    yesterday: 2,
+    twoDayChange: 4,
     color: "#e94b35",
     points: [
       ["2025-10-16", 0],
       ["2026-01-01", 500],
       ["2026-03-01", 700],
       ["2026-04-01", 1000],
-      ["2026-10-08", 2312]
+      ["2026-10-08", 2314]
     ]
   },
   {
     name: "NVIDIA-NeMo/Curator",
     total: 1802,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 4,
     color: "#e879b4",
     points: [
@@ -2113,7 +2113,7 @@ const phases = [
     label: "10 月：滚动观察",
     start: "2026-10-01",
     end: "2026-10-08",
-    note: "10/1-10/8 为当前滚动月，数据随每日更新继续补齐。"
+    note: "10/1-10/08 为当前滚动月，数据随每日更新继续补齐。"
   }
 ];
 
