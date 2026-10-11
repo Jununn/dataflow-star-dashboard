@@ -120,7 +120,7 @@ const dailyCounts = [
   ["2026-09-26", 2], ["2026-09-27", 1], ["2026-09-28", 3], ["2026-09-29", 2],
   ["2026-09-30", 4], ["2026-10-01", 1], ["2026-10-02", 4], ["2026-10-03", 3],
   ["2026-10-04", 1], ["2026-10-05", 3], ["2026-10-06", 1], ["2026-10-07", 3],
-  ["2026-10-08", 2], ["2026-10-09", 5], ["2026-10-10", 4], ["2026-10-11", 0]
+  ["2026-10-08", 2], ["2026-10-09", 5], ["2026-10-10", 4], ["2026-10-11", 1]
 ];
 
 const webuiStarMeta = {
@@ -129,7 +129,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-10-11",
   beforeStart: 24,
-  generatedAt: "2026-10-11T09:10:42.861Z"
+  generatedAt: "2026-10-11T16:33:55.225Z"
 };
 
 const webuiDailyCounts = [
@@ -160,11 +160,11 @@ const webuiDailyCounts = [
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 3022,
+  total: 3024,
   startDate: "2026-04-03",
   endDate: "2026-10-11",
   beforeStart: 105,
-  generatedAt: "2026-10-11T09:10:51.629Z"
+  generatedAt: "2026-10-11T16:34:04.270Z"
 };
 
 const dataflexDailyCounts = [
@@ -215,7 +215,7 @@ const dataflexDailyCounts = [
   ["2026-09-26", 0], ["2026-09-27", 0], ["2026-09-28", 6], ["2026-09-29", 19],
   ["2026-09-30", 6], ["2026-10-01", 15], ["2026-10-02", 17], ["2026-10-03", 6],
   ["2026-10-04", 14], ["2026-10-05", 16], ["2026-10-06", 13], ["2026-10-07", 16],
-  ["2026-10-08", 11], ["2026-10-09", 17], ["2026-10-10", 14], ["2026-10-11", 7]
+  ["2026-10-08", 11], ["2026-10-09", 17], ["2026-10-10", 14], ["2026-10-11", 9]
 ];
 
 let competitorSnapshotDate = "2026-10-11";
@@ -1324,13 +1324,13 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 46
   },
   "2026-10-11": {
-    "datajuicer/data-juicer": 7133,
+    "datajuicer/data-juicer": 7134,
     "Eventual-Inc/Daft": 5795,
-    "OpenDCAI/DataFlow": 8208,
+    "OpenDCAI/DataFlow": 8209,
     "huggingface/datatrove": 3379,
-    "NVIDIA-NeMo/DataDesigner": 2321,
+    "NVIDIA-NeMo/DataDesigner": 2322,
     "NVIDIA-NeMo/Curator": 1804,
-    "tinyfish-io/bigset": 1706,
+    "tinyfish-io/bigset": 1705,
     "OpenDataArena/OpenDataArena-Tool": 146,
     "InternScience/SciDataCopilot": 46
   }
@@ -1339,9 +1339,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 7133,
+    total: 7134,
     yesterday: 1,
-    twoDayChange: 5,
+    twoDayChange: 6,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -1354,13 +1354,13 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-10-11", 7133]
+      ["2026-10-11", 7134]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
     total: 5795,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 2,
     color: "#f2994a",
     points: [
@@ -1382,16 +1382,16 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 8208,
+    total: 8209,
     yesterday: 1,
-    twoDayChange: 4,
+    twoDayChange: 5,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
     total: 3379,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 2,
     color: "#3fb950",
     points: [
@@ -1410,22 +1410,22 @@ const competitorRepos = [
   },
   {
     name: "NVIDIA-NeMo/DataDesigner",
-    total: 2321,
-    yesterday: 2,
-    twoDayChange: 5,
+    total: 2322,
+    yesterday: 1,
+    twoDayChange: 6,
     color: "#e94b35",
     points: [
       ["2025-10-16", 0],
       ["2026-01-01", 500],
       ["2026-03-01", 700],
       ["2026-04-01", 1000],
-      ["2026-10-11", 2321]
+      ["2026-10-11", 2322]
     ]
   },
   {
     name: "NVIDIA-NeMo/Curator",
     total: 1804,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 1,
     color: "#e879b4",
     points: [
@@ -1442,13 +1442,13 @@ const competitorRepos = [
   },
   {
     name: "tinyfish-io/bigset",
-    total: 1706,
-    yesterday: 0,
-    twoDayChange: 0,
+    total: 1705,
+    yesterday: -1,
+    twoDayChange: -1,
     color: "#14b8a6",
     points: [
       ["2026-05-15", 0],
-      ["2026-10-11", 1706]
+      ["2026-10-11", 1705]
     ]
   },
   {
