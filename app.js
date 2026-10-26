@@ -1770,7 +1770,12 @@ const actions = [
   ["2026-09-30", "Facebook", "oss-dataflow", "https://www.facebook.com/groups/968349588962639/permalink/1114246904372906/"],
   ["2026-09-30", "Reddit", "oss-dataflow", "https://www.reddit.com/r/Rag/comments/1wtydcs/a_lot_of_rag_quality_is_decided_before_retrieval/"],
   ["2026-09-30", "Reddit", "oss-dataflow+flex", "https://www.reddit.com/r/LLMDevs/comments/1wty1gv/from_pdf_archives_to_a_trainable_model_a/"],
-  ["2026-09-30", "Reddit", "oss-dataflow+flex", "https://www.reddit.com/r/OpenSourceeAI/comments/1wty133/from_pdf_archives_to_a_trainable_model_a/"]
+  ["2026-09-30", "Reddit", "oss-dataflow+flex", "https://www.reddit.com/r/OpenSourceeAI/comments/1wty133/from_pdf_archives_to_a_trainable_model_a/"],
+  ["2026-10-15","Reddit","dataflow-rag","https://www.reddit.com/r/Rag/comments/1x6i37q/the_hardest_part_of_building_a_rag_knowledge_base/"],
+  ["2026-10-16","LinkedIn","dataflow oss","https://www.linkedin.com/feed/update/urn:li:groupPost:43875-7516810395337105408"],
+  ["2026-10-19","LinkedIn","dataflow rag","https://www.linkedin.com/feed/update/urn:li:activity:7517898106399703040?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEUUBPQBFc8EfKdyeyOBsOUABAvO12iGjao"],
+  ["2026-10-20","Reddit","dataflow-oss","https://www.reddit.com/r/AI_Coders/comments/1xapbqt/we_opensourced_a_data_processing_pipeline_to_make/"],
+  ["2026-10-22","Reddit","dataflow-rag","https://www.reddit.com/r/LocalLLM/comments/1xcfpiq/data_preparation_is_unavoidable_in_llm/v"]
 ].map(([date, channel, title, url]) => ({ date, channel, title, url }));
 
 const trafficRows = [
