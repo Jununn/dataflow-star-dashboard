@@ -124,7 +124,7 @@ const dailyCounts = [
   ["2026-10-12", 2], ["2026-10-13", 0], ["2026-10-14", 8], ["2026-10-15", 1],
   ["2026-10-16", 3], ["2026-10-17", 8], ["2026-10-18", 5], ["2026-10-19", 15],
   ["2026-10-20", 11], ["2026-10-21", 9], ["2026-10-22", 13], ["2026-10-23", 6],
-  ["2026-10-24", 8], ["2026-10-25", 12], ["2026-10-26", 20], ["2026-10-27", 8]
+  ["2026-10-24", 8], ["2026-10-25", 12], ["2026-10-26", 20], ["2026-10-27", 12]
 ];
 
 const webuiStarMeta = {
@@ -133,7 +133,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-10-27",
   beforeStart: 24,
-  generatedAt: "2026-10-27T08:13:59.393Z"
+  generatedAt: "2026-10-27T16:12:56.492Z"
 };
 
 const webuiDailyCounts = [
@@ -168,11 +168,11 @@ const webuiDailyCounts = [
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 3270,
+  total: 3272,
   startDate: "2026-04-03",
   endDate: "2026-10-27",
   beforeStart: 105,
-  generatedAt: "2026-10-27T08:14:10.804Z"
+  generatedAt: "2026-10-27T16:13:11.109Z"
 };
 
 const dataflexDailyCounts = [
@@ -227,7 +227,7 @@ const dataflexDailyCounts = [
   ["2026-10-12", 20], ["2026-10-13", 14], ["2026-10-14", 12], ["2026-10-15", 12],
   ["2026-10-16", 13], ["2026-10-17", 19], ["2026-10-18", 19], ["2026-10-19", 19],
   ["2026-10-20", 14], ["2026-10-21", 19], ["2026-10-22", 20], ["2026-10-23", 11],
-  ["2026-10-24", 8], ["2026-10-25", 20], ["2026-10-26", 20], ["2026-10-27", 8]
+  ["2026-10-24", 8], ["2026-10-25", 20], ["2026-10-26", 20], ["2026-10-27", 10]
 ];
 
 let competitorSnapshotDate = "2026-10-27";
@@ -1502,11 +1502,11 @@ const competitorSnapshots = {
   },
   "2026-10-27": {
     "datajuicer/data-juicer": 7189,
-    "Eventual-Inc/Daft": 5814,
-    "OpenDCAI/DataFlow": 8305,
-    "huggingface/datatrove": 3406,
-    "NVIDIA-NeMo/DataDesigner": 2375,
-    "NVIDIA-NeMo/Curator": 1828,
+    "Eventual-Inc/Daft": 5815,
+    "OpenDCAI/DataFlow": 8309,
+    "huggingface/datatrove": 3407,
+    "NVIDIA-NeMo/DataDesigner": 2378,
+    "NVIDIA-NeMo/Curator": 1829,
     "tinyfish-io/bigset": 1708,
     "OpenDataArena/OpenDataArena-Tool": 149,
     "InternScience/SciDataCopilot": 46
@@ -1517,7 +1517,7 @@ const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
     total: 7189,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 6,
     color: "#f2c94c",
     points: [
@@ -1536,9 +1536,9 @@ const competitorRepos = [
   },
   {
     name: "Eventual-Inc/Daft",
-    total: 5814,
+    total: 5815,
     yesterday: 1,
-    twoDayChange: 2,
+    twoDayChange: 3,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -1554,22 +1554,22 @@ const competitorRepos = [
       ["2025-10-01", 4400],
       ["2026-01-01", 4900],
       ["2026-04-01", 5350],
-      ["2026-10-27", 5814]
+      ["2026-10-27", 5815]
     ]
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 8305,
-    yesterday: 9,
-    twoDayChange: 33,
+    total: 8309,
+    yesterday: 4,
+    twoDayChange: 37,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
-    total: 3406,
-    yesterday: 0,
-    twoDayChange: 4,
+    total: 3407,
+    yesterday: 1,
+    twoDayChange: 5,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -1582,28 +1582,28 @@ const competitorRepos = [
       ["2025-06-01", 2400],
       ["2025-10-01", 2650],
       ["2026-03-01", 2900],
-      ["2026-10-27", 3406]
+      ["2026-10-27", 3407]
     ]
   },
   {
     name: "NVIDIA-NeMo/DataDesigner",
-    total: 2375,
-    yesterday: 0,
-    twoDayChange: 4,
+    total: 2378,
+    yesterday: 3,
+    twoDayChange: 7,
     color: "#e94b35",
     points: [
       ["2025-10-16", 0],
       ["2026-01-01", 500],
       ["2026-03-01", 700],
       ["2026-04-01", 1000],
-      ["2026-10-27", 2375]
+      ["2026-10-27", 2378]
     ]
   },
   {
     name: "NVIDIA-NeMo/Curator",
-    total: 1828,
-    yesterday: 0,
-    twoDayChange: 3,
+    total: 1829,
+    yesterday: 1,
+    twoDayChange: 4,
     color: "#e879b4",
     points: [
       ["2024-03-14", 0],
@@ -1614,13 +1614,13 @@ const competitorRepos = [
       ["2025-07-01", 900],
       ["2025-12-01", 1200],
       ["2026-04-01", 1450],
-      ["2026-10-27", 1828]
+      ["2026-10-27", 1829]
     ]
   },
   {
     name: "tinyfish-io/bigset",
     total: 1708,
-    yesterday: -1,
+    yesterday: 0,
     twoDayChange: -1,
     color: "#14b8a6",
     points: [
