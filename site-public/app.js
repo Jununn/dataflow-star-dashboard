@@ -1,4 +1,4 @@
-let startTotal = 1661;
+let startTotal = 1660;
 const historicalStartTotal = 72;
 const historicalNonZeroDailyCounts = [
   ["2025-06-04", 1], ["2025-06-05", 8], ["2025-06-06", 26], ["2025-06-07", 21],
@@ -125,8 +125,8 @@ const dailyCounts = [
   ["2026-10-16", 3], ["2026-10-17", 8], ["2026-10-18", 5], ["2026-10-19", 15],
   ["2026-10-20", 11], ["2026-10-21", 9], ["2026-10-22", 13], ["2026-10-23", 6],
   ["2026-10-24", 8], ["2026-10-25", 12], ["2026-10-26", 20], ["2026-10-27", 16],
-  ["2026-10-28", 15], ["2026-10-29", 23], ["2026-10-30", 24], ["2026-10-31", 14],
-  ["2026-11-01", 11], ["2026-11-02", 21], ["2026-11-03", 7]
+  ["2026-10-28", 15], ["2026-10-29", 23], ["2026-10-30", 23], ["2026-10-31", 14],
+  ["2026-11-01", 11], ["2026-11-02", 21], ["2026-11-03", 12]
 ];
 
 const webuiStarMeta = {
@@ -135,7 +135,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-11-03",
   beforeStart: 24,
-  generatedAt: "2026-11-03T09:52:20.000Z"
+  generatedAt: "2026-11-03T18:14:40.290Z"
 };
 
 const webuiDailyCounts = [
@@ -171,11 +171,11 @@ const webuiDailyCounts = [
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 3385,
+  total: 3389,
   startDate: "2026-04-03",
   endDate: "2026-11-03",
   beforeStart: 104,
-  generatedAt: "2026-11-03T09:52:35.384Z"
+  generatedAt: "2026-11-03T18:14:56.658Z"
 };
 
 const dataflexDailyCounts = [
@@ -232,7 +232,7 @@ const dataflexDailyCounts = [
   ["2026-10-20", 14], ["2026-10-21", 19], ["2026-10-22", 20], ["2026-10-23", 11],
   ["2026-10-24", 8], ["2026-10-25", 20], ["2026-10-26", 20], ["2026-10-27", 16],
   ["2026-10-28", 20], ["2026-10-29", 13], ["2026-10-30", 16], ["2026-10-31", 14],
-  ["2026-11-01", 16], ["2026-11-02", 22], ["2026-11-03", 6]
+  ["2026-11-01", 16], ["2026-11-02", 22], ["2026-11-03", 10]
 ];
 
 let competitorSnapshotDate = "2026-11-03";
@@ -1583,11 +1583,11 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 46
   },
   "2026-11-03": {
-    "datajuicer/data-juicer": 7211,
-    "Eventual-Inc/Daft": 5824,
-    "OpenDCAI/DataFlow": 8428,
+    "datajuicer/data-juicer": 7213,
+    "Eventual-Inc/Daft": 5825,
+    "OpenDCAI/DataFlow": 8431,
     "huggingface/datatrove": 3414,
-    "NVIDIA-NeMo/DataDesigner": 2391,
+    "NVIDIA-NeMo/DataDesigner": 2392,
     "NVIDIA-NeMo/Curator": 1848,
     "tinyfish-io/bigset": 1707,
     "OpenDataArena/OpenDataArena-Tool": 149,
@@ -1598,9 +1598,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 7211,
-    yesterday: 0,
-    twoDayChange: 6,
+    total: 7213,
+    yesterday: 2,
+    twoDayChange: 8,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -1613,14 +1613,14 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-11-03", 7211]
+      ["2026-11-03", 7213]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
-    total: 5824,
+    total: 5825,
     yesterday: 1,
-    twoDayChange: 4,
+    twoDayChange: 5,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -1636,14 +1636,14 @@ const competitorRepos = [
       ["2025-10-01", 4400],
       ["2026-01-01", 4900],
       ["2026-04-01", 5350],
-      ["2026-11-03", 5824]
+      ["2026-11-03", 5825]
     ]
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 8428,
-    yesterday: 9,
-    twoDayChange: 34,
+    total: 8431,
+    yesterday: 3,
+    twoDayChange: 37,
     color: "#2d9cdb",
     points: null
   },
@@ -1669,22 +1669,22 @@ const competitorRepos = [
   },
   {
     name: "NVIDIA-NeMo/DataDesigner",
-    total: 2391,
-    yesterday: 4,
-    twoDayChange: 7,
+    total: 2392,
+    yesterday: 1,
+    twoDayChange: 8,
     color: "#e94b35",
     points: [
       ["2025-10-16", 0],
       ["2026-01-01", 500],
       ["2026-03-01", 700],
       ["2026-04-01", 1000],
-      ["2026-11-03", 2391]
+      ["2026-11-03", 2392]
     ]
   },
   {
     name: "NVIDIA-NeMo/Curator",
     total: 1848,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 3,
     color: "#e879b4",
     points: [
