@@ -1892,7 +1892,8 @@ const actions = [
   ["2026-10-16", "LinkedIn", "dataflow oss", "https://www.linkedin.com/feed/update/urn:li:groupPost:43875-7516810395337105408"],
   ["2026-10-19", "LinkedIn", "dataflow rag", "https://www.linkedin.com/feed/update/urn:li:activity:7517898106399703040?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEUUBPQBFc8EfKdyeyOBsOUABAvO12iGjao"],
   ["2026-10-20", "Reddit", "dataflow-oss", "https://www.reddit.com/r/AI_Coders/comments/1xapbqt/we_opensourced_a_data_processing_pipeline_to_make/"],
-  ["2026-10-22", "Reddit", "dataflow-rag", "https://www.reddit.com/r/LocalLLM/comments/1xcfpiq/data_preparation_is_unavoidable_in_llm/v"]
+  ["2026-10-22", "Reddit", "dataflow-rag", "https://www.reddit.com/r/LocalLLM/comments/1xcfpiq/data_preparation_is_unavoidable_in_llm/v"],
+  ["2026-11-04", "Reddit", "dataflow-oss", "https://www.reddit.com/r/LLMDevs/comments/1xngkrp/comment/19s4b9jjtbi9w/?screen_view_count=2"]
 ].map(([date, channel, title, url]) => ({ date, channel, title, url }));
 
 const trafficRows = [
