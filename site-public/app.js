@@ -2746,9 +2746,9 @@ function renderSummary() {
   const totalAdded = data.reduce((sum, item) => sum + item.stars, 0);
   const maxDay = data.reduce((max, item) => (item.stars > max.stars ? item : max), data[0]);
   const octoberRows = data.filter((item) => item.date.startsWith("2026-10"));
-  const septemberRows = data.filter((item) => item.date.startsWith("2026-09"));
+  const novemberRows = data.filter((item) => item.date.startsWith("2026-11"));
   const octoberAvg = octoberRows.reduce((sum, item) => sum + item.stars, 0) / octoberRows.length;
-  const septemberAvg = septemberRows.reduce((sum, item) => sum + item.stars, 0) / septemberRows.length;
+  const novemberAvg = novemberRows.length ? novemberRows.reduce((sum, item) => sum + item.stars, 0) / novemberRows.length : 0;
   const afterMarch1 = data.filter((item) => item.date >= "2026-03-01");
   const afterMarch1Total = afterMarch1.reduce((sum, item) => sum + item.stars, 0);
   const cards = [
@@ -2756,7 +2756,7 @@ function renderSummary() {
     ["3/1 后新增", formatNumber(afterMarch1Total), `2026-03-01 到 ${data.at(-1).date}，覆盖 3 月恢复、4 月抬升和 5 月高动量阶段。`],
     ["当前快照累计", formatNumber(data.at(-1).cumulative), `由 2026-01-01 前累计基线 ${formatNumber(startTotal)} 加日增推算。`],
     ["最高单日", `${maxDay.stars}`, `${maxDay.date}，对应 5/15 后传播峰值。`],
-    ["10 月日均", octoberAvg.toFixed(1), `9 月日均 ${septemberAvg.toFixed(1)}，10 月为完整月数据。`]
+    ["11 月日均", novemberAvg.toFixed(1), `10 月日均 ${octoberAvg.toFixed(1)}，11 月统计截至 ${novemberRows.at(-1)?.date || "暂无数据"}，当日数据未结束。`]
   ];
   document.getElementById("summary").innerHTML = cards
     .map(([label, value, note]) => `<article class="metric"><span>${label}</span><strong>${value}</strong><p>${note}</p></article>`)
