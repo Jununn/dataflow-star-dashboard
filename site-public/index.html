@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Dataflow Star Dashboard</title>
     <link rel="icon" type="image/png" href="./favicon.png" />
-    <link rel="stylesheet" href="./styles.css?v=422-acf1670" />
+    <link rel="stylesheet" href="./styles.css?v=20260909-march-only" />
   </head>
   <body>
     <header class="page-header">
@@ -146,7 +146,7 @@
         <div class="panel-heading">
           <div>
             <h2>阶段新增用户地区比例</h2>
-            <p>1-5 月为历史快照，6-8 月为阶段统计，9 月为当前滚动月。</p>
+            <p>1-8 月保留历史阶段快照，9-10 月为完整月统计，11 月为当前滚动月。</p>
           </div>
           <a class="inline-source" href="https://starmapper.bruniaux.com/OpenDCAI/DataFlow" target="_blank" rel="noreferrer">打开 Starmapper</a>
         </div>
@@ -212,6 +212,122 @@
       </section>
 
       <section class="panel stargazer-overlap-panel">
+        <div class="panel-heading">
+          <div>
+            <h2>共同关注网络：兴趣相关度与潜在场景（11月）</h2>
+            <p>分析 11 月 1—4 日新增 stargazer，观察这些用户还共同 star 了哪些项目，用于判断当前开发者兴趣结构和 DataFlow 的潜在使用场景。</p>
+          </div>
+        </div>
+
+        <div class="overlap-meta">
+          <span>生成时间：2026-11-04 11:59 CST</span>
+          <span>范围：2026-11-01 至 2026-11-04（UTC，11 月进行中）</span>
+          <span>11 月新增 stargazer：47</span>
+          <span>抓取：47 / 47，成功 47，失败 0，公开收藏为空 0</span>
+          <span>每人最多读取最近 300 个 starred repos</span>
+        </div>
+
+        <div class="overlap-insights">
+          <article>
+            <strong>Agent 工作流与本地知识库是可探索的切入点</strong>
+            <span>LiveStream-Agent-Studio 和 MCPHub-Desktop 各有 36 / 47 人共同收藏（77%），Meldwork 有 35 人（74%）。可探索直播资料结构化、RAG 文档整理和 Agent 任务数据准备；这些是基于项目描述的场景推断，尚未验证集成。</span>
+          </article>
+          <article>
+            <strong>头部项目收藏者高度重合，整体兴趣仍包含大量泛项目</strong>
+            <span>Top 12 项目对用户集合重叠均值 99.6%，区间 97.1%—100.0%，分母为两集合中较小人数。共现次数中 Agent / Workflow 占 30%、LLM Infra 占 11%、Other 占 43%；这不是用户占比，也不能据此确认来源渠道。</span>
+          </article>
+        </div>
+
+        <div class="overlap-table-grid">
+          <div class="overlap-table-intro">
+            <div>
+              <h3>共同关注项目 Top 30：兴趣相关度 + 场景推断</h3>
+            </div>
+            <div class="overlap-scroll-actions" aria-label="横向滚动表格">
+              <button type="button" onclick="this.closest('.overlap-table-grid').querySelector('.overlap-table-wrap').scrollBy({ left: -640, behavior: 'smooth' })">←</button>
+              <button type="button" onclick="this.closest('.overlap-table-grid').querySelector('.overlap-table-wrap').scrollBy({ left: 640, behavior: 'smooth' })">→</button>
+            </div>
+          </div>
+          <div class="table-wrap overlap-table-wrap">
+            <table class="overlap-table">
+              <thead>
+                <tr>
+                  <th>项目</th>
+                  <th>共同用户</th>
+                  <th>样本占比</th>
+                  <th>关系</th>
+                  <th>分类</th>
+                  <th>Stars</th>
+                  <th>描述</th>
+                  <th>具体关系 / 可设计场景</th>
+                  <th>语言</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><a href="https://github.com/erupts/erupt" target="_blank" rel="noreferrer">erupts/erupt</a></td><td>36</td><td>77%</td><td><span class="relation-pill complement">互补工具</span></td><td>Dev Tooling</td><td>3,985</td><td>Code as configuration. Annotate a Java entity with @Erupt and ship a production-grade admin backend in minutes — UI, RBAC, audit logs and APIs, all generated at runtime. No codegen, no frontend.</td><td>可用其后台界面承接数据质检、人工复核和处理任务管理；DataFlow 负责清洗与结构化，接口对接仍需验证。</td><td>Java</td></tr>
+                <tr><td><a href="https://github.com/HanyuanWang/LiveStream-Agent-Studio" target="_blank" rel="noreferrer">HanyuanWang/LiveStream-Agent-Studio</a></td><td>36</td><td>77%</td><td><span class="relation-pill downstream">潜在下游</span></td><td>Agent / Workflow</td><td>1,886</td><td>面向抖音直播电商的 Windows 本地 AI Agent Studio，贯通主播发现、直播洞察、直播复盘与短视频内容编导的统一智能工作流。</td><td>围绕直播发现、洞察与复盘，可探索把字幕、商品资料和复盘记录清洗为结构化内容库及 Agent 任务样本。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/skrstop/MCPHub-Desktop" target="_blank" rel="noreferrer">skrstop/MCPHub-Desktop</a></td><td>36</td><td>77%</td><td><span class="relation-pill downstream">潜在下游</span></td><td>RAG / Search</td><td>1,061</td><td>MCPHub Desktop 是一款基于 Tauri 2 构建的桌面客户端，用于在个人电脑上统一管理 MCP服务器、Skills、RAG 知识库。所有进程、配置、密钥与向量数据都运行/保存在用户自己的机器上，不依赖任何远端服务。</td><td>面向其本地 RAG 知识库，可探索文档解析、去重、切分和元数据整理；处理结果需验证目标知识库的导入格式。</td><td>Rust</td></tr>
+                <tr><td><a href="https://github.com/ManfredCh/Lyapunov" target="_blank" rel="noreferrer">ManfredCh/Lyapunov</a></td><td>36</td><td>77%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>LLM Infra</td><td>1,028</td><td>LLM-first, 3D-native robotics and simulation workspace.</td><td>项目聚焦机器人与仿真工作区，可探索仿真日志清洗和任务元数据整理；多模态数据格式与适配能力需另行验证。</td><td>TypeScript</td></tr>
+                <tr><td><a href="https://github.com/rockmatrix-ai/EdgeRock" target="_blank" rel="noreferrer">rockmatrix-ai/EdgeRock</a></td><td>36</td><td>77%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>Evaluation</td><td>990</td><td>EdgeRock: Strong Reasoning at Constant Memory. Multimodal models with O(N) generation and O(1) persistent history. Inference and evaluation code.</td><td>项目提供多模态模型推理与评估代码，可探索构建去重、分层和质量筛选后的评测输入集；需核实具体输入格式。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/Gitruck/cli" target="_blank" rel="noreferrer">Gitruck/cli</a></td><td>36</td><td>77%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>Dev Tooling</td><td>962</td><td>一条命令，把口播毛片变成可二次精修的剪辑工程。</td><td>从口播视频到剪辑工程的描述提示内容生产需求，可探索字幕文本清洗和语料复用；不据此推断已有视频处理集成。</td><td>TypeScript</td></tr>
+                <tr><td><a href="https://github.com/deillusion/Varina" target="_blank" rel="noreferrer">deillusion/Varina</a></td><td>36</td><td>77%</td><td><span class="relation-pill weak">待核实</span></td><td>Other</td><td>946</td><td>暂无仓库描述</td><td>仓库描述为空，当前只能确认共同收藏关系，无法可靠推断产品用途或与 DataFlow 的具体链路。</td><td>JavaScript</td></tr>
+                <tr><td><a href="https://github.com/cookiy-ai/sell-sessions-skill" target="_blank" rel="noreferrer">cookiy-ai/sell-sessions-skill</a></td><td>35</td><td>74%</td><td><span class="relation-pill weak">待核实</span></td><td>Other</td><td>1,916</td><td>暂无仓库描述</td><td>仓库描述为空，仅凭名称不足以确定业务功能；暂不把它计为已确认的销售或 Agent 场景。</td><td>-</td></tr>
+                <tr><td><a href="https://github.com/PSRben/VisionHOPE" target="_blank" rel="noreferrer">PSRben/VisionHOPE</a></td><td>35</td><td>74%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>LLM Infra</td><td>1,405</td><td>Official PyTorch implementation of VisionHOPE: Visual Backbones as Self-Modifying Learning Systems.</td><td>项目为视觉骨干模型研究实现，可探索训练与评测样本的去重、质量筛选和元数据整理；视觉数据支持需验证。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/Ryder-Sun/Meldwork" target="_blank" rel="noreferrer">Ryder-Sun/Meldwork</a></td><td>35</td><td>74%</td><td><span class="relation-pill downstream">潜在下游</span></td><td>Agent / Workflow</td><td>1,392</td><td>Local-first AI agent workspace for multi-agent collaboration, agent orchestration, scoped permissions, evidence-aware runs, and human-in-the-loop decisions.</td><td>本地多 Agent 工作区强调证据与人工决策，可探索准备任务知识、执行日志和可追溯评测数据。</td><td>JavaScript</td></tr>
+                <tr><td><a href="https://github.com/wy-coliney/jev-browser-use" target="_blank" rel="noreferrer">wy-coliney/jev-browser-use</a></td><td>35</td><td>74%</td><td><span class="relation-pill complement">互补工具</span></td><td>Dev Tooling</td><td>1,207</td><td>5–10x faster browser operations: Jev clicks, Codex thinks and verifies. Built at EZCollegeApp.</td><td>浏览器自动化可产生页面文本和操作轨迹，DataFlow 可探索把这些输出清洗成知识库材料或 Agent 轨迹样本。</td><td>JavaScript</td></tr>
+                <tr><td><a href="https://github.com/20000419/fauxnix" target="_blank" rel="noreferrer">20000419/fauxnix</a></td><td>35</td><td>74%</td><td><span class="relation-pill complement">互补工具</span></td><td>Agent / Workflow</td><td>898</td><td>Run Linux-style commands on Windows via deterministic bash→PowerShell translation. No VM, no WSL. MCP server + CLI built for AI agents (Claude Code, Codex, OpenCode...). GNU-style output, bash-style errors, UTF-8/GBK handled.</td><td>项目为 Windows 上的 Agent 提供命令翻译及 MCP/CLI 工具，可探索辅助运行数据准备任务；命令兼容性需实测。</td><td>TypeScript</td></tr>
+                <tr><td><a href="https://github.com/ApodexAI/FrontierAgent" target="_blank" rel="noreferrer">ApodexAI/FrontierAgent</a></td><td>34</td><td>72%</td><td><span class="relation-pill downstream">潜在下游</span></td><td>Agent / Workflow</td><td>5,434</td><td>🧩 FrontierAgent, our agent framework, open-sourced alongside it — native command-line TUI, ReAct and Agent Team modes, one command on macOS and Linux, no preinstall, no hard Docker dependency.</td><td>面向 ReAct 与 Agent Team，可探索准备工具调用任务、知识材料和轨迹评测集，再验证其任务输入规范。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/cosmo-wander-ai/cosmo-edge" target="_blank" rel="noreferrer">cosmo-wander-ai/cosmo-edge</a></td><td>34</td><td>72%</td><td><span class="relation-pill adjacent">相邻场景</span></td><td>Agent / Workflow</td><td>2,078</td><td>Production-grade C++ edge AI engine for video analytics and on-device VLM across Sophon, Rockchip RKNN, and x86, with visual orchestration, real-time OSD, events, and reproducible benchmarks.</td><td>面向边缘视频分析和端侧 VLM，可探索事件日志结构化、场景样本筛选和基准输入整理；设备端集成需另验。</td><td>C</td></tr>
+                <tr><td><a href="https://github.com/Continuum-AI-Corp/OrcaRouter-Lite" target="_blank" rel="noreferrer">Continuum-AI-Corp/OrcaRouter-Lite</a></td><td>34</td><td>72%</td><td><span class="relation-pill complement">互补工具</span></td><td>LLM Infra</td><td>1,477</td><td>Self-hosted LLM router with a managed safety net. OpenAI-compatible. BYOK. Single-workspace. Streaming. For more advanced routing choose hosted OrcaRouter</td><td>其 OpenAI 兼容路由可作为数据生成或标注管道的候选模型入口，需验证鉴权、请求格式及路由稳定性。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/puppyone-ai/puppyone" target="_blank" rel="noreferrer">puppyone-ai/puppyone</a></td><td>34</td><td>72%</td><td><span class="relation-pill downstream">潜在下游</span></td><td>Agent / Workflow</td><td>1,405</td><td>The (local &amp; cloud) folder built for your agents.</td><td>项目定位为 Agent 文件夹，可探索将整理后的文档、元数据及知识材料交给 Agent 消费；文件规范需核实。</td><td>TypeScript</td></tr>
+                <tr><td><a href="https://github.com/HernanJiang/CraftStation" target="_blank" rel="noreferrer">HernanJiang/CraftStation</a></td><td>34</td><td>72%</td><td><span class="relation-pill downstream">潜在下游</span></td><td>Agent / Workflow</td><td>932</td><td>CraftStation Agent Runtime Composition System</td><td>描述指向 Agent 运行时组合系统，可探索提供任务数据和评测样本；具体工作流接口仍需阅读实现验证。</td><td>TypeScript</td></tr>
+                <tr><td><a href="https://github.com/superwesleyhys-ux/factcircuit" target="_blank" rel="noreferrer">superwesleyhys-ux/factcircuit</a></td><td>34</td><td>72%</td><td><span class="relation-pill complement">互补工具</span></td><td>RAG / Search</td><td>926</td><td>FactCircuit: an auditable claim-and-evidence verification loop with immutable provenance, staged checks, bounded retrieval, and reproducible evaluation.</td><td>其主张—证据核验链路可与数据准备相衔接，探索构建有来源标记的事实核验样本和证据检索数据。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/lexmount/moli" target="_blank" rel="noreferrer">lexmount/moli</a></td><td>31</td><td>66%</td><td><span class="relation-pill complement">互补工具</span></td><td>Agent / Workflow</td><td>22,479</td><td>Best headless browser for AI agents. Lite, Fast, High-Compatibility. Built in Rust</td><td>无头浏览器可提供网页采集入口，可探索把页面输出送入去噪、去重和结构化管道，形成 RAG 或训练语料。</td><td>Rust</td></tr>
+                <tr><td><a href="https://github.com/momozi1996/momo-code" target="_blank" rel="noreferrer">momozi1996/momo-code</a></td><td>31</td><td>66%</td><td><span class="relation-pill downstream">潜在下游</span></td><td>Agent / Workflow</td><td>1,105</td><td>MOMO CODE — RSI *JEV*Pi --AI coding agent that evolves with you</td><td>面向 coding Agent，可探索代码任务、错误修复记录与工具调用轨迹的数据整理；需核实任务和日志格式。</td><td>TypeScript</td></tr>
+                <tr><td><a href="https://github.com/jingyunstudio/jingyun-dsh" target="_blank" rel="noreferrer">jingyunstudio/jingyun-dsh</a></td><td>31</td><td>66%</td><td><span class="relation-pill downstream">潜在下游</span></td><td>Agent / Workflow</td><td>921</td><td>基于 Jingyun Studio + DeepSeek Harness (DSH) 打造的一站式 AI 商业化桌面客户端，一个将 AI 智能体 / 技能 / 工作流转化为可交易商品的完整商业化平台客户端。  井云为 DSH 注入了完整的商业闭环：登录注册 → 会员体系 → 订阅支付 → 云端资产 → 多端同步，让 AI 开发者 30 分钟内将自己的智能体封装为独立的商业产品。</td><td>其桌面客户端承载智能体、技能和工作流，可探索提供可复用的数据准备工作流及演示数据，尚未验证集成。</td><td>TypeScript</td></tr>
+                <tr><td><a href="https://github.com/daixudk96-max/agent-skill-gate" target="_blank" rel="noreferrer">daixudk96-max/agent-skill-gate</a></td><td>31</td><td>66%</td><td><span class="relation-pill complement">互补工具</span></td><td>Agent / Workflow</td><td>794</td><td>Agent Skill 步进治理体系：由程序保证 Agent 不跳步骤（step-gate Rust 门控 + 交付门 + 链治理）</td><td>步进门控强调流程完整性，可探索为数据准备阶段设置输入校验、质量检查和交付校验关卡。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/fuxicodex/Fuxi" target="_blank" rel="noreferrer">fuxicodex/Fuxi</a></td><td>30</td><td>64%</td><td><span class="relation-pill downstream">潜在下游</span></td><td>Agent / Workflow</td><td>3,196</td><td>FuXi is a fast, self-contained AI coding agent that lives in your terminal — edit code, run commands, and drive tools, with cost-aware routing across LLM providers.</td><td>终端 coding Agent 可探索消费结构化任务集、代码语料及工具调用样本；实际训练或评测链路需验证。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/AMOS144/MoonlightBox" target="_blank" rel="noreferrer">AMOS144/MoonlightBox</a></td><td>30</td><td>64%</td><td><span class="relation-pill weak">弱相关</span></td><td>Other</td><td>821</td><td>般若波罗蜜。回到每一个争吵和沉默的节点，看看另一个版本的结局。</td><td>描述呈现情绪与对话体验，未说明数据处理或模型接口，暂不足以提出明确的 DataFlow 产品链路。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/Moxin-Tech/moworld_base" target="_blank" rel="noreferrer">Moxin-Tech/moworld_base</a></td><td>30</td><td>64%</td><td><span class="relation-pill weak">待核实</span></td><td>Other</td><td>764</td><td>暂无仓库描述</td><td>仓库描述为空，保留为共同收藏信号，不从名称推断模型、机器人或数据用途。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/questflowai/investorskills" target="_blank" rel="noreferrer">questflowai/investorskills</a></td><td>29</td><td>62%</td><td><span class="relation-pill downstream">潜在下游</span></td><td>Agent / Workflow</td><td>1,907</td><td>Investor Skills is an open-source library that turns durable investing judgment into portable, structured formats. It collects how great investors think, filter opportunities, size risk, and act under uncertainty — then structures those patterns so humans can study them and AI finance agents can apply them.</td><td>将投资判断整理为结构化技能的定位，可探索把公开投研材料清洗为带来源的结构化知识与评测任务。</td><td>Swift</td></tr>
+                <tr><td><a href="https://github.com/Niiiiikiiiiii/McLife-Desk" target="_blank" rel="noreferrer">Niiiiikiiiiii/McLife-Desk</a></td><td>29</td><td>62%</td><td><span class="relation-pill weak">弱相关</span></td><td>Other</td><td>1,759</td><td>忙碌了一天，回到家，你打开麦当劳，却突然纠结：今天吃了什么？这周点了几次？这个月花了多少钱？热量会不会超标？  于是有了 **McLife Desk 麦门人生工作台**。它记录每一次点麦：日期、餐品、金额与热量，生成专属点餐日历；按当月消费次数和金额解锁麦门等级，还能通过趣味测试发现自己的麦门消费人格。  它不劝你戒掉麦当劳，只陪你在忙碌、独处和奖励自己的时刻，看见自己的选择，管理预算与生活节奏。  **记录每一次点麦，也记录你的生活。**</td><td>项目描述为餐饮消费与生活记录工具，当前与 DataFlow 的直接关系较弱，保留为泛应用兴趣信号。</td><td>HTML</td></tr>
+                <tr><td><a href="https://github.com/LookJohnny/soulForge" target="_blank" rel="noreferrer">LookJohnny/soulForge</a></td><td>29</td><td>62%</td><td><span class="relation-pill weak">待核实</span></td><td>Other</td><td>712</td><td>暂无仓库描述</td><td>仓库描述为空，当前不推断其功能、目标用户或与 DataFlow 的适配关系。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/EvoMap/AutoResearch" target="_blank" rel="noreferrer">EvoMap/AutoResearch</a></td><td>28</td><td>60%</td><td><span class="relation-pill downstream">潜在下游</span></td><td>Agent / Workflow</td><td>3,086</td><td>AI/ML research agents from idea to paper-ready evidence. An EvoMap open-source project.</td><td>研究 Agent 从想法推进到论文证据，可探索准备去重文献、结构化实验记录和可追溯证据数据集。</td><td>Python</td></tr>
+                <tr><td><a href="https://github.com/elliothux/open-compute" target="_blank" rel="noreferrer">elliothux/open-compute</a></td><td>28</td><td>60%</td><td><span class="relation-pill complement">互补工具</span></td><td>RAG / Search</td><td>2,895</td><td>Self-hosted Cloudflare Workers-compatible platform with Workers、KV、D1、R2、DO、Queues、Workflows、Cron、Cache、Images、Vectorize、AI Search、Artifacts、Static Assets、Service Bindings、Dynamic Workers、LogTail、Gateway in one Rust binary.</td><td>自托管平台包含存储、队列、工作流与 AI Search，可探索承载数据任务调度和结果存储；部署及格式兼容性需验证。</td><td>Rust</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="table-wrap overlap-category-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>兴趣分类</th>
+                  <th>共现次数</th>
+                  <th>占比</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Other</td><td>5,046</td><td>43%</td></tr>
+                <tr><td>Agent / Workflow</td><td>3,547</td><td>30%</td></tr>
+                <tr><td>LLM Infra</td><td>1,328</td><td>11%</td></tr>
+                <tr><td>RAG / Search</td><td>509</td><td>4%</td></tr>
+                <tr><td>Dev Tooling</td><td>460</td><td>4%</td></tr>
+                <tr><td>Evaluation</td><td>387</td><td>3%</td></tr>
+                <tr><td>Data Engineering</td><td>244</td><td>2%</td></tr>
+                <tr><td>Database / Storage</td><td>199</td><td>2%</td></tr>
+                <tr><td>Data Prep / Dataset</td><td>126</td><td>1%</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p class="overlap-note">口径：分析 2026-11-01 至 2026-11-04（UTC 日期）给 OpenDCAI/DataFlow 点 star 且抓取时仍可见的全部 47 位用户；成功读取 47 人、失败 0 人，每人最近最多 300 个公开 starred repos，收藏时间不限于 11 月。项目样本占比以 47 位成功读取用户为分母；分类占比以过滤泛项目后的共现总次数为分母。分类为关键词初筛，11 月起修正子串误匹配，历史月份未重算。关系与场景根据仓库描述推断，不代表真实使用或已验证集成；描述不足的项目标为待核实。11 月 4 日及本月数据尚未结束。完整结果见 <a href="https://github.com/Jununn/dataflow-star-dashboard/blob/main/reports/stargazer-overlap-2026-11.md" target="_blank" rel="noreferrer">11 月分析报告</a>（<a href="https://github.com/Jununn/dataflow-star-dashboard/blob/main/reports/stargazer-overlap-2026-11.json" target="_blank" rel="noreferrer">JSON 数据</a>）。</p>
+      </section>
+
+      <details class="panel stargazer-overlap-panel overlap-archive">
+        <summary>展开 9 月共同关注网络（9 月 1—7 日，134 人样本）</summary>
+        <div class="overlap-archive-body">
         <div class="panel-heading">
           <div>
             <h2>共同关注网络：兴趣相关度与潜在场景（9月）</h2>
@@ -322,7 +438,9 @@
         </div>
 
         <p class="overlap-note">口径：分析 2026-09-01 到 2026-09-07 给 OpenDCAI/DataFlow 点 star 的用户；覆盖 9 月当前新增 134 人，已抓取 134 人，并读取每人最近最多 300 个公开 starred repos；抓取失败 0 人。GitHub 不提供共同 star 图谱接口，本分析由公开 stargazer 和用户 starred repos 聚合而来，适合判断兴趣相关度，不等同于真实使用关系。完整结果见 <a href="./reports/stargazer-overlap-2026-09.md" target="_blank" rel="noreferrer">9 月分析报告</a>。</p>
-      </section>
+
+        </div>
+      </details>
 
       <details class="panel stargazer-overlap-panel overlap-archive">
         <summary>展开 8 月共同关注网络（715 人样本）</summary>
@@ -676,6 +794,6 @@
       </details>
     </main>
 
-    <script src="./app.js?v=422-acf1670"></script>
+    <script src="./app.js?v=20261104-october-average"></script>
   </body>
 </html>

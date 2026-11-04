@@ -264,13 +264,32 @@ function updateCurrentPhases(source, endDate, total) {
       : "9/1-9/30 为完整月数据；日增按 starred_at 统计。"
   });
   if (endDate <= "2026-09-30") return source;
-  return replacePhase(source, "october", {
+  source = replacePhase(source, "october", {
     id: "october",
     label: "10 月：滚动观察",
     start: "2026-10-01",
-    end: endDate,
-    note: `10/1-${endDate.slice(5).replace("-", "/")} 为当前滚动月，数据随每日更新继续补齐。`
+    end: endDate <= "2026-10-31" ? endDate : "2026-10-31",
+    note: endDate <= "2026-10-31"
+      ? `10/1-${endDate.slice(5).replace("-", "/")} 为当前滚动月，数据随每日更新继续补齐。`
+      : "10/1-10/31 为完整月数据；日增按 starred_at 统计。"
   });
+  if (endDate <= "2026-10-31") return source;
+  const monthIds = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
+  for (let month = 11; month <= Number(endDate.slice(5, 7)); month += 1) {
+    const start = `2026-${String(month).padStart(2, "0")}-01`;
+    const last = utcDate(new Date(Date.UTC(2026, month, 0)));
+    const end = endDate < last ? endDate : last;
+    source = replacePhase(source, monthIds[month - 1], {
+      id: monthIds[month - 1],
+      label: `${month} 月：滚动观察`,
+      start,
+      end,
+      note: end < last
+        ? `${month}/1-${end.slice(5).replace("-", "/")} 为当前滚动月，数据随每日更新继续补齐。`
+        : `${month}/1-${month}/${last.slice(8)} 为完整月数据；日增按 starred_at 统计。`
+    });
+  }
+  return source;
 }
 
 function cumulative(startTotal, rows) {

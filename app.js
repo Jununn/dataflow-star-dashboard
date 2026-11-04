@@ -126,16 +126,16 @@ const dailyCounts = [
   ["2026-10-20", 11], ["2026-10-21", 9], ["2026-10-22", 13], ["2026-10-23", 6],
   ["2026-10-24", 8], ["2026-10-25", 12], ["2026-10-26", 20], ["2026-10-27", 16],
   ["2026-10-28", 15], ["2026-10-29", 23], ["2026-10-30", 23], ["2026-10-31", 14],
-  ["2026-11-01", 11], ["2026-11-02", 21], ["2026-11-03", 12]
+  ["2026-11-01", 11], ["2026-11-02", 21], ["2026-11-03", 14], ["2026-11-04", 1]
 ];
 
 const webuiStarMeta = {
   repo: "OpenDCAI/DataFlow-WebUI",
   total: 254,
   startDate: "2026-07-15",
-  endDate: "2026-11-03",
+  endDate: "2026-11-04",
   beforeStart: 24,
-  generatedAt: "2026-11-03T18:14:40.290Z"
+  generatedAt: "2026-11-04T03:12:38.485Z"
 };
 
 const webuiDailyCounts = [
@@ -166,16 +166,17 @@ const webuiDailyCounts = [
   ["2026-10-19", 0], ["2026-10-20", 0], ["2026-10-21", 2], ["2026-10-22", 0],
   ["2026-10-23", 0], ["2026-10-24", 0], ["2026-10-25", 0], ["2026-10-26", 1],
   ["2026-10-27", 0], ["2026-10-28", 0], ["2026-10-29", 0], ["2026-10-30", 0],
-  ["2026-10-31", 0], ["2026-11-01", 0], ["2026-11-02", 0], ["2026-11-03", 0]
+  ["2026-10-31", 0], ["2026-11-01", 0], ["2026-11-02", 0], ["2026-11-03", 0],
+  ["2026-11-04", 0]
 ];
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 3389,
+  total: 3393,
   startDate: "2026-04-03",
-  endDate: "2026-11-03",
+  endDate: "2026-11-04",
   beforeStart: 104,
-  generatedAt: "2026-11-03T18:14:56.658Z"
+  generatedAt: "2026-11-04T03:13:11.046Z"
 };
 
 const dataflexDailyCounts = [
@@ -232,25 +233,14 @@ const dataflexDailyCounts = [
   ["2026-10-20", 14], ["2026-10-21", 19], ["2026-10-22", 20], ["2026-10-23", 11],
   ["2026-10-24", 8], ["2026-10-25", 20], ["2026-10-26", 20], ["2026-10-27", 16],
   ["2026-10-28", 20], ["2026-10-29", 13], ["2026-10-30", 16], ["2026-10-31", 14],
-  ["2026-11-01", 16], ["2026-11-02", 22], ["2026-11-03", 10]
+  ["2026-11-01", 16], ["2026-11-02", 22], ["2026-11-03", 12], ["2026-11-04", 2]
 ];
 
-let competitorSnapshotDate = "2026-11-03";
-let competitorPreviousSnapshotDate = "2026-11-01";
+let competitorSnapshotDate = "2026-11-04";
+let competitorPreviousSnapshotDate = "2026-11-02";
 
 
 const competitorSnapshots = {
-  "2026-06-16": {
-    "datajuicer/data-juicer": 6545,
-    "Eventual-Inc/Daft": 5567,
-    "OpenDCAI/DataFlow": 4956,
-    "huggingface/datatrove": 3091,
-    "NVIDIA-NeMo/DataDesigner": 2004,
-    "NVIDIA-NeMo/Curator": 1619,
-    "tinyfish-io/bigset": 1460,
-    "OpenDataArena/OpenDataArena-Tool": 144,
-    "InternScience/SciDataCopilot": 40
-  },
   "2026-06-14": {
     "datajuicer/data-juicer": 6537,
     "Eventual-Inc/Daft": 5564,
@@ -259,6 +249,17 @@ const competitorSnapshots = {
     "NVIDIA-NeMo/DataDesigner": 1997,
     "NVIDIA-NeMo/Curator": 1615,
     "tinyfish-io/bigset": 1444,
+    "OpenDataArena/OpenDataArena-Tool": 144,
+    "InternScience/SciDataCopilot": 40
+  },
+  "2026-06-16": {
+    "datajuicer/data-juicer": 6545,
+    "Eventual-Inc/Daft": 5567,
+    "OpenDCAI/DataFlow": 4956,
+    "huggingface/datatrove": 3091,
+    "NVIDIA-NeMo/DataDesigner": 2004,
+    "NVIDIA-NeMo/Curator": 1619,
+    "tinyfish-io/bigset": 1460,
     "OpenDataArena/OpenDataArena-Tool": 144,
     "InternScience/SciDataCopilot": 40
   },
@@ -1308,11 +1309,11 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 46
   },
   "2026-10-08": {
-    "datajuicer/data-juicer": 7124,
-    "Eventual-Inc/Daft": 5792,
+    "datajuicer/data-juicer": 7122,
+    "Eventual-Inc/Daft": 5791,
     "OpenDCAI/DataFlow": 8199,
-    "huggingface/datatrove": 3375,
-    "NVIDIA-NeMo/DataDesigner": 2314,
+    "huggingface/datatrove": 3374,
+    "NVIDIA-NeMo/DataDesigner": 2312,
     "NVIDIA-NeMo/Curator": 1802,
     "tinyfish-io/bigset": 1705,
     "OpenDataArena/OpenDataArena-Tool": 146,
@@ -1592,15 +1593,26 @@ const competitorSnapshots = {
     "tinyfish-io/bigset": 1707,
     "OpenDataArena/OpenDataArena-Tool": 149,
     "InternScience/SciDataCopilot": 46
+  },
+  "2026-11-04": {
+    "datajuicer/data-juicer": 7215,
+    "Eventual-Inc/Daft": 5825,
+    "OpenDCAI/DataFlow": 8434,
+    "huggingface/datatrove": 3415,
+    "NVIDIA-NeMo/DataDesigner": 2392,
+    "NVIDIA-NeMo/Curator": 1849,
+    "tinyfish-io/bigset": 1706,
+    "OpenDataArena/OpenDataArena-Tool": 149,
+    "InternScience/SciDataCopilot": 46
   }
 };
 
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 7213,
+    total: 7215,
     yesterday: 2,
-    twoDayChange: 8,
+    twoDayChange: 4,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -1613,14 +1625,14 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-11-03", 7213]
+      ["2026-11-04", 7215]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
     total: 5825,
-    yesterday: 1,
-    twoDayChange: 5,
+    yesterday: 0,
+    twoDayChange: 2,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -1636,22 +1648,22 @@ const competitorRepos = [
       ["2025-10-01", 4400],
       ["2026-01-01", 4900],
       ["2026-04-01", 5350],
-      ["2026-11-03", 5825]
+      ["2026-11-04", 5825]
     ]
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 8431,
+    total: 8434,
     yesterday: 3,
-    twoDayChange: 37,
+    twoDayChange: 15,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
-    total: 3414,
-    yesterday: 0,
-    twoDayChange: 0,
+    total: 3415,
+    yesterday: 1,
+    twoDayChange: 1,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -1664,28 +1676,28 @@ const competitorRepos = [
       ["2025-06-01", 2400],
       ["2025-10-01", 2650],
       ["2026-03-01", 2900],
-      ["2026-11-03", 3414]
+      ["2026-11-04", 3415]
     ]
   },
   {
     name: "NVIDIA-NeMo/DataDesigner",
     total: 2392,
-    yesterday: 1,
-    twoDayChange: 8,
+    yesterday: 0,
+    twoDayChange: 5,
     color: "#e94b35",
     points: [
       ["2025-10-16", 0],
       ["2026-01-01", 500],
       ["2026-03-01", 700],
       ["2026-04-01", 1000],
-      ["2026-11-03", 2392]
+      ["2026-11-04", 2392]
     ]
   },
   {
     name: "NVIDIA-NeMo/Curator",
-    total: 1848,
-    yesterday: 0,
-    twoDayChange: 3,
+    total: 1849,
+    yesterday: 1,
+    twoDayChange: 2,
     color: "#e879b4",
     points: [
       ["2024-03-14", 0],
@@ -1696,18 +1708,18 @@ const competitorRepos = [
       ["2025-07-01", 900],
       ["2025-12-01", 1200],
       ["2026-04-01", 1450],
-      ["2026-11-03", 1848]
+      ["2026-11-04", 1849]
     ]
   },
   {
     name: "tinyfish-io/bigset",
-    total: 1707,
-    yesterday: 0,
-    twoDayChange: 0,
+    total: 1706,
+    yesterday: -1,
+    twoDayChange: -1,
     color: "#14b8a6",
     points: [
       ["2026-05-15", 0],
-      ["2026-11-03", 1707]
+      ["2026-11-04", 1706]
     ]
   },
   {
@@ -1720,7 +1732,7 @@ const competitorRepos = [
       ["2025-07-19", 0],
       ["2025-11-01", 60],
       ["2026-03-01", 120],
-      ["2026-11-03", 149]
+      ["2026-11-04", 149]
     ]
   },
   {
@@ -1731,7 +1743,7 @@ const competitorRepos = [
     color: "#7c6bd8",
     points: [
       ["2026-02-09", 0],
-      ["2026-11-03", 46]
+      ["2026-11-04", 46]
     ]
   }
 ];
@@ -1876,11 +1888,11 @@ const actions = [
   ["2026-09-30", "Reddit", "oss-dataflow", "https://www.reddit.com/r/Rag/comments/1wtydcs/a_lot_of_rag_quality_is_decided_before_retrieval/"],
   ["2026-09-30", "Reddit", "oss-dataflow+flex", "https://www.reddit.com/r/LLMDevs/comments/1wty1gv/from_pdf_archives_to_a_trainable_model_a/"],
   ["2026-09-30", "Reddit", "oss-dataflow+flex", "https://www.reddit.com/r/OpenSourceeAI/comments/1wty133/from_pdf_archives_to_a_trainable_model_a/"],
-  ["2026-10-15","Reddit","dataflow-rag","https://www.reddit.com/r/Rag/comments/1x6i37q/the_hardest_part_of_building_a_rag_knowledge_base/"],
-  ["2026-10-16","LinkedIn","dataflow oss","https://www.linkedin.com/feed/update/urn:li:groupPost:43875-7516810395337105408"],
-  ["2026-10-19","LinkedIn","dataflow rag","https://www.linkedin.com/feed/update/urn:li:activity:7517898106399703040?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEUUBPQBFc8EfKdyeyOBsOUABAvO12iGjao"],
-  ["2026-10-20","Reddit","dataflow-oss","https://www.reddit.com/r/AI_Coders/comments/1xapbqt/we_opensourced_a_data_processing_pipeline_to_make/"],
-  ["2026-10-22","Reddit","dataflow-rag","https://www.reddit.com/r/LocalLLM/comments/1xcfpiq/data_preparation_is_unavoidable_in_llm/v"]
+  ["2026-10-15", "Reddit", "dataflow-rag", "https://www.reddit.com/r/Rag/comments/1x6i37q/the_hardest_part_of_building_a_rag_knowledge_base/"],
+  ["2026-10-16", "LinkedIn", "dataflow oss", "https://www.linkedin.com/feed/update/urn:li:groupPost:43875-7516810395337105408"],
+  ["2026-10-19", "LinkedIn", "dataflow rag", "https://www.linkedin.com/feed/update/urn:li:activity:7517898106399703040?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEUUBPQBFc8EfKdyeyOBsOUABAvO12iGjao"],
+  ["2026-10-20", "Reddit", "dataflow-oss", "https://www.reddit.com/r/AI_Coders/comments/1xapbqt/we_opensourced_a_data_processing_pipeline_to_make/"],
+  ["2026-10-22", "Reddit", "dataflow-rag", "https://www.reddit.com/r/LocalLLM/comments/1xcfpiq/data_preparation_is_unavoidable_in_llm/v"]
 ].map(([date, channel, title, url]) => ({ date, channel, title, url }));
 
 const trafficRows = [
@@ -1981,7 +1993,21 @@ const trafficRows = [
   ["2026-09-02", 252, 114, 41, 27],
   ["2026-09-03", 207, 103, 44, 28],
   ["2026-09-04", 198, 86, 275, 40],
-  ["2026-09-05", 99, 49, 24, 22]
+  ["2026-09-05", 99, 49, 24, 22],
+  ["2026-10-20", 160, 87, 689, 124],
+  ["2026-10-21", 55, 37, 939, 55],
+  ["2026-10-22", 45, 23, 56, 34],
+  ["2026-10-23", 70, 35, 62, 42],
+  ["2026-10-24", 221, 103, 94, 33],
+  ["2026-10-25", 122, 45, 110, 40],
+  ["2026-10-26", 254, 118, 181, 46],
+  ["2026-10-27", 193, 93, 127, 45],
+  ["2026-10-28", 220, 79, 210, 56],
+  ["2026-10-29", 228, 121, 119, 52],
+  ["2026-10-30", 240, 118, 135, 39],
+  ["2026-10-31", 200, 71, 295, 47],
+  ["2026-11-01", 239, 61, 297, 65],
+  ["2026-11-02", 222, 121, 162, 63]
 ].map(([date, views, visitors, clones, cloners]) => ({ date, views, visitors, clones, cloners }));
 
 const trafficSourceSnapshots = [
@@ -2335,6 +2361,33 @@ const trafficSourceSnapshots = [
       ["/pull/522", 22, 8],
       ["/tree/main/dataflow/operators", 18, 16]
     ]
+  },
+  {
+    date: "2026-11-02",
+    referrers: [
+      ["github.com", 283, 188],
+      ["Google", 103, 79],
+      ["aocr.org", 80, 80],
+      ["Bing", 56, 34],
+      ["oschina.net", 24, 22],
+      ["wcny4qa9krto.feishu.cn", 11, 11],
+      ["Baidu", 8, 7],
+      ["zwt233.github.io", 7, 5],
+      ["opendcai.github.io", 7, 4],
+      ["haolpku.github.io", 5, 3]
+    ],
+    content: [
+      ["Overview", 924, 591],
+      ["/blob/main/README-zh.md", 316, 189],
+      ["/pulls", 131, 21],
+      ["/issues", 79, 32],
+      ["/discussions", 64, 7],
+      ["/tree/main", 30, 25],
+      ["/pull/572", 30, 13],
+      ["/tree/main/dataflow", 24, 23],
+      ["/issues/580", 21, 7],
+      ["/blob/d70f9ef3/README-zh.md", 17, 17]
+    ]
   }
 ].map((snapshot) => ({
   ...snapshot,
@@ -2410,8 +2463,15 @@ const phases = [
     id: "october",
     label: "10 月：滚动观察",
     start: "2026-10-01",
-    end: "2026-11-03",
-    note: "10/1-11/03 为当前滚动月，数据随每日更新继续补齐。"
+    end: "2026-10-31",
+    note: "10/1-10/31 为完整月数据；日增按 starred_at 统计。"
+  },
+  {
+    id: "november",
+    label: "11 月：滚动观察",
+    start: "2026-11-01",
+    end: "2026-11-04",
+    note: "11/1-11/04 为当前滚动月，数据随每日更新继续补齐。"
   }
 ];
 
@@ -2468,7 +2528,7 @@ const phaseRegionStats = [
     china: 196,
     overseas: 586,
     unknown: 336,
-    note: "05/01-05/31 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    note: "05/01-05/31 地区统计已用 GitHub GraphQL 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Shanghai 25","China 19","Beijing 16","Beijing, China 14","Hong Kong 12","Taiwan 12","Shenzhen 6","Shanghai, China 5","Hangzhou 4","Hangzhou, China 4"],
     topOverseasLocations: ["United States 98","Japan 47","Singapore 20","Germany 19","Canada 14","India 14","South Korea 14","United Kingdom 14","France 12","Vietnam 11"]
   },
@@ -2480,45 +2540,69 @@ const phaseRegionStats = [
     china: 283,
     overseas: 775,
     unknown: 256,
-    note: "06/01-06/30 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    note: "06/01-06/30 地区统计已用 GitHub GraphQL 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Shanghai 25","Hong Kong 24","China 23","Beijing 22","Taiwan 15","Shanghai, China 13","Beijing, China 12","Shenzhen 9","Guangzhou 7","Hangzhou, China 7"],
     topOverseasLocations: ["United States 142","Japan 71","Singapore 36","South Korea 29","India 23","United Kingdom 22","Australia 20","Germany 11","Canada 10","France 10"]
   },
   {
     phaseId: "july",
     status: "complete",
-    totalStars: 1473,
+    totalStars: 1472,
     known: 1025,
     china: 277,
     overseas: 748,
-    unknown: 448,
-    note: "07/01-07/31 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    unknown: 447,
+    note: "07/01-07/31 地区统计已用 GitHub GraphQL 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Shanghai 44","China 22","Beijing 20","Hong Kong 14","Taiwan 12","Beijing, China 9","Shanghai, China 9","Shenzhen 9","Taipei 7","Hangzhou 5"],
     topOverseasLocations: ["United States 137","Japan 76","Singapore 36","South Korea 23","India 20","United Kingdom 13","France 11","Australia 10","Canada 10","Germany 10"]
   },
   {
     phaseId: "august",
     status: "complete",
-    totalStars: 957,
-    known: 159,
-    china: 51,
-    overseas: 108,
-    unknown: 798,
-    note: "08/01-09/11 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["Beijing 7","Shanghai 7","Beijing, China 5","China 5","Beijing,China 3","Hangzhou 3","beijing 2","135 Yaguan Road,Haihe Education Park,Tianjin,China 1","Beijing China 1","china 1"],
-    topOverseasLocations: ["United States 21","Japan 6","Australia 4","Singapore 4","Germany 3","Hawaii 3","India 3","United Kingdom 3","Earth 2","Portland, OR 2"]
+    totalStars: 710,
+    known: 132,
+    china: 41,
+    overseas: 91,
+    unknown: 578,
+    note: "08/01-08/31 地区统计已用 GitHub GraphQL 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    topChinaLocations: ["Beijing 6","Beijing, China 5","Shanghai 5","China 4","Beijing,China 3","Hangzhou 3","135 Yaguan Road,Haihe Education Park,Tianjin,China 1","beijing 1","Beijing China 1","china 1"],
+    topOverseasLocations: ["United States 18","Japan 6","Australia 3","Hawaii 3","India 3","Singapore 3","United Kingdom 3","Earth 2","South Korea 2","Sweden 2"]
   },
   {
     phaseId: "september",
     status: "complete",
-    totalStars: 201,
-    known: 23,
-    china: 8,
-    overseas: 15,
-    unknown: 178,
-    note: "09/01-09/09 地区统计已用 GitHub GraphQL 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["Shanghai 2","beijing 1","Beijing 1","China 1","hefei China 1","Shenzhen, China 1","Shenzhen, Guangdong, China 1"],
-    topOverseasLocations: ["Germany 2","United States 2","🔗 Bridging wet lab and dry lab 1","Australia 1","Chong Qing 1","Indonesia 1","Lisboa 1","Manila, Philippines 1","Portland, OR 1","SF 1"]
+    totalStars: 368,
+    known: 48,
+    china: 29,
+    overseas: 19,
+    unknown: 320,
+    note: "09/01-09/30 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    topChinaLocations: ["Shanghai 5","Beijing 3","China 3","Shanghai, China 2","beijing 1","Beijing HaiDian 1","Beijing, China 1","China Hubei Wuhan 1","Chong Qing 1","hangzhou 1"],
+    topOverseasLocations: ["United States 4","Germany 3","Australia 1","Finland 1","Indonesia 1","Lisboa 1","Manila, Philippines 1","Medellin, Colombia 1","Portland, OR 1","SF 1"]
+  },
+  {
+    phaseId: "october",
+    status: "complete",
+    totalStars: 241,
+    known: 53,
+    china: 24,
+    overseas: 29,
+    unknown: 188,
+    note: "10/01-10/31 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    topChinaLocations: ["China 3","beijing 2","Beijing 2","127 West Youyi Road, Xi'an 710072 1","Baoding 1","Beijing China 1","Cangzhou 1","China Hunan 1","Chongqing 1","Haerbin 1"],
+    topOverseasLocations: ["United States 8","Germany 2","Netherlands 2","Atlanta 1","Brazil 1","Buenos Aires 1","France 1","Helsinki 1","Indonesia 1","Karachi 1"]
+  },
+  {
+    phaseId: "november",
+    status: "complete",
+    totalStars: 47,
+    known: 11,
+    china: 6,
+    overseas: 5,
+    unknown: 36,
+    note: "11/01-11/04 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    topChinaLocations: ["china 1","Dezhou city 1","Hong Kong 1","Shanghai 1","Xian 1","上海 1"],
+    topOverseasLocations: ["Atlanta 1","Phoenix 1","Poland 1","Singapore 1","United States 1"]
   }
 ];
 
@@ -2660,13 +2744,9 @@ function getChannelClass(channel) {
 function renderSummary() {
   const totalAdded = data.reduce((sum, item) => sum + item.stars, 0);
   const maxDay = data.reduce((max, item) => (item.stars > max.stars ? item : max), data[0]);
-  const juneRows = data.filter((item) => item.date >= "2026-06-01" && item.date <= "2026-06-30");
-  const juneAvg = juneRows.reduce((sum, item) => sum + item.stars, 0) / juneRows.length;
-  const julyRows = data.filter((item) => item.date >= "2026-07-01" && item.date <= "2026-07-31");
-  const julyAvg = julyRows.reduce((sum, item) => sum + item.stars, 0) / julyRows.length;
-  const augustRows = data.filter((item) => item.date >= "2026-08-01" && item.date <= "2026-08-31");
-  const augustAvg = augustRows.reduce((sum, item) => sum + item.stars, 0) / augustRows.length;
-  const septemberRows = data.filter((item) => item.date >= "2026-09-01" && item.date <= "2026-09-30");
+  const octoberRows = data.filter((item) => item.date.startsWith("2026-10"));
+  const septemberRows = data.filter((item) => item.date.startsWith("2026-09"));
+  const octoberAvg = octoberRows.reduce((sum, item) => sum + item.stars, 0) / octoberRows.length;
   const septemberAvg = septemberRows.reduce((sum, item) => sum + item.stars, 0) / septemberRows.length;
   const afterMarch1 = data.filter((item) => item.date >= "2026-03-01");
   const afterMarch1Total = afterMarch1.reduce((sum, item) => sum + item.stars, 0);
@@ -2675,7 +2755,7 @@ function renderSummary() {
     ["3/1 后新增", formatNumber(afterMarch1Total), `2026-03-01 到 ${data.at(-1).date}，覆盖 3 月恢复、4 月抬升和 5 月高动量阶段。`],
     ["当前快照累计", formatNumber(data.at(-1).cumulative), `由 2026-01-01 前累计基线 ${formatNumber(startTotal)} 加日增推算。`],
     ["最高单日", `${maxDay.stars}`, `${maxDay.date}，对应 5/15 后传播峰值。`],
-    ["9 月日均", septemberAvg.toFixed(1), `8 月日均 ${augustAvg.toFixed(1)}，9 月为完整月数据。`]
+    ["10 月日均", octoberAvg.toFixed(1), `9 月日均 ${septemberAvg.toFixed(1)}，10 月为完整月数据。`]
   ];
   document.getElementById("summary").innerHTML = cards
     .map(([label, value, note]) => `<article class="metric"><span>${label}</span><strong>${value}</strong><p>${note}</p></article>`)
@@ -3235,7 +3315,7 @@ function renderCompetitorChart() {
     })
     .join("");
   document.getElementById("competitorLegend").innerHTML = sorted
-    .map((repo) => `<a class="competitor-chip" href="https://github.com/${repo.name}" target="_blank" rel="noreferrer"><span style="background:${repo.color}"></span><strong>${repo.name}</strong><em>${formatNumber(repo.total)}</em><small>${competitorSnapshotDate} 快照，较 ${competitorPreviousSnapshotDate} +${formatNumber(repo.twoDayChange ?? repo.yesterday)}</small></a>`)
+    .map((repo) => `<a class="competitor-chip" href="https://github.com/${repo.name}" target="_blank" rel="noreferrer"><span style="background:${repo.color}"></span><strong>${repo.name}</strong><em>${formatNumber(repo.total)}</em><small>${competitorSnapshotDate} 快照，较 ${competitorPreviousSnapshotDate} ${(repo.twoDayChange ?? repo.yesterday) >= 0 ? "+" : ""}${formatNumber(repo.twoDayChange ?? repo.yesterday)}</small></a>`)
     .join("");
   document.getElementById("competitorChart").innerHTML = `
     <div id="competitorTooltip" class="chart-tooltip" hidden></div>

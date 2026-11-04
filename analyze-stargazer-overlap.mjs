@@ -82,19 +82,19 @@ function isGenericRepo(repo) {
 }
 
 function classifyRepo(repo) {
-  const text = `${repo.fullName} ${repo.description} ${repo.language}`.toLowerCase();
+  const text = `${repo.fullName} ${repo.description}`.toLowerCase();
   const rules = [
-    ["Agent / Workflow", ["agent", "workflow", "dify", "langchain", "autogen", "crew", "flow", "orchestrat"]],
-    ["RAG / Search", ["rag", "retrieval", "vector", "embedding", "search", "milvus", "qdrant", "weaviate", "chromadb", "lancedb"]],
-    ["Data Engineering", ["data", "etl", "elt", "pipeline", "airflow", "dagster", "dbt", "spark", "flink", "dlt", "duckdb"]],
-    ["Data Prep / Dataset", ["dataset", "data prep", "dataprep", "annotation", "label", "unstructured", "parsing", "extract"]],
-    ["LLM Infra", ["llm", "inference", "serving", "vllm", "ollama", "transformer", "model", "prompt", "mcp"]],
-    ["Evaluation", ["eval", "benchmark", "testing", "observability", "ragas", "deepeval"]],
-    ["Database / Storage", ["database", "postgres", "mysql", "sqlite", "redis", "warehouse", "lakehouse"]],
-    ["Dev Tooling", ["cli", "framework", "sdk", "developer", "devtool", "template"]]
+    ["Data Prep / Dataset", /\b(dataset\w*|data prep\w*|dataprep\w*|annotation\w*|unstructured|parsing|parser\w*)\b|数据清洗|数据标注|文档解析/],
+    ["RAG / Search", /\b(rag|retrieval|vector\w*|embedding\w*|search|milvus|qdrant|weaviate|chromadb|lancedb)\b|知识库|知识图谱|检索/],
+    ["Agent / Workflow", /\b(agent\w*|workflow\w*|dify|langchain|autogen|crewai|orchestrat\w*)\b|智能体|工作流/],
+    ["Evaluation", /\b(eval\w*|benchmark\w*|testing|observability|ragas|deepeval|verification)\b|评测|评估/],
+    ["Database / Storage", /\b(database\w*|postgres\w*|mysql|sqlite|redis|warehouse\w*|lakehouse\w*)\b|数据库|存储/],
+    ["Data Engineering", /\b(data|etl|elt|pipeline\w*|airflow|dagster|dbt|spark|flink|dlt|duckdb)\b|数据工程|数据管道/],
+    ["LLM Infra", /\b(llm\w*|inference|serving|vllm|ollama|transformer\w*|model\w*|backbone\w*|prompt\w*|mcp\w*|vlm\w*)\b|大模型|推理引擎/],
+    ["Dev Tooling", /\b(cli|framework\w*|sdk|developer\w*|devtool\w*|template\w*|backend\w*|browser)\b|开发工具|命令行/]
   ];
-  for (const [category, keywords] of rules) {
-    if (keywords.some((keyword) => text.includes(keyword))) return category;
+  for (const [category, pattern] of rules) {
+    if (pattern.test(text)) return category;
   }
   return "Other";
 }
@@ -133,7 +133,7 @@ function sampleUsers(rows) {
 }
 
 async function fetchUserStarred(login) {
-  return cachedJson(`starred-${login}-${perUserRepoLimit}`, async () => {
+  return cachedJson(`starred-${login}-${perUserRepoLimit}-${endDate}`, async () => {
     const pages = Math.ceil(perUserRepoLimit / 100);
     const repos = [];
     for (let page = 1; page <= pages; page += 1) {
@@ -161,6 +161,7 @@ function repoLine(row) {
 const stargazers = await cachedJson(`stargazers-${repoFullName.replace("/", "-")}-${endDate}`, fetchStargazers);
 const sampled = sampleUsers(stargazers);
 const sampledLogins = sampled.map((item) => item.user.login);
+if (!sampledLogins.length) throw new Error(`No stargazers found for ${startDate} to ${endDate}`);
 
 const starredLists = await mapLimit(sampledLogins, concurrency, async (login) => {
   try {
@@ -169,6 +170,8 @@ const starredLists = await mapLimit(sampledLogins, concurrency, async (login) =>
     return { login, repos: [], error: String(error.message || error) };
   }
 });
+const successfulUsers = starredLists.filter((item) => !item.error).length;
+if (!successfulUsers) throw new Error("Could not read any sampled user's starred repositories");
 
 const sourceRepoLower = repoFullName.toLowerCase();
 const repoMap = new Map();
@@ -190,7 +193,7 @@ for (const item of starredLists) {
 }
 
 const rows = [...repoMap.values()]
-  .map((row) => ({ ...row, category: classifyRepo(row), sampledUsers: sampledLogins.length }))
+  .map((row) => ({ ...row, category: classifyRepo(row), sampledUsers: successfulUsers }))
   .sort((a, b) => b.userCount - a.userCount || b.stars - a.stars || a.fullName.localeCompare(b.fullName));
 const filteredRows = rows.filter((row) => !isGenericRepo(row));
 const categoryCounts = new Map();
@@ -210,9 +213,9 @@ for (let i = 0; i < topOverlapSource.length; i += 1) {
 const topOverlap = topOverlapRatios.length
   ? {
       repos: topOverlapSource.map((row) => row.fullName),
-      average: pct(topOverlapRatios.reduce((sum, value) => sum + value, 0), topOverlapRatios.length),
-      min: pct(Math.min(...topOverlapRatios), 1),
-      max: pct(Math.max(...topOverlapRatios), 1)
+      average: `${(100 * topOverlapRatios.reduce((sum, value) => sum + value, 0) / topOverlapRatios.length).toFixed(1)}%`,
+      min: `${(100 * Math.min(...topOverlapRatios)).toFixed(1)}%`,
+      max: `${(100 * Math.max(...topOverlapRatios)).toFixed(1)}%`
     }
   : { repos: [], average: "0%", min: "0%", max: "0%" };
 
@@ -223,6 +226,8 @@ const result = {
   sample: {
     targetStargazers: stargazers.filter((item) => item.starred_at?.slice(0, 10) >= startDate && item.starred_at?.slice(0, 10) <= endDate).length,
     sampledUsers: sampledLogins.length,
+    successfulUsers,
+    emptyUsers: starredLists.filter((item) => !item.error && !item.repos.length).length,
     perUserRepoLimit,
     failedUsers: starredLists.filter((item) => item.error).map((item) => ({ login: item.login, error: item.error }))
   },
@@ -244,12 +249,13 @@ const markdown = `# ${reportMonth} DataFlow Stargazer 共同关注分析
 生成时间：${result.generatedAt}
 
 样本：${result.sample.sampledUsers} / ${result.sample.targetStargazers} 个 ${monthName} 月新增 stargazer；每人最多读取最近 ${perUserRepoLimit} 个 starred repos。
+范围：${startDate} 至 ${endDate}（UTC 日期）；成功 ${successfulUsers} 人，失败 ${result.sample.failedUsers.length} 人，公开收藏为空 ${result.sample.emptyUsers} 人。比例以成功读取用户数为分母。
 
 ## 快速判断
 
 - Top 12 共同关注项目之间的用户集合平均重叠：${topOverlap.average}；区间：${topOverlap.min} - ${topOverlap.max}。
-- 这个重叠度很高，说明 ${monthName} 月新增 stargazer 中存在一批 GitHub star 行为高度相似的人群；它更像同一类信息源/榜单/推荐链路带来的用户，而不是完全随机的自然扩散。
-- 共同关注集中在 Agent / Workflow、LLM Infra、RAG / Search，其次才是 Data Engineering。
+- 这里的重叠度是两个项目共同用户数除以较小用户集合人数，再对项目对求平均；它不是全部新增用户的相似度，也不能据此确定流入渠道。
+- 共现次数最多的分类：${categories.slice(0, 3).map((row) => `${row.category}（${row.share}）`).join("、")}。分类为关键词初筛，场景需结合项目描述判断。
 
 ## 共同关注项目 Top 30（过滤泛项目）
 
@@ -272,10 +278,11 @@ ${rows.slice(0, 30).map(repoLine).join("\n")}
 ## 口径
 
 - 只分析 ${startDate} 到 ${endDate} 给 ${repoFullName} 点 star 的用户。
-- 抽样方式：按 ${monthName} 月新增 stargazer 时间序列等距抽样，避免只看最近几天。
+- 抽样方式：${sampledLogins.length === result.sample.targetStargazers ? "覆盖日期范围内全部当前可见的新增 stargazer" : `按 ${monthName} 月新增 stargazer 时间序列等距抽样，避免只看最近几天`}；已取消 star 的用户不在当前列表中。
 - 每个用户最多取最近 ${perUserRepoLimit} 个 starred repos；很早以前 star 的项目不会进入本次样本。
 - “过滤泛项目”会去掉超大型学习清单、通用 awesome list、面试资料等噪声，但原始 Top 表仍保留。
 - GitHub 不提供共同 star 图谱接口，本报告由公开 stargazer 和用户 starred repos 聚合而来。
+- 收藏列表反映抓取时可见的兴趣，并不限定收藏发生在 ${monthName} 月；共现次数占比不是用户占比，也不代表真实使用、集成或购买意向。
 `;
 
 await fs.writeFile(mdPath, markdown);
