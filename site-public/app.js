@@ -126,8 +126,8 @@ const dailyCounts = [
   ["2026-10-20", 11], ["2026-10-21", 9], ["2026-10-22", 13], ["2026-10-23", 6],
   ["2026-10-24", 8], ["2026-10-25", 12], ["2026-10-26", 20], ["2026-10-27", 16],
   ["2026-10-28", 15], ["2026-10-29", 23], ["2026-10-30", 23], ["2026-10-31", 14],
-  ["2026-11-01", 11], ["2026-11-02", 21], ["2026-11-03", 14], ["2026-11-04", 10],
-  ["2026-11-05", 11]
+  ["2026-11-01", 11], ["2026-11-02", 21], ["2026-11-03", 13], ["2026-11-04", 10],
+  ["2026-11-05", 14]
 ];
 
 const webuiStarMeta = {
@@ -136,7 +136,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-11-05",
   beforeStart: 24,
-  generatedAt: "2026-11-05T09:44:14.404Z"
+  generatedAt: "2026-11-05T18:32:01.933Z"
 };
 
 const webuiDailyCounts = [
@@ -173,11 +173,11 @@ const webuiDailyCounts = [
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 3422,
+  total: 3425,
   startDate: "2026-04-03",
   endDate: "2026-11-05",
   beforeStart: 104,
-  generatedAt: "2026-11-05T09:44:29.759Z"
+  generatedAt: "2026-11-05T18:32:18.030Z"
 };
 
 const dataflexDailyCounts = [
@@ -235,7 +235,7 @@ const dataflexDailyCounts = [
   ["2026-10-24", 8], ["2026-10-25", 20], ["2026-10-26", 20], ["2026-10-27", 16],
   ["2026-10-28", 20], ["2026-10-29", 13], ["2026-10-30", 16], ["2026-10-31", 14],
   ["2026-11-01", 16], ["2026-11-02", 21], ["2026-11-03", 12], ["2026-11-04", 22],
-  ["2026-11-05", 10]
+  ["2026-11-05", 13]
 ];
 
 let competitorSnapshotDate = "2026-11-05";
@@ -1608,11 +1608,11 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 46
   },
   "2026-11-05": {
-    "datajuicer/data-juicer": 7222,
-    "Eventual-Inc/Daft": 5826,
-    "OpenDCAI/DataFlow": 8453,
-    "huggingface/datatrove": 3417,
-    "NVIDIA-NeMo/DataDesigner": 2397,
+    "datajuicer/data-juicer": 7223,
+    "Eventual-Inc/Daft": 5827,
+    "OpenDCAI/DataFlow": 8455,
+    "huggingface/datatrove": 3416,
+    "NVIDIA-NeMo/DataDesigner": 2398,
     "NVIDIA-NeMo/Curator": 1852,
     "tinyfish-io/bigset": 1705,
     "OpenDataArena/OpenDataArena-Tool": 149,
@@ -1623,9 +1623,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 7222,
-    yesterday: 3,
-    twoDayChange: 9,
+    total: 7223,
+    yesterday: 1,
+    twoDayChange: 10,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -1638,14 +1638,14 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-11-05", 7222]
+      ["2026-11-05", 7223]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
-    total: 5826,
-    yesterday: -1,
-    twoDayChange: 1,
+    total: 5827,
+    yesterday: 1,
+    twoDayChange: 2,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -1661,22 +1661,22 @@ const competitorRepos = [
       ["2025-10-01", 4400],
       ["2026-01-01", 4900],
       ["2026-04-01", 5350],
-      ["2026-11-05", 5826]
+      ["2026-11-05", 5827]
     ]
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 8453,
-    yesterday: 13,
-    twoDayChange: 22,
+    total: 8455,
+    yesterday: 2,
+    twoDayChange: 24,
     color: "#2d9cdb",
     points: null
   },
   {
     name: "huggingface/datatrove",
-    total: 3417,
-    yesterday: 0,
-    twoDayChange: 3,
+    total: 3416,
+    yesterday: -1,
+    twoDayChange: 2,
     color: "#3fb950",
     points: [
       ["2023-06-14", 0],
@@ -1689,27 +1689,27 @@ const competitorRepos = [
       ["2025-06-01", 2400],
       ["2025-10-01", 2650],
       ["2026-03-01", 2900],
-      ["2026-11-05", 3417]
+      ["2026-11-05", 3416]
     ]
   },
   {
     name: "NVIDIA-NeMo/DataDesigner",
-    total: 2397,
-    yesterday: 4,
-    twoDayChange: 5,
+    total: 2398,
+    yesterday: 1,
+    twoDayChange: 6,
     color: "#e94b35",
     points: [
       ["2025-10-16", 0],
       ["2026-01-01", 500],
       ["2026-03-01", 700],
       ["2026-04-01", 1000],
-      ["2026-11-05", 2397]
+      ["2026-11-05", 2398]
     ]
   },
   {
     name: "NVIDIA-NeMo/Curator",
     total: 1852,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 4,
     color: "#e879b4",
     points: [
