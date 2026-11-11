@@ -128,7 +128,7 @@ const dailyCounts = [
   ["2026-10-28", 15], ["2026-10-29", 23], ["2026-10-30", 23], ["2026-10-31", 14],
   ["2026-11-01", 11], ["2026-11-02", 21], ["2026-11-03", 13], ["2026-11-04", 10],
   ["2026-11-05", 22], ["2026-11-06", 15], ["2026-11-07", 11], ["2026-11-08", 12],
-  ["2026-11-09", 17], ["2026-11-10", 15], ["2026-11-11", 11]
+  ["2026-11-09", 17], ["2026-11-10", 15], ["2026-11-11", 14]
 ];
 
 const webuiStarMeta = {
@@ -137,7 +137,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-11-11",
   beforeStart: 24,
-  generatedAt: "2026-11-11T09:44:05.547Z"
+  generatedAt: "2026-11-11T18:24:08.948Z"
 };
 
 const webuiDailyCounts = [
@@ -175,11 +175,11 @@ const webuiDailyCounts = [
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 3533,
+  total: 3540,
   startDate: "2026-04-03",
   endDate: "2026-11-11",
   beforeStart: 104,
-  generatedAt: "2026-11-11T09:44:23.060Z"
+  generatedAt: "2026-11-11T18:24:25.640Z"
 };
 
 const dataflexDailyCounts = [
@@ -238,7 +238,7 @@ const dataflexDailyCounts = [
   ["2026-10-28", 20], ["2026-10-29", 13], ["2026-10-30", 16], ["2026-10-31", 14],
   ["2026-11-01", 16], ["2026-11-02", 21], ["2026-11-03", 12], ["2026-11-04", 22],
   ["2026-11-05", 13], ["2026-11-06", 10], ["2026-11-07", 31], ["2026-11-08", 33],
-  ["2026-11-09", 19], ["2026-11-10", 10], ["2026-11-11", 7]
+  ["2026-11-09", 19], ["2026-11-10", 10], ["2026-11-11", 14]
 ];
 
 let competitorSnapshotDate = "2026-11-11";
@@ -1677,13 +1677,13 @@ const competitorSnapshots = {
     "InternScience/SciDataCopilot": 46
   },
   "2026-11-11": {
-    "datajuicer/data-juicer": 7240,
-    "Eventual-Inc/Daft": 5843,
-    "OpenDCAI/DataFlow": 8541,
+    "datajuicer/data-juicer": 7241,
+    "Eventual-Inc/Daft": 5844,
+    "OpenDCAI/DataFlow": 8544,
     "huggingface/datatrove": 3419,
-    "NVIDIA-NeMo/DataDesigner": 2403,
+    "NVIDIA-NeMo/DataDesigner": 2402,
     "NVIDIA-NeMo/Curator": 1858,
-    "tinyfish-io/bigset": 1707,
+    "tinyfish-io/bigset": 1708,
     "OpenDataArena/OpenDataArena-Tool": 149,
     "InternScience/SciDataCopilot": 46
   }
@@ -1692,9 +1692,9 @@ const competitorSnapshots = {
 const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
-    total: 7240,
-    yesterday: 7,
-    twoDayChange: 8,
+    total: 7241,
+    yesterday: 1,
+    twoDayChange: 9,
     color: "#f2c94c",
     points: [
       ["2023-08-01", 0],
@@ -1707,14 +1707,14 @@ const competitorRepos = [
       ["2025-06-01", 4500],
       ["2025-09-01", 5100],
       ["2026-01-01", 5600],
-      ["2026-11-11", 7240]
+      ["2026-11-11", 7241]
     ]
   },
   {
     name: "Eventual-Inc/Daft",
-    total: 5843,
-    yesterday: 4,
-    twoDayChange: 7,
+    total: 5844,
+    yesterday: 1,
+    twoDayChange: 8,
     color: "#f2994a",
     points: [
       ["2022-04-25", 0],
@@ -1730,14 +1730,14 @@ const competitorRepos = [
       ["2025-10-01", 4400],
       ["2026-01-01", 4900],
       ["2026-04-01", 5350],
-      ["2026-11-11", 5843]
+      ["2026-11-11", 5844]
     ]
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 8541,
-    yesterday: 12,
-    twoDayChange: 27,
+    total: 8544,
+    yesterday: 3,
+    twoDayChange: 30,
     color: "#2d9cdb",
     points: null
   },
@@ -1763,22 +1763,22 @@ const competitorRepos = [
   },
   {
     name: "NVIDIA-NeMo/DataDesigner",
-    total: 2403,
-    yesterday: 0,
-    twoDayChange: 0,
+    total: 2402,
+    yesterday: -1,
+    twoDayChange: -1,
     color: "#e94b35",
     points: [
       ["2025-10-16", 0],
       ["2026-01-01", 500],
       ["2026-03-01", 700],
       ["2026-04-01", 1000],
-      ["2026-11-11", 2403]
+      ["2026-11-11", 2402]
     ]
   },
   {
     name: "NVIDIA-NeMo/Curator",
     total: 1858,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 2,
     color: "#e879b4",
     points: [
@@ -1795,13 +1795,13 @@ const competitorRepos = [
   },
   {
     name: "tinyfish-io/bigset",
-    total: 1707,
+    total: 1708,
     yesterday: 1,
-    twoDayChange: 1,
+    twoDayChange: 2,
     color: "#14b8a6",
     points: [
       ["2026-05-15", 0],
-      ["2026-11-11", 1707]
+      ["2026-11-11", 1708]
     ]
   },
   {
