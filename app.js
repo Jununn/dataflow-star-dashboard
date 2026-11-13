@@ -129,7 +129,7 @@ const dailyCounts = [
   ["2026-11-01", 11], ["2026-11-02", 21], ["2026-11-03", 13], ["2026-11-04", 10],
   ["2026-11-05", 22], ["2026-11-06", 15], ["2026-11-07", 11], ["2026-11-08", 12],
   ["2026-11-09", 17], ["2026-11-10", 15], ["2026-11-11", 17], ["2026-11-12", 14],
-  ["2026-11-13", 6]
+  ["2026-11-13", 9]
 ];
 
 const webuiStarMeta = {
@@ -138,7 +138,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-11-13",
   beforeStart: 24,
-  generatedAt: "2026-11-13T09:51:33.647Z"
+  generatedAt: "2026-11-13T18:24:44.880Z"
 };
 
 const webuiDailyCounts = [
@@ -177,11 +177,11 @@ const webuiDailyCounts = [
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 3561,
+  total: 3570,
   startDate: "2026-04-03",
   endDate: "2026-11-13",
   beforeStart: 104,
-  generatedAt: "2026-11-13T09:51:49.268Z"
+  generatedAt: "2026-11-13T18:25:03.738Z"
 };
 
 const dataflexDailyCounts = [
@@ -241,7 +241,7 @@ const dataflexDailyCounts = [
   ["2026-11-01", 16], ["2026-11-02", 21], ["2026-11-03", 12], ["2026-11-04", 22],
   ["2026-11-05", 13], ["2026-11-06", 10], ["2026-11-07", 31], ["2026-11-08", 33],
   ["2026-11-09", 19], ["2026-11-10", 10], ["2026-11-11", 16], ["2026-11-12", 13],
-  ["2026-11-13", 6]
+  ["2026-11-13", 15]
 ];
 
 let competitorSnapshotDate = "2026-11-13";
@@ -1704,7 +1704,7 @@ const competitorSnapshots = {
   "2026-11-13": {
     "datajuicer/data-juicer": 7245,
     "Eventual-Inc/Daft": 5848,
-    "OpenDCAI/DataFlow": 8567,
+    "OpenDCAI/DataFlow": 8570,
     "huggingface/datatrove": 3419,
     "NVIDIA-NeMo/DataDesigner": 2405,
     "NVIDIA-NeMo/Curator": 1861,
@@ -1718,7 +1718,7 @@ const competitorRepos = [
   {
     name: "datajuicer/data-juicer",
     total: 7245,
-    yesterday: 1,
+    yesterday: 0,
     twoDayChange: 4,
     color: "#f2c94c",
     points: [
@@ -1738,7 +1738,7 @@ const competitorRepos = [
   {
     name: "Eventual-Inc/Daft",
     total: 5848,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 4,
     color: "#f2994a",
     points: [
@@ -1760,9 +1760,9 @@ const competitorRepos = [
   },
   {
     name: "OpenDCAI/DataFlow",
-    total: 8567,
-    yesterday: 10,
-    twoDayChange: 23,
+    total: 8570,
+    yesterday: 3,
+    twoDayChange: 26,
     color: "#2d9cdb",
     points: null
   },
@@ -1789,7 +1789,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/DataDesigner",
     total: 2405,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 3,
     color: "#e94b35",
     points: [
@@ -1803,7 +1803,7 @@ const competitorRepos = [
   {
     name: "NVIDIA-NeMo/Curator",
     total: 1861,
-    yesterday: 2,
+    yesterday: 0,
     twoDayChange: 3,
     color: "#e879b4",
     points: [
@@ -2631,86 +2631,86 @@ const phaseRegionStats = [
   {
     phaseId: "may",
     status: "complete",
-    totalStars: 1118,
-    known: 782,
-    china: 196,
-    overseas: 586,
-    unknown: 336,
-    note: "05/01-05/31 地区统计已用 GitHub GraphQL 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    totalStars: 1114,
+    known: 777,
+    china: 215,
+    overseas: 562,
+    unknown: 337,
+    note: "05/01-05/31 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Shanghai 25","China 19","Beijing 16","Beijing, China 14","Hong Kong 12","Taiwan 12","Shenzhen 6","Shanghai, China 5","Hangzhou 4","Hangzhou, China 4"],
     topOverseasLocations: ["United States 98","Japan 47","Singapore 20","Germany 19","Canada 14","India 14","South Korea 14","United Kingdom 14","France 12","Vietnam 11"]
   },
   {
     phaseId: "june",
     status: "complete",
-    totalStars: 1314,
-    known: 1058,
-    china: 283,
-    overseas: 775,
-    unknown: 256,
-    note: "06/01-06/30 地区统计已用 GitHub GraphQL 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    totalStars: 1313,
+    known: 1054,
+    china: 316,
+    overseas: 738,
+    unknown: 259,
+    note: "06/01-06/30 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Shanghai 25","Hong Kong 24","China 23","Beijing 22","Taiwan 15","Shanghai, China 13","Beijing, China 12","Shenzhen 9","Guangzhou 7","Hangzhou, China 7"],
     topOverseasLocations: ["United States 142","Japan 71","Singapore 36","South Korea 29","India 23","United Kingdom 22","Australia 20","Germany 11","Canada 10","France 10"]
   },
   {
     phaseId: "july",
     status: "complete",
-    totalStars: 1472,
-    known: 1025,
-    china: 277,
-    overseas: 748,
-    unknown: 447,
-    note: "07/01-07/31 地区统计已用 GitHub GraphQL 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    totalStars: 1470,
+    known: 1016,
+    china: 304,
+    overseas: 712,
+    unknown: 454,
+    note: "07/01-07/31 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["Shanghai 44","China 22","Beijing 20","Hong Kong 14","Taiwan 12","Beijing, China 9","Shanghai, China 9","Shenzhen 9","Taipei 7","Hangzhou 5"],
     topOverseasLocations: ["United States 137","Japan 76","Singapore 36","South Korea 23","India 20","United Kingdom 13","France 11","Australia 10","Canada 10","Germany 10"]
   },
   {
     phaseId: "august",
     status: "complete",
-    totalStars: 710,
-    known: 132,
-    china: 41,
-    overseas: 91,
-    unknown: 578,
-    note: "08/01-08/31 地区统计已用 GitHub GraphQL 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["Beijing 6","Beijing, China 5","Shanghai 5","China 4","Beijing,China 3","Hangzhou 3","135 Yaguan Road,Haihe Education Park,Tianjin,China 1","beijing 1","Beijing China 1","china 1"],
-    topOverseasLocations: ["United States 18","Japan 6","Australia 3","Hawaii 3","India 3","Singapore 3","United Kingdom 3","Earth 2","South Korea 2","Sweden 2"]
+    totalStars: 694,
+    known: 133,
+    china: 51,
+    overseas: 82,
+    unknown: 561,
+    note: "08/01-08/31 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    topChinaLocations: ["Beijing 7","Beijing, China 5","Shanghai 5","China 4","Beijing,China 3","Hangzhou 3","中国 2","武汉 2","135 Yaguan Road,Haihe Education Park,Tianjin,China 1","beijing 1"],
+    topOverseasLocations: ["United States 18","Japan 6","Australia 3","Hawaii 3","India 3","Singapore 3","United Kingdom 3","South Korea 2","Sweden 2","1st Law 1"]
   },
   {
     phaseId: "september",
     status: "complete",
     totalStars: 368,
-    known: 48,
-    china: 29,
+    known: 49,
+    china: 30,
     overseas: 19,
-    unknown: 320,
+    unknown: 319,
     note: "09/01-09/30 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["Shanghai 5","Beijing 3","China 3","Shanghai, China 2","beijing 1","Beijing HaiDian 1","Beijing, China 1","China Hubei Wuhan 1","Chong Qing 1","hangzhou 1"],
+    topChinaLocations: ["Shanghai 6","Beijing 3","China 3","Shanghai, China 2","beijing 1","Beijing HaiDian 1","Beijing, China 1","China Hubei Wuhan 1","Chong Qing 1","hangzhou 1"],
     topOverseasLocations: ["United States 4","Germany 3","Australia 1","Finland 1","Indonesia 1","Lisboa 1","Manila, Philippines 1","Medellin, Colombia 1","Portland, OR 1","SF 1"]
   },
   {
     phaseId: "october",
     status: "complete",
-    totalStars: 241,
+    totalStars: 240,
     known: 53,
     china: 24,
     overseas: 29,
-    unknown: 188,
+    unknown: 187,
     note: "10/01-10/31 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
     topChinaLocations: ["China 3","beijing 2","Beijing 2","127 West Youyi Road, Xi'an 710072 1","Baoding 1","Beijing China 1","Cangzhou 1","China Hunan 1","Chongqing 1","Haerbin 1"],
-    topOverseasLocations: ["United States 8","Germany 2","Netherlands 2","Atlanta 1","Brazil 1","Buenos Aires 1","France 1","Helsinki 1","Indonesia 1","Karachi 1"]
+    topOverseasLocations: ["United States 9","Germany 2","Netherlands 2","Atlanta 1","Brazil 1","Buenos Aires 1","France 1","Helsinki 1","Indonesia 1","Karachi 1"]
   },
   {
     phaseId: "november",
     status: "complete",
-    totalStars: 47,
-    known: 11,
-    china: 6,
-    overseas: 5,
-    unknown: 36,
-    note: "11/01-11/04 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
-    topChinaLocations: ["china 1","Dezhou city 1","Hong Kong 1","Shanghai 1","Xian 1","上海 1"],
-    topOverseasLocations: ["Atlanta 1","Phoenix 1","Poland 1","Singapore 1","United States 1"]
+    totalStars: 187,
+    known: 50,
+    china: 21,
+    overseas: 29,
+    unknown: 137,
+    note: "11/01-11/13 地区统计已用 GitHub API 补齐，样本为当前仍保留 star 的该阶段新增用户。",
+    topChinaLocations: ["Shanghai 3","china 2","Beijing 1","BeiJing 1","Chongqing 1","Dezhou city 1","Fuzhou City 1","Guangzhou, ShenZhen,ShangHai,China 1","Hong Kong 1","jinan 1"],
+    topOverseasLocations: ["United States 4","Panjin city 2","Singapore 2","Atlanta 1","Cambridge 1","Canada 1","Copenhagen 1","Dublin 1","France 1","handan city 1"]
   }
 ];
 
