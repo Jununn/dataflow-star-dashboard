@@ -14,7 +14,7 @@ const monthName = Number(reportMonth.slice(5, 7));
 const sampleSize = Number(process.env.SAMPLE_SIZE || 160);
 const perUserRepoLimit = Number(process.env.PER_USER_REPO_LIMIT || 300);
 const concurrency = Number(process.env.CONCURRENCY || 8);
-const reportDir = join(root, "reports");
+const reportDir = join(root, ".private", "reports");
 const cacheDir = join(root, ".cache", "stargazer-overlap");
 
 const headers = {

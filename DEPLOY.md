@@ -1,23 +1,28 @@
-# DataFlow Star Dashboard Deployment
+# Encrypted GitHub Pages dashboard
 
-This dashboard is deployed as a static GitHub Pages site. The GitHub Actions workflow updates stars, competitor snapshots, and region stats in `app.js`, copies the public files into `site-public/`, commits the new snapshot, and publishes `site-public/` to the `gh-pages` branch.
+The public page contains the summary and Star charts. Everything from the visitor/Star comparison onward, the complete dashboard script, activity records and reports is encrypted with AES-256-GCM. PBKDF2-SHA-256 derives the key with 600,000 iterations and a random salt; each build uses a fresh nonce.
 
-## Files to publish
+## Secrets and deployment
 
-- `site-public/index.html`
-- `site-public/styles.css`
-- `site-public/app.js`
+Set repository Actions secrets `DASHBOARD_PASSWORD` and `GH_TOKEN`. Never put their values in source files. The token needs repository access, access to DataFlow traffic statistics, and workflow scope when modifying the workflow. Publishing gh-pages with a personal token triggers GitHub Pages builds.
 
-Local token files are ignored by `.gitignore` and must not be committed.
+The workflow runs at 10:30 and 19:00 Beijing time. Scheduled runs and manual runs with Refresh enabled decrypt to ignored `.private/`, refresh stars, competitors, current-month regions and traffic, then encrypt again. An update failure stops publication. Existing historical reports and activity records are preserved; new activity records and overlap research require explicit source edits/research. Push-triggered runs deploy the existing encrypted snapshot without refreshing data.
 
-## GitHub setup
+Only the eight files listed in `dashboard-build.mjs` are published. Decrypted sources, tokens, cache files and reports must never be committed or uploaded as Actions artifacts. Both branch deployments preserve Git history.
 
-1. Create a GitHub repository for this dashboard.
-2. Push this folder to the repository.
-3. Open repository settings, then `Secrets and variables` -> `Actions`.
-4. Add a repository secret named `GH_TOKEN`.
-5. Paste a GitHub token that can read public repo metadata and has enough API quota.
-6. Run the `Update and deploy dashboard` workflow manually once. This creates or refreshes the `gh-pages` branch.
-7. Open `Settings` -> `Pages`, set the source to `Deploy from a branch`, then select `gh-pages` and `/ (root)`.
+## Local editing
 
-The workflow also runs at 10:30 and 19:00 Beijing time every day.
+1. Set `DASHBOARD_PASSWORD` in the current terminal session using hidden input.
+2. Run `node dashboard-build.mjs restore` to recover `.private/index.html`, `.private/app.js` and `.private/reports/`.
+3. Edit those private files. Do not edit the generated public app or page.
+4. Run `node dashboard-build.mjs build`, then `node --test dashboard-crypto.test.mjs`.
+5. Preview only `site-public/`, e.g. `python -m http.server 8778 --bind 127.0.0.1 --directory site-public`.
+6. Commit the generated public files and implementation changes, never `.private/`.
+
+Run `node dashboard-refresh.mjs` to refresh data, or `node dashboard-refresh.mjs --deploy-only` to verify/rebuild the current encrypted snapshot. Restore overwrites private files, so build local edits before calling refresh.
+
+## Unlock and password rotation
+
+Unlock reconstructs the original HTML and script, preserving direct children of main and the original styles. Remembering unlock stores the derived key in this browser, not the password. Relock clears it. Treat remembered browser storage as sensitive. The salt remains stable for ordinary updates so remembered unlock continues to work.
+
+To rotate, restore with the old password, change the environment variable and repository Secret, and build with `--rekey`. This invalidates remembered keys. Encryption cannot revoke copies previously downloaded or remove data from historical Git commits. Historical plaintext from before migration remains in history; history rewriting requires a separate explicit decision.

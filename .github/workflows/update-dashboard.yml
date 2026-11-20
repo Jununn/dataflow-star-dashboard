@@ -1,81 +1,67 @@
-name: Update and deploy dashboard
-
+name: Update and deploy encrypted dashboard
 on:
   push:
-    branches:
-      - main
-    paths:
-      - "index.html"
-      - "styles.css"
-      - "app.js"
-      - "update-dashboard.mjs"
-      - "update-regions.mjs"
-      - "env-token.mjs"
-      - "reports/**"
-      - ".github/workflows/update-dashboard.yml"
+    branches: [main]
   workflow_dispatch:
+    inputs:
+      refresh:
+        description: Refresh GitHub data before deployment
+        type: boolean
+        default: true
   schedule:
     - cron: "30 2 * * *"
     - cron: "0 11 * * *"
-
 permissions:
   contents: write
-
 concurrency:
-  group: pages
-  cancel-in-progress: true
-
+  group: encrypted-dashboard
+  cancel-in-progress: false
 jobs:
   update-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-
-      - name: Setup Node
-        uses: actions/setup-node@v5
+      - uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GH_TOKEN || github.token }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
         with:
           node-version: "22"
-
-      - name: Update dashboard data
+      - name: Restore, refresh and encrypt
         env:
+          DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN || github.token }}
+          REFRESH: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.refresh) }}
+        shell: bash
         run: |
-          node update-dashboard.mjs
-          node update-regions.mjs
-
-      - name: Refresh public site files
-        run: |
-          mkdir -p site-public
-          cp index.html site-public/index.html
-          cp styles.css site-public/styles.css
-          cp app.js site-public/app.js
-          VERSION="${GITHUB_RUN_NUMBER}-${GITHUB_SHA::7}" node -e 'const fs = require("node:fs"); const path = "site-public/index.html"; const version = process.env.VERSION; let html = fs.readFileSync(path, "utf8"); html = html.replace(/\.\/styles\.css(?:\?v=[^"]*)?/g, `./styles.css?v=${version}`).replace(/\.\/app\.js(?:\?v=[^"]*)?/g, `./app.js?v=${version}`); fs.writeFileSync(path, html);'
-
-      - name: Commit updated snapshot
+          if [ "$REFRESH" = "true" ]; then
+            node dashboard-refresh.mjs
+          else
+            node dashboard-refresh.mjs --deploy-only
+          fi
+          node --test dashboard-crypto.test.mjs dashboard-loader.test.mjs
+      - name: Commit encrypted snapshot
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add app.js site-public/index.html site-public/styles.css site-public/app.js
-          if git diff --cached --quiet; then
-            echo "No dashboard changes to commit."
-          else
-            git commit -m "chore: update dashboard snapshot"
-            git push
+          git add index.html app.js protected.js unlock.js dashboard-gate.css styles.css favicon.png .nojekyll site-public
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update encrypted dashboard [skip ci]"
+            git push origin HEAD:main
           fi
-
-      - name: Publish gh-pages branch
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+      - name: Publish allowlisted files
         run: |
-          rm -rf /tmp/dataflow-pages
-          mkdir -p /tmp/dataflow-pages
-          cp -R site-public/. /tmp/dataflow-pages/
-          git -C /tmp/dataflow-pages init
-          git -C /tmp/dataflow-pages checkout -b gh-pages
-          git -C /tmp/dataflow-pages config user.name "github-actions[bot]"
-          git -C /tmp/dataflow-pages config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git -C /tmp/dataflow-pages add .
-          git -C /tmp/dataflow-pages commit -m "Deploy dashboard"
-          git -C /tmp/dataflow-pages remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git -C /tmp/dataflow-pages push --force origin gh-pages
+          git worktree add "$RUNNER_TEMP/dashboard-pages" origin/gh-pages
+          cd "$RUNNER_TEMP/dashboard-pages"
+          git rm -r --ignore-unmatch .
+          for file in index.html app.js protected.js unlock.js dashboard-gate.css styles.css favicon.png .nojekyll; do
+            cp "$GITHUB_WORKSPACE/site-public/$file" "$file"
+          done
+          git add .
+          if ! git diff --cached --quiet; then
+            git commit -m "Deploy encrypted dashboard"
+            git push origin HEAD:gh-pages
+          fi
+      - name: Remove temporary decrypted sources
+        if: always()
+        run: node -e "require('node:fs').rmSync('.private', {recursive:true,force:true})"

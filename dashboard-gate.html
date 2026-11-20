@@ -1,0 +1,16 @@
+<section class="panel" id="dashboardGate" aria-labelledby="gateTitle">
+  <h2 id="gateTitle">解锁详细看板</h2>
+  <p>输入口令后，查看独立访客与新增 Star 对照及后续内容。</p>
+  <form id="dashboardGateForm">
+    <label for="dashboardPasscode">访问口令</label>
+    <div class="gate-input-row"><input id="dashboardPasscode" type="password" autocomplete="current-password" required aria-describedby="gateError"><button type="submit" id="gateSubmit">解锁</button></div>
+    <label class="gate-remember"><input id="gateRemember" type="checkbox" checked>在此浏览器记住解锁状态</label>
+    <p id="gateError" role="status" aria-live="polite"></p>
+  </form>
+  <noscript>请启用 JavaScript 后输入口令解锁。</noscript>
+</section>
+</main>
+<script src="./app.js?v=BUILD_VERSION"></script>
+<script src="./protected.js?v=BUILD_VERSION"></script>
+<script src="./unlock.js?v=BUILD_VERSION"></script>
+</body></html>

@@ -5,8 +5,7 @@ import { fileURLToPath } from "node:url";
 import { loadGithubToken } from "./env-token.mjs";
 
 const root = dirname(fileURLToPath(import.meta.url));
-const appPath = join(root, "app.js");
-const zipPath = join(root, "dataflow-star-dashboard.zip");
+const appPath = join(process.env.DASHBOARD_SOURCE_DIR || join(root, ".private"), "app.js");
 const githubToken = loadGithubToken(root);
 const recalculationWindowDays = 4;
 const repoNames = [
@@ -424,7 +423,6 @@ async function main() {
   if (checkTotal !== totalStars) {
     throw new Error(`Cumulative mismatch: ${checkTotal} != ${totalStars}`);
   }
-  execFileSync("zip", ["-j", zipPath, join(root, "index.html"), join(root, "styles.css"), appPath, join(root, "update-dashboard.mjs")], { stdio: "pipe" });
 
   const changedDates = updatedRows.filter(([date]) => date >= cutoff);
   console.log(JSON.stringify({
@@ -432,8 +430,7 @@ async function main() {
     snapshotDate: endDate,
     dataflow: { stars: totalStars, forks: dataflow.forks_count },
     changedDates,
-    competitors: nextCompetitors.map((repo) => [repo.name, repo.total, repo.twoDayChange]),
-    zip: zipPath
+    competitors: nextCompetitors.map((repo) => [repo.name, repo.total, repo.twoDayChange])
   }, null, 2));
 }
 

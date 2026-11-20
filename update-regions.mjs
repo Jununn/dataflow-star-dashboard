@@ -1,5 +1,5 @@
 import fs from "node:fs/promises";
-import { dirname } from "node:path";
+import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadGithubToken } from "./env-token.mjs";
 
@@ -9,7 +9,7 @@ if (!token) {
   throw new Error("GITHUB_TOKEN is required");
 }
 
-const appPath = new URL("./app.js", import.meta.url);
+const appPath = join(process.env.DASHBOARD_SOURCE_DIR || join(root, ".private"), "app.js");
 const appSource = await fs.readFile(appPath, "utf8");
 const headers = {
   "Accept": "application/vnd.github+json",
@@ -65,6 +65,7 @@ function isChinaLocation(location) {
     "harbin",
     "haerbin",
     "shenyang",
+    "panjin",
     "jinan",
     "qingdao",
     "changsha",
@@ -227,7 +228,7 @@ const latestDailyDate = [...dailyCountsSource.matchAll(/\["(\d{4}-\d{2}-\d{2})",
 if (!latestDailyDate) throw new Error("Cannot find latest dashboard date");
 const monthIds = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
 const firstMonth = process.env.REGION_START_MONTH || "2026-05";
-if (!/^2026-(0[5-9]|1[0-2])$/.test(firstMonth)) throw new Error("Invalid REGION_START_MONTH");
+if (!/^20\d{2}-(0[1-9]|1[0-2])$/.test(firstMonth)) throw new Error("Invalid REGION_START_MONTH");
 const targetRanges = [];
 for (let month = Number(firstMonth.slice(5)); month <= Number(latestDailyDate.slice(5, 7)); month += 1) {
   const start = `2026-${String(month).padStart(2, "0")}-01`;

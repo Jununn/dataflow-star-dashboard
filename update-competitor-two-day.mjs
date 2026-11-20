@@ -1,11 +1,11 @@
 import fs from "node:fs/promises";
-import { dirname } from "node:path";
+import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadGithubToken } from "./env-token.mjs";
 
 const root = dirname(fileURLToPath(import.meta.url));
 const token = loadGithubToken(root);
-const appPath = new URL("./app.js", import.meta.url);
+const appPath = join(process.env.DASHBOARD_SOURCE_DIR || join(root, ".private"), "app.js");
 const repoNames = [
   "datajuicer/data-juicer",
   "Eventual-Inc/Daft",
