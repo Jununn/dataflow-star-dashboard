@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="./styles.css?v=456-1678547" />
   <style>
 #dashboardProtected[hidden], #dashboardGate[hidden] { display:none !important; }
-#dashboardProtected:not([hidden]) { display:contents; }
+#dashboardProtected { grid-column:1 / -1; }
+#dashboardGate:not([hidden]) ~ section, #dashboardGate:not([hidden]) ~ details { display:none !important; }
 #dashboardGate { padding:28px; }
 #dashboardGate p { line-height:1.6; }
 .gate-input-row { display:flex; gap:12px; margin:10px 0 16px; flex-wrap:wrap; }
@@ -92,8 +93,7 @@
   </form>
   <noscript>请启用 JavaScript 后输入口令解锁。</noscript>
 </section>
-<div id="dashboardProtected" hidden>
-  <div class="gate-toolbar"><span id="gateStatus" role="status">详细看板已解锁</span><button id="dashboardRelock" type="button">重新锁定</button></div>
+<div id="dashboardProtected" class="gate-toolbar" hidden><span id="gateStatus" role="status">详细看板已解锁</span><button id="dashboardRelock" type="button">重新锁定</button></div>
 <section class="panel chart-panel">
         <div class="panel-heading">
           <div>
@@ -818,7 +818,6 @@
         <p class="overlap-note">口径：分析 2026-06-01 到 2026-06-30 给 OpenDCAI/DataFlow 点 star 的用户；按 6 月新增 stargazer 时间序列等距抽样 400 人，并读取每人最近最多 300 个公开 starred repos。GitHub 不提供共同 star 图谱接口，本分析由公开 stargazer 和用户 starred repos 聚合而来，适合判断兴趣相关度，不等同于真实使用关系。</p>
         </div>
       </details>
-    </div>
     </main>
 <script>
 (() => {
