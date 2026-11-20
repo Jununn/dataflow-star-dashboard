@@ -1,0 +1,7 @@
+#dashboardGate { padding: 28px; }
+.gate-input-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 10px 0 16px; }
+#dashboardPasscode { padding: 12px; border: 1px solid #8893a4; border-radius: 8px; font: inherit; width: min(320px,100%); box-sizing: border-box; }
+#gateSubmit { padding: 10px 20px; border: 0; border-radius: 8px; background: #3455bb; color: white; cursor: pointer; font: inherit; }
+#gateSubmit:disabled { opacity: .65; cursor: wait; }
+.gate-remember { display: flex; gap: 8px; align-items: center; }
+#gateError { color: #b42318; min-height: 1.6em; }
