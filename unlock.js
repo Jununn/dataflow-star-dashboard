@@ -20,7 +20,11 @@
   }
   async function decrypt(key) {
     const clear = await crypto.subtle.decrypt({ name: "AES-GCM", iv: bytes(envelope.iv), additionalData: new TextEncoder().encode("dataflow-dashboard:v1") }, key, bytes(envelope.ciphertext));
-    const payload = JSON.parse(new TextDecoder().decode(clear));
+    if (envelope.compression && envelope.compression !== "gzip") throw new Error("Unsupported compression");
+    const text = envelope.compression === "gzip"
+      ? await new Response(new Blob([clear]).stream().pipeThrough(new DecompressionStream("gzip"))).text()
+      : new TextDecoder().decode(clear);
+    const payload = JSON.parse(text);
     if (payload.version !== 1 || typeof payload.html !== "string" || typeof payload.app !== "string") throw new Error("Invalid payload");
     return payload;
   }
