@@ -18,7 +18,7 @@ test("browser loader rejects invalid input, reconstructs original document and r
       return elements.get(id);
     };
     let written="";
-    const context={window:{__DASHBOARD_ENCRYPTED__:savedEnvelope},document:{getElementById:get,open(){},write(html){written=html;},close(){}},crypto:webcrypto,TextEncoder,TextDecoder,Uint8Array,atob,btoa,Blob,URL,
+    const context={window:{__DASHBOARD_ENCRYPTED__:savedEnvelope},document:{getElementById:get,open(){},write(html){written=html;},close(){}},crypto:webcrypto,TextEncoder,TextDecoder,Uint8Array,atob,btoa,Blob,URL,Response,DecompressionStream,
       localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v),removeItem:k=>storage.delete(k)}};
     vm.runInNewContext(loader,context);
     return {get,events,get written(){return written;}};

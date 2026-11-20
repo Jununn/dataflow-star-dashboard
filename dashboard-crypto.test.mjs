@@ -4,6 +4,7 @@ import fs from "node:fs/promises";
 import vm from "node:vm";
 import { encryptPayload, decryptPayload, deriveKey, parseEnvelope } from "./dashboard-crypto.mjs";
 import { webcrypto } from "node:crypto";
+import { gunzipSync } from "node:zlib";
 test("authenticated encryption rejects wrong passwords and modified ciphertext", async () => {
   const payload = { html: "<main>private</main>", app: "const actions=[];", reports: {} };
   const encrypted = await encryptPayload(payload, "test-only-random-password");
@@ -15,7 +16,7 @@ test("authenticated encryption rejects wrong passwords and modified ciphertext",
   assert.notEqual(updated.iv, encrypted.iv);
   const key = await deriveKey("test-only-random-password", encrypted.salt);
   const clear = await webcrypto.subtle.decrypt({name:"AES-GCM",iv:Buffer.from(updated.iv,"base64"),additionalData:new TextEncoder().encode("dataflow-dashboard:v1")}, key, Buffer.from(updated.ciphertext,"base64"));
-  assert.deepEqual(JSON.parse(new TextDecoder().decode(clear)),payload);
+  assert.deepEqual(JSON.parse(gunzipSync(Buffer.from(clear)).toString()),payload);
   const rotated = await encryptPayload(payload, "another-test-password");
   assert.notEqual(rotated.salt, encrypted.salt);
 });
