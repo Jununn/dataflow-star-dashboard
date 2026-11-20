@@ -6,7 +6,19 @@
     <title>Dataflow Star Dashboard</title>
     <link rel="icon" type="image/png" href="./favicon.png" />
     <link rel="stylesheet" href="./styles.css?v=456-1678547" />
-  </head>
+  <style>
+#dashboardProtected[hidden], #dashboardGate[hidden] { display:none !important; }
+#dashboardProtected:not([hidden]) { display:contents; }
+#dashboardGate { padding:28px; }
+#dashboardGate p { line-height:1.6; }
+.gate-input-row { display:flex; gap:12px; margin:10px 0 16px; flex-wrap:wrap; }
+#dashboardPasscode { padding:12px; border:1px solid #8893a4; border-radius:8px; font:inherit; width:min(320px,100%); box-sizing:border-box; }
+#dashboardGate button, #dashboardRelock { padding:10px 20px; border:0; border-radius:8px; background:#3455bb; color:white; cursor:pointer; font:inherit; }
+.gate-remember { display:flex; align-items:center; gap:8px; }
+#gateError { color:#b42318; min-height:1.6em; }
+.gate-toolbar { display:flex; align-items:center; justify-content:space-between; gap:12px; margin:8px 0 16px; }
+</style>
+</head>
   <body>
     <header class="page-header">
       <div>
@@ -68,7 +80,21 @@
         <div id="combinedChart" class="chart-wrap" aria-label="Combined daily stars and cumulative stars chart"></div>
       </section>
 
-      <section class="panel chart-panel">
+
+<section class="panel" id="dashboardGate" aria-labelledby="gateTitle">
+  <h2 id="gateTitle">解锁详细看板</h2>
+  <p>输入口令后，查看独立访客与新增 Star 对照及后续所有内容。</p>
+  <form id="dashboardGateForm">
+    <label for="dashboardPasscode">访问口令</label>
+    <div class="gate-input-row"><input id="dashboardPasscode" type="password" autocomplete="current-password" required aria-describedby="gateError"><button type="submit">解锁</button></div>
+    <label class="gate-remember"><input id="gateRemember" type="checkbox" checked>在此浏览器记住解锁状态</label>
+    <p id="gateError" role="status" aria-live="polite"></p>
+  </form>
+  <noscript>请启用 JavaScript 后输入口令解锁。</noscript>
+</section>
+<div id="dashboardProtected" hidden>
+  <div class="gate-toolbar"><span id="gateStatus" role="status">详细看板已解锁</span><button id="dashboardRelock" type="button">重新锁定</button></div>
+<section class="panel chart-panel">
         <div class="panel-heading">
           <div>
             <h2>独立访客与新增 Star 对照</h2>
@@ -591,7 +617,7 @@
           <div class="overlap-table-intro">
             <div>
               <h3>共同关注项目 Top 30：兴趣相关度 + 场景推断</h3>
-              
+
             </div>
             <div class="overlap-scroll-actions" aria-label="横向滚动表格">
               <button type="button" onclick="this.closest('.overlap-table-grid').querySelector('.overlap-table-wrap').scrollBy({ left: -640, behavior: 'smooth' })">←</button>
@@ -708,7 +734,7 @@
           <div class="overlap-table-intro">
             <div>
               <h3>共同关注项目 Top 30：兴趣相关度 + 场景推断</h3>
-              
+
             </div>
             <div class="overlap-scroll-actions" aria-label="横向滚动表格">
               <button type="button" onclick="this.closest('.overlap-table-grid').querySelector('.overlap-table-wrap').scrollBy({ left: -640, behavior: 'smooth' })">←</button>
@@ -792,7 +818,55 @@
         <p class="overlap-note">口径：分析 2026-06-01 到 2026-06-30 给 OpenDCAI/DataFlow 点 star 的用户；按 6 月新增 stargazer 时间序列等距抽样 400 人，并读取每人最近最多 300 个公开 starred repos。GitHub 不提供共同 star 图谱接口，本分析由公开 stargazer 和用户 starred repos 聚合而来，适合判断兴趣相关度，不等同于真实使用关系。</p>
         </div>
       </details>
+    </div>
     </main>
+<script>
+(() => {
+ const key = "dataflow-dashboard-unlocked-v1";
+ const gate = document.getElementById("dashboardGate");
+ const content = document.getElementById("dashboardProtected");
+ const input = document.getElementById("dashboardPasscode");
+ const remember = document.getElementById("gateRemember");
+ const error = document.getElementById("gateError");
+ const status = document.getElementById("gateStatus");
+ function show(unlocked) {
+   gate.hidden = unlocked;
+   content.hidden = !unlocked;
+ }
+ let stored = false;
+ try { stored = localStorage.getItem(key) === "yes"; } catch {}
+ show(stored);
+ document.getElementById("dashboardGateForm").addEventListener("submit", (event) => {
+   event.preventDefault();
+   if (input.value !== "adastra") {
+     error.textContent = "口令不正确，请重试。";
+     input.setAttribute("aria-invalid", "true");
+     input.select();
+     return;
+   }
+   input.value = "";
+   input.removeAttribute("aria-invalid");
+   error.textContent = "";
+   status.textContent = remember.checked ? "已解锁 · 此浏览器已记住" : "已解锁 · 仅本次页面有效";
+   try {
+     if (remember.checked) localStorage.setItem(key, "yes");
+     else localStorage.removeItem(key);
+   } catch { status.textContent = "已解锁 · 浏览器无法保存状态，刷新后需重新输入"; }
+   show(true);
+   document.getElementById("dashboardRelock").focus();
+   window.dispatchEvent(new Event("resize"));
+ });
+ document.getElementById("dashboardRelock").addEventListener("click", () => {
+   try { localStorage.removeItem(key); } catch {}
+   show(false);
+   input.focus();
+ });
+ window.addEventListener("storage", (event) => {
+   if (event.key === key || event.key === null) show(event.key === key && event.newValue === "yes");
+ });
+})();
+</script>
+
 
     <script src="./app.js?v=456-1678547"></script>
   </body>
