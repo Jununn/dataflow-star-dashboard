@@ -7,7 +7,7 @@ import {encryptPayload} from "./dashboard-crypto.mjs";
 
 test("browser loader rejects invalid input, reconstructs original document and remembers a key", async () => {
   const password = "test-only-browser-password";
-  const html = '<html><nav></nav><main><section id="original">private</section></main><script src="./app.js"></script></html>';
+  const html = '<html><head></head><nav></nav><main><section id="original"><h2>独立访客与新增 Star 对照</h2>private</section></main><script src="./app.js"></script></html>';
   const payload = {version:1,html,app:"window.rendered=true;",reports:{}};
   const encrypted = await encryptPayload(payload,password);
   const storage = new Map();
@@ -31,7 +31,10 @@ test("browser loader rejects invalid input, reconstructs original document and r
   assert(page.get("gateError").textContent);
   page.get("dashboardPasscode").value=password;
   await page.events.get("dashboardGateForm:submit")({preventDefault(){}});
-  assert(page.written.includes('<main><section id="original">private</section></main>'));
+  assert(page.written.includes('<section id="original"><h2>独立访客与新增 Star 对照</h2>private</section></main>'));
+  assert(page.written.includes('<main><div id="dashboardUnlockStatus"'));
+  assert(page.written.includes('</button></div><section id="original"'));
+  assert(page.written.includes('<nav></nav>'));
   assert(page.written.includes("window.rendered=true;"));
   assert(!JSON.stringify([...storage]).includes(password));
   assert(storage.has("dataflow-dashboard-decryption-v2"));

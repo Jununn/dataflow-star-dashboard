@@ -35,7 +35,12 @@
       const report = payload.reports[name];
       return report === undefined ? 'href="#"' : 'href="' + URL.createObjectURL(new Blob([report], { type: name.endsWith(".json") ? "application/json;charset=utf-8" : "text/plain;charset=utf-8" })) + '"';
     });
-    html = html.replace("</nav>", '<span id="privateSessionStatus" class="live-status"></span><button type="button" id="dashboardRelock" class="chart-mode-button">重新锁定</button></nav>');
+    const heading = html.indexOf("<h2>独立访客与新增 Star 对照</h2>");
+    const boundary = html.lastIndexOf("<section", heading);
+    if (heading < 0 || boundary < 0) throw new Error("Missing protected section");
+    const toolbar = '<div id="dashboardUnlockStatus" role="status"><span id="privateSessionStatus"></span><button type="button" id="dashboardRelock">重新锁定</button></div>';
+    html = html.slice(0, boundary) + toolbar + html.slice(boundary);
+    html = html.replace("</head>", '<style>#dashboardUnlockStatus{grid-column:1 / -1;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 0 12px;font-size:14px}#dashboardRelock{flex-shrink:0;border:0;border-radius:8px;background:#3455bb;color:#fff;padding:10px 20px;font:inherit;cursor:pointer}#dashboardRelock:focus-visible{outline:3px solid #93a9ef;outline-offset:3px}</style></head>');
     const lockScript = [
       'document.getElementById("privateSessionStatus").textContent = ' + JSON.stringify(notice).replace(/</g, "\\u003c") + ';',
       'document.getElementById("dashboardRelock").addEventListener("click", () => {',
