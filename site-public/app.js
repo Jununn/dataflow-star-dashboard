@@ -133,7 +133,7 @@ const dailyCounts = [
   ["2026-11-09", 17], ["2026-11-10", 15], ["2026-11-11", 17], ["2026-11-12", 14],
   ["2026-11-13", 11], ["2026-11-14", 11], ["2026-11-15", 15], ["2026-11-16", 13],
   ["2026-11-17", 13], ["2026-11-18", 19], ["2026-11-19", 1], ["2026-11-20", 3],
-  ["2026-11-21", 3]
+  ["2026-11-21", 5]
 ];
 
 const webuiStarMeta = {
@@ -142,7 +142,7 @@ const webuiStarMeta = {
   startDate: "2026-07-15",
   endDate: "2026-11-21",
   beforeStart: 24,
-  generatedAt: "2026-11-21T10:03:17.997Z"
+  generatedAt: "2026-11-21T17:52:40.108Z"
 };
 
 const webuiDailyCounts = [
@@ -183,11 +183,11 @@ const webuiDailyCounts = [
 
 const dataflexStarMeta = {
   repo: "OpenDCAI/DataFlex",
-  total: 3682,
+  total: 3684,
   startDate: "2026-04-03",
   endDate: "2026-11-21",
   beforeStart: 105,
-  generatedAt: "2026-11-21T10:03:31.526Z"
+  generatedAt: "2026-11-21T17:52:55.397Z"
 };
 
 const dataflexDailyCounts = [
@@ -249,7 +249,7 @@ const dataflexDailyCounts = [
   ["2026-11-09", 19], ["2026-11-10", 10], ["2026-11-11", 16], ["2026-11-12", 13],
   ["2026-11-13", 21], ["2026-11-14", 13], ["2026-11-15", 19], ["2026-11-16", 17],
   ["2026-11-17", 9], ["2026-11-18", 25], ["2026-11-19", 4], ["2026-11-20", 15],
-  ["2026-11-21", 3]
+  ["2026-11-21", 5]
 ];
 
 let competitorSnapshotDate = dailyCounts.at(-1)[0];
